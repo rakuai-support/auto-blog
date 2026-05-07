@@ -1,0 +1,140 @@
+/* AI活用ラボ - スタイルシート */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.8;
+  color: #333;
+  background: #fafafa;
+}
+
+header {
+  background: #000;
+  color: #fff;
+  padding: 1.5rem 0;
+}
+.header-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.logo {
+  color: #35a0d9;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.tagline {
+  color: #a39463;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #888;
+  font-size: 0.8rem;
+  border-top: 1px solid #eee;
+  margin-top: 3rem;
+}
+
+/* 記事一覧 */
+.article-list { list-style: none; }
+.article-list li {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.2s;
+}
+.article-list li:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.article-list a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.article-list a:hover { color: #35a0d9; }
+.article-meta {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 0.3rem;
+}
+.article-excerpt {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+.tag {
+  display: inline-block;
+  background: #35a0d9;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  margin-right: 0.3rem;
+}
+
+/* 記事本文 */
+article h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+article h2 {
+  font-size: 1.25rem;
+  margin: 2rem 0 0.75rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid #35a0d9;
+}
+article h3 {
+  font-size: 1.05rem;
+  margin: 1.5rem 0 0.5rem;
+}
+article p { margin-bottom: 1rem; }
+article ul, article ol {
+  margin: 0.5rem 0 1rem 1.5rem;
+}
+article li { margin-bottom: 0.3rem; }
+
+/* アフィリエイトボックス */
+.affiliate-box {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border: 2px solid #a39463;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+.affiliate-box p {
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+.affiliate-box a {
+  display: inline-block;
+  background: #35a0d9;
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+}
+.affiliate-box a:hover {
+  background: #2a8bc2;
+}
+
+/* レスポンシブ */
+@media (max-width: 600px) {
+  article h1 { font-size: 1.3rem; }
+  .header-inner { padding: 0 0.75rem; }
+}

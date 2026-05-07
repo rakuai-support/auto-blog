@@ -1,0 +1,43 @@
+{
+  "site": {
+    "title": "AI活用ラボ｜業種別AIガイド",
+    "description": "中小企業・個人事業主のためのAI活用情報サイト",
+    "url": "https://rakuai-support.github.io/auto-blog",
+    "language": "ja"
+  },
+  "generation": {
+    "articles_per_run": 1,
+    "max_articles": 300
+  },
+  "affiliate": {
+    "placeholder_tag": "<!-- AFFILIATE -->",
+    "links": [
+      {
+        "keyword": "ChatGPT",
+        "html": "<div class=\"affiliate-box\"><p>ChatGPTをもっと活用したい方へ</p><a href=\"YOUR_AFFILIATE_LINK_HERE\" target=\"_blank\" rel=\"nofollow\">ChatGPT Plus を試してみる</a></div>"
+      },
+      {
+        "keyword": "業務効率化",
+        "html": "<div class=\"affiliate-box\"><p>業務効率化ツールをお探しの方へ</p><a href=\"YOUR_AFFILIATE_LINK_HERE\" target=\"_blank\" rel=\"nofollow\">おすすめツールを見る</a></div>"
+      }
+    ]
+  },
+  "industries": [
+    "飲食店", "美容室", "整骨院・整体院", "歯科医院", "不動産業",
+    "税理士事務所", "司法書士事務所", "工務店・リフォーム業", "自動車整備業", "クリーニング店",
+    "学習塾", "保育園・幼稚園", "介護施設", "花屋", "写真スタジオ",
+    "印刷会社", "運送業", "農業", "ペットショップ・動物病院", "旅館・民宿"
+  ],
+  "topics_per_industry": [
+    "予約管理の効率化",
+    "顧客対応の自動化",
+    "SNS投稿の作成",
+    "売上データの分析",
+    "スタッフ教育の効率化",
+    "在庫管理の改善",
+    "経理作業の時短",
+    "集客・マーケティング",
+    "口コミ対応",
+    "業務マニュアル作成"
+  ]
+}
