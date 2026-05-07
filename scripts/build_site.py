@@ -142,18 +142,64 @@ def build_toc(headings):
 </div>"""
 
 
+def build_affiliate_html(pick, config):
+    """1つのアフィリエイトピックからリッチなHTMLカードを生成"""
+    aff = config["affiliate"]
+
+    # アイコンSVG
+    icons = {
+        "bulb": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>',
+        "book": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>',
+        "calc": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="8" y1="18" x2="16" y2="18"/></svg>',
+        "chart": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',
+        "cal": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
+        "bed": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v-2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg>',
+    }
+    icon_svg = icons.get(pick.get("icon", "bulb"), icons["bulb"])
+
+    # URLを組み立て
+    if pick["search"] == "_travel":
+        url = aff["travel_url"]
+        tracking = aff.get("travel_img", aff["tracking_img"])
+    else:
+        from urllib.parse import quote
+        query = quote(pick["search"], safe="")
+        url = aff["base_url"].replace("{query}", query)
+        tracking = aff["tracking_img"]
+
+    label = html.escape(pick["label"])
+
+    return f"""<div class="aff-card">
+  <div class="aff-card-inner">
+    <div class="aff-icon">{icon_svg}</div>
+    <div class="aff-content">
+      <span class="aff-badge">PICK UP</span>
+      <p class="aff-label">{label}</p>
+      <a href="{url}" target="_blank" rel="nofollow" class="aff-btn">
+        楽天で探す
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+  <img border="0" width="1" height="1" src="{tracking}" alt="">
+</div>"""
+
+
 def insert_affiliate(html_text, config):
-    """アフィリエイトタグを実際のリンクに置換"""
-    if not config.get("affiliate", {}).get("links"):
+    """アフィリエイトタグをリッチなカードに置換"""
+    picks = config.get("affiliate", {}).get("picks", [])
+    if not picks:
         return html_text.replace("<!-- AFFILIATE -->", "")
 
-    link_html = config["affiliate"]["links"][0]["html"]
-    for link in config["affiliate"]["links"]:
-        if link["keyword"].lower() in html_text.lower():
-            link_html = link["html"]
+    # 記事内容に合うピックを選択
+    chosen = picks[-1]  # デフォルトは最後（AI汎用）
+    for pick in picks:
+        if pick["keyword"].lower() in html_text.lower():
+            chosen = pick
             break
 
-    return html_text.replace("<!-- AFFILIATE -->", link_html)
+    card_html = build_affiliate_html(chosen, config)
+    return html_text.replace("<!-- AFFILIATE -->", card_html)
 
 
 def build_related_articles(current_meta, all_meta):

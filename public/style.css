@@ -298,32 +298,99 @@ article li {
 }
 .toc a:hover { text-decoration: underline; }
 
-/* アフィリエイトボックス */
-.affiliate-box {
-  background: linear-gradient(135deg, #fff9e6, #fff3cc);
-  border: 2px solid var(--gold);
-  border-radius: var(--radius);
-  padding: 1.5rem;
+/* アフィリエイトカード */
+.aff-card {
   margin: 2rem 0;
-  text-align: center;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  position: relative;
 }
-.affiliate-box p {
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-  font-size: 0.95rem;
+.aff-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--gold), var(--blue));
 }
-.affiliate-box a {
+.aff-card-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem 1.75rem;
+}
+.aff-icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  background: rgba(53, 160, 217, 0.12);
+  border: 1px solid rgba(53, 160, 217, 0.25);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue);
+}
+.aff-icon svg {
+  width: 26px;
+  height: 26px;
+}
+.aff-content {
+  flex: 1;
+  min-width: 0;
+}
+.aff-badge {
   display: inline-block;
   background: var(--gold);
+  color: var(--black);
+  font-size: 0.6rem;
+  font-weight: 900;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.35rem;
+}
+.aff-label {
   color: var(--white);
-  padding: 0.65rem 1.75rem;
-  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+.aff-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: linear-gradient(135deg, var(--blue), #4db8e8);
+  color: var(--white);
+  padding: 0.55rem 1.5rem;
+  border-radius: 50px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 0.9rem;
-  transition: opacity 0.2s;
+  font-size: 0.85rem;
+  transition: all 0.25s;
+  box-shadow: 0 3px 12px rgba(53, 160, 217, 0.3);
 }
-.affiliate-box a:hover { opacity: 0.85; }
+.aff-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 20px rgba(53, 160, 217, 0.45);
+}
+.aff-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s;
+}
+.aff-btn:hover .aff-arrow {
+  transform: translateX(3px);
+}
+@media (max-width: 600px) {
+  .aff-card-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.25rem;
+  }
+}
 
 /* CTAボックス */
 .cta-box {
