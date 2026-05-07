@@ -1,64 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://rakuai-support.github.io/auto-blog/index.html</loc>
     <lastmod>2026-05-08</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
-  </url>  <url>
+  </url>
+  <url>
     <loc>https://rakuai-support.github.io/auto-blog/articles/091ae53a.html</loc>
     <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>  <url>
+  </url>
+  <url>
     <loc>https://rakuai-support.github.io/auto-blog/articles/1aab3038.html</loc>
     <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>  <url>
+  </url>
+  <url>
     <loc>https://rakuai-support.github.io/auto-blog/articles/1b3ae544.html</loc>
     <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>  <url>
+  </url>
+  <url>
     <loc>https://rakuai-support.github.io/auto-blog/articles/3d2e232d.html</loc>
     <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>  <url>
+  </url>
+  <url>
     <loc>https://rakuai-support.github.io/auto-blog/articles/4012597b.html</loc>
     <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>  <url>
+  </url>
+  <url>
     <loc>https://rakuai-support.github.io/auto-blog/articles/6bfd69ed.html</loc>
     <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>  <url>
+  </url>
+  <url>
     <loc>https://rakuai-support.github.io/auto-blog/articles/73d0e6f1.html</loc>
     <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>  <url>
+  </url>
+  <url>
     <loc>https://rakuai-support.github.io/auto-blog/articles/7e5defa7.html</loc>
     <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>  <url>
+  </url>
+  <url>
     <loc>https://rakuai-support.github.io/auto-blog/articles/9c909148.html</loc>
     <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>  <url>
+  </url>
+  <url>
     <loc>https://rakuai-support.github.io/auto-blog/articles/9daf4c03.html</loc>
     <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>  <url>
+  </url>
+  <url>
     <loc>https://rakuai-support.github.io/auto-blog/articles/c55daf64.html</loc>
     <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>  <url>
+  </url>
+  <url>
     <loc>https://rakuai-support.github.io/auto-blog/articles/e00150b3.html</loc>
     <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>  <url>
+  </url>
+  <url>
     <loc>https://rakuai-support.github.io/auto-blog/articles/f13ab3db.html</loc>
     <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>  <url>
+  </url>
+  <url>
     <loc>https://rakuai-support.github.io/auto-blog/articles/fa25459e.html</loc>
     <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>

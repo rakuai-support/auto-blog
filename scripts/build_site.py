@@ -453,16 +453,20 @@ document.querySelectorAll('.category-btn').forEach(function(btn) {{
 
 def build_sitemap(all_meta, config):
     """sitemap.xml"""
-    urls = [f"""  <url>
+    urls = [f"""
+  <url>
     <loc>{config['site']['url']}/index.html</loc>
     <lastmod>{datetime.now().strftime('%Y-%m-%d')}</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>"""]
 
     for meta in all_meta:
-        urls.append(f"""  <url>
+        urls.append(f"""
+  <url>
     <loc>{config['site']['url']}/articles/{meta['slug']}.html</loc>
     <lastmod>{meta.get('date', datetime.now().strftime('%Y-%m-%d'))}</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>""")
 
