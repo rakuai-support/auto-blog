@@ -3,62 +3,156 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>トップ | AI活用ラボ</title>
+  <title>業種別AI活用ガイド | AI活用ラボ</title>
   <meta name="description" content="中小企業・個人事業主のためのAI活用情報サイト">
   <link rel="canonical" href="https://rakuai-support.github.io/auto-blog">
+  <!-- OGP -->
+  <meta property="og:title" content="業種別AI活用ガイド | AI活用ラボ">
+  <meta property="og:description" content="中小企業・個人事業主のためのAI活用情報サイト">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rakuai-support.github.io/auto-blog">
+  <meta property="og:site_name" content="AI活用ラボ">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="業種別AI活用ガイド | AI活用ラボ">
+  <meta name="twitter:description" content="中小企業・個人事業主のためのAI活用情報サイト">
+  <!-- フォント -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  
   <!-- Google AdSense（承認後に有効化） -->
   <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_ADSENSE_ID" crossorigin="anonymous"></script> -->
 </head>
 <body>
   <header>
     <div class="header-inner">
-      <a href="index.html" class="logo">AI活用ラボ</a>
-      <p class="tagline">業種別・すぐ使えるAI活用ガイド</p>
+      <div class="header-top">
+        <a href="index.html" class="logo">AI活用ラボ</a>
+        <nav class="header-nav">
+          <a href="index.html">記事一覧</a>
+          <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">無料相談</a>
+        </nav>
+      </div>
+      <p class="tagline">中小企業・個人事業主のための業種別AI活用ガイド</p>
     </div>
   </header>
   <main>
-    <h1>AI活用ラボ - 業種別ガイド</h1>
-<p>中小企業・個人事業主のための、すぐに使えるAI活用ガイド集です。</p>
-<p>現在 <strong>6記事</strong> 公開中</p>
+    
+    <div class="hero">
+  <h1>業種別AI活用ガイド</h1>
+  <p class="hero-sub">ChatGPTなどの無料AIツールで、日々の業務をもっと楽に</p>
+  <p class="hero-count">現在 10記事 公開中</p>
+</div>
+<div class="category-filter">
+<button class="category-btn active" onclick="filterArticles('all')">すべて</button><button class="category-btn" onclick="filterArticles('不動産業')">不動産業</button><button class="category-btn" onclick="filterArticles('整骨院・整体院')">整骨院・整体院</button><button class="category-btn" onclick="filterArticles('歯科医院')">歯科医院</button><button class="category-btn" onclick="filterArticles('美容室')">美容室</button><button class="category-btn" onclick="filterArticles('飲食店')">飲食店</button>
+</div>
 <ul class="article-list">
-<li>
-  <span class="tag">飲食店</span>
-  <a href="articles/091ae53a.html">飲食店のSNS投稿の作成をAIで改善する方法</a>
-  <div class="article-meta">2026-05-07</div>
+<li data-industry="飲食店">
+  <a class="article-title" href="articles/091ae53a.html">飲食店のSNS投稿の作成をAIで改善する方法</a>
+  <div class="article-meta">
+    <span class="tag">飲食店</span>
+    <span>2026-05-07</span>
+    <span class="read-time">約3分</span>
+  </div>
   <div class="article-excerpt">飲食店のSNS投稿をAIで効率化する方法を解説。ChatGPTを使った文章作成の手順やコツを初心者向けにわかりやすく紹介します。</div>
-</li><li>
-  <span class="tag">飲食店</span>
-  <a href="articles/1aab3038.html">飲食店の売上データの分析をAIで改善する方法</a>
-  <div class="article-meta">2026-05-07</div>
+</li><li data-industry="飲食店">
+  <a class="article-title" href="articles/1aab3038.html">飲食店の売上データの分析をAIで改善する方法</a>
+  <div class="article-meta">
+    <span class="tag">飲食店</span>
+    <span>2026-05-07</span>
+    <span class="read-time">約3分</span>
+  </div>
   <div class="article-excerpt">飲食店の売上データをChatGPTなどの無料AIで分析する方法を初心者向けにわかりやすく解説します。</div>
-</li><li>
-  <span class="tag">飲食店</span>
-  <a href="articles/4012597b.html">飲食店のスタッフ教育の効率化をAIで改善する方法</a>
-  <div class="article-meta">2026-05-07</div>
+</li><li data-industry="飲食店">
+  <a class="article-title" href="articles/4012597b.html">飲食店のスタッフ教育の効率化をAIで改善する方法</a>
+  <div class="article-meta">
+    <span class="tag">飲食店</span>
+    <span>2026-05-07</span>
+    <span class="read-time">約3分</span>
+  </div>
   <div class="article-excerpt">飲食店のスタッフ教育をAIで効率化する方法を解説。マニュアル作成・FAQ整備・ロールプレイ練習にChatGPTを活用する具体的な手順を紹介します。</div>
-</li><li>
-  <span class="tag">飲食店</span>
-  <a href="articles/7e5defa7.html">飲食店の在庫管理の改善をAIで改善する方法</a>
-  <div class="article-meta">2026-05-07</div>
+</li><li data-industry="整骨院・整体院">
+  <a class="article-title" href="articles/6bfd69ed.html">【整骨院・整体院向け】予約管理の効率化にAIを使ったら何が変わる？</a>
+  <div class="article-meta">
+    <span class="tag">整骨院・整体院</span>
+    <span>2026-05-07</span>
+    <span class="read-time">約7分</span>
+  </div>
+  <div class="article-excerpt">整骨院・整体院の予約管理をAIで効率化する方法を解説。ChatGPTのプロンプト例やGoogleフォーム活用で月20時間削減を実現するステップを紹介。</div>
+</li><li data-industry="飲食店">
+  <a class="article-title" href="articles/7e5defa7.html">飲食店の在庫管理の改善をAIで改善する方法</a>
+  <div class="article-meta">
+    <span class="tag">飲食店</span>
+    <span>2026-05-07</span>
+    <span class="read-time">約3分</span>
+  </div>
   <div class="article-excerpt">飲食店の在庫管理をChatGPT等のAIと無料ツールで改善する方法を、具体的な活用例とともにわかりやすく解説します。</div>
-</li><li>
-  <span class="tag">飲食店</span>
-  <a href="articles/c55daf64.html">飲食店の顧客対応の自動化をAIで改善する方法</a>
-  <div class="article-meta">2026-05-07</div>
+</li><li data-industry="美容室">
+  <a class="article-title" href="articles/9c909148.html">月10時間削減！美容室の予約管理の効率化をAIで自動化した事例</a>
+  <div class="article-meta">
+    <span class="tag">美容室</span>
+    <span>2026-05-07</span>
+    <span class="read-time">約7分</span>
+  </div>
+  <div class="article-excerpt">美容室の予約管理をGoogleフォームとChatGPTで効率化する方法を解説。月10時間削減につながる具体的な手順と無料ツールの組み合わせを紹介します。</div>
+</li><li data-industry="飲食店">
+  <a class="article-title" href="articles/c55daf64.html">飲食店の顧客対応の自動化をAIで改善する方法</a>
+  <div class="article-meta">
+    <span class="tag">飲食店</span>
+    <span>2026-05-07</span>
+    <span class="read-time">約3分</span>
+  </div>
   <div class="article-excerpt">飲食店の顧客対応をAIで自動化する方法を解説。ChatGPTやLINE公式アカウントを活用した無料・低コストの実践的な改善策を紹介します。</div>
-</li><li>
-  <span class="tag">飲食店</span>
-  <a href="articles/fa25459e.html">飲食店の予約管理の効率化をAIで改善する方法</a>
-  <div class="article-meta">2026-05-07</div>
+</li><li data-industry="不動産業">
+  <a class="article-title" href="articles/e00150b3.html">不動産業の予約管理の効率化を今日からAIで効率化する3つのステップ</a>
+  <div class="article-meta">
+    <span class="tag">不動産業</span>
+    <span>2026-05-07</span>
+    <span class="read-time">約7分</span>
+  </div>
+  <div class="article-excerpt">不動産業の内見予約管理をChatGPT・Googleフォーム・LINE公式アカウントで効率化する3ステップを具体的に解説。月30時間削減も目指せる実践ガイド。</div>
+</li><li data-industry="歯科医院">
+  <a class="article-title" href="articles/f13ab3db.html">プロが教える！歯科医院の予約管理の効率化にChatGPTを活用する方法</a>
+  <div class="article-meta">
+    <span class="tag">歯科医院</span>
+    <span>2026-05-07</span>
+    <span class="read-time">約7分</span>
+  </div>
+  <div class="article-excerpt">歯科医院の予約管理をChatGPTで効率化する方法を解説。プロンプト例や無料ツールとの組み合わせで月30時間削減を目指す実践ガイド。</div>
+</li><li data-industry="飲食店">
+  <a class="article-title" href="articles/fa25459e.html">飲食店の予約管理の効率化をAIで改善する方法</a>
+  <div class="article-meta">
+    <span class="tag">飲食店</span>
+    <span>2026-05-07</span>
+    <span class="read-time">約3分</span>
+  </div>
   <div class="article-excerpt">飲食店の予約管理の悩みをAI活用で解決。ChatGPTやGoogleフォームを使った効率化の具体的な方法を初心者向けにわかりやすく解説します。</div>
 </li>
 </ul>
+<script>
+function filterArticles(industry) {
+  document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.article-list li').forEach(li => {
+    if (industry === 'all' || li.dataset.industry === industry) {
+      li.style.display = '';
+    } else {
+      li.style.display = 'none';
+    }
+  });
+}
+</script>
   </main>
   <footer>
-    <p>&copy; 2026 AI活用ラボ. 運営: かわさき楽AIサポート</p>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="index.html">記事一覧</a>
+        <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">かわさき楽AIサポート</a>
+        <a href="sitemap.xml">サイトマップ</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 AI活用ラボ. 運営: <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">株式会社スマイルファクトリー</a></p>
+    </div>
   </footer>
 </body>
 </html>

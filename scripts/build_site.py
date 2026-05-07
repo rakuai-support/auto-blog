@@ -1,6 +1,6 @@
 """
-静的サイトビルドスクリプト
-content/articles/ のMarkdownからHTMLを生成し、public/ に配置する。
+静的サイトビルドスクリプト v2
+目次自動生成、構造化データ、関連記事、カテゴリフィルター対応
 """
 import json
 import re
@@ -32,11 +32,11 @@ def md_to_html(md_text):
     result = []
     in_list = False
     list_type = None
+    h2_count = 0
 
     for line in lines:
         stripped = line.strip()
 
-        # 空行
         if not stripped:
             if in_list:
                 result.append(f"</{list_type}>")
@@ -44,27 +44,35 @@ def md_to_html(md_text):
             result.append("")
             continue
 
+        # 水平線（---）はスキップ
+        if stripped == "---":
+            continue
+
         # 見出し
         if stripped.startswith("### "):
             if in_list:
                 result.append(f"</{list_type}>")
                 in_list = False
-            result.append(f"<h3>{html.escape(stripped[4:])}</h3>")
+            text = stripped[4:]
+            result.append(f"<h3>{inline_format(text)}</h3>")
             continue
         if stripped.startswith("## "):
             if in_list:
                 result.append(f"</{list_type}>")
                 in_list = False
-            result.append(f"<h2>{html.escape(stripped[3:])}</h2>")
+            h2_count += 1
+            text = stripped[3:]
+            anchor = f"section-{h2_count}"
+            result.append(f'<h2 id="{anchor}">{inline_format(text)}</h2>')
             continue
         if stripped.startswith("# "):
             if in_list:
                 result.append(f"</{list_type}>")
                 in_list = False
-            result.append(f"<h1>{html.escape(stripped[2:])}</h1>")
+            result.append(f"<h1>{inline_format(stripped[2:])}</h1>")
             continue
 
-        # アフィリエイトタグはそのまま通す
+        # アフィリエイトタグ
         if "<!-- AFFILIATE -->" in stripped:
             result.append(stripped)
             continue
@@ -75,9 +83,7 @@ def md_to_html(md_text):
                 result.append("<ul>")
                 in_list = True
                 list_type = "ul"
-            content = stripped[2:]
-            content = inline_format(content)
-            result.append(f"<li>{content}</li>")
+            result.append(f"<li>{inline_format(stripped[2:])}</li>")
             continue
 
         if re.match(r"^\d+\. ", stripped):
@@ -86,16 +92,14 @@ def md_to_html(md_text):
                 in_list = True
                 list_type = "ol"
             content = re.sub(r"^\d+\. ", "", stripped)
-            content = inline_format(content)
-            result.append(f"<li>{content}</li>")
+            result.append(f"<li>{inline_format(content)}</li>")
             continue
 
-        # 通常の段落
+        # 通常段落
         if in_list:
             result.append(f"</{list_type}>")
             in_list = False
-        content = inline_format(stripped)
-        result.append(f"<p>{content}</p>")
+        result.append(f"<p>{inline_format(stripped)}</p>")
 
     if in_list:
         result.append(f"</{list_type}>")
@@ -104,13 +108,38 @@ def md_to_html(md_text):
 
 
 def inline_format(text):
-    """太字・リンクのインライン変換"""
+    """太字・リンク・コードのインライン変換"""
     text = html.escape(text)
-    # 太字 **text**
     text = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", text)
-    # リンク [text](url)
+    text = re.sub(r"`(.+?)`", r"<code>\1</code>", text)
     text = re.sub(r"\[(.+?)\]\((.+?)\)", r'<a href="\2">\1</a>', text)
     return text
+
+
+def extract_h2_headings(md_text):
+    """Markdownからh2見出しを抽出（目次用）"""
+    headings = []
+    count = 0
+    for line in md_text.split("\n"):
+        if line.strip().startswith("## "):
+            count += 1
+            text = line.strip()[3:]
+            headings.append({"id": f"section-{count}", "text": text})
+    return headings
+
+
+def build_toc(headings):
+    """目次HTMLを生成"""
+    if len(headings) < 2:
+        return ""
+    items = "\n".join(
+        f'<li><a href="#{h["id"]}">{html.escape(h["text"])}</a></li>'
+        for h in headings
+    )
+    return f"""<div class="toc">
+  <div class="toc-title">この記事の内容</div>
+  <ol>{items}</ol>
+</div>"""
 
 
 def insert_affiliate(html_text, config):
@@ -118,7 +147,6 @@ def insert_affiliate(html_text, config):
     if not config.get("affiliate", {}).get("links"):
         return html_text.replace("<!-- AFFILIATE -->", "")
 
-    # 記事内容に合うリンクを選択（最初にマッチしたもの）
     link_html = config["affiliate"]["links"][0]["html"]
     for link in config["affiliate"]["links"]:
         if link["keyword"].lower() in html_text.lower():
@@ -128,61 +156,168 @@ def insert_affiliate(html_text, config):
     return html_text.replace("<!-- AFFILIATE -->", link_html)
 
 
-def build_article(meta, md_text, template, config):
+def build_related_articles(current_meta, all_meta):
+    """同じ業種 or 同じトピックの関連記事を最大4件表示"""
+    related = []
+    for meta in all_meta:
+        if meta["slug"] == current_meta["slug"]:
+            continue
+        if meta["industry"] == current_meta["industry"] or meta["topic"] == current_meta["topic"]:
+            related.append(meta)
+        if len(related) >= 4:
+            break
+
+    if not related:
+        return ""
+
+    items = []
+    for m in related:
+        items.append(f"""<li>
+  <span class="tag">{html.escape(m['industry'])}</span>
+  <a href="{m['slug']}.html">{html.escape(m['title'])}</a>
+</li>""")
+
+    return f"""<div class="related-articles">
+  <h2>あわせて読みたい</h2>
+  <ul class="related-list">{"".join(items)}</ul>
+</div>"""
+
+
+def build_structured_data(meta, config):
+    """JSON-LD構造化データを生成"""
+    data = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": meta["title"],
+        "description": meta["description"],
+        "datePublished": meta["date"],
+        "dateModified": meta["date"],
+        "author": {
+            "@type": "Organization",
+            "name": "かわさき楽AIサポート",
+            "url": "https://www.smilefactory-rakuai.com/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "株式会社スマイルファクトリー"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": f'{config["site"]["url"]}/articles/{meta["slug"]}.html'
+        }
+    }
+    return f'<script type="application/ld+json">{json.dumps(data, ensure_ascii=False)}</script>'
+
+
+def build_article(meta, md_text, template, config, all_meta):
     """1記事分のHTMLを生成"""
     article_html = md_to_html(md_text)
     article_html = insert_affiliate(article_html, config)
 
-    date_display = meta.get("date", "")
-    header = f'<div class="article-meta">{date_display} | {html.escape(meta.get("industry", ""))}</div>'
+    # 目次を生成してh1の後に挿入
+    headings = extract_h2_headings(md_text)
+    toc = build_toc(headings)
+    if toc:
+        article_html = article_html.replace("</h1>", f"</h1>\n{toc}", 1)
+
+    # 記事ヘッダーメタ
+    read_min = meta.get("read_minutes", 3)
+    header_meta = f'<div class="article-header-meta"><span class="tag">{html.escape(meta.get("industry", ""))}</span><span>{meta.get("date", "")}</span><span>約{read_min}分で読めます</span></div>'
+
+    # 関連記事
+    related = build_related_articles(meta, all_meta)
+
+    # CTA
     cta = """<div class="cta-box">
   <p class="cta-title">AIの導入、何から始めればいいかわからない方へ</p>
   <p>かわさき楽AIサポートでは、中小企業・個人事業主の方に向けて、無料ツール中心のAI活用支援を行っています。初回相談は無料です。</p>
-  <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="cta-btn">かわさき楽AIサポートに相談する</a>
+  <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="cta-btn">無料で相談してみる</a>
 </div>"""
-    content = f"<article>\n{header}\n{article_html}\n{cta}\n</article>"
+
+    content = f"<article>\n{header_meta}\n{article_html}\n{cta}\n{related}\n</article>"
+
+    # パンくずリスト
+    breadcrumb = f'<div class="breadcrumb"><a href="../index.html">トップ</a><span>&gt;</span><span>{html.escape(meta.get("industry", ""))}</span><span>&gt;</span><span>{html.escape(meta["title"][:30])}...</span></div>'
+
+    # 構造化データ
+    structured = build_structured_data(meta, config)
 
     page = template.replace("{{page_title}}", html.escape(meta["title"]))
     page = page.replace("{{meta_description}}", html.escape(meta["description"]))
     page = page.replace("{{canonical_url}}", f'{config["site"]["url"]}/articles/{meta["slug"]}.html')
     page = page.replace("{{root_path}}", "../")
+    page = page.replace("{{og_type}}", "article")
+    page = page.replace("{{breadcrumb}}", breadcrumb)
+    page = page.replace("{{structured_data}}", structured)
     page = page.replace("{{content}}", content)
 
     return page
 
 
 def build_index(all_meta, template, config):
-    """トップページ（記事一覧）を生成"""
-    # 日付で降順ソート
+    """トップページ（記事一覧 + カテゴリフィルター）"""
     sorted_meta = sorted(all_meta, key=lambda m: m.get("date", ""), reverse=True)
 
+    # カテゴリ一覧
+    industries = sorted(set(m["industry"] for m in all_meta))
+    cat_buttons = ['<button class="category-btn active" onclick="filterArticles(\'all\')">すべて</button>']
+    for ind in industries:
+        escaped = html.escape(ind)
+        cat_buttons.append(f'<button class="category-btn" onclick="filterArticles(\'{escaped}\')">{escaped}</button>')
+
+    # 記事一覧
     items = []
     for meta in sorted_meta:
-        items.append(f"""<li>
-  <span class="tag">{html.escape(meta.get('industry', ''))}</span>
-  <a href="articles/{meta['slug']}.html">{html.escape(meta['title'])}</a>
-  <div class="article-meta">{meta.get('date', '')}</div>
-  <div class="article-excerpt">{html.escape(meta['description'][:100])}</div>
+        read_min = meta.get("read_minutes", 3)
+        items.append(f"""<li data-industry="{html.escape(meta.get('industry', ''))}">
+  <a class="article-title" href="articles/{meta['slug']}.html">{html.escape(meta['title'])}</a>
+  <div class="article-meta">
+    <span class="tag">{html.escape(meta.get('industry', ''))}</span>
+    <span>{meta.get('date', '')}</span>
+    <span class="read-time">約{read_min}分</span>
+  </div>
+  <div class="article-excerpt">{html.escape(meta['description'][:120])}</div>
 </li>""")
 
-    content = f"""<h1>AI活用ラボ - 業種別ガイド</h1>
-<p>中小企業・個人事業主のための、すぐに使えるAI活用ガイド集です。</p>
-<p>現在 <strong>{len(all_meta)}記事</strong> 公開中</p>
+    content = f"""<div class="hero">
+  <h1>業種別AI活用ガイド</h1>
+  <p class="hero-sub">ChatGPTなどの無料AIツールで、日々の業務をもっと楽に</p>
+  <p class="hero-count">現在 {len(all_meta)}記事 公開中</p>
+</div>
+<div class="category-filter">
+{"".join(cat_buttons)}
+</div>
 <ul class="article-list">
 {"".join(items)}
-</ul>"""
+</ul>
+<script>
+function filterArticles(industry) {{
+  document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.article-list li').forEach(li => {{
+    if (industry === 'all' || li.dataset.industry === industry) {{
+      li.style.display = '';
+    }} else {{
+      li.style.display = 'none';
+    }}
+  }});
+}}
+</script>"""
 
-    page = template.replace("{{page_title}}", "トップ")
+    page = template.replace("{{page_title}}", "業種別AI活用ガイド")
     page = page.replace("{{meta_description}}", config["site"]["description"])
     page = page.replace("{{canonical_url}}", config["site"]["url"])
     page = page.replace("{{root_path}}", "")
+    page = page.replace("{{og_type}}", "website")
+    page = page.replace("{{breadcrumb}}", "")
+    page = page.replace("{{structured_data}}", "")
     page = page.replace("{{content}}", content)
 
     return page
 
 
 def build_sitemap(all_meta, config):
-    """sitemap.xml を生成"""
+    """sitemap.xml"""
     urls = [f"""  <url>
     <loc>{config['site']['url']}/index.html</loc>
     <lastmod>{datetime.now().strftime('%Y-%m-%d')}</lastmod>
@@ -207,12 +342,15 @@ def main():
     template = load_template()
     ARTICLES_DIR.mkdir(parents=True, exist_ok=True)
 
-    # 全記事を処理
+    # 全記事メタデータを先に読み込む
     all_meta = []
     for meta_path in sorted(CONTENT_DIR.glob("*.json")):
         with open(meta_path, "r", encoding="utf-8") as f:
-            meta = json.load(f)
+            all_meta.append(json.load(f))
 
+    # 各記事をビルド
+    built = 0
+    for meta in all_meta:
         md_path = CONTENT_DIR / f"{meta['slug']}.md"
         if not md_path.exists():
             continue
@@ -220,12 +358,12 @@ def main():
         with open(md_path, "r", encoding="utf-8") as f:
             md_text = f.read()
 
-        article_html = build_article(meta, md_text, template, config)
+        article_html = build_article(meta, md_text, template, config, all_meta)
         out_path = ARTICLES_DIR / f"{meta['slug']}.html"
         with open(out_path, "w", encoding="utf-8") as f:
             f.write(article_html)
 
-        all_meta.append(meta)
+        built += 1
         print(f"  ビルド: {meta['slug']} ({meta['title']})")
 
     # インデックスページ
@@ -238,7 +376,7 @@ def main():
     with open(PUBLIC_DIR / "sitemap.xml", "w", encoding="utf-8") as f:
         f.write(sitemap)
 
-    print(f"\nビルド完了: {len(all_meta)}記事 → public/")
+    print(f"\nビルド完了: {built}記事 → public/")
 
 
 if __name__ == "__main__":
