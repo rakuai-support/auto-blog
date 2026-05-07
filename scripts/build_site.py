@@ -143,40 +143,51 @@ def build_toc(headings):
 
 
 def build_affiliate_html(pick, config):
-    """1つのアフィリエイトピックからリッチなHTMLカードを生成"""
+    """書籍画像付きのリッチなアフィリエイトカードを生成"""
     aff = config["affiliate"]
-
-    # アイコンSVG
-    icons = {
-        "bulb": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>',
-        "book": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>',
-        "calc": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="8" y1="18" x2="16" y2="18"/></svg>',
-        "chart": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',
-        "cal": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
-        "bed": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v-2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg>',
-    }
-    icon_svg = icons.get(pick.get("icon", "bulb"), icons["bulb"])
+    from urllib.parse import quote
 
     # URLを組み立て
     if pick["search"] == "_travel":
         url = aff["travel_url"]
         tracking = aff.get("travel_img", aff["tracking_img"])
-    else:
-        from urllib.parse import quote
-        query = quote(pick["search"], safe="")
-        url = aff["base_url"].replace("{query}", query)
-        tracking = aff["tracking_img"]
+        # 旅館用は画像なしカード
+        return f"""<div class="aff-card">
+  <div class="aff-card-inner aff-travel">
+    <div class="aff-travel-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v-2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg>
+    </div>
+    <div class="aff-content">
+      <span class="aff-badge">RECOMMEND</span>
+      <p class="aff-label">宿泊施設の集客改善に</p>
+      <p class="aff-sub">楽天トラベルへの掲載で予約数アップ</p>
+      <a href="{url}" target="_blank" rel="nofollow" class="aff-btn">楽天トラベルを見る <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+  <img border="0" width="1" height="1" src="{tracking}" alt="">
+</div>"""
 
-    label = html.escape(pick["label"])
+    query = quote(pick["search"], safe="")
+    url = aff["base_url"].replace("{query}", query)
+    tracking = aff["tracking_img"]
+
+    book_title = html.escape(pick.get("book_title", ""))
+    book_author = html.escape(pick.get("book_author", ""))
+    book_price = html.escape(pick.get("book_price", ""))
+    book_img = pick.get("book_img", "")
 
     return f"""<div class="aff-card">
   <div class="aff-card-inner">
-    <div class="aff-icon">{icon_svg}</div>
+    <div class="aff-book-img">
+      <img src="{book_img}" alt="{book_title}" loading="lazy">
+    </div>
     <div class="aff-content">
       <span class="aff-badge">PICK UP</span>
-      <p class="aff-label">{label}</p>
+      <p class="aff-book-title">{book_title}</p>
+      <p class="aff-book-meta">{book_author}　{book_price}（税込）</p>
+      <div class="aff-stars">★★★★☆ おすすめ</div>
       <a href="{url}" target="_blank" rel="nofollow" class="aff-btn">
-        楽天で探す
+        楽天ブックスで見る
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>

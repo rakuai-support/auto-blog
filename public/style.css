@@ -298,13 +298,13 @@ article li {
 }
 .toc a:hover { text-decoration: underline; }
 
-/* アフィリエイトカード */
+/* アフィリエイトカード（書籍画像付き） */
 .aff-card {
   margin: 2rem 0;
   border-radius: var(--radius);
   overflow: hidden;
   background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
   position: relative;
 }
 .aff-card::before {
@@ -316,29 +316,39 @@ article li {
 }
 .aff-card-inner {
   display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  padding: 1.5rem 1.75rem;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
 }
-.aff-icon {
+/* 書籍画像エリア */
+.aff-book-img {
   flex-shrink: 0;
-  width: 56px;
-  height: 56px;
-  background: rgba(53, 160, 217, 0.12);
-  border: 1px solid rgba(53, 160, 217, 0.25);
-  border-radius: 14px;
+  width: 140px;
+  background: linear-gradient(135deg, #1e1e30, #2a2a40);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--blue);
+  padding: 1.25rem;
 }
-.aff-icon svg {
-  width: 26px;
-  height: 26px;
+.aff-book-img img {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 4px 4px 16px rgba(0,0,0,0.4), 0 0 30px rgba(53,160,217,0.08);
+  transition: transform 0.3s;
 }
+.aff-card:hover .aff-book-img img {
+  transform: scale(1.05) rotate(-1deg);
+}
+/* コンテンツエリア */
 .aff-content {
   flex: 1;
   min-width: 0;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .aff-badge {
   display: inline-block;
@@ -346,50 +356,89 @@ article li {
   color: var(--black);
   font-size: 0.6rem;
   font-weight: 900;
-  padding: 0.15rem 0.5rem;
+  padding: 0.15rem 0.55rem;
   border-radius: 3px;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.35rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.4rem;
+  width: fit-content;
+}
+.aff-book-title {
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  line-height: 1.45;
+}
+.aff-book-meta {
+  color: #999;
+  font-size: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+.aff-stars {
+  color: #f5c518;
+  font-size: 0.78rem;
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.05em;
 }
 .aff-label {
   color: var(--white);
   font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
   line-height: 1.4;
+}
+.aff-sub {
+  color: #999;
+  font-size: 0.8rem;
+  margin-bottom: 0.7rem;
 }
 .aff-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: linear-gradient(135deg, var(--blue), #4db8e8);
+  background: linear-gradient(135deg, #bf0000, #e60020);
   color: var(--white);
-  padding: 0.55rem 1.5rem;
+  padding: 0.5rem 1.4rem;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   transition: all 0.25s;
-  box-shadow: 0 3px 12px rgba(53, 160, 217, 0.3);
+  box-shadow: 0 3px 12px rgba(191, 0, 0, 0.25);
+  width: fit-content;
 }
 .aff-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 5px 20px rgba(53, 160, 217, 0.45);
+  box-shadow: 0 5px 20px rgba(191, 0, 0, 0.4);
+  background: linear-gradient(135deg, #d40000, #ff1a35);
 }
 .aff-arrow {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   transition: transform 0.2s;
 }
 .aff-btn:hover .aff-arrow {
   transform: translateX(3px);
 }
+/* 旅館用 */
+.aff-travel { padding: 1.5rem 1.75rem; }
+.aff-travel-icon {
+  flex-shrink: 0;
+  width: 56px; height: 56px;
+  background: rgba(53, 160, 217, 0.12);
+  border: 1px solid rgba(53, 160, 217, 0.25);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--blue);
+  margin-right: 1.25rem;
+}
+.aff-travel-icon svg { width: 26px; height: 26px; }
 @media (max-width: 600px) {
-  .aff-card-inner {
-    flex-direction: column;
-    text-align: center;
-    padding: 1.25rem;
-  }
+  .aff-card-inner { flex-direction: column; }
+  .aff-book-img { width: 100%; padding: 1.25rem; }
+  .aff-book-img img { max-width: 80px; }
+  .aff-content { padding: 1rem 1.25rem 1.25rem; }
+  .aff-travel { flex-direction: row; }
 }
 
 /* CTAボックス */

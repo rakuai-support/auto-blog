@@ -15,12 +15,54 @@
     "travel_url": "https://rpx.a8.net/svt/ejp?a8mat=2ZPHBO+123RHU+2HOM+6I9N5&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4779e.5d30c5ba.0eb4779f.b871e4e3%2Fa18090710619_2ZPHBO_123RHU_2HOM_6I9N5%3Fpc%3Dhttp%253A%252F%252Ftravel.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Ftravel.rakuten.co.jp%252F",
     "travel_img": "https://www12.a8.net/0.gif?a8mat=2ZPHBO+123RHU+2HOM+6I9N5",
     "picks": [
-      { "keyword": "経理",  "icon": "calc",  "label": "経理・会計のAI活用本", "search": "経理+AI+効率化" },
-      { "keyword": "集客",  "icon": "chart", "label": "集客・マーケティング本", "search": "集客+AI+マーケティング" },
-      { "keyword": "予約",  "icon": "cal",   "label": "予約管理・業務改善本", "search": "業務改善+AI" },
-      { "keyword": "教育",  "icon": "book",  "label": "人材教育・研修のAI本", "search": "AI+人材育成" },
-      { "keyword": "旅館",  "icon": "bed",   "label": "楽天トラベルで集客強化", "search": "_travel" },
-      { "keyword": "AI",    "icon": "bulb",  "label": "ChatGPT仕事術・AI入門書", "search": "ChatGPT+仕事術" }
+      {
+        "keyword": "経理",
+        "book_title": "経理についてAIに質問！ イチからわかる！つまずかない！",
+        "book_author": "小島孝子",
+        "book_price": "1,760円",
+        "book_img": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/5529/9784478125529_1_3.jpg",
+        "search": "経理+AI"
+      },
+      {
+        "keyword": "集客",
+        "book_title": "はじめてのChatGPTの教科書 誰でもAIをビジネスに活用できる",
+        "book_author": "田口和裕",
+        "book_price": "1,650円",
+        "book_img": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/2372/9784800712372_1_3.jpg",
+        "search": "ChatGPT+ビジネス"
+      },
+      {
+        "keyword": "予約",
+        "book_title": "AI仕事革命 ChatGPTで業務効率化",
+        "book_author": "谷口恵子",
+        "book_price": "1,760円",
+        "book_img": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/4553/9784295404553_1_2.jpg",
+        "search": "ChatGPT+業務効率化"
+      },
+      {
+        "keyword": "教育",
+        "book_title": "ChatGPTの教科書 初心者から使いこなす人になる",
+        "book_author": "武井一巳",
+        "book_price": "1,540円",
+        "book_img": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/7780/9784863547780_1_3.jpg",
+        "search": "ChatGPT+教科書"
+      },
+      {
+        "keyword": "旅館",
+        "book_title": "",
+        "book_author": "",
+        "book_price": "",
+        "book_img": "",
+        "search": "_travel"
+      },
+      {
+        "keyword": "AI",
+        "book_title": "ChatGPT最強の仕事術",
+        "book_author": "池田朋弘",
+        "book_price": "1,760円",
+        "book_img": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/9594/9784866809594_1_2.jpg",
+        "search": "ChatGPT+仕事術"
+      }
     ]
   },
   "industries": [
