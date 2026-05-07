@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rakuai-support.github.io/auto-blog/sitemap.xml
