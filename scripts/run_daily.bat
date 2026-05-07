@@ -1,29 +1,24 @@
 @echo off
-REM ========================================
-REM 毎日自動実行バッチ
-REM タスクスケジューラから呼ばれる
-REM ========================================
+chcp 65001 >nul
 
-cd /d "C:\Users\utaka\rakuai\projects\1000チャレンジ\auto-blog"
+cd /d "%~dp0.."
 
-echo [%date% %time%] 自動記事生成を開始 >> logs\daily.log
+if not exist logs mkdir logs
 
-REM 1. 記事生成
+echo [%date% %time%] START >> logs\daily.log
+
 py scripts\generate_article.py >> logs\daily.log 2>&1
 if errorlevel 1 (
-    echo [%date% %time%] 記事生成でエラー発生 >> logs\daily.log
+    echo [%date% %time%] ERROR: generate >> logs\daily.log
     exit /b 1
 )
 
-REM 2. 書籍情報を楽天APIから取得
 py scripts\fetch_books.py >> logs\daily.log 2>&1
 
-REM 3. サイトビルド
 py scripts\build_site.py >> logs\daily.log 2>&1
 
-REM 3. Git push（GitHub Pagesへデプロイ）
 git add -A
-git commit -m "auto: 記事追加 %date%"
+git commit -m "auto: article %date%"
 git push origin main
 
-echo [%date% %time%] 完了 >> logs\daily.log
+echo [%date% %time%] DONE >> logs\daily.log

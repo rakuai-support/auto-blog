@@ -81,27 +81,39 @@ def save_history(history):
 
 
 def pick_next_topic(config, history):
-    """業種をバラけさせて選ぶ（同じ業種が連続しない）"""
+    """業種×トピックの両方をバランスよく選ぶ"""
     generated = set(history["generated"])
     topics = config["topics_per_industry"]
     industries = config["industries"]
 
-    # 業種ごとの生成済みトピック数をカウント
-    counts = {}
+    # 業種ごと・トピックごとの生成済み数をカウント
+    ind_counts = {}
+    topic_counts = {}
     for key in generated:
-        ind = key.split("|")[0]
-        counts[ind] = counts.get(ind, 0) + 1
+        parts = key.split("|")
+        if len(parts) == 2:
+            ind_counts[parts[0]] = ind_counts.get(parts[0], 0) + 1
+            topic_counts[parts[1]] = topic_counts.get(parts[1], 0) + 1
 
-    # 最も記事が少ない業種から優先的に選ぶ
-    sorted_industries = sorted(industries, key=lambda i: counts.get(i, 0))
-
-    for industry in sorted_industries:
+    # 未生成の組み合わせを全列挙し、業種+トピックの合計カウントでソート
+    candidates = []
+    for industry in industries:
         for topic in topics:
             key = f"{industry}|{topic}"
             if key not in generated:
-                return industry, topic, key
+                score = ind_counts.get(industry, 0) + topic_counts.get(topic, 0)
+                candidates.append((score, industry, topic, key))
 
-    return None, None, None
+    if not candidates:
+        return None, None, None
+
+    # スコアが同じもの（最小値）からランダムに選んで単調さを防ぐ
+    candidates.sort(key=lambda x: x[0])
+    min_score = candidates[0][0]
+    best = [c for c in candidates if c[0] == min_score]
+    chosen = random.choice(best)
+
+    return chosen[1], chosen[2], chosen[3]
 
 
 def generate_slug(industry, topic):

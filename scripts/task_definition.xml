@@ -5,7 +5,7 @@
   </RegistrationInfo>
   <Triggers>
     <CalendarTrigger>
-      <StartBoundary>2026-05-08T08:00:00</StartBoundary>
+      <StartBoundary>2026-05-08T08:33:00</StartBoundary>
       <Enabled>true</Enabled>
       <ScheduleByDay>
         <DaysInterval>1</DaysInterval>
@@ -36,14 +36,13 @@
     <Enabled>true</Enabled>
     <Hidden>false</Hidden>
     <RunOnlyIfIdle>false</RunOnlyIfIdle>
-
     <ExecutionTimeLimit>PT30M</ExecutionTimeLimit>
     <Priority>7</Priority>
   </Settings>
   <Actions Context="Author">
     <Exec>
-      <Command>C:\Users\utaka\rakuai\projects\1000チャレンジ\auto-blog\scripts\run_daily.bat</Command>
-      <WorkingDirectory>C:\Users\utaka\rakuai\projects\1000チャレンジ\auto-blog</WorkingDirectory>
+      <Command>C:\Users\utaka\rakuai\projects\1000challenge\auto-blog\scripts\run_daily.bat</Command>
+      <WorkingDirectory>C:\Users\utaka\rakuai\projects\1000challenge\auto-blog</WorkingDirectory>
     </Exec>
   </Actions>
 </Task>
