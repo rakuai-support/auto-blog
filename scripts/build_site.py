@@ -196,20 +196,66 @@ def build_affiliate_html(pick, config):
 </div>"""
 
 
-def insert_affiliate(html_text, config):
-    """アフィリエイトタグをリッチなカードに置換"""
-    picks = config.get("affiliate", {}).get("picks", [])
-    if not picks:
-        return html_text.replace("<!-- AFFILIATE -->", "")
+def load_books_cache():
+    """書籍キャッシュを読み込む"""
+    cache_path = Path(__file__).resolve().parent.parent / "content" / "books_cache.json"
+    if cache_path.exists():
+        with open(cache_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {"books": {}}
 
-    # 記事内容に合うピックを選択
-    chosen = picks[-1]  # デフォルトは最後（AI汎用）
-    for pick in picks:
-        if pick["keyword"].lower() in html_text.lower():
-            chosen = pick
-            break
 
-    card_html = build_affiliate_html(chosen, config)
+def insert_affiliate(html_text, config, meta=None, books_cache=None):
+    """アフィリエイトタグを書籍画像付きカードに置換"""
+    if books_cache is None:
+        books_cache = {}
+
+    # 記事に対応する書籍をキャッシュから取得
+    book = None
+    if meta and meta.get("slug") in books_cache.get("books", {}):
+        book = books_cache["books"][meta["slug"]]
+
+    if book and book.get("image_url"):
+        aff_url = book.get("affiliate_url", "#")
+        card_html = f"""<div class="aff-card">
+  <div class="aff-card-inner">
+    <div class="aff-book-img">
+      <img src="{html.escape(book['image_url'])}" alt="{html.escape(book['title'])}" loading="lazy">
+    </div>
+    <div class="aff-content">
+      <span class="aff-badge">PICK UP</span>
+      <p class="aff-book-title">{html.escape(book['title'])}</p>
+      <p class="aff-book-meta">{html.escape(book.get('author', ''))}　{book.get('price', '')}円（税込）</p>
+      <div class="aff-stars">{"★" * min(5, max(1, book.get('review_count', 0)))}{"☆" * max(0, 5 - book.get('review_count', 0))} レビュー{book.get('review_count', 0)}件</div>
+      <a href="{html.escape(aff_url)}" target="_blank" rel="nofollow" class="aff-btn">
+        楽天ブックスで見る
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</div>"""
+    else:
+        # キャッシュに本がない場合は楽天検索リンク
+        from urllib.parse import quote
+        industry = meta.get("industry", "AI") if meta else "AI"
+        topic = meta.get("topic", "活用") if meta else "活用"
+        search_q = quote(f"{industry} {topic} AI")
+        aff = config.get("affiliate", {})
+        url = aff.get("base_url", "").replace("{query}", search_q)
+        card_html = f"""<div class="aff-card">
+  <div class="aff-card-inner" style="padding:1.5rem 1.75rem">
+    <div class="aff-content">
+      <span class="aff-badge">RECOMMEND</span>
+      <p class="aff-book-title">{html.escape(industry)}のAI活用に役立つ書籍</p>
+      <p class="aff-book-meta">楽天ブックスで関連書籍を探せます</p>
+      <a href="{url}" target="_blank" rel="nofollow" class="aff-btn">
+        楽天ブックスで探す
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</div>"""
+
     return html_text.replace("<!-- AFFILIATE -->", card_html)
 
 
@@ -266,10 +312,10 @@ def build_structured_data(meta, config):
     return f'<script type="application/ld+json">{json.dumps(data, ensure_ascii=False)}</script>'
 
 
-def build_article(meta, md_text, template, config, all_meta):
+def build_article(meta, md_text, template, config, all_meta, books_cache=None):
     """1記事分のHTMLを生成"""
     article_html = md_to_html(md_text)
-    article_html = insert_affiliate(article_html, config)
+    article_html = insert_affiliate(article_html, config, meta=meta, books_cache=books_cache)
 
     # 目次を生成してh1の後に挿入
     headings = extract_h2_headings(md_text)
@@ -399,6 +445,9 @@ def main():
     template = load_template()
     ARTICLES_DIR.mkdir(parents=True, exist_ok=True)
 
+    # 書籍キャッシュを読み込む
+    books_cache = load_books_cache()
+
     # 全記事メタデータを先に読み込む
     all_meta = []
     for meta_path in sorted(CONTENT_DIR.glob("*.json")):
@@ -415,7 +464,7 @@ def main():
         with open(md_path, "r", encoding="utf-8") as f:
             md_text = f.read()
 
-        article_html = build_article(meta, md_text, template, config, all_meta)
+        article_html = build_article(meta, md_text, template, config, all_meta, books_cache)
         out_path = ARTICLES_DIR / f"{meta['slug']}.html"
         with open(out_path, "w", encoding="utf-8") as f:
             f.write(article_html)

@@ -15,7 +15,10 @@ if errorlevel 1 (
     exit /b 1
 )
 
-REM 2. サイトビルド
+REM 2. 書籍情報を楽天APIから取得
+py scripts\fetch_books.py >> logs\daily.log 2>&1
+
+REM 3. サイトビルド
 py scripts\build_site.py >> logs\daily.log 2>&1
 
 REM 3. Git push（GitHub Pagesへデプロイ）
