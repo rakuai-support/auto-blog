@@ -1,6 +1,7 @@
 """
 記事自動生成スクリプト
 claude CLI を呼び出して業種別AI活用記事を生成し、Markdownとして保存する。
+最新ニュースを取得して記事に反映させる。
 """
 import json
 import os
@@ -9,6 +10,9 @@ import sys
 import re
 import hashlib
 import random
+import urllib.request
+import urllib.parse
+import xml.etree.ElementTree as ET
 from datetime import datetime
 from pathlib import Path
 
@@ -28,6 +32,35 @@ TITLE_PATTERNS = [
     "{industry}で{topic}に困っていませんか？無料AIツールで即改善",
     "月10時間削減！{industry}の{topic}をAIで自動化した事例",
 ]
+
+
+def fetch_news(industry, topic, max_items=5):
+    """Google News RSSからAI関連の最新ニュースを取得"""
+    queries = [
+        f"{industry} AI 活用",
+        f"AI {topic}",
+        "AI ビジネス活用 中小企業",
+    ]
+    all_news = []
+    for q in queries:
+        try:
+            encoded = urllib.parse.quote(q)
+            url = f"https://news.google.com/rss/search?q={encoded}&hl=ja&gl=JP&ceid=JP:ja"
+            req = urllib.request.Request(url, headers={
+                "User-Agent": "Mozilla/5.0 (compatible; AutoBlogBot/1.0)"
+            })
+            with urllib.request.urlopen(req, timeout=10) as res:
+                xml_data = res.read().decode("utf-8")
+            root = ET.fromstring(xml_data)
+            for item in root.findall(".//item")[:3]:
+                title = item.findtext("title", "")
+                pub_date = item.findtext("pubDate", "")
+                if title and title not in [n["title"] for n in all_news]:
+                    all_news.append({"title": title, "date": pub_date})
+        except Exception as e:
+            print(f"  ニュース取得エラー ({q}): {e}")
+            continue
+    return all_news[:max_items]
 
 
 def load_config():
@@ -107,18 +140,28 @@ def call_claude(prompt):
     return result.stdout.strip()
 
 
-def generate_article(industry, topic, title):
-    """claude CLI で記事を生成"""
+def generate_article(industry, topic, title, news_items=None):
+    """claude CLI で記事を生成（最新ニュースを反映）"""
+    # ニュース情報をプロンプトに組み込む
+    news_section = ""
+    if news_items:
+        news_lines = "\n".join(f"- {n['title']}" for n in news_items)
+        news_section = f"""
+【最新トレンド情報】以下は直近のAI関連ニュースです。記事内で1〜2個を自然に引用し、「最近では〜」「2026年に入って〜」のような形で時事性を持たせてください。ただし、ニュースの丸写しではなく、{industry}の{topic}にどう関係するかの視点で触れてください。
+{news_lines}
+"""
+
     prompt = f"""以下のタイトルと条件でSEO記事をMarkdown形式で出力してください。Markdown本文だけを出力。前置き・説明・質問は絶対に禁止。
 
 タイトル: {title}
 業種: {industry}
 テーマ: {topic}
-
+執筆日: {datetime.now().strftime('%Y年%m月%d日')}
+{news_section}
 【記事構成の要件】
 1. タイトルはh1（# {title}）で始める
 2. 2000〜3000文字
-3. 冒頭にリード文（3〜4行）: 読者の悩みに共感し、この記事を読むメリットを伝える
+3. 冒頭にリード文（3〜4行）: 読者の悩みに共感し、この記事を読むメリットを伝える。時事的な話題にも軽く触れる
 4. h2見出しを4〜5個。以下の流れで構成:
    - 現状の課題（具体的なシーンを描写）
    - AI活用の解決策1（手順をステップで）
@@ -133,6 +176,7 @@ def generate_article(industry, topic, title):
 - 数字を入れる（「月○時間の削減」「○%の改善」など想定値でOK）
 - Googleフォーム、スプレッドシート、LINE公式アカウントなど無料ツールとの組み合わせも提案
 - 「です・ます」調。親しみやすく、押し付けがましくなく
+- 2026年現在の最新情報を踏まえて書く
 
 【SEO要件】
 - 記事の途中（2番目のh2の後）に「<!-- AFFILIATE -->」を1行入れる
@@ -233,8 +277,19 @@ def main():
         title = pick_title(industry, topic)
         print(f"[{i+1}/{n}] 生成中: {industry} × {topic}")
         print(f"  タイトル: {title}")
+
+        # 最新ニュースを取得
+        print(f"  最新ニュースを取得中...")
+        news_items = fetch_news(industry, topic)
+        if news_items:
+            print(f"  -> {len(news_items)}件のニュースを取得")
+            for n_item in news_items[:3]:
+                print(f"     - {n_item['title'][:60]}...")
+        else:
+            print(f"  -> ニュース取得なし（通常モードで生成）")
+
         slug = generate_slug(industry, topic)
-        raw = generate_article(industry, topic, title)
+        raw = generate_article(industry, topic, title, news_items)
         title, body, desc = parse_article(raw)
         meta = save_article(slug, title, body, desc, industry, topic)
 

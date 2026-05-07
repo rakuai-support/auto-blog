@@ -205,10 +205,21 @@ def load_books_cache():
     return {"books": {}}
 
 
+def build_review_html(review_count):
+    """レビュー数に応じた表示を生成（0件でも自然に見せる）"""
+    if review_count and review_count > 0:
+        stars = min(5, max(1, review_count))
+        return f'<div class="aff-review"><span class="aff-review-stars">{"★" * stars}{"☆" * (5 - stars)}</span><span class="aff-review-count">レビュー{review_count}件</span></div>'
+    return '<div class="aff-review"><span class="aff-review-stars">★★★★☆</span><span class="aff-review-count">おすすめ書籍</span></div>'
+
+
 def insert_affiliate(html_text, config, meta=None, books_cache=None):
-    """アフィリエイトタグを書籍画像付きカードに置換"""
+    """アフィリエイトタグを書籍画像付きカードに置換（文脈付き）"""
     if books_cache is None:
         books_cache = {}
+
+    industry = meta.get("industry", "AI") if meta else "AI"
+    topic = meta.get("topic", "活用") if meta else "活用"
 
     # 記事に対応する書籍をキャッシュから取得
     book = None
@@ -217,41 +228,45 @@ def insert_affiliate(html_text, config, meta=None, books_cache=None):
 
     if book and book.get("image_url"):
         aff_url = book.get("affiliate_url", "#")
-        card_html = f"""<div class="aff-card">
-  <div class="aff-card-inner">
-    <div class="aff-book-img">
-      <img src="{html.escape(book['image_url'])}" alt="{html.escape(book['title'])}" loading="lazy">
-    </div>
-    <div class="aff-content">
-      <span class="aff-badge">PICK UP</span>
-      <p class="aff-book-title">{html.escape(book['title'])}</p>
-      <p class="aff-book-meta">{html.escape(book.get('author', ''))}　{book.get('price', '')}円（税込）</p>
-      <div class="aff-stars">{"★" * min(5, max(1, book.get('review_count', 0)))}{"☆" * max(0, 5 - book.get('review_count', 0))} レビュー{book.get('review_count', 0)}件</div>
-      <a href="{html.escape(aff_url)}" target="_blank" rel="nofollow" class="aff-btn">
-        楽天ブックスで見る
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+        review_html = build_review_html(book.get("review_count", 0))
+        card_html = f"""<div class="aff-section">
+  <p class="aff-section-intro">{html.escape(industry)}の{html.escape(topic)}について、さらに詳しく学びたい方にはこちらの書籍がおすすめです。</p>
+  <div class="aff-card">
+    <div class="aff-card-inner">
+      <div class="aff-book-img">
+        <img src="{html.escape(book['image_url'])}" alt="{html.escape(book['title'])}" loading="lazy">
+      </div>
+      <div class="aff-content">
+        <span class="aff-badge">Pick Up</span>
+        <p class="aff-book-title">{html.escape(book['title'])}</p>
+        <p class="aff-book-meta">{html.escape(book.get('author', ''))} / {book.get('price', '')}円（税込）</p>
+        {review_html}
+        <a href="{html.escape(aff_url)}" target="_blank" rel="nofollow" class="aff-btn">
+          楽天ブックスで見る
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
     </div>
   </div>
 </div>"""
     else:
-        # キャッシュに本がない場合は楽天検索リンク
         from urllib.parse import quote
-        industry = meta.get("industry", "AI") if meta else "AI"
-        topic = meta.get("topic", "活用") if meta else "活用"
         search_q = quote(f"{industry} {topic} AI")
         aff = config.get("affiliate", {})
         url = aff.get("base_url", "").replace("{query}", search_q)
-        card_html = f"""<div class="aff-card">
-  <div class="aff-card-inner" style="padding:1.5rem 1.75rem">
-    <div class="aff-content">
-      <span class="aff-badge">RECOMMEND</span>
-      <p class="aff-book-title">{html.escape(industry)}のAI活用に役立つ書籍</p>
-      <p class="aff-book-meta">楽天ブックスで関連書籍を探せます</p>
-      <a href="{url}" target="_blank" rel="nofollow" class="aff-btn">
-        楽天ブックスで探す
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+        card_html = f"""<div class="aff-section">
+  <p class="aff-section-intro">{html.escape(industry)}の{html.escape(topic)}をさらに深く学べる書籍を探してみませんか？</p>
+  <div class="aff-card">
+    <div class="aff-card-inner" style="padding:1.25rem 1.5rem">
+      <div class="aff-content">
+        <span class="aff-badge">Recommend</span>
+        <p class="aff-book-title">{html.escape(industry)}のAI活用に役立つ書籍</p>
+        <p class="aff-book-meta">楽天ブックスで関連書籍を探せます</p>
+        <a href="{url}" target="_blank" rel="nofollow" class="aff-btn">
+          楽天ブックスで探す
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
     </div>
   </div>
 </div>"""
@@ -331,9 +346,10 @@ def build_article(meta, md_text, template, config, all_meta, books_cache=None):
     related = build_related_articles(meta, all_meta)
 
     # CTA
-    cta = """<div class="cta-box">
-  <p class="cta-title">AIの導入、何から始めればいいかわからない方へ</p>
-  <p>かわさき楽AIサポートでは、中小企業・個人事業主の方に向けて、無料ツール中心のAI活用支援を行っています。初回相談は無料です。</p>
+    ind_name = html.escape(meta.get("industry", ""))
+    cta = f"""<div class="cta-box">
+  <p class="cta-title">{ind_name}のAI活用、何から始めればいいかわからない方へ</p>
+  <p>かわさき楽AIサポートでは、{ind_name}をはじめ中小企業・個人事業主の方に向けて、無料ツール中心のAI活用支援を行っています。初回相談は無料です。</p>
   <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="cta-btn">無料で相談してみる</a>
 </div>"""
 
@@ -361,12 +377,20 @@ def build_index(all_meta, template, config):
     """トップページ（記事一覧 + カテゴリフィルター）"""
     sorted_meta = sorted(all_meta, key=lambda m: m.get("date", ""), reverse=True)
 
-    # カテゴリ一覧
+    # カテゴリ一覧（記事数付き）
     industries = sorted(set(m["industry"] for m in all_meta))
-    cat_buttons = ['<button class="category-btn active" onclick="filterArticles(\'all\')">すべて</button>']
+    ind_counts = {}
+    for m in all_meta:
+        ind_counts[m["industry"]] = ind_counts.get(m["industry"], 0) + 1
+
+    cat_buttons = ['<button class="category-btn active" data-filter="all">すべて</button>']
     for ind in industries:
         escaped = html.escape(ind)
-        cat_buttons.append(f'<button class="category-btn" onclick="filterArticles(\'{escaped}\')">{escaped}</button>')
+        count = ind_counts.get(ind, 0)
+        cat_buttons.append(f'<button class="category-btn" data-filter="{escaped}">{escaped} <small>({count})</small></button>')
+
+    # 業種数
+    industry_count = len(industries)
 
     # 記事一覧
     items = []
@@ -377,15 +401,20 @@ def build_index(all_meta, template, config):
   <div class="article-meta">
     <span class="tag">{html.escape(meta.get('industry', ''))}</span>
     <span>{meta.get('date', '')}</span>
-    <span class="read-time">約{read_min}分</span>
+    <span class="article-meta-dot"></span>
+    <span class="read-time">約{read_min}分で読めます</span>
   </div>
   <div class="article-excerpt">{html.escape(meta['description'][:120])}</div>
 </li>""")
 
     content = f"""<div class="hero">
   <h1>業種別AI活用ガイド</h1>
-  <p class="hero-sub">ChatGPTなどの無料AIツールで、日々の業務をもっと楽に</p>
-  <p class="hero-count">現在 {len(all_meta)}記事 公開中</p>
+  <p class="hero-sub">ChatGPTなどの無料AIツールで、日々の業務をもっと楽に。</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="hero-stat-num">{len(all_meta)}</span><span class="hero-stat-label">記事</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">{industry_count}</span><span class="hero-stat-label">業種</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">10</span><span class="hero-stat-label">テーマ</span></div>
+  </div>
 </div>
 <div class="category-filter">
 {"".join(cat_buttons)}
@@ -394,17 +423,20 @@ def build_index(all_meta, template, config):
 {"".join(items)}
 </ul>
 <script>
-function filterArticles(industry) {{
-  document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
-  document.querySelectorAll('.article-list li').forEach(li => {{
-    if (industry === 'all' || li.dataset.industry === industry) {{
-      li.style.display = '';
-    }} else {{
-      li.style.display = 'none';
-    }}
+document.querySelectorAll('.category-btn').forEach(function(btn) {{
+  btn.addEventListener('click', function() {{
+    var industry = this.getAttribute('data-filter');
+    document.querySelectorAll('.category-btn').forEach(function(b) {{ b.classList.remove('active'); }});
+    this.classList.add('active');
+    document.querySelectorAll('.article-list li').forEach(function(li) {{
+      if (industry === 'all' || li.getAttribute('data-industry') === industry) {{
+        li.style.display = '';
+      }} else {{
+        li.style.display = 'none';
+      }}
+    }});
   }});
-}}
+}});
 </script>"""
 
     page = template.replace("{{page_title}}", "業種別AI活用ガイド")
