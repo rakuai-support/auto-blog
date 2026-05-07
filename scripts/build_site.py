@@ -135,7 +135,12 @@ def build_article(meta, md_text, template, config):
 
     date_display = meta.get("date", "")
     header = f'<div class="article-meta">{date_display} | {html.escape(meta.get("industry", ""))}</div>'
-    content = f"<article>\n{header}\n{article_html}\n</article>"
+    cta = """<div class="cta-box">
+  <p class="cta-title">AIの導入、何から始めればいいかわからない方へ</p>
+  <p>かわさき楽AIサポートでは、中小企業・個人事業主の方に向けて、無料ツール中心のAI活用支援を行っています。初回相談は無料です。</p>
+  <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="cta-btn">かわさき楽AIサポートに相談する</a>
+</div>"""
+    content = f"<article>\n{header}\n{article_html}\n{cta}\n</article>"
 
     page = template.replace("{{page_title}}", html.escape(meta["title"]))
     page = page.replace("{{meta_description}}", html.escape(meta["description"]))

@@ -133,6 +133,41 @@ article li { margin-bottom: 0.3rem; }
   background: #2a8bc2;
 }
 
+/* CTAボックス（サービス誘導） */
+.cta-box {
+  background: #000;
+  color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2.5rem 0 1rem;
+  text-align: center;
+}
+.cta-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #a39463;
+  margin-bottom: 0.5rem;
+}
+.cta-box p {
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.cta-btn {
+  display: inline-block;
+  background: #35a0d9;
+  color: #fff;
+  padding: 0.7rem 2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+.cta-btn:hover {
+  background: #2a8bc2;
+}
+
 /* レスポンシブ */
 @media (max-width: 600px) {
   article h1 { font-size: 1.3rem; }
