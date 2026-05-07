@@ -125,7 +125,7 @@ def call_claude(prompt):
     result = subprocess.run(
         [claude_cmd, "-p",
          "--system-prompt", "あなたは中小企業向けAI活用の専門ライターです。実践的で具体的、読みやすいSEO記事をMarkdown形式で出力します。質問・確認・説明は一切せず、Markdown本文のみ出力してください。",
-         "--model", "claude-sonnet-4-6"],
+         "--model", "claude-opus-4-7"],
         input=prompt,
         capture_output=True,
         text=True,
