@@ -6,10 +6,10 @@
 
 ## 概要
 
-毎朝6時にWindowsタスクスケジューラが起動し、以下を自動実行する:
+毎日2回（8:00 / 17:00）Windowsタスクスケジューラが起動し、以下を自動実行する:
 
 1. **最新ニュース取得** - Google News RSSからAI関連ニュースを収集
-2. **記事生成** - Claude CLI（claude-sonnet-4-6）でニュースを反映したSEO記事をMarkdown生成
+2. **記事生成** - Claude CLI（claude-opus-4-7）でニュースを反映したSEO記事をMarkdown生成
 3. **書籍情報取得** - 楽天ブックスAPIで記事テーマに合った書籍を検索・キャッシュ
 4. **サイトビルド** - Markdown → HTML変換、目次・構造化データ・アフィリエイトカード付与
 5. **デプロイ** - git push → GitHub Actions → GitHub Pages自動公開
@@ -18,7 +18,7 @@
 
 ## 記事マトリックス
 
-20業種 × 10テーマ = **最大200記事**
+20業種 × 10テーマ = **最大200記事**（config.jsonの上限設定: 300記事）
 
 ### 対象業種（20）
 飲食店 / 美容室 / 整骨院・整体院 / 歯科医院 / 不動産業 / 税理士事務所 / 司法書士事務所 / 工務店・リフォーム業 / 自動車整備業 / クリーニング店 / 学習塾 / 保育園・幼稚園 / 介護施設 / 花屋 / 写真スタジオ / 印刷会社 / 運送業 / 農業 / ペットショップ・動物病院 / 旅館・民宿
@@ -37,7 +37,8 @@ auto-blog/
 │   ├── fetch_books.py           # 楽天ブックスAPI書籍検索・キャッシュ
 │   ├── build_site.py            # 静的サイトビルダー（Markdown→HTML）
 │   ├── run_daily.bat            # 毎日の自動実行バッチ
-│   └── setup_scheduler.bat      # タスクスケジューラ登録用
+│   ├── setup_scheduler.bat      # タスクスケジューラ登録用
+│   └── task_definition.xml      # タスクスケジューラ定義（8:00 / 17:00）
 ├── templates/
 │   └── base.html                # HTMLテンプレート（OGP・構造化データ付き）
 ├── content/
@@ -49,7 +50,8 @@ auto-blog/
 │   ├── articles/                # 各記事HTML
 │   ├── style.css                # サイトCSS
 │   ├── robots.txt               # クローラー設定
-│   ├── sitemap.xml              # サイトマップ
+│   ├── sitemap.xml              # サイトマップ（changefreq付き）
+│   ├── ogp.png                  # OGP共通画像（1200x630）
 │   └── googlea0af38cf627c9297.html  # Search Console認証
 ├── .github/workflows/
 │   └── deploy.yml               # GitHub Actions デプロイ設定
@@ -90,7 +92,7 @@ RAKUTEN_AFFILIATE_ID=（楽天アフィリエイトID）
 scripts\setup_scheduler.bat
 ```
 
-毎朝6:00に `scripts\run_daily.bat` が実行される。
+毎日8:00と17:00に `scripts\run_daily.bat` が実行される。
 
 ## 各スクリプトの詳細
 
@@ -98,7 +100,7 @@ scripts\setup_scheduler.bat
 
 - `pick_next_topic()`: 業種バランスを考慮して次のトピックを選択（記事数が少ない業種を優先）
 - `fetch_news()`: Google News RSSから業種×トピック関連のAIニュースを最大5件取得
-- `call_claude()`: Claude CLI（claude-sonnet-4-6）を呼び出し、ニュースを反映したSEO記事を生成
+- `call_claude()`: Claude CLI（claude-opus-4-7）を呼び出し、ニュースを反映したSEO記事を生成
 - `pick_title()`: 8パターンのタイトルテンプレートからランダム選択
 - 出力: `content/articles/{slug}.md` + `{slug}.json`
 
@@ -133,7 +135,7 @@ scripts\setup_scheduler.bat
 - [x] sitemap.xml 自動生成・送信
 - [x] robots.txt 設定
 - [x] JSON-LD 構造化データ（Article スキーマ）
-- [x] OGP / Twitter Card メタタグ
+- [x] OGP / Twitter Card メタタグ（og:image / twitter:image 設定済み）
 - [x] canonical URL
 - [x] パンくずリスト
 - [x] レスポンシブ対応
