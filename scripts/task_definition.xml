@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-16"?>
 <Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
   <RegistrationInfo>
-    <Description>AI活用ラボ - 毎日の記事自動生成・デプロイ</Description>
+    <Description>小さなお店のための業種別AIお困り解決帳 - 毎日の記事自動生成・デプロイ</Description>
   </RegistrationInfo>
   <Triggers>
     <CalendarTrigger>

@@ -1,4 +1,4 @@
-/* AI活用ラボ - スタイルシート v3 */
+/* 小さなお店のための業種別AIお困り解決帳 - スタイルシート v3 */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
@@ -52,19 +52,21 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 .logo {
   color: var(--white);
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 900;
-  letter-spacing: -0.01em;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  letter-spacing: 0;
+  line-height: 1.35;
+  min-width: 0;
+  flex: 1;
+  overflow-wrap: anywhere;
 }
 .logo-accent { color: var(--blue); }
-.header-nav { display: flex; gap: 0.25rem; }
+.header-nav { display: flex; gap: 0.25rem; flex-shrink: 0; }
 .header-nav a {
   color: var(--white);
   text-decoration: none;

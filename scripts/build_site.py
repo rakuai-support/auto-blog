@@ -617,6 +617,8 @@ def build_structured_data(meta, config, md_text=""):
 
 def build_article(meta, md_text, template, config, all_meta, books_cache=None):
     """1記事分のHTMLを生成"""
+    site_name = config["site"]["title"]
+    site_description = config["site"]["description"]
     article_html = md_to_html(md_text)
     article_html = insert_affiliate(article_html, config, meta=meta, books_cache=books_cache)
     article_html = insert_saas_cards(article_html, config)
@@ -658,7 +660,10 @@ def build_article(meta, md_text, template, config, all_meta, books_cache=None):
     # 構造化データ（FAQ含む）
     structured = build_structured_data(meta, config, md_text)
 
-    page = template.replace("{{page_title}}", html.escape(meta["title"]))
+    page_title = f'{meta["title"]} | {site_name}'
+    page = template.replace("{{html_title}}", html.escape(page_title))
+    page = page.replace("{{site_name}}", html.escape(site_name))
+    page = page.replace("{{site_description}}", html.escape(site_description))
     page = page.replace("{{meta_description}}", html.escape(meta["description"]))
     page = page.replace("{{canonical_url}}", f'{config["site"]["url"]}/articles/{meta["slug"]}.html')
     page = page.replace("{{root_path}}", "../")
@@ -672,6 +677,8 @@ def build_article(meta, md_text, template, config, all_meta, books_cache=None):
 
 def build_index(all_meta, template, config):
     """トップページ（記事一覧 + カテゴリフィルター）"""
+    site_name = config["site"]["title"]
+    site_description = config["site"]["description"]
     sorted_meta = sorted(all_meta, key=lambda m: m.get("date", ""), reverse=True)
 
     # カテゴリ一覧（記事数付き）
@@ -705,8 +712,8 @@ def build_index(all_meta, template, config):
 </li>""")
 
     content = f"""<div class="hero">
-  <h1>業種別AI活用ガイド</h1>
-  <p class="hero-sub">ChatGPTなどの無料AIツールで、日々の業務をもっと楽に。</p>
+  <h1>{html.escape(site_name)}</h1>
+  <p class="hero-sub">{html.escape(site_description)}</p>
   <div class="hero-stats">
     <div class="hero-stat"><span class="hero-stat-num">{len(all_meta)}</span><span class="hero-stat-label">記事</span></div>
     <div class="hero-stat"><span class="hero-stat-num">{industry_count}</span><span class="hero-stat-label">業種</span></div>
@@ -736,8 +743,10 @@ document.querySelectorAll('.category-btn').forEach(function(btn) {{
 }});
 </script>"""
 
-    page = template.replace("{{page_title}}", "業種別AI活用ガイド")
-    page = page.replace("{{meta_description}}", config["site"]["description"])
+    page = template.replace("{{html_title}}", html.escape(site_name))
+    page = page.replace("{{site_name}}", html.escape(site_name))
+    page = page.replace("{{site_description}}", html.escape(site_description))
+    page = page.replace("{{meta_description}}", html.escape(site_description))
     page = page.replace("{{canonical_url}}", config["site"]["url"])
     page = page.replace("{{root_path}}", "")
     page = page.replace("{{og_type}}", "website")
