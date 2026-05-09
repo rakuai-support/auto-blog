@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="xq2Wicedua7rwzz4MrzjFmLgCvCU9ZIT-cl3uNYukho">
+  <title>税理士事務所 業務マニュアル作成 効率化｜ChatGPTを使った具体的なやり方 | AI活用ラボ</title>
+  <meta name="description" content="税理士事務所の業務マニュアル作成をChatGPTで効率化する具体的手順。月20時間→4時間に削減した実例とプロンプト例を紹介。">
+  <link rel="canonical" href="https://rakuai-support.github.io/auto-blog/articles/771e70c4.html">
+  <!-- OGP -->
+  <meta property="og:title" content="税理士事務所 業務マニュアル作成 効率化｜ChatGPTを使った具体的なやり方 | AI活用ラボ">
+  <meta property="og:description" content="税理士事務所の業務マニュアル作成をChatGPTで効率化する具体的手順。月20時間→4時間に削減した実例とプロンプト例を紹介。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rakuai-support.github.io/auto-blog/articles/771e70c4.html">
+  <meta property="og:site_name" content="AI活用ラボ">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://rakuai-support.github.io/auto-blog/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="税理士事務所 業務マニュアル作成 効率化｜ChatGPTを使った具体的なやり方 | AI活用ラボ">
+  <meta name="twitter:description" content="税理士事務所の業務マニュアル作成をChatGPTで効率化する具体的手順。月20時間→4時間に削減した実例とプロンプト例を紹介。">
+  <meta name="twitter:image" content="https://rakuai-support.github.io/auto-blog/ogp.png">
+  <!-- フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "税理士事務所 業務マニュアル作成 効率化｜ChatGPTを使った具体的なやり方", "description": "税理士事務所の業務マニュアル作成をChatGPTで効率化する具体的手順。月20時間→4時間に削減した実例とプロンプト例を紹介。", "datePublished": "2026-05-04", "dateModified": "2026-05-04", "author": {"@type": "Organization", "name": "かわさき楽AIサポート", "url": "https://www.smilefactory-rakuai.com/"}, "publisher": {"@type": "Organization", "name": "株式会社スマイルファクトリー"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rakuai-support.github.io/auto-blog/articles/771e70c4.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "ChatGPTに顧問先の機密情報を入力しても大丈夫ですか？", "acceptedAnswer": {"@type": "Answer", "text": "ChatGPTの有料版（Plus／Team／Enterprise）では、デフォルトで入力データが学習に使われない設定になっています。ただし念のため、**顧問先名や個人名は仮名に置き換える運用**をおすすめします。田中さんの事務所では「A社」「Bさん」と置換するルールを徹底しています。"}}, {"@type": "Question", "name": "法改正に対応したマニュアル更新はどうすればいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "ChatGPTに「**2026年4月施行の改正点を反映して、このマニュアルを更新してください**」と依頼すれば差分を出してくれますが、最新の税法情報は必ず公式情報（国税庁HP、税理士会通達）と照合してください。AIは便利ですが、最終確認は税理士の責任です。"}}, {"@type": "Question", "name": "初心者におすすめの本やツールはありますか？", "acceptedAnswer": {"@type": "Answer", "text": "まずはChatGPTのビジネス活用に関する入門書を1冊読むことを強くおすすめします。プロンプトの基本パターンを知っているだけで成果が10倍変わります。ツールは無料版のChatGPTから始めて、効果を実感したらPlus（月額3,000円）に切り替えるのが王道です。 <!-- AFFILIATE2 --> ---"}}, {"@type": "Question", "name": "初心者におすすめの本やツールはありますか？", "acceptedAnswer": {"@type": "Answer", "text": "まずはChatGPTのビジネス活用に関する入門書を1冊読むことを強くおすすめします。プロンプトの基本パターンを知っているだけで成果が10倍変わります。ツールは無料版のChatGPTから始めて、効果を実感したらPlus（月額3,000円）に切り替えるのが王道です。 <!-- AFFILIATE2 --> ---"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "税理士事務所の業務マニュアル作成をAIで効率化する方法", "description": "税理士事務所の業務マニュアル作成をChatGPTで効率化する具体的手順。月20時間→4時間に削減した実例とプロンプト例を紹介。", "step": [{"@type": "HowToStep", "name": "ChatGPTに役割を与える", "text": "ChatGPTに役割を与える"}, {"@type": "HowToStep", "name": "音声入力で「話しながら」マニュアル化", "text": "音声入力で「話しながら」マニュアル化"}, {"@type": "HowToStep", "name": "表形式での整理を依頼する", "text": "表形式での整理を依頼する"}, {"@type": "HowToStep", "name": "参考書籍で基礎を固める", "text": "参考書籍で基礎を固める"}, {"@type": "HowToStep", "name": "Googleスプレッドシートに展開", "text": "Googleスプレッドシートに展開"}]}</script>
+  <!-- Google AdSense -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_ADSENSE_ID" crossorigin="anonymous"></script> -->
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="header-top">
+        <a href="../index.html" class="logo"><span class="logo-accent">AI</span>活用ラボ</a>
+        <nav class="header-nav">
+          <a href="../index.html">記事一覧</a>
+          <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="nav-cta">無料相談</a>
+        </nav>
+      </div>
+      <p class="tagline">中小企業・個人事業主のための業種別AI活用ガイド</p>
+    </div>
+  </header>
+  <main>
+    <div class="breadcrumb"><a href="../index.html">トップ</a><span>&gt;</span><span>税理士事務所</span><span>&gt;</span><span>税理士事務所 業務マニュアル作成 効率化｜ChatGPTを使...</span></div>
+    <article>
+<div class="article-header-meta"><span class="tag">税理士事務所</span><span>2026-05-04</span><span>約13分で読めます</span></div>
+<h1>税理士事務所 業務マニュアル作成 効率化｜ChatGPTを使った具体的なやり方</h1>
+<div class="toc">
+  <div class="toc-title">この記事の内容</div>
+  <ol><li><a href="#section-1">税理士事務所の業務マニュアル作成、なぜこんなに大変なのか？</a></li>
+<li><a href="#section-2">税理士事務所で業務マニュアル作成が放置されがちな3つの理由</a></li>
+<li><a href="#section-3">業務マニュアル作成をAIで解決する方法（ステップ解説）</a></li>
+<li><a href="#section-4">もうひとつのAI活用法：freee会計との組み合わせ</a></li>
+<li><a href="#section-5">導入前後でどう変わった？数字で見るビフォーアフター</a></li>
+<li><a href="#section-6">よくある質問</a></li>
+<li><a href="#section-7">まとめ：田中さんからのひとこと</a></li></ol>
+</div>
+
+<p>川崎市高津区で開業20年目の「田中税理士事務所」。所長の田中誠さん（52歳・男性）は、スタッフ4名・顧問先約80社を抱える小規模事務所のオーナー税理士です。最近、ベテランパート職員の退職が決まり、新人スタッフへの引き継ぎ資料を慌てて作り始めたものの、気づけば毎晩22時まで残ってマニュアル作成に追われる日々。「年末調整の手順だけで20ページ書いて、まだ法人税申告も消費税も電子申告マニュアルも残ってる…」とため息をつきます。2026年に入って、辻・本郷ITCと税理士法人が「AI活用プロジェクト（TH-AI）」を本格始動させたというニュースを目にした田中さんは、「うちみたいな小規模事務所でも、AIでマニュアル作成を効率化できないだろうか？」と考え始めました。</p>
+
+<p>※本記事の事例は、税理士事務所でよくあるお悩みをもとに構成したフィクションです。</p>
+
+<p><strong>結論から言えば、税理士事務所の業務マニュアル作成はChatGPTと無料ツールの組み合わせで月20時間→4時間に削減できます。</strong> ベテランの頭の中にある暗黙知を、AIが質問しながら引き出して文書化してくれるからです。</p>
+
+
+<h2 id="section-1">税理士事務所の業務マニュアル作成、なぜこんなに大変なのか？</h2>
+
+<h3>田中さんのある1日</h3>
+
+<p>朝9時、田中さんは新人の山田さんから「源泉徴収票の入力、どこから始めればいいですか？」と聞かれます。口頭で30分説明したものの、午後にはまた「住宅ローン控除の2年目以降の処理は？」と質問が。夕方には別のスタッフから「この顧問先、特殊な処理があったはずなんですが、マニュアルどこですか？」と聞かれて絶句。</p>
+
+<p><strong>マニュアルが「ない」のではなく、「田中さんの頭の中にしかない」状態</strong>なのです。</p>
+
+<h3>税理士業務の特殊性</h3>
+
+<p>税理士事務所のマニュアル作成が難しい理由は明確です。</p>
+
+<ul>
+<li><strong>顧問先ごとに処理が違う</strong>（業種・規模・経理レベルがバラバラ）</li>
+<li><strong>法改正が毎年ある</strong>（インボイス、電子帳簿保存法、定額減税など）</li>
+<li><strong>判断基準が言語化しづらい</strong>（「この場合は資産計上、この場合は経費」のような微妙な線引き）</li>
+<li><strong>繁忙期と閑散期の差が激しい</strong>（マニュアル作成に充てる時間が取れない）</li>
+</ul>
+
+<p>田中さんが抱える具体的な困りごとは「<strong>ベテラン職員の頭の中にある『暗黙知』を、新人でも理解できる形に文書化したいが、書き出すのに時間がかかりすぎる</strong>」というものでした。</p>
+
+
+<h2 id="section-2">税理士事務所で業務マニュアル作成が放置されがちな3つの理由</h2>
+
+<h3>理由1：業界構造の壁</h3>
+
+<p>税理士業界は「徒弟制度」の文化が色濃く残っています。「先輩の背中を見て覚えろ」「3年やればわかる」という空気の中で、マニュアル化は後回しになりがちです。</p>
+
+<h3>理由2：時間の壁</h3>
+
+<p>繁忙期（1〜3月、5月、年末）は文字通り休む暇がなく、閑散期に「やろう」と思っても、研修や顧問先対応、自己研鑽でスケジュールが埋まります。マニュアル作成は「重要だけど緊急ではない」タスクの典型です。</p>
+
+<h3>理由3：心理の壁</h3>
+
+<p>「マニュアルを作ると自分の存在価値が下がるのでは」という無意識の抵抗もあります。また、「完璧なマニュアルを作らねば」というプレッシャーで筆が止まるパターンも多いのです。</p>
+
+<p>田中さんも「中途半端なマニュアルを残すくらいなら、毎回自分が説明したほうが早い」と長年思っていました。</p>
+
+
+<h2 id="section-3">業務マニュアル作成をAIで解決する方法（ステップ解説）</h2>
+
+<p>田中さんが選んだのは、<strong>ChatGPTに「インタビュアー」になってもらい、頭の中の手順を引き出してもらう</strong>方法でした。最近では「AIマニュアル作成ツール」も増えていますが、税理士業務の特殊性を考えると、汎用AIに自分でカスタマイズする方が柔軟性が高いと判断したのです。</p>
+
+<h3>ステップ1：ChatGPTに役割を与える</h3>
+
+<p>最初のプロンプトは以下のようなものです。</p>
+
+<p>「<strong>あなたは業務マニュアル作成のプロです。私は税理士で、年末調整業務の手順を新人スタッフ向けにマニュアル化したいと思っています。私が業務手順を話すので、抜け漏れがないように質問してください。専門用語には必ず注釈をつけてください。</strong>」</p>
+
+<p>このプロンプトを使うことで、ChatGPTが「聞き手」になり、田中さんが思いつくままに話した内容を構造化してくれるようになりました。</p>
+
+<h3>ステップ2：音声入力で「話しながら」マニュアル化</h3>
+
+<p>田中さんはスマホのChatGPTアプリの音声入力機能を使い、移動中や昼休みに業務手順を口頭で話しました。タイピングよりも3倍速く、頭の中の手順を出力できたそうです。</p>
+
+<p>入力例：「<strong>年末調整は11月初旬に顧問先へ依頼書を送付するところから始まります。返送された書類のうち、扶養控除申告書は新年度分と現年度分の2種類があって、新人がよく混同するので注意点を強調してマニュアル化してください。</strong>」</p>
+
+<h3>ステップ3：表形式での整理を依頼する</h3>
+
+<p>「<strong>今までの内容を、『作業ステップ』『使用システム』『所要時間』『よくあるミス』の4列の表にまとめてください。</strong>」</p>
+
+<p>このプロンプトで、ChatGPTが自動的に表組みのマニュアルを生成してくれます。</p>
+
+<h3>ステップ4：参考書籍で基礎を固める</h3>
+
+<p>田中さんが最初に読んだのは、ChatGPTのビジネス活用について書かれた入門書でした。「この本に書いてあった『役割を与える』『具体的な制約条件をつける』『出力形式を指定する』という3つのコツを意識したら、最初のプロンプトから使えるマニュアルが出てきた」と振り返ります。</p>
+
+<div class="aff-section">
+  <p class="aff-section-intro">税理士事務所の業務マニュアル作成について、さらに詳しく学びたい方にはこちらの書籍がおすすめです。</p>
+  <div class="aff-card">
+    <div class="aff-card-inner">
+      <div class="aff-book-img">
+        <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/0814/9784502150814.jpg?_ex=200x200" alt="図解＆設例連結決算の業務マニュアル" loading="lazy">
+      </div>
+      <div class="aff-content">
+        <span class="aff-badge">Pick Up</span>
+        <p class="aff-book-title">図解＆設例連結決算の業務マニュアル</p>
+        <p class="aff-book-meta">飯塚 幸子 / 3960円（税込）</p>
+        <div class="aff-review"><span class="aff-review-stars">★★★★☆</span><span class="aff-review-count">おすすめ書籍</span></div>
+        <a href="https://hb.afl.rakuten.co.jp/hgc/g00q072n.6jlih6a3.g00q072n.6jlii7e7/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F13329736%2F" target="_blank" rel="nofollow" class="aff-btn">
+          楽天ブックスで見る
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>ステップ5：Googleスプレッドシートに展開</h3>
+
+<p>ChatGPTが出力した表をGoogleスプレッドシートにコピペして、事務所全体で共有。検索性が高く、スマホからも見られるため、顧問先訪問中のスタッフがすぐ確認できるようになりました。</p>
+
+<h3>失敗談：最初はうまくいかなかった</h3>
+
+<p>実は田中さん、最初の1週間は「こんな当たり前のマニュアルしか出てこないのか」とがっかりしていました。原因は<strong>プロンプトが抽象的すぎたこと</strong>。「年末調整のマニュアルを作って」だけでは一般論しか返ってこなかったのです。</p>
+
+<p>「<strong>当事務所の顧問先は飲食業が多く、深夜営業の従業員のタイムカード集計に特殊性があります。この前提で年末調整マニュアルを作成してください</strong>」のように、<strong>自事務所の特殊事情を必ず前提条件に入れる</strong>ようにしたら、一気に実用的な内容になりました。</p>
+
+
+<h2 id="section-4">もうひとつのAI活用法：freee会計との組み合わせ</h2>
+
+<h3>クラウド会計ソフトの操作マニュアルもAIで</h3>
+
+<p>田中さんの事務所では顧問先の多くがfreee会計&lt;!-- TOOL:freee会計 --&gt;を使っています。新人スタッフは「freeeの画面のどこを見ればいいかわからない」と頻繁に質問してきました。</p>
+
+<p>そこで田中さんは、freee会計の画面をスクリーンショットしてChatGPTに貼り付け、以下のように依頼しました。</p>
+
+<p>「<strong>この画面は freee会計の仕訳登録画面です。新人スタッフが初めて使う前提で、どのボタンを順番に押せばいいか、画面の見方の注意点とあわせて手順書を作ってください。</strong>」</p>
+
+<p>画像を読み取れるGPT-4o以降のモデルなら、画面要素を認識して具体的な手順書を作ってくれます。</p>
+
+<h3>Canvaでビジュアル化</h3>
+
+<p>文字だけのマニュアルは読まれません。田中さんはCanva&lt;!-- TOOL:Canva --&gt;の無料版で、ChatGPTが作った手順書をフロー図やインフォグラフィックに変換しました。Canvaには「マニュアルテンプレート」が豊富にあり、デザインの心得がない田中さんでも見栄えの良い資料が30分で作れるようになりました。</p>
+
+<h3>顧問先への展開</h3>
+
+<p>さらに、顧問先向けの「証憑書類の送付方法マニュアル」もChatGPT＋Canvaで作成。LINE公式アカウント&lt;!-- TOOL:LINE公式アカウント --&gt;で配信したところ、「わかりやすい」と顧問先からも好評で、書類不備の差し戻しが月15件→3件に激減しました。</p>
+
+<p>ちなみに田中さん、この頃に「AIOスコア診断」というサービスを見つけて、自事務所のホームページがChatGPTやGeminiで紹介されるかを無料診断してみたそうです。「マニュアル作成だけでなく、集客面でもAIを意識する時代なんだな」と実感したとのこと。</p>
+
+
+<h2 id="section-5">導入前後でどう変わった？数字で見るビフォーアフター</h2>
+
+<h3>田中税理士事務所の実数値</h3>
+
+<p>| 項目 | 導入前 | 導入後 |</p>
+<p>|---|---|---|</p>
+<p>| マニュアル作成時間 | 月20時間 | 月4時間 |</p>
+<p>| 新人への口頭説明時間 | 週8時間 | 週2時間 |</p>
+<p>| マニュアル整備済み業務数 | 5業務 | 32業務 |</p>
+<p>| 顧問先からの書類不備問い合わせ | 月15件 | 月3件 |</p>
+<p>| 田中さんの残業時間 | 月60時間 | 月25時間 |</p>
+
+<p><strong>ChatGPT Plusの月額費用は3,000円</strong>ですが、削減できた残業代と空いた時間で取れた新規顧問契約（月額顧問料3万円×2件）を考えれば、投資対効果は一目瞭然でした。</p>
+
+<h3>想定外の副次効果</h3>
+
+<p>マニュアル化を進める過程で、<strong>「実はこの作業、不要だったのでは？」という業務の棚卸しも進みました</strong>。長年の慣習で続けていた紙台帳のダブルチェックなど、3つの業務を廃止できたそうです。</p>
+
+<p>2026年に入って話題になったAI活用コンテスト「AI-1グランプリ」で税理士法人九段会計事務所が第一回王者になったニュースを見て、「うちのような小規模事務所でも、地道にAIを業務に組み込めば変われる」と田中さんは確信を深めました。</p>
+
+
+<p class="inline-related">あわせて読みたい: <a href="73d0e6f1.html" class="inline-link">税理士事務所の予約管理の効率化</a>の記事もおすすめです。</p>
+<h2 id="section-6">よくある質問</h2>
+
+<h3>Q1: ChatGPTに顧問先の機密情報を入力しても大丈夫ですか？</h3>
+
+<p>ChatGPTの有料版（Plus／Team／Enterprise）では、デフォルトで入力データが学習に使われない設定になっています。ただし念のため、<strong>顧問先名や個人名は仮名に置き換える運用</strong>をおすすめします。田中さんの事務所では「A社」「Bさん」と置換するルールを徹底しています。</p>
+
+<h3>Q2: 法改正に対応したマニュアル更新はどうすればいいですか？</h3>
+
+<p>ChatGPTに「<strong>2026年4月施行の改正点を反映して、このマニュアルを更新してください</strong>」と依頼すれば差分を出してくれますが、最新の税法情報は必ず公式情報（国税庁HP、税理士会通達）と照合してください。AIは便利ですが、最終確認は税理士の責任です。</p>
+
+<h3>Q3: 初心者におすすめの本やツールはありますか？</h3>
+
+<p>まずはChatGPTのビジネス活用に関する入門書を1冊読むことを強くおすすめします。プロンプトの基本パターンを知っているだけで成果が10倍変わります。ツールは無料版のChatGPTから始めて、効果を実感したらPlus（月額3,000円）に切り替えるのが王道です。</p>
+
+<p>&lt;!-- AFFILIATE2 --&gt;</p>
+
+
+<h2 id="section-7">まとめ：田中さんからのひとこと</h2>
+
+<p>「正直、AIなんて若い人のものだと思っていました。でも音声入力で話しかけるだけでマニュアルの叩き台ができる時代になって、私のような52歳の税理士でも使えています。<strong>マニュアル作成は『完璧を目指さない』『AIに聞き手になってもらう』『自事務所の特殊事情を必ず伝える』の3つがコツです。</strong>」</p>
+
+<p>田中さんは今、空いた時間で新しい顧問先開拓と、若手スタッフの育成に注力しています。「マニュアル化は、結局スタッフを大切にすることなんだと気づきました。一人で抱え込まず、AIと一緒に事務所を育てていきたいですね。」</p>
+
+<p>PwC税理士法人が経理・税務領域での生成AI活用セミナーを開催するなど、業界全体がAI活用に大きく舵を切っている2026年。小規模事務所だからこそ、フットワーク軽くAIを取り入れる価値は大きいはずです。あなたの事務所でも、まずは1つの業務マニュアルから始めてみませんか？</p>
+<div class="disclaimer">
+  <p>※本記事に登場する人物・店舗名は架空のものであり、実在の個人・団体とは関係ありません。事例は同業種でよくあるお悩みをもとに構成したフィクションです。効果や数値はあくまで想定であり、成果を保証するものではありません。</p>
+</div>
+<div class="cta-box">
+  <p class="cta-title">「うちも業務マニュアル作成をどうにかしたい」と思った税理士事務所の方へ</p>
+  <p>この記事で紹介した方法は、どなたでも今日から始められます。「でも一人だと不安…」という方は、かわさき楽AIサポートにご相談ください。無料ツール中心で、あなたの業務に合ったAI活用を一緒に考えます。</p>
+  <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="cta-btn">初回無料で相談してみる</a>
+</div>
+<div class="related-articles">
+  <h2>あわせて読みたい</h2>
+  <ul class="related-list"><li>
+  <span class="tag">介護施設</span>
+  <a href="461e773f.html">介護施設 業務マニュアル作成 効率化｜ChatGPTを使った具体的なやり方</a>
+</li><li>
+  <span class="tag">クリーニング店</span>
+  <a href="722358ec.html">クリーニング店 業務マニュアル作成 改善したい｜今日から始められるAI活用3ステップ</a>
+</li><li>
+  <span class="tag">税理士事務所</span>
+  <a href="73d0e6f1.html">税理士事務所 予約管理の効率化 改善したい｜今日から始められるAI活用3ステップ</a>
+</li></ul>
+</div>
+</article>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="../index.html">記事一覧</a>
+        <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">かわさき楽AIサポート</a>
+        <a href="../sitemap.xml">サイトマップ</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 AI活用ラボ / <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">株式会社スマイルファクトリー</a></p>
+    </div>
+  </footer>
+</body>
+</html>

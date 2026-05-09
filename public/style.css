@@ -721,6 +721,74 @@ article strong {
   color: var(--blue-dark);
 }
 
+/* ========== 自社サービスカード ========== */
+.own-service-section {
+  margin: 2rem 0;
+}
+.own-service-section-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 0.75rem;
+}
+.own-service-card {
+  margin-bottom: 0.75rem;
+}
+.own-service-inner {
+  background: linear-gradient(135deg, #fff8f0 0%, #fff3e6 100%);
+  border: 2px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+}
+.own-service-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.own-service-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--white);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.6rem;
+  border-radius: 3px;
+  width: fit-content;
+}
+.own-service-name {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0;
+}
+.own-service-desc {
+  font-size: 0.83rem;
+  color: var(--text-light);
+  margin: 0;
+  line-height: 1.5;
+}
+.own-service-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  background: var(--gold);
+  color: var(--white);
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  width: fit-content;
+  transition: all var(--transition);
+}
+.own-service-btn:hover {
+  opacity: 0.85;
+  color: var(--white);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(163, 148, 99, 0.3);
+}
+
 /* ========== 注意書き ========== */
 .disclaimer {
   margin: 2rem 0 1.5rem;

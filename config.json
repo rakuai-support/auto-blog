@@ -65,6 +65,35 @@
       }
     ]
   },
+  "own_services": [
+    {
+      "id": "menuprint",
+      "name": "MenuPrint（メニュープリント）",
+      "description": "スマホだけでプロ品質のメニュー表を作成。コンビニで即印刷、月額980円〜",
+      "url": "https://print.omotenashiqr.com/lp.html",
+      "cta_text": "MenuPrintを見てみる",
+      "badge": "月額980円〜",
+      "keywords": ["飲食店", "美容室", "整骨院・整体院", "メニュー", "チラシ", "印刷"]
+    },
+    {
+      "id": "aio-shindan",
+      "name": "AIOスコア診断（無料）",
+      "description": "Claude・ChatGPT・Geminiの3つのAIに「あなたのお店が紹介されるか」を無料で一括診断。改善レポート付き",
+      "url": "https://www.smilefactory-rakuai.com/aio-shindan",
+      "cta_text": "無料でAIO診断してみる",
+      "badge": "完全無料",
+      "keywords": ["集客", "マーケティング", "口コミ", "SEO", "AI"]
+    },
+    {
+      "id": "omotenashi-qr",
+      "name": "おもてなしQRメーカー",
+      "description": "日本語入力だけで15言語のAI音声動画をQRコードで作成。1分あたり30円、最短5分で完成",
+      "url": "https://lp.omotenashiqr.com/",
+      "cta_text": "おもてなしQRを試す",
+      "badge": "15言語対応",
+      "keywords": ["旅館・民宿", "飲食店", "インバウンド", "多言語", "外国人"]
+    }
+  ],
   "saas_affiliate": [
     {
       "keyword": "経理",
@@ -123,6 +152,8 @@
     "経理作業の時短",
     "集客・マーケティング",
     "口コミ対応",
-    "業務マニュアル作成"
+    "業務マニュアル作成",
+    "メニュー表・チラシ作成",
+    "多言語・インバウンド対応"
   ]
 }

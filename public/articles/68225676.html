@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="xq2Wicedua7rwzz4MrzjFmLgCvCU9ZIT-cl3uNYukho">
+  <title>歯科医院 売上データの分析 人手不足で回らない → AIに任せたら楽になった話 | AI活用ラボ</title>
+  <meta name="description" content="歯科医院の売上分析に悩む院長向け。ChatGPTと無料ツールで月8時間→1.5時間に削減した実例を解説。">
+  <link rel="canonical" href="https://rakuai-support.github.io/auto-blog/articles/68225676.html">
+  <!-- OGP -->
+  <meta property="og:title" content="歯科医院 売上データの分析 人手不足で回らない → AIに任せたら楽になった話 | AI活用ラボ">
+  <meta property="og:description" content="歯科医院の売上分析に悩む院長向け。ChatGPTと無料ツールで月8時間→1.5時間に削減した実例を解説。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rakuai-support.github.io/auto-blog/articles/68225676.html">
+  <meta property="og:site_name" content="AI活用ラボ">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://rakuai-support.github.io/auto-blog/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="歯科医院 売上データの分析 人手不足で回らない → AIに任せたら楽になった話 | AI活用ラボ">
+  <meta name="twitter:description" content="歯科医院の売上分析に悩む院長向け。ChatGPTと無料ツールで月8時間→1.5時間に削減した実例を解説。">
+  <meta name="twitter:image" content="https://rakuai-support.github.io/auto-blog/ogp.png">
+  <!-- フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "歯科医院 売上データの分析 人手不足で回らない → AIに任せたら楽になった話", "description": "歯科医院の売上分析に悩む院長向け。ChatGPTと無料ツールで月8時間→1.5時間に削減した実例を解説。", "datePublished": "2026-05-06", "dateModified": "2026-05-06", "author": {"@type": "Organization", "name": "かわさき楽AIサポート", "url": "https://www.smilefactory-rakuai.com/"}, "publisher": {"@type": "Organization", "name": "株式会社スマイルファクトリー"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rakuai-support.github.io/auto-blog/articles/68225676.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "ChatGPTに患者の個人情報を入力しても大丈夫ですか?", "acceptedAnswer": {"@type": "Answer", "text": "患者氏名・生年月日・カルテ番号などは絶対に入力しないでください。佐藤院長も、データを渡す前に必ず「メニュー名・金額・件数」だけに加工しています。集計済みの数字だけなら問題ありません。"}}, {"@type": "Question", "name": "無料プランだけでどこまでできますか?", "acceptedAnswer": {"@type": "Answer", "text": "ChatGPTの無料版、freee会計の無料プラン、Googleスプレッドシート、STORES予約とLINE公式の無料枠だけで、月次分析の80%は十分カバーできます。佐藤院長も最初の半年は完全無料で運用していました。"}}, {"@type": "Question", "name": "初心者におすすめの本やツールはありますか?", "acceptedAnswer": {"@type": "Answer", "text": "まずはChatGPTのビジネス活用入門書を1冊通読するのが近道です。プロンプトの型を3〜4個覚えるだけで、自院の数字を語る相棒として機能しはじめます。歯科経営に特化した本より、汎用のAI活用本のほうが応用が利きます。 <!-- AFFILIATE2 -->"}}, {"@type": "Question", "name": "初心者におすすめの本やツールはありますか?", "acceptedAnswer": {"@type": "Answer", "text": "まずはChatGPTのビジネス活用入門書を1冊通読するのが近道です。プロンプトの型を3〜4個覚えるだけで、自院の数字を語る相棒として機能しはじめます。歯科経営に特化した本より、汎用のAI活用本のほうが応用が利きます。 <!-- AFFILIATE2 -->"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "歯科医院の売上データの分析をAIで効率化する方法", "description": "歯科医院の売上分析に悩む院長向け。ChatGPTと無料ツールで月8時間→1.5時間に削減した実例を解説。", "step": [{"@type": "HowToStep", "name": "**レセコンから月次CSVを書き出す**: 日別売上、自費・保険別、メニュー別の3種類だけに絞る。", "text": "**レセコンから月次CSVを書き出す**: 日別売上、自費・保険別、メニュー別の3種類だけに絞る。"}, {"@type": "HowToStep", "name": "**freee会計**<!-- TOOL:freee会計 -->**にアップロードして経費と突き合わせる**: 無料プランから始め、売上と固定費・変動費を一画面で見られるようにする。", "text": "**freee会計**<!-- TOOL:freee会計 -->**にアップロードして経費と突き合わせる**: 無料プランから始め、売上と固定費・変動費を一画面で見られるようにする。"}, {"@type": "HowToStep", "name": "**Googleスプレッドシートに月次サマリーを貼る**: ChatGPTに読ませやすいよう、表形式で整える。", "text": "**Googleスプレッドシートに月次サマリーを貼る**: ChatGPTに読ませやすいよう、表形式で整える。"}, {"@type": "HowToStep", "name": "**ChatGPTにCSVを貼り付けて質問する**: ここが一番の山場で、後述のプロンプト例を活用する。", "text": "**ChatGPTにCSVを貼り付けて質問する**: ここが一番の山場で、後述のプロンプト例を活用する。"}, {"@type": "HowToStep", "name": "**回答を院内ミーティングで共有する**: スタッフと「来月どこを伸ばすか」を15分で話す。", "text": "**回答を院内ミーティングで共有する**: スタッフと「来月どこを伸ばすか」を15分で話す。"}]}</script>
+  <!-- Google AdSense -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_ADSENSE_ID" crossorigin="anonymous"></script> -->
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="header-top">
+        <a href="../index.html" class="logo"><span class="logo-accent">AI</span>活用ラボ</a>
+        <nav class="header-nav">
+          <a href="../index.html">記事一覧</a>
+          <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="nav-cta">無料相談</a>
+        </nav>
+      </div>
+      <p class="tagline">中小企業・個人事業主のための業種別AI活用ガイド</p>
+    </div>
+  </header>
+  <main>
+    <div class="breadcrumb"><a href="../index.html">トップ</a><span>&gt;</span><span>歯科医院</span><span>&gt;</span><span>歯科医院 売上データの分析 人手不足で回らない → AIに任...</span></div>
+    <article>
+<div class="article-header-meta"><span class="tag">歯科医院</span><span>2026-05-06</span><span>約11分で読めます</span></div>
+<h1>歯科医院 売上データの分析 人手不足で回らない → AIに任せたら楽になった話</h1>
+<div class="toc">
+  <div class="toc-title">この記事の内容</div>
+  <ol><li><a href="#section-1">歯科医院の売上データの分析、なぜこんなに大変なのか？</a></li>
+<li><a href="#section-2">歯科医院で売上データの分析が放置されがちな3つの理由</a></li>
+<li><a href="#section-3">売上データの分析をAIで解決する方法(ステップ解説)</a></li>
+<li><a href="#section-4">もうひとつのAI活用法: 予約データとの組み合わせ</a></li>
+<li><a href="#section-5">導入前後でどう変わった？数字で見るビフォーアフター</a></li>
+<li><a href="#section-6">よくある質問</a></li>
+<li><a href="#section-7">まとめ：佐藤院長からのひとこと</a></li></ol>
+</div>
+
+<p>川崎市高津区で小さな歯科医院を営む佐藤院長(48歳・男性)。スタッフは歯科衛生士2名、歯科助手1名、受付パート1名の合計4名体制。月商はおおよそ450万円前後で、地域に根ざした診療を15年続けてきました。ただ最近、診療後に院長室にこもってレセコンから出力したCSVを眺めながら、「先月、自費診療って結局いくらだったっけ？」「インプラント相談から成約までの率って下がってない？」とため息をつく日々が増えています。人手不足で受付スタッフは予約対応で手一杯、院長自身も診療で1日が終わり、売上データの分析は気づけば3か月放置。2026年に入ってから「歯科でもオンライン診療やAI活用が進んでいる」という日経の記事を見て焦りを感じつつ、何から手をつけていいかわからない――そんな状態でした。</p>
+
+<p>※本記事の事例は、歯科医院でよくあるお悩みをもとに構成したフィクションです。</p>
+
+<p><strong>結論から言えば、歯科医院の売上データ分析はChatGPTと無料のクラウド会計・スプレッドシートを組み合わせることで、月8時間かかっていた作業を1.5時間程度まで削減できます。</strong> 専門知識も追加コストもほぼ不要で、診療の合間に院長一人でも回せる仕組みが作れます。</p>
+
+<h2 id="section-1">歯科医院の売上データの分析、なぜこんなに大変なのか？</h2>
+
+<p>佐藤院長の典型的な1日はこうです。9時から13時まで診療、昼休みは保険請求の確認とスタッフミーティング、14時30分から19時まで再び診療。閉院後にカルテを書き終えると20時。そこからレセコンを開き、自費診療の売上、保険診療の点数、自費比率、新患数、キャンセル率……と数字を拾い始めるのですが、30分も経つとまぶたが重くなります。</p>
+
+<h3>データはあるのに「使える形」になっていない</h3>
+
+<p>歯科医院には実は売上データが大量にあります。レセコンの日別売上、ユニット稼働率、自費メニュー別の成約数、リコール率、新患の流入経路。ところが、それぞれが別ファイル、別フォーマット。佐藤院長は「数字を眺めるだけで、結局何が問題なのかわからない」と感じていました。</p>
+
+<h3>比較ができないから判断もできない</h3>
+
+<p>先月と今月、去年の同じ月、近隣の同規模医院。比較軸を作って初めて数字は意味を持ちますが、その整形作業に毎月8時間かかっていました。スタッフに頼むには専門性が高く、税理士に丸投げするには細かすぎる。この「中間の作業」が完全に院長の肩に乗っていたのです。</p>
+
+<h2 id="section-2">歯科医院で売上データの分析が放置されがちな3つの理由</h2>
+
+<h3>理由1: 診療優先で時間が取れない</h3>
+
+<p>歯科医院は1日のほとんどを診療チェアで過ごします。スタートアップ業界では「歯科技工士不足でもAI活用で精密な被せ物を」というニュース(Science Portal)もあるように、現場の人手不足は深刻。経営分析に割ける時間は実質ゼロに近いのが実情です。</p>
+
+<h3>理由2: スプレッドシートへの苦手意識</h3>
+
+<p>VLOOKUP、ピボットテーブル、関数。聞いただけで頭が痛くなる院長は少なくありません。佐藤院長も「Excelは月次の入力で精一杯」というタイプでした。</p>
+
+<h3>理由3: 「分析しても改善できる気がしない」という心理</h3>
+
+<p>数字を見ても、忙しさは変わらない。打ち手が思いつかない。だから見たくない。この負のループが、多くの歯科医院で起きています。</p>
+
+<h2 id="section-3">売上データの分析をAIで解決する方法(ステップ解説)</h2>
+
+<p>佐藤院長が最初に読んだのは、ChatGPTを業務でどう使うかをやさしく解説した入門書でした。「この本に出ていたプロンプトの作り方を真似たら、初日からそれっぽい答えが返ってきて驚いた」と振り返ります。</p>
+
+<div class="aff-section">
+  <p class="aff-section-intro">歯科医院の売上データの分析について、さらに詳しく学びたい方にはこちらの書籍がおすすめです。</p>
+  <div class="aff-card">
+    <div class="aff-card-inner">
+      <div class="aff-book-img">
+        <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8787/9784781208787_1_2.jpg?_ex=200x200" alt="お金と人で悩まない歯科医院経営の原則" loading="lazy">
+      </div>
+      <div class="aff-content">
+        <span class="aff-badge">Pick Up</span>
+        <p class="aff-book-title">お金と人で悩まない歯科医院経営の原則</p>
+        <p class="aff-book-meta">坂本佳昭 / 2420円（税込）</p>
+        <div class="aff-review"><span class="aff-review-stars">★★★★☆</span><span class="aff-review-count">おすすめ書籍</span></div>
+        <a href="https://hb.afl.rakuten.co.jp/hgc/g00q072n.6jlih6a3.g00q072n.6jlii7e7/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F17159037%2F" target="_blank" rel="nofollow" class="aff-btn">
+          楽天ブックスで見る
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>そこから佐藤院長が実際に踏んだステップは以下の通りです。</p>
+
+<ol>
+<li><strong>レセコンから月次CSVを書き出す</strong>: 日別売上、自費・保険別、メニュー別の3種類だけに絞る。</li>
+<li><strong>freee会計</strong>&lt;!-- TOOL:freee会計 --&gt;<strong>にアップロードして経費と突き合わせる</strong>: 無料プランから始め、売上と固定費・変動費を一画面で見られるようにする。</li>
+<li><strong>Googleスプレッドシートに月次サマリーを貼る</strong>: ChatGPTに読ませやすいよう、表形式で整える。</li>
+<li><strong>ChatGPTにCSVを貼り付けて質問する</strong>: ここが一番の山場で、後述のプロンプト例を活用する。</li>
+<li><strong>回答を院内ミーティングで共有する</strong>: スタッフと「来月どこを伸ばすか」を15分で話す。</li>
+</ol>
+
+<h3>実際に使ったプロンプト例</h3>
+
+<p>佐藤院長が日常的に使っているプロンプトはこんな感じです。</p>
+
+<p>「あなたは歯科医院の経営コンサルタントです。以下の3か月分の月次売上データから、自費診療の伸び悩みの原因を3つ仮説として挙げ、来月試すべき施策を優先順位つきで提案してください。」</p>
+
+<p>「以下のメニュー別売上データを見て、客単価が下がっている要因を分析してください。患者数の減少か、メニュー構成の変化か、どちらの寄与が大きいかを数字で示してください。」</p>
+
+<p>「先月のキャンセル率が15%でした。歯科医院の平均と比べてどうか、また減らすために診療予約のリマインド方法をどう変えるべきか、3案ください。」</p>
+
+<p>「うちの自費比率は28%です。地域密着型・スタッフ4名規模の歯科医院として高いか低いか、伸ばすなら何から着手すべきか教えてください。」</p>
+
+<h3>失敗談: 最初は「ふわっとした答え」しか返ってこなかった</h3>
+
+<p>導入1週目、佐藤院長は「うちの売上を分析してください」と一言だけ投げて、当たり障りのない一般論ばかり返ってきました。原因は前提情報の不足。「医院の規模・地域・スタッフ数・主力メニュー」を最初に書いてから質問する形に変えたところ、回答の質が一気に上がりました。AIには&quot;自分の医院のプロフィール&quot;を毎回伝えるのがコツです。</p>
+
+<h2 id="section-4">もうひとつのAI活用法: 予約データとの組み合わせ</h2>
+
+<p>売上分析だけでは片手落ちです。佐藤院長は予約管理にSTORES予約&lt;!-- TOOL:STORES予約 --&gt;を導入し、無料プランで自費相談枠と通常診療枠を分けて管理しはじめました。これでメニュー別の予約獲得状況が自動で集計され、ChatGPTに渡しやすい形になります。</p>
+
+<p>さらにLINE公式アカウント&lt;!-- TOOL:LINE公式アカウント --&gt;でリコール案内を月200通の無料枠内で配信。配信後の予約獲得率もデータ化し、「先月のLINE配信からの予約転換率は何%でしたか? 文面のどこを変えるべきですか?」とAIに相談する運用にしました。</p>
+
+<p>最近、PR TIMESで報じられた「自然言語で経営データを分析できるストアレコードAI」のような専用SaaSも登場していますが、佐藤院長のような小規模医院では、まずは無料のChatGPT+スプレッドシートで十分にスタートできます。</p>
+
+<p>メニュー表や患者向け資料の刷新には、スマホだけでプロ品質のチラシが作れる「MenuPrint」というサービスも見つけて、自費メニュー紹介の三つ折りパンフレットを月額980円で作成しました。</p>
+
+<h2 id="section-5">導入前後でどう変わった？数字で見るビフォーアフター</h2>
+
+<p>| 項目 | 導入前 | 導入後(3か月後) |</p>
+<p>|---|---|---|</p>
+<p>| 月次分析にかける時間 | 8時間 | 1.5時間 |</p>
+<p>| 自費診療売上 | 月125万円 | 月158万円(+26%) |</p>
+<p>| キャンセル率 | 15% | 9% |</p>
+<p>| リコール来院率 | 42% | 58% |</p>
+<p>| 院長の睡眠時間(平日平均) | 5.5時間 | 6.8時間 |</p>
+
+<p>特に大きかったのは、AIが「火曜午後の自費相談枠が空きがちなので、LINEで火曜限定リマインドを送ってはどうか」と具体策を出してくれたこと。それを実行しただけで、月15万円ほどの自費売上が積み上がりました。コスト削減効果は、税理士への臨時相談料(年間約12万円)が不要になった点も含めて、年間でおよそ40万円相当です。</p>
+
+<p>「予約したつもり」で終わらせない、というニュース記事(newscast.jp)が示すように、予約データを活かしきることが歯科医院の経営改善の肝になっていると佐藤院長も実感しています。</p>
+
+<p class="inline-related">あわせて読みたい: <a href="f13ab3db.html" class="inline-link">歯科医院の予約管理の効率化</a>の記事もおすすめです。</p>
+<h2 id="section-6">よくある質問</h2>
+
+<h3>Q1: ChatGPTに患者の個人情報を入力しても大丈夫ですか?</h3>
+
+<p>患者氏名・生年月日・カルテ番号などは絶対に入力しないでください。佐藤院長も、データを渡す前に必ず「メニュー名・金額・件数」だけに加工しています。集計済みの数字だけなら問題ありません。</p>
+
+<h3>Q2: 無料プランだけでどこまでできますか?</h3>
+
+<p>ChatGPTの無料版、freee会計の無料プラン、Googleスプレッドシート、STORES予約とLINE公式の無料枠だけで、月次分析の80%は十分カバーできます。佐藤院長も最初の半年は完全無料で運用していました。</p>
+
+<h3>Q3: 初心者におすすめの本やツールはありますか?</h3>
+
+<p>まずはChatGPTのビジネス活用入門書を1冊通読するのが近道です。プロンプトの型を3〜4個覚えるだけで、自院の数字を語る相棒として機能しはじめます。歯科経営に特化した本より、汎用のAI活用本のほうが応用が利きます。</p>
+
+<p>&lt;!-- AFFILIATE2 --&gt;</p>
+
+<h2 id="section-7">まとめ：佐藤院長からのひとこと</h2>
+
+<p>「正直、最初はAIなんて若い人のものだと思っていました。でも、毎晩8時間かかっていた数字いじりが1時間半で終わるようになって、夜10時には家に帰れるようになりました。スタッフにも『院長、最近機嫌いいですね』と言われます」と佐藤院長は笑います。</p>
+
+<p>歯科医院の売上データ分析は、もはや院長一人で抱え込む時代ではありません。ChatGPTという&quot;いつでも相談できる経営パートナー&quot;を月数千円(または無料)で雇える今、最初の一歩は「先月のCSVを1枚、AIに見せてみる」だけ。それだけで、明日の診療がほんの少し楽になるはずです。</p>
+<div class="disclaimer">
+  <p>※本記事に登場する人物・店舗名は架空のものであり、実在の個人・団体とは関係ありません。事例は同業種でよくあるお悩みをもとに構成したフィクションです。効果や数値はあくまで想定であり、成果を保証するものではありません。</p>
+</div>
+<div class="cta-box">
+  <p class="cta-title">「うちも売上データの分析をどうにかしたい」と思った歯科医院の方へ</p>
+  <p>この記事で紹介した方法は、どなたでも今日から始められます。「でも一人だと不安…」という方は、かわさき楽AIサポートにご相談ください。無料ツール中心で、あなたの業務に合ったAI活用を一緒に考えます。</p>
+  <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="cta-btn">初回無料で相談してみる</a>
+</div>
+<div class="related-articles">
+  <h2>あわせて読みたい</h2>
+  <ul class="related-list"><li>
+  <span class="tag">花屋</span>
+  <a href="08e3502e.html">花屋 売上データの分析 大変 → AIで解決した方法を全手順つきで紹介</a>
+</li><li>
+  <span class="tag">飲食店</span>
+  <a href="1aab3038.html">飲食店 売上データの分析 人手不足で回らない → AIに任せたら楽になった話</a>
+</li><li>
+  <span class="tag">歯科医院</span>
+  <a href="f13ab3db.html">歯科医院 予約管理の効率化 効率化｜ChatGPTを使った具体的なやり方</a>
+</li></ul>
+</div>
+</article>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="../index.html">記事一覧</a>
+        <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">かわさき楽AIサポート</a>
+        <a href="../sitemap.xml">サイトマップ</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 AI活用ラボ / <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">株式会社スマイルファクトリー</a></p>
+    </div>
+  </footer>
+</body>
+</html>

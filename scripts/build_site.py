@@ -354,6 +354,59 @@ def insert_saas_cards(html_text, config):
     return html_text
 
 
+def build_own_service_card(service):
+    """自社サービスのプロモーションカードを生成"""
+    return f"""<div class="own-service-card">
+  <div class="own-service-inner">
+    <div class="own-service-content">
+      <span class="own-service-badge">{html.escape(service['badge'])}</span>
+      <p class="own-service-name">{html.escape(service['name'])}</p>
+      <p class="own-service-desc">{html.escape(service['description'])}</p>
+      <a href="{html.escape(service['url'])}" target="_blank" rel="noopener" class="own-service-btn">
+        {html.escape(service['cta_text'])}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</div>"""
+
+
+def insert_own_services(html_text, config, meta):
+    """記事のテーマ・業種に合う自社サービスカードを挿入"""
+    services = config.get("own_services", [])
+    if not services:
+        return html_text
+
+    industry = meta.get("industry", "")
+    topic = meta.get("topic", "")
+
+    matched = []
+    for svc in services:
+        keywords = svc.get("keywords", [])
+        if any(k in industry or k in topic for k in keywords):
+            matched.append(svc)
+
+    # マッチしなくてもAIO診断は全記事に出す
+    if not any(s["id"] == "aio-shindan" for s in matched):
+        aio = next((s for s in services if s["id"] == "aio-shindan"), None)
+        if aio:
+            matched.append(aio)
+
+    if not matched:
+        return html_text
+
+    # CTAボックスの直前に挿入
+    cards_html = "\n".join(build_own_service_card(s) for s in matched[:2])
+    promo_section = f"""<div class="own-service-section">
+  <p class="own-service-section-title">関連サービスのご紹介</p>
+  {cards_html}
+</div>"""
+
+    # disclaimerの前に挿入
+    html_text = html_text.replace('<div class="disclaimer">', f'{promo_section}\n<div class="disclaimer">')
+    return html_text
+
+
 def insert_inline_links(html_text, current_meta, all_meta):
     """記事本文中に関連記事への内部リンクを自然に挿入"""
     same_industry = [m for m in all_meta
@@ -556,6 +609,7 @@ def build_article(meta, md_text, template, config, all_meta, books_cache=None):
     article_html = insert_affiliate(article_html, config, meta=meta, books_cache=books_cache)
     article_html = insert_saas_cards(article_html, config)
     article_html = insert_inline_links(article_html, meta, all_meta)
+    article_html = insert_own_services(article_html, config, meta)
 
     # 目次を生成してh1の後に挿入
     headings = extract_h2_headings(md_text)
