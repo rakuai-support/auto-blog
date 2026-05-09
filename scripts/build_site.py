@@ -579,7 +579,12 @@ def build_article(meta, md_text, template, config, all_meta, books_cache=None):
   <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="cta-btn">初回無料で相談してみる</a>
 </div>"""
 
-    content = f"<article>\n{header_meta}\n{article_html}\n{cta}\n{related}\n</article>"
+    # 注意書き
+    disclaimer = """<div class="disclaimer">
+  <p>※本記事に登場する人物・店舗名は架空のものであり、実在の個人・団体とは関係ありません。事例は同業種でよくあるお悩みをもとに構成したフィクションです。効果や数値はあくまで想定であり、成果を保証するものではありません。</p>
+</div>"""
+
+    content = f"<article>\n{header_meta}\n{article_html}\n{disclaimer}\n{cta}\n{related}\n</article>"
 
     # パンくずリスト
     breadcrumb = f'<div class="breadcrumb"><a href="../index.html">トップ</a><span>&gt;</span><span>{html.escape(meta.get("industry", ""))}</span><span>&gt;</span><span>{html.escape(meta["title"][:30])}...</span></div>'

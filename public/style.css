@@ -721,6 +721,21 @@ article strong {
   color: var(--blue-dark);
 }
 
+/* ========== 注意書き ========== */
+.disclaimer {
+  margin: 2rem 0 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+.disclaimer p {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
 /* ========== 更新日バッジ ========== */
 .last-updated {
   display: inline-flex;
