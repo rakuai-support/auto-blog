@@ -3,7 +3,7 @@
 
   <url>
     <loc>https://rakuai-support.github.io/auto-blog/index.html</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -16,6 +16,18 @@
   <url>
     <loc>https://rakuai-support.github.io/auto-blog/articles/091ae53a.html</loc>
     <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rakuai-support.github.io/auto-blog/articles/13166930.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rakuai-support.github.io/auto-blog/articles/13e816a5.html</loc>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -76,6 +88,12 @@
   <url>
     <loc>https://rakuai-support.github.io/auto-blog/articles/59496467.html</loc>
     <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rakuai-support.github.io/auto-blog/articles/626b79c3.html</loc>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
