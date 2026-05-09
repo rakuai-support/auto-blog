@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="xq2Wicedua7rwzz4MrzjFmLgCvCU9ZIT-cl3uNYukho">
+  <title>学習塾 口コミ対応 大変 → AIで解決した方法を全手順つきで紹介 | AI活用ラボ</title>
+  <meta name="description" content="学習塾オーナー佐藤さんの実例で紹介。ChatGPTで口コミ対応を月12時間→2時間に削減した全手順とプロンプト例を公開。">
+  <link rel="canonical" href="https://rakuai-support.github.io/auto-blog/articles/c05619f2.html">
+  <!-- OGP -->
+  <meta property="og:title" content="学習塾 口コミ対応 大変 → AIで解決した方法を全手順つきで紹介 | AI活用ラボ">
+  <meta property="og:description" content="学習塾オーナー佐藤さんの実例で紹介。ChatGPTで口コミ対応を月12時間→2時間に削減した全手順とプロンプト例を公開。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rakuai-support.github.io/auto-blog/articles/c05619f2.html">
+  <meta property="og:site_name" content="AI活用ラボ">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://rakuai-support.github.io/auto-blog/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="学習塾 口コミ対応 大変 → AIで解決した方法を全手順つきで紹介 | AI活用ラボ">
+  <meta name="twitter:description" content="学習塾オーナー佐藤さんの実例で紹介。ChatGPTで口コミ対応を月12時間→2時間に削減した全手順とプロンプト例を公開。">
+  <meta name="twitter:image" content="https://rakuai-support.github.io/auto-blog/ogp.png">
+  <!-- フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "学習塾 口コミ対応 大変 → AIで解決した方法を全手順つきで紹介", "description": "学習塾オーナー佐藤さんの実例で紹介。ChatGPTで口コミ対応を月12時間→2時間に削減した全手順とプロンプト例を公開。", "datePublished": "2026-05-09", "dateModified": "2026-05-09", "author": {"@type": "Organization", "name": "かわさき楽AIサポート", "url": "https://www.smilefactory-rakuai.com/"}, "publisher": {"@type": "Organization", "name": "株式会社スマイルファクトリー"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rakuai-support.github.io/auto-blog/articles/c05619f2.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "ChatGPTに口コミの本文を入れて、個人情報の問題は大丈夫ですか？", "acceptedAnswer": {"@type": "Answer", "text": "投稿者名や生徒名など個人を特定できる情報は伏せ字にしてから入力すれば問題ありません。佐藤さんも「投稿者：A様」のように置き換えて運用しています。有料版のChatGPT Teamプランなら学習に使われない設定もあり、より安心です。"}}, {"@type": "Question", "name": "返信の「AIっぽさ」が読者にバレませんか？", "acceptedAnswer": {"@type": "Answer", "text": "ステップ5の「固有情報を1〜2行追加」が最大のポイントです。塾名・地域名・季節の話題（「期末テスト前のお忙しい時期に」など）を1行入れるだけで、ほぼ判別不能になります。"}}, {"@type": "Question", "name": "初心者におすすめの本やツールはありますか？", "acceptedAnswer": {"@type": "Answer", "text": "まずはChatGPTの無料プランから始め、プロンプト設計を1冊の入門書で学ぶのが最短ルートです。佐藤さんも「本を1冊読んでから始めた人と、いきなり触り始めた人では、3か月後の差が大きい」と話しています。下記におすすめをまとめました。 <!-- AFFILIATE2 -->"}}, {"@type": "Question", "name": "初心者におすすめの本やツールはありますか？", "acceptedAnswer": {"@type": "Answer", "text": "まずはChatGPTの無料プランから始め、プロンプト設計を1冊の入門書で学ぶのが最短ルートです。佐藤さんも「本を1冊読んでから始めた人と、いきなり触り始めた人では、3か月後の差が大きい」と話しています。下記におすすめをまとめました。 <!-- AFFILIATE2 -->"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "学習塾の口コミ対応をAIで効率化する方法", "description": "学習塾オーナー佐藤さんの実例で紹介。ChatGPTで口コミ対応を月12時間→2時間に削減した全手順とプロンプト例を公開。", "step": [{"@type": "HowToStep", "name": "手順", "text": "手順"}, {"@type": "HowToStep", "name": "**口コミを集約するスプレッドシートを作る**：列を「投稿日／媒体／投稿者名／星評価／本文／対応ステータス／返信文ドラフト」の7つに分け、毎朝5分間ですべての媒体の新着口コミを書き写します。", "text": "**口コミを集約するスプレッドシートを作る**：列を「投稿日／媒体／投稿者名／星評価／本文／対応ステータス／返信文ドラフト」の7つに分け、毎朝5分間ですべての媒体の新着口コミを書き写します。"}, {"@type": "HowToStep", "name": "**塾の「返信トーン」をChatGPTに記憶させる**：最初に1回だけ、塾の方針・大切にしている価値観・避けたい表現を伝えます。佐藤さんはこう入力しました。「あなたは川崎市高津区の個別指導塾『まなびや高津校』の責任者です。返信は『です・ます』調、生徒一人ひとりに向き合う姿勢を伝え、批判には言い訳をせず改善姿勢を示します。300字以内で、定型文に見えないように書いてください。」", "text": "**塾の「返信トーン」をChatGPTに記憶させる**：最初に1回だけ、塾の方針・大切にしている価値観・避けたい表現を伝えます。佐藤さんはこう入力しました。「あなたは川崎市高津区の個別指導塾『まなびや高津校』の責任者です。返信は『です・ます』調、生徒一人ひとりに向き合う姿勢を伝え、批判には言い訳をせず改善姿勢を示します。300字以内で、定型文に見えないように書いてください。」"}, {"@type": "HowToStep", "name": "**口コミ本文を貼り付けてドラフトを生成**：「以下の口コミに対する返信ドラフトを3パターン作ってください。1つは丁寧重視、1つは共感重視、1つは具体的改善策を示すパターンでお願いします。口コミ：〔本文をそのまま貼り付け〕」", "text": "**口コミ本文を貼り付けてドラフトを生成**：「以下の口コミに対する返信ドラフトを3パターン作ってください。1つは丁寧重視、1つは共感重視、1つは具体的改善策を示すパターンでお願いします。口コミ：〔本文をそのまま貼り付け〕」"}, {"@type": "HowToStep", "name": "**低評価口コミは「事実確認用の質問」も同時に出させる**：「この口コミに返信する前に、塾内で事実確認すべき点を5つリストアップしてください」と入力すると、講師ヒアリングのチェックリストが自動でできあがります。", "text": "**低評価口コミは「事実確認用の質問」も同時に出させる**：「この口コミに返信する前に、塾内で事実確認すべき点を5つリストアップしてください」と入力すると、講師ヒアリングのチェックリストが自動でできあがります。"}, {"@type": "HowToStep", "name": "**3パターンから選び、固有情報を1〜2行追加**：生徒の名前は出せないので「先日ご相談いただいた件」など、保護者だけがピンとくる表現を1行足すだけで「テンプレ感」が一気に消えます。", "text": "**3パターンから選び、固有情報を1〜2行追加**：生徒の名前は出せないので「先日ご相談いただいた件」など、保護者だけがピンとくる表現を1行足すだけで「テンプレ感」が一気に消えます。"}, {"@type": "HowToStep", "name": "**スプレッドシートに完成版を記録、Googleビジネスプロフィールに投稿**：これで完了。1件あたり5〜7分です。", "text": "**スプレッドシートに完成版を記録、Googleビジネスプロフィールに投稿**：これで完了。1件あたり5〜7分です。"}]}</script>
+  <!-- Google AdSense -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_ADSENSE_ID" crossorigin="anonymous"></script> -->
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="header-top">
+        <a href="../index.html" class="logo"><span class="logo-accent">AI</span>活用ラボ</a>
+        <nav class="header-nav">
+          <a href="../index.html">記事一覧</a>
+          <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="nav-cta">無料相談</a>
+        </nav>
+      </div>
+      <p class="tagline">中小企業・個人事業主のための業種別AI活用ガイド</p>
+    </div>
+  </header>
+  <main>
+    <div class="breadcrumb"><a href="../index.html">トップ</a><span>&gt;</span><span>学習塾</span><span>&gt;</span><span>学習塾 口コミ対応 大変 → AIで解決した方法を全手順つき...</span></div>
+    <article>
+<div class="article-header-meta"><span class="tag">学習塾</span><span>2026-05-09</span><span>約11分で読めます</span></div>
+<h1>学習塾 口コミ対応 大変 → AIで解決した方法を全手順つきで紹介</h1>
+<div class="toc">
+  <div class="toc-title">この記事の内容</div>
+  <ol><li><a href="#section-1">学習塾の口コミ対応、なぜこんなに大変なのか？</a></li>
+<li><a href="#section-2">学習塾で口コミ対応が放置されがちな3つの理由</a></li>
+<li><a href="#section-3">口コミ対応をAIで解決する方法（ステップ解説）</a></li>
+<li><a href="#section-4">もうひとつのAI活用法：LINE公式アカウントとの組み合わせ</a></li>
+<li><a href="#section-5">導入前後でどう変わった？数字で見るビフォーアフター</a></li>
+<li><a href="#section-6">よくある質問</a></li>
+<li><a href="#section-7">まとめ：佐藤さんからのひとこと</a></li></ol>
+</div>
+
+<p>午後9時、最後の生徒を送り出した後の教室。佐藤健一さん（48歳・男性）は、川崎市高津区で個別指導塾「まなびや高津校」を営むオーナーです。スタッフは正社員1名と学生講師4名、生徒数は約80名、年商は約3,500万円。授業準備、保護者対応、シフト管理に追われる毎日のなか、佐藤さんがここ1年で一番頭を抱えているのが「Googleマップや塾選び系サイトに投稿される口コミへの返信」でした。「先生が冷たい」「自習室が狭い」「成績が上がらない」――感情のこもった文章を読むたびに胸がざわつき、丁寧に返信しようとすると1件あたり30分以上。気づけば深夜0時。最近では「口コミ返信AIエージェントがリリース初動で200店舗を突破した」というニュースも目にし、「うちの塾でも使えるんだろうか」と気になっていたのです。</p>
+
+<p><strong>結論から言えば、学習塾の口コミ対応はChatGPTと無料ツールの組み合わせで月12時間→2時間に削減でき、しかも返信品質は以前より上がります。</strong> 本記事では、佐藤さんが実際に試して効果を出した全手順を、プロンプト例つきで紹介します。</p>
+
+<h2 id="section-1">学習塾の口コミ対応、なぜこんなに大変なのか？</h2>
+
+<h3>佐藤さんの「ある火曜日」</h3>
+
+<p>佐藤さんの火曜日は、朝7時にGoogleビジネスプロフィールの通知から始まります。「★2 講師の入れ替わりが激しすぎる」――その一文を読んだだけで、その日の集中力は半分削られます。授業の合間にスマホを開いては文面を考え、夜の業務後にようやくPCに向かうものの、「言い訳に聞こえないか」「他の保護者が読んだらどう感じるか」と何度も書き直し、結局返信を1週間放置してしまうことも。</p>
+
+<h3>1件30分×月20件＝月10時間以上の見えないコスト</h3>
+
+<p>佐藤さんの場合、Google・塾ナビ・エキテン合わせて月15〜20件の新規口コミが入ります。1件あたり平均30分かかるとすれば、<strong>月に10〜12時間が口コミ対応だけに消えている</strong>計算です。時給換算で約3,000円とすれば、月3〜4万円のコストが見えない形で発生していたわけです。</p>
+
+<h3>放置すると検索順位と入塾問い合わせが落ちる</h3>
+
+<p>口コミへの返信率はGoogleのローカル検索順位に影響することが知られています。佐藤さんも「溝の口 個別指導塾」での表示順位が下がり、新規問い合わせが前年比で2割減っていました。</p>
+
+<h2 id="section-2">学習塾で口コミ対応が放置されがちな3つの理由</h2>
+
+<h3>理由1：業界構造的に「夜が本業」</h3>
+
+<p>学習塾は授業時間が夕方〜夜。事務作業をやる時間が物理的にありません。これは飲食店や美容室と同じ構造的な制約です。</p>
+
+<h3>理由2：感情労働としての重さ</h3>
+
+<p>低評価の口コミは「自分の教育観を否定された」ように感じやすく、冷静な返信文を書くのに精神的エネルギーを消耗します。佐藤さんも「★1の口コミを見た日は授業の準備にも集中できなかった」と言います。</p>
+
+<h3>理由3：返信のテンプレ化と個別最適化のジレンマ</h3>
+
+<p>毎回同じような返信だと「コピペ感」が出てしまい、逆に印象を悪くします。かといって完全オリジナルで書くと時間がかかる――このジレンマこそ、AIが最も得意な領域です。</p>
+
+<h2 id="section-3">口コミ対応をAIで解決する方法（ステップ解説）</h2>
+
+<p>ここからが本題です。佐藤さんが実際に踏んだ手順を、そのまま再現できる形で紹介します。</p>
+
+<h3>使うツール</h3>
+
+<ul>
+<li><strong>ChatGPT（無料プランでOK、有料の方が精度は高い）</strong></li>
+<li><strong>Googleスプレッドシート</strong>（口コミ管理用、無料）</li>
+<li><strong>Googleビジネスプロフィール</strong>（既存アカウント）</li>
+</ul>
+
+<h3>ステップ手順</h3>
+
+<ol>
+<li><strong>口コミを集約するスプレッドシートを作る</strong>：列を「投稿日／媒体／投稿者名／星評価／本文／対応ステータス／返信文ドラフト」の7つに分け、毎朝5分間ですべての媒体の新着口コミを書き写します。</li>
+<li><strong>塾の「返信トーン」をChatGPTに記憶させる</strong>：最初に1回だけ、塾の方針・大切にしている価値観・避けたい表現を伝えます。佐藤さんはこう入力しました。「あなたは川崎市高津区の個別指導塾『まなびや高津校』の責任者です。返信は『です・ます』調、生徒一人ひとりに向き合う姿勢を伝え、批判には言い訳をせず改善姿勢を示します。300字以内で、定型文に見えないように書いてください。」</li>
+<li><strong>口コミ本文を貼り付けてドラフトを生成</strong>：「以下の口コミに対する返信ドラフトを3パターン作ってください。1つは丁寧重視、1つは共感重視、1つは具体的改善策を示すパターンでお願いします。口コミ：〔本文をそのまま貼り付け〕」</li>
+<li><strong>低評価口コミは「事実確認用の質問」も同時に出させる</strong>：「この口コミに返信する前に、塾内で事実確認すべき点を5つリストアップしてください」と入力すると、講師ヒアリングのチェックリストが自動でできあがります。</li>
+<li><strong>3パターンから選び、固有情報を1〜2行追加</strong>：生徒の名前は出せないので「先日ご相談いただいた件」など、保護者だけがピンとくる表現を1行足すだけで「テンプレ感」が一気に消えます。</li>
+<li><strong>スプレッドシートに完成版を記録、Googleビジネスプロフィールに投稿</strong>：これで完了。1件あたり5〜7分です。</li>
+</ol>
+
+<h3>佐藤さんが最初に読んだ本</h3>
+
+<p>佐藤さんが最初に手に取ったのは、ChatGPTのビジネス活用について書かれた入門書でした。「プロンプトは命令ではなく『役割を与えること』だと書いてあって、最初の設定文をしっかり書いたら本当に出力が変わったんです」と振り返ります。塾講師という立場柄、新しいツールに腰が引けていた佐藤さんでも、1冊読み切ったその週末から実装に踏み切れたといいます。</p>
+
+<div class="aff-section">
+  <p class="aff-section-intro">学習塾の口コミ対応について、さらに詳しく学びたい方にはこちらの書籍がおすすめです。</p>
+  <div class="aff-card">
+    <div class="aff-card-inner">
+      <div class="aff-book-img">
+        <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/9638/9784815049638.gif?_ex=200x200" alt="【POD】中小学習塾経営者のための　学習塾・逆転の経営戦略" loading="lazy">
+      </div>
+      <div class="aff-content">
+        <span class="aff-badge">Pick Up</span>
+        <p class="aff-book-title">【POD】中小学習塾経営者のための　学習塾・逆転の経営戦略</p>
+        <p class="aff-book-meta">川崎隆夫/今野篤 / 2200円（税込）</p>
+        <div class="aff-review"><span class="aff-review-stars">★★★★☆</span><span class="aff-review-count">おすすめ書籍</span></div>
+        <a href="https://hb.afl.rakuten.co.jp/hgc/g00q072n.6jlih6a3.g00q072n.6jlii7e7/?pc=https%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F18404826%2F" target="_blank" rel="nofollow" class="aff-btn">
+          楽天ブックスで見る
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>失敗談：最初は「謝りすぎ」で逆効果だった</h3>
+
+<p>実は佐藤さん、最初の1週間はChatGPTの出力をそのまま使っていました。すると、AIは無難に振る舞うため「申し訳ございません」を連発した文章を出してきがちで、別の保護者から「そんなに謝るなら最初からちゃんとやって」とさらに辛辣な口コミがついてしまったのです。そこで2でのトーン設定に「過剰な謝罪はせず、改善行動を具体的に示す」という一文を追加したところ、返信に対する「いいね」が急増しました。</p>
+
+<h2 id="section-4">もうひとつのAI活用法：LINE公式アカウントとの組み合わせ</h2>
+
+<p>口コミ対応は「投稿された後」の話ですが、根本解決には「投稿される前」のフォローが効きます。佐藤さんが次に取り組んだのが、保護者との日常コミュニケーション強化でした。</p>
+
+<h3>使ったツール：LINE公式アカウント</h3>
+
+<p>LINE公式アカウント&lt;!-- TOOL:LINE公式アカウント --&gt;は月200通まで無料で配信でき、開封率はメールの数倍。佐藤さんは月2回、ChatGPTで作った「学習進捗お知らせメッセージ」を保護者に配信するようにしました。</p>
+
+<h3>プロンプト例</h3>
+
+<p>「中学2年生の保護者向けに、定期テスト2週間前のタイミングで送るLINEメッセージを作ってください。塾としての応援姿勢を示しつつ、家庭でできる声かけを2つ提案する形で、200字以内、絵文字は1〜2個までにしてください。」</p>
+
+<p>このひと手間で、保護者の「塾は何をしてくれているのかわからない」という不満が激減し、低評価の口コミが月平均3件→1件未満に減りました。2026年に入って、AI講師が「学習転移」を実証する事例（DOUのスパルタ英会話との実証実験）など、保護者がAI活用に慣れてきた追い風もあり、塾側のAI活用も自然に受け入れられやすくなっています。</p>
+
+<h3>Canvaで「改善しました」報告画像も作成</h3>
+
+<p>Canva&lt;!-- TOOL:Canva --&gt;の無料版で、月1回「保護者の声から改善したこと」を画像化してLINEで配信。透明性が伝わり、口コミ自体のトーンが柔らかくなりました。</p>
+
+<h2 id="section-5">導入前後でどう変わった？数字で見るビフォーアフター</h2>
+
+<p>| 項目 | 導入前 | 導入後（3か月後） |</p>
+<p>|------|--------|------------------|</p>
+<p>| 月の口コミ対応時間 | 約12時間 | 約2時間 |</p>
+<p>| 1件あたり返信時間 | 30分 | 5〜7分 |</p>
+<p>| 返信率 | 約40% | 100% |</p>
+<p>| 平均星評価 | 3.6 | 4.3 |</p>
+<p>| 月の新規問い合わせ | 8件 | 14件 |</p>
+<p>| 心理的負担（佐藤さん主観） | 10/10 | 3/10 |</p>
+
+<p><strong>月10時間の削減</strong>＝時給換算で月3万円相当のコスト削減に加え、星評価上昇と問い合わせ増の効果まで含めれば、売上インパクトは月10万円以上と佐藤さんは試算しています。さらに、英検対策など最新カリキュラム（アイードと築山塾の英検パーフェクト対策講座のような事例）の検討にも頭が回るようになり、「本業に集中できる時間」が戻ってきたのが何より大きな変化でした。</p>
+
+<h2 id="section-6">よくある質問</h2>
+
+<h3>Q1: ChatGPTに口コミの本文を入れて、個人情報の問題は大丈夫ですか？</h3>
+
+<p>投稿者名や生徒名など個人を特定できる情報は伏せ字にしてから入力すれば問題ありません。佐藤さんも「投稿者：A様」のように置き換えて運用しています。有料版のChatGPT Teamプランなら学習に使われない設定もあり、より安心です。</p>
+
+<h3>Q2: 返信の「AIっぽさ」が読者にバレませんか？</h3>
+
+<p>ステップ5の「固有情報を1〜2行追加」が最大のポイントです。塾名・地域名・季節の話題（「期末テスト前のお忙しい時期に」など）を1行入れるだけで、ほぼ判別不能になります。</p>
+
+<h3>Q3: 初心者におすすめの本やツールはありますか？</h3>
+
+<p>まずはChatGPTの無料プランから始め、プロンプト設計を1冊の入門書で学ぶのが最短ルートです。佐藤さんも「本を1冊読んでから始めた人と、いきなり触り始めた人では、3か月後の差が大きい」と話しています。下記におすすめをまとめました。</p>
+
+<p>&lt;!-- AFFILIATE2 --&gt;</p>
+
+<h2 id="section-7">まとめ：佐藤さんからのひとこと</h2>
+
+<p>「正直、AIに頼るのは『教育者として手抜きじゃないか』とずっと迷っていました。でも実際にやってみたら、削減できた10時間を生徒一人ひとりの学習プラン作成に使えるようになった。むしろ教育の質が上がったんです」――佐藤さんはそう語ります。</p>
+
+<p>学習塾の口コミ対応は、感情労働・時間制約・テンプレ化のジレンマという三重苦を抱える業務です。だからこそ、ChatGPTと無料ツールの組み合わせは、たった3か月でビジネスの体力を取り戻してくれます。今日のうちにスプレッドシート1枚作るところから、始めてみませんか。</p>
+<div class="cta-box">
+  <p class="cta-title">「うちも口コミ対応をどうにかしたい」と思った学習塾の方へ</p>
+  <p>この記事で紹介した方法は、どなたでも今日から始められます。「でも一人だと不安…」という方は、かわさき楽AIサポートにご相談ください。無料ツール中心で、あなたの業務に合ったAI活用を一緒に考えます。</p>
+  <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="cta-btn">初回無料で相談してみる</a>
+</div>
+<div class="related-articles">
+  <h2>あわせて読みたい</h2>
+  <ul class="related-list"><li>
+  <span class="tag">農業</span>
+  <a href="2fc64bde.html">農業 口コミ対応 人手不足で回らない → AIに任せたら楽になった話</a>
+</li></ul>
+</div>
+</article>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="../index.html">記事一覧</a>
+        <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">かわさき楽AIサポート</a>
+        <a href="../sitemap.xml">サイトマップ</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 AI活用ラボ / <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">株式会社スマイルファクトリー</a></p>
+    </div>
+  </footer>
+</body>
+</html>
