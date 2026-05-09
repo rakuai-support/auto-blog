@@ -29,6 +29,23 @@ def load_template():
         return f.read()
 
 
+def build_analytics_tag(config):
+    """GA4 measurement IDが設定されている場合にGoogle tagを生成する"""
+    measurement_id = config.get("analytics", {}).get("ga4_measurement_id", "").strip()
+    if not measurement_id:
+        return ""
+
+    safe_id = html.escape(measurement_id)
+    return f"""<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={safe_id}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+    gtag('config', '{safe_id}');
+  </script>"""
+
+
 def split_table_row(row):
     """Markdown table rowをセル配列に分解する"""
     return [cell.strip() for cell in row.strip().strip("|").split("|")]
@@ -753,6 +770,7 @@ def build_article(meta, md_text, template, config, all_meta, books_cache=None):
     page = page.replace("{{og_type}}", "article")
     page = page.replace("{{breadcrumb}}", breadcrumb)
     page = page.replace("{{structured_data}}", structured)
+    page = page.replace("{{analytics_tag}}", build_analytics_tag(config))
     page = page.replace("{{content}}", content)
 
     return page
@@ -835,6 +853,7 @@ document.querySelectorAll('.category-btn').forEach(function(btn) {{
     page = page.replace("{{og_type}}", "website")
     page = page.replace("{{breadcrumb}}", "")
     page = page.replace("{{structured_data}}", "")
+    page = page.replace("{{analytics_tag}}", build_analytics_tag(config))
     page = page.replace("{{content}}", content)
 
     return page

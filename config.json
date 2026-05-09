@@ -5,6 +5,9 @@
     "url": "https://rakuai-support.github.io/auto-blog",
     "language": "ja"
   },
+  "analytics": {
+    "ga4_measurement_id": "G-7ZNG2CPH6V"
+  },
   "generation": {
     "articles_per_run": 3,
     "max_articles": 300
