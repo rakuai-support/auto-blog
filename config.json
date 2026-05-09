@@ -6,7 +6,7 @@
     "language": "ja"
   },
   "generation": {
-    "articles_per_run": 1,
+    "articles_per_run": 3,
     "max_articles": 300
   },
   "affiliate": {
@@ -65,6 +65,48 @@
       }
     ]
   },
+  "saas_affiliate": [
+    {
+      "keyword": "経理",
+      "service": "freee会計",
+      "description": "クラウド会計ソフト。確定申告・請求書・経費精算をまとめて効率化",
+      "url": "https://www.freee.co.jp/",
+      "cta_text": "freee会計を無料で試す",
+      "badge": "無料で始められる"
+    },
+    {
+      "keyword": "予約",
+      "service": "STORES予約",
+      "description": "予約管理・顧客管理・決済をまとめて自動化。無料プランあり",
+      "url": "https://stores.jp/reserve",
+      "cta_text": "STORES予約を無料で試す",
+      "badge": "無料プランあり"
+    },
+    {
+      "keyword": "集客",
+      "service": "LINE公式アカウント",
+      "description": "メッセージ配信・クーポン・ショップカード。月200通まで無料",
+      "url": "https://www.lycbiz.com/jp/service/line-official-account/",
+      "cta_text": "LINE公式アカウントを開設する",
+      "badge": "無料で開設"
+    },
+    {
+      "keyword": "SNS",
+      "service": "Canva Pro",
+      "description": "SNS画像・チラシ・動画をAIで簡単作成。30日間無料トライアル",
+      "url": "https://www.canva.com/ja_jp/",
+      "cta_text": "Canvaを無料で試す",
+      "badge": "30日間無料"
+    },
+    {
+      "keyword": "顧客",
+      "service": "HubSpot CRM",
+      "description": "顧客管理・メール配信・営業管理を無料で一元化",
+      "url": "https://www.hubspot.jp/products/crm",
+      "cta_text": "HubSpot CRMを無料で始める",
+      "badge": "永久無料プラン"
+    }
+  ],
   "industries": [
     "飲食店", "美容室", "整骨院・整体院", "歯科医院", "不動産業",
     "税理士事務所", "司法書士事務所", "工務店・リフォーム業", "自動車整備業", "クリーニング店",

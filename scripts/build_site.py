@@ -1,10 +1,13 @@
 """
-静的サイトビルドスクリプト v2
-目次自動生成、構造化データ、関連記事、カテゴリフィルター対応
+静的サイトビルドスクリプト v3
+目次自動生成、構造化データ（Article/FAQ/HowTo）、関連記事、内部リンク、
+SaaSアフィリエイト、カテゴリフィルター、sitemap ping対応
 """
 import json
 import re
 import html
+import urllib.request
+import urllib.parse
 from pathlib import Path
 from datetime import datetime
 
@@ -322,6 +325,63 @@ def insert_affiliate(html_text, config, meta=None, books_cache=None):
     return result
 
 
+def insert_saas_cards(html_text, config):
+    """<!-- TOOL:ツール名 --> タグをSaaSカードに置換"""
+    saas_list = config.get("saas_affiliate", [])
+    if not saas_list:
+        return html_text
+
+    for saas in saas_list:
+        tag = f"<!-- TOOL:{saas['service']} -->"
+        if tag in html_text:
+            card = f"""<div class="saas-card">
+  <div class="saas-card-inner">
+    <div class="saas-content">
+      <span class="saas-badge">{html.escape(saas['badge'])}</span>
+      <p class="saas-name">{html.escape(saas['service'])}</p>
+      <p class="saas-desc">{html.escape(saas['description'])}</p>
+      <a href="{html.escape(saas['url'])}" target="_blank" rel="nofollow noopener" class="saas-btn">
+        {html.escape(saas['cta_text'])}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</div>"""
+            html_text = html_text.replace(tag, card)
+
+    # マッチしなかったタグを除去
+    html_text = re.sub(r"<!-- TOOL:.+? -->", "", html_text)
+    return html_text
+
+
+def insert_inline_links(html_text, current_meta, all_meta):
+    """記事本文中に関連記事への内部リンクを自然に挿入"""
+    same_industry = [m for m in all_meta
+                     if m["industry"] == current_meta["industry"]
+                     and m["slug"] != current_meta["slug"]]
+    same_topic = [m for m in all_meta
+                  if m["topic"] == current_meta["topic"]
+                  and m["slug"] != current_meta["slug"]]
+
+    links_added = 0
+    # 同業種の記事へのリンク（最大2つ）
+    for m in same_industry[:2]:
+        topic_escaped = html.escape(m["topic"])
+        link = f'<a href="{m["slug"]}.html" class="inline-link">{html.escape(m["industry"])}の{topic_escaped}</a>'
+        # まとめセクションの前に挿入
+        marker = '<h2 id="section-'
+        # 最後から2番目のh2の前にリンクを挿入
+        positions = [i for i, c in enumerate(html_text) if html_text[i:i+len(marker)] == marker]
+        if len(positions) >= 3 and links_added == 0:
+            insert_pos = positions[-2]
+            link_block = f'<p class="inline-related">あわせて読みたい: {link}の記事もおすすめです。</p>\n'
+            html_text = html_text[:insert_pos] + link_block + html_text[insert_pos:]
+            links_added += 1
+            break
+
+    return html_text
+
+
 def build_related_articles(current_meta, all_meta):
     """同じ業種 or 同じトピックの関連記事を最大4件表示"""
     related = []
@@ -385,8 +445,43 @@ def extract_faq(md_text):
     return faqs
 
 
+def extract_howto_steps(md_text):
+    """Markdownからステップ手順を抽出（HowToスキーマ用）"""
+    steps = []
+    lines = md_text.split("\n")
+    in_solution = False
+
+    for line in lines:
+        stripped = line.strip()
+        # 解決策セクションを探す
+        if stripped.startswith("## ") and ("解決" in stripped or "方法" in stripped or "ステップ" in stripped):
+            in_solution = True
+            continue
+        if in_solution and stripped.startswith("## "):
+            break
+        # h3のステップ見出しを抽出
+        if in_solution and stripped.startswith("### ") and ("ステップ" in stripped or "Step" in stripped.lower()):
+            step_text = re.sub(r"^###\s*(ステップ\d*[:：]?\s*|Step\s*\d*[:：]?\s*)", "", stripped).strip()
+            if step_text:
+                steps.append(step_text)
+        # 番号付きリストも抽出
+        if in_solution and re.match(r"^\d+\.\s", stripped):
+            step_text = re.sub(r"^\d+\.\s*", "", stripped).strip()
+            if step_text and len(step_text) > 5:
+                steps.append(step_text)
+
+    # 重複除去しつつ順序保持
+    seen = set()
+    unique = []
+    for s in steps:
+        if s not in seen:
+            seen.add(s)
+            unique.append(s)
+    return unique[:8]
+
+
 def build_structured_data(meta, config, md_text=""):
-    """JSON-LD構造化データを生成（Article + FAQ）"""
+    """JSON-LD構造化データを生成（Article + FAQ + HowTo）"""
     scripts = []
 
     # Article スキーマ
@@ -433,6 +528,25 @@ def build_structured_data(meta, config, md_text=""):
         }
         scripts.append(f'<script type="application/ld+json">{json.dumps(faq_data, ensure_ascii=False)}</script>')
 
+    # HowTo スキーマ
+    howto_steps = extract_howto_steps(md_text)
+    if len(howto_steps) >= 2:
+        howto_data = {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": f'{meta.get("industry", "")}の{meta.get("topic", "")}をAIで効率化する方法',
+            "description": meta["description"],
+            "step": [
+                {
+                    "@type": "HowToStep",
+                    "name": step,
+                    "text": step
+                }
+                for step in howto_steps
+            ]
+        }
+        scripts.append(f'<script type="application/ld+json">{json.dumps(howto_data, ensure_ascii=False)}</script>')
+
     return "\n".join(scripts)
 
 
@@ -440,6 +554,8 @@ def build_article(meta, md_text, template, config, all_meta, books_cache=None):
     """1記事分のHTMLを生成"""
     article_html = md_to_html(md_text)
     article_html = insert_affiliate(article_html, config, meta=meta, books_cache=books_cache)
+    article_html = insert_saas_cards(article_html, config)
+    article_html = insert_inline_links(article_html, meta, all_meta)
 
     # 目次を生成してh1の後に挿入
     headings = extract_h2_headings(md_text)
@@ -629,6 +745,46 @@ def main():
         f.write(sitemap)
 
     print(f"\nビルド完了: {built}記事 → public/")
+
+    # sitemap ping（Google / Bing）
+    ping_sitemap(config)
+
+
+def ping_sitemap(config):
+    """IndexNow API（Bing/Yandex等）にURL更新を通知"""
+    site_url = config["site"]["url"]
+    # IndexNow用キーファイルが存在すれば通知
+    key_path = Path(__file__).resolve().parent.parent / "public" / "indexnow-key.txt"
+    if not key_path.exists():
+        # キーを生成して保存
+        import hashlib
+        key = hashlib.md5(site_url.encode()).hexdigest()[:32]
+        key_path.write_text(key, encoding="utf-8")
+        # キー認証ファイルも作成
+        verify_path = Path(__file__).resolve().parent.parent / "public" / f"{key}.txt"
+        verify_path.write_text(key, encoding="utf-8")
+        print(f"  IndexNow キー生成: {key}")
+
+    key = key_path.read_text(encoding="utf-8").strip()
+    sitemap_url = f"{site_url}/sitemap.xml"
+
+    try:
+        data = json.dumps({
+            "host": "rakuai-support.github.io",
+            "key": key,
+            "keyLocation": f"{site_url}/{key}.txt",
+            "urlList": [f"{site_url}/index.html", sitemap_url]
+        }).encode("utf-8")
+        req = urllib.request.Request(
+            "https://api.indexnow.org/indexnow",
+            data=data,
+            headers={"Content-Type": "application/json; charset=utf-8"},
+            method="POST"
+        )
+        with urllib.request.urlopen(req, timeout=10) as res:
+            print(f"  IndexNow ping OK ({res.status})")
+    except Exception as e:
+        print(f"  IndexNow ping: {e}（初回は認証待ち）")
 
 
 if __name__ == "__main__":
