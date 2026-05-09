@@ -271,7 +271,55 @@ def insert_affiliate(html_text, config, meta=None, books_cache=None):
   </div>
 </div>"""
 
-    return html_text.replace("<!-- AFFILIATE -->", card_html)
+    result = html_text.replace("<!-- AFFILIATE -->", card_html)
+
+    # 2つ目のアフィリエイト枠（まとめ前）
+    if "<!-- AFFILIATE2 -->" in result:
+        # 別の訴求文でカードを生成
+        if book and book.get("image_url"):
+            aff_url = book.get("affiliate_url", "#")
+            card2_html = f"""<div class="aff-section">
+  <p class="aff-section-intro">この記事の内容をもっと体系的に学びたい方へ。実践的な一冊をご紹介します。</p>
+  <div class="aff-card">
+    <div class="aff-card-inner">
+      <div class="aff-book-img">
+        <img src="{html.escape(book['image_url'])}" alt="{html.escape(book['title'])}" loading="lazy">
+      </div>
+      <div class="aff-content">
+        <span class="aff-badge">おすすめ</span>
+        <p class="aff-book-title">{html.escape(book['title'])}</p>
+        <p class="aff-book-meta">{html.escape(book.get('author', ''))} / {book.get('price', '')}円（税込）</p>
+        {review_html}
+        <a href="{html.escape(aff_url)}" target="_blank" rel="nofollow" class="aff-btn">
+          楽天ブックスで詳細を見る
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>"""
+        else:
+            search_q = quote(f"{industry} {topic} AI 入門")
+            url2 = aff.get("base_url", "").replace("{query}", search_q)
+            card2_html = f"""<div class="aff-section">
+  <p class="aff-section-intro">「もっと詳しく知りたい」と思った方へ。AI活用の入門書から実践書まで、あなたに合った一冊が見つかるかもしれません。</p>
+  <div class="aff-card">
+    <div class="aff-card-inner" style="padding:1.25rem 1.5rem">
+      <div class="aff-content">
+        <span class="aff-badge">もっと学ぶ</span>
+        <p class="aff-book-title">{html.escape(industry)}×AI活用の関連書籍</p>
+        <p class="aff-book-meta">初心者向けから実践レベルまで幅広く揃っています</p>
+        <a href="{url2}" target="_blank" rel="nofollow" class="aff-btn">
+          楽天ブックスで探す
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>"""
+        result = result.replace("<!-- AFFILIATE2 -->", card2_html)
+
+    return result
 
 
 def build_related_articles(current_meta, all_meta):
@@ -301,9 +349,48 @@ def build_related_articles(current_meta, all_meta):
 </div>"""
 
 
-def build_structured_data(meta, config):
-    """JSON-LD構造化データを生成"""
-    data = {
+def extract_faq(md_text):
+    """MarkdownからFAQ（Q&A）を抽出"""
+    faqs = []
+    lines = md_text.split("\n")
+    current_q = None
+    current_a_lines = []
+    in_faq = False
+
+    for line in lines:
+        stripped = line.strip()
+        # 「よくある質問」セクション開始
+        if stripped.startswith("## ") and "よくある質問" in stripped:
+            in_faq = True
+            continue
+        # FAQ後の次のh2で終了
+        if in_faq and stripped.startswith("## "):
+            if current_q and current_a_lines:
+                faqs.append({"q": current_q, "a": " ".join(current_a_lines).strip()})
+            break
+        if not in_faq:
+            continue
+        # Q行を検出
+        if stripped.startswith("### ") and ("Q" in stripped or "質問" in stripped):
+            if current_q and current_a_lines:
+                faqs.append({"q": current_q, "a": " ".join(current_a_lines).strip()})
+            current_q = re.sub(r"^###\s*(Q\d*[:：]?\s*)", "", stripped).strip()
+            current_a_lines = []
+        elif current_q and stripped:
+            current_a_lines.append(stripped)
+
+    if current_q and current_a_lines:
+        faqs.append({"q": current_q, "a": " ".join(current_a_lines).strip()})
+
+    return faqs
+
+
+def build_structured_data(meta, config, md_text=""):
+    """JSON-LD構造化データを生成（Article + FAQ）"""
+    scripts = []
+
+    # Article スキーマ
+    article_data = {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": meta["title"],
@@ -324,7 +411,29 @@ def build_structured_data(meta, config):
             "@id": f'{config["site"]["url"]}/articles/{meta["slug"]}.html'
         }
     }
-    return f'<script type="application/ld+json">{json.dumps(data, ensure_ascii=False)}</script>'
+    scripts.append(f'<script type="application/ld+json">{json.dumps(article_data, ensure_ascii=False)}</script>')
+
+    # FAQ スキーマ
+    faqs = extract_faq(md_text)
+    if faqs:
+        faq_data = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": faq["q"],
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": faq["a"]
+                    }
+                }
+                for faq in faqs
+            ]
+        }
+        scripts.append(f'<script type="application/ld+json">{json.dumps(faq_data, ensure_ascii=False)}</script>')
+
+    return "\n".join(scripts)
 
 
 def build_article(meta, md_text, template, config, all_meta, books_cache=None):
@@ -347,10 +456,11 @@ def build_article(meta, md_text, template, config, all_meta, books_cache=None):
 
     # CTA
     ind_name = html.escape(meta.get("industry", ""))
+    topic_name = html.escape(meta.get("topic", ""))
     cta = f"""<div class="cta-box">
-  <p class="cta-title">{ind_name}のAI活用、何から始めればいいかわからない方へ</p>
-  <p>かわさき楽AIサポートでは、{ind_name}をはじめ中小企業・個人事業主の方に向けて、無料ツール中心のAI活用支援を行っています。初回相談は無料です。</p>
-  <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="cta-btn">無料で相談してみる</a>
+  <p class="cta-title">「うちも{topic_name}をどうにかしたい」と思った{ind_name}の方へ</p>
+  <p>この記事で紹介した方法は、どなたでも今日から始められます。「でも一人だと不安…」という方は、かわさき楽AIサポートにご相談ください。無料ツール中心で、あなたの業務に合ったAI活用を一緒に考えます。</p>
+  <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="cta-btn">初回無料で相談してみる</a>
 </div>"""
 
     content = f"<article>\n{header_meta}\n{article_html}\n{cta}\n{related}\n</article>"
@@ -358,8 +468,8 @@ def build_article(meta, md_text, template, config, all_meta, books_cache=None):
     # パンくずリスト
     breadcrumb = f'<div class="breadcrumb"><a href="../index.html">トップ</a><span>&gt;</span><span>{html.escape(meta.get("industry", ""))}</span><span>&gt;</span><span>{html.escape(meta["title"][:30])}...</span></div>'
 
-    # 構造化データ
-    structured = build_structured_data(meta, config)
+    # 構造化データ（FAQ含む）
+    structured = build_structured_data(meta, config, md_text)
 
     page = template.replace("{{page_title}}", html.escape(meta["title"]))
     page = page.replace("{{meta_description}}", html.escape(meta["description"]))

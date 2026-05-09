@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="xq2Wicedua7rwzz4MrzjFmLgCvCU9ZIT-cl3uNYukho">
+  <title>旅館・民宿 SNS投稿の作成 人手不足で回らない → AIに任せたら楽になった話 | AI活用ラボ</title>
+  <meta name="description" content="箱根の旅館女将がAIでSNS投稿を月12時間削減。具体的プロンプトとビフォーアフターを公開します。">
+  <link rel="canonical" href="https://rakuai-support.github.io/auto-blog/articles/4e49999c.html">
+  <!-- OGP -->
+  <meta property="og:title" content="旅館・民宿 SNS投稿の作成 人手不足で回らない → AIに任せたら楽になった話 | AI活用ラボ">
+  <meta property="og:description" content="箱根の旅館女将がAIでSNS投稿を月12時間削減。具体的プロンプトとビフォーアフターを公開します。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rakuai-support.github.io/auto-blog/articles/4e49999c.html">
+  <meta property="og:site_name" content="AI活用ラボ">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://rakuai-support.github.io/auto-blog/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="旅館・民宿 SNS投稿の作成 人手不足で回らない → AIに任せたら楽になった話 | AI活用ラボ">
+  <meta name="twitter:description" content="箱根の旅館女将がAIでSNS投稿を月12時間削減。具体的プロンプトとビフォーアフターを公開します。">
+  <meta name="twitter:image" content="https://rakuai-support.github.io/auto-blog/ogp.png">
+  <!-- フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "旅館・民宿 SNS投稿の作成 人手不足で回らない → AIに任せたら楽になった話", "description": "箱根の旅館女将がAIでSNS投稿を月12時間削減。具体的プロンプトとビフォーアフターを公開します。", "datePublished": "2026-05-09", "dateModified": "2026-05-09", "author": {"@type": "Organization", "name": "かわさき楽AIサポート", "url": "https://www.smilefactory-rakuai.com/"}, "publisher": {"@type": "Organization", "name": "株式会社スマイルファクトリー"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://rakuai-support.github.io/auto-blog/articles/4e49999c.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "パソコンが苦手でも本当にできますか？", "acceptedAnswer": {"@type": "Answer", "text": "恵子さんは普段スマホしか使いません。それでもChatGPTのスマホアプリで十分使いこなせています。文字を打つのが苦手な方は、音声入力で話しかけるだけでもプロンプトが書けるので、特別なPCスキルは不要です。"}}, {"@type": "Question", "name": "AIで作った文章をそのまま使うのは失礼ではないですか？", "acceptedAnswer": {"@type": "Answer", "text": "最終的に投稿前に自分の言葉で1〜2行追記するのがコツです。AIは「下書き作成役」として使い、最後の温かみは自分で加える。この使い分けをすれば、お客様にも違和感は伝わりません。"}}, {"@type": "Question", "name": "初心者におすすめの本やツールはありますか？", "acceptedAnswer": {"@type": "Answer", "text": "まずはChatGPT（無料版で十分）と、Canva無料版から始めるのがおすすめです。書籍は「ChatGPTビジネス活用」と検索すると初心者向けの解説書がたくさんあります。1冊じっくり読むよりも、手を動かしながら短い実用書を1〜2冊読むほうが、現場ですぐ使えるようになります。"}}, {"@type": "Question", "name": "初心者におすすめの本やツールはありますか？", "acceptedAnswer": {"@type": "Answer", "text": "まずはChatGPT（無料版で十分）と、Canva無料版から始めるのがおすすめです。書籍は「ChatGPTビジネス活用」と検索すると初心者向けの解説書がたくさんあります。1冊じっくり読むよりも、手を動かしながら短い実用書を1〜2冊読むほうが、現場ですぐ使えるようになります。"}}]}</script>
+  <!-- Google AdSense -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_ADSENSE_ID" crossorigin="anonymous"></script> -->
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="header-top">
+        <a href="../index.html" class="logo"><span class="logo-accent">AI</span>活用ラボ</a>
+        <nav class="header-nav">
+          <a href="../index.html">記事一覧</a>
+          <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="nav-cta">無料相談</a>
+        </nav>
+      </div>
+      <p class="tagline">中小企業・個人事業主のための業種別AI活用ガイド</p>
+    </div>
+  </header>
+  <main>
+    <div class="breadcrumb"><a href="../index.html">トップ</a><span>&gt;</span><span>旅館・民宿</span><span>&gt;</span><span>旅館・民宿 SNS投稿の作成 人手不足で回らない → AIに...</span></div>
+    <article>
+<div class="article-header-meta"><span class="tag">旅館・民宿</span><span>2026-05-09</span><span>約12分で読めます</span></div>
+<h1>旅館・民宿 SNS投稿の作成 人手不足で回らない → AIに任せたら楽になった話</h1>
+<div class="toc">
+  <div class="toc-title">この記事の内容</div>
+  <ol><li><a href="#section-1">恵子さんの1日と、SNS投稿に追い詰められる現実</a></li>
+<li><a href="#section-2">なぜSNS投稿は後回しになり続けるのか</a></li>
+<li><a href="#section-3">解決策1：ChatGPTを「専属コピーライター」にする</a></li>
+<li><a href="#section-4">解決策2：Canva＋AIで「画像作成」も自分でやる</a></li>
+<li><a href="#section-5">ビフォーアフター：数字で見える変化</a></li>
+<li><a href="#section-6">もっと深く学びたい人へ：恵子さんが次に手に取った1冊</a></li>
+<li><a href="#section-7">よくある質問</a></li>
+<li><a href="#section-8">まとめ：恵子さんからのひとこと</a></li></ol>
+</div>
+
+<p>朝5時半、箱根の小さな温泉旅館の厨房で、女将の<strong>山本恵子さん（52歳）</strong>は朝食の仕込みをしながら、スマホを片手にため息をついていました。「今日もインスタ、何も投稿できてない…」。従業員4名、客室8室の家族経営の旅館。接客も予約管理も経理も、ほとんど恵子さんが回しています。SNSが大事なのはわかっている。でも、写真を撮って、文章を考えて、ハッシュタグをつけて…そんな時間、どこにあるのでしょうか。2026年に入ってからは、AIを活用したSNS運用研修が各地で始まり「投稿作成・画像生成・分析改善をAIで3倍速に」という話題も耳にしますが、恵子さんにはまだ遠い世界のように感じていました。今日は、そんな恵子さんが「AIに任せたら楽になった」と語るまでの物語をお届けします。</p>
+
+<h2 id="section-1">恵子さんの1日と、SNS投稿に追い詰められる現実</h2>
+
+<h3>朝5時半から夜11時まで、SNSに割ける時間は「ゼロ」</h3>
+
+<p>恵子さんの1日は、朝5時半の朝食仕込みから始まります。7時にお客様の朝食提供、9時にチェックアウト対応、10時から客室清掃、12時に予約電話の対応、14時に翌日の食材発注、15時から夕食の仕込み、16時にチェックイン準備、18時から夕食提供、21時に最終のお見送り、それから翌日の予約確認と帳簿付け。気がつけば夜11時です。</p>
+
+<p>「SNSは大事だってわかってるんです。でも、どこにその時間を入れたらいいのか、本当にわからなくて」と恵子さんは話します。</p>
+
+<h3>「いい写真は撮れる。でも文章が出てこない」</h3>
+
+<p>旅館の魅力は十分にあります。露天風呂、季節の懐石料理、庭の紅葉。お客様にスマホで写真を撮っていただくと「素敵」と褒められます。でも、いざ自分でInstagramに投稿しようとすると、キャプションが書けない。「『本日も天気がよく…』って、毎回同じ書き出しになっちゃって。1投稿に30分以上かかることもありました」。</p>
+
+<p>そして、月に2〜3回しか投稿できない。フォロワーは伸びない。予約サイト経由の集客に頼り続け、手数料は10%以上取られていく。この悪循環が、ずっと恵子さんを苦しめていました。</p>
+
+<h2 id="section-2">なぜSNS投稿は後回しになり続けるのか</h2>
+
+<h3>「広告ではなく日常を発信」というハードルの高さ</h3>
+
+<p>旅館・民宿のSNSは「日常の魅力を切り取る」ことが求められます。これは大手チェーンのマニュアル運用とは違って、属人的な感性が必要です。だからこそ、本来は女将やオーナー本人の言葉で発信したい。でもその「本人」が一番忙しい、というジレンマがあります。</p>
+
+<h3>完璧主義の罠</h3>
+
+<p>「中途半端な投稿はかえってブランドを下げるのでは」という不安も、多くの旅館オーナーを止めています。恵子さんも「文章のセンスがない自分が書いて、お客様に失礼じゃないか」と長年悩んできました。</p>
+
+<h3>業界全体の人手不足</h3>
+
+<p>最近では、能登半島の前波で旧旅館を活用した民宿開業のニュースが報じられるなど、地域観光の再生に向けた動きが各地で進んでいます。一方で、施設運営のプロが解説する自治体向けセミナーでも「遊休不動産の利活用」が議論されているように、宿泊施設の運営現場は人手不足が常態化しています。SNS担当者を雇う余裕などない、というのが現実です。</p>
+
+<h2 id="section-3">解決策1：ChatGPTを「専属コピーライター」にする</h2>
+
+<h3>きっかけは1冊の本</h3>
+
+<p>転機は、商工会議所の経営者交流会で出会った同世代の旅館経営者からの一言でした。「うちもAIに頼ってますよ、楽になりますよ」。そこから恵子さんが最初に手に取ったのは、ChatGPTのビジネス活用について書かれた入門書でした。「最初はカタカナ用語ばかりで不安だったんですが、この本のとおりにやってみたら、いきなり使える文章が出てきて驚きました」と恵子さんは振り返ります。</p>
+
+<div class="aff-section">
+  <p class="aff-section-intro">旅館・民宿のSNS投稿の作成をさらに深く学べる書籍を探してみませんか？</p>
+  <div class="aff-card">
+    <div class="aff-card-inner" style="padding:1.25rem 1.5rem">
+      <div class="aff-content">
+        <span class="aff-badge">Recommend</span>
+        <p class="aff-book-title">旅館・民宿のAI活用に役立つ書籍</p>
+        <p class="aff-book-meta">楽天ブックスで関連書籍を探せます</p>
+        <a href="https://rpx.a8.net/svt/ejp?a8mat=2ZPHBO+123RHU+2HOM+686ZL&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0ea62065.34400275.0ea62066.204f04c0%2Fa18090710619_2ZPHBO_123RHU_2HOM_686ZL%3Fpc%3Dhttp%253A%252F%252Fsearch.rakuten.co.jp%252Fsearch%252Fmall%252F%E6%97%85%E9%A4%A8%E3%83%BB%E6%B0%91%E5%AE%BF%20SNS%E6%8A%95%E7%A8%BF%E3%81%AE%E4%BD%9C%E6%88%90%20AI%252F%26m%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252F" target="_blank" rel="nofollow" class="aff-btn">
+          楽天ブックスで探す
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>ステップ1：写真の情報をそのまま伝えるだけ</h3>
+
+<p>恵子さんが最初に試したプロンプトはこれでした。</p>
+
+<p>「箱根の小さな温泉旅館の女将です。今日撮った露天風呂の写真をInstagramに投稿します。秋の紅葉が湯船の縁から見える写真です。50代以上の女性に響く、しっとりした雰囲気のキャプションを200文字程度で3パターン作ってください。ハッシュタグも10個提案してください」</p>
+
+<p>この1つのプロンプトで、3パターンのキャプションとハッシュタグが30秒で出力されました。「あ、これそのまま使える…」と恵子さんは目を見張ったそうです。</p>
+
+<h3>ステップ2：季節ごとの投稿テンプレを量産</h3>
+
+<p>次に試したのがこちらです。</p>
+
+<p>「12月から2月までの3ヶ月間、毎週2回ペースでInstagramに投稿したいです。冬の旅館の魅力（雪見風呂・あったかい鍋・こたつ）を中心に、24投稿分のテーマと簡単な構成案を表形式で作ってください」</p>
+
+<p>3ヶ月分の「投稿カレンダー」が一瞬で完成。あとは当日に写真を撮って、テーマに沿ってキャプションを書くだけ。「企画する」という重い作業から解放されたのが、いちばん大きかったと恵子さんは話します。</p>
+
+<h3>ステップ3：返信もAIに下書きしてもらう</h3>
+
+<p>DMやコメント返信もAIに任せています。</p>
+
+<p>「Instagramで『年末に伺いたいのですが空室ありますか？』というDMが来ました。丁寧でかつ温かみのある返信文を、空室確認をご案内する形で書いてください」</p>
+
+<p>下書きをそのままコピー、宿の予約状況だけ自分で書き換えて送信。返信時間は1件あたり10分から1分に短縮されました。</p>
+
+<h2 id="section-4">解決策2：Canva＋AIで「画像作成」も自分でやる</h2>
+
+<h3>文章だけでなく、画像も作れるようになった</h3>
+
+<p>恵子さんが次にハマったのが、Canvaの無料テンプレートとAIの組み合わせです。Adobeなどでも「AIと始めるお手軽クリエイティブ」のコンテンツが続々登場している今、画像作成のハードルは劇的に下がっています。</p>
+
+<p>恵子さんは「冬の懐石料理プラン」の告知画像を、こんなプロンプトで作りました。</p>
+
+<p>「Canvaの無料テンプレートで使う、Instagram投稿用の縦長画像のキャッチコピーと構成を考えてください。テーマは『箱根の冬の懐石プラン・期間限定』。50代女性に響く、和の高級感を感じさせる短いコピーを5案、サブコピーも合わせて提案してください」</p>
+
+<p>出てきたコピー候補から1つ選び、Canvaのテンプレートにはめ込むだけで、プロっぽい告知画像が15分で完成。これまで外注していた季節キャンペーンのチラシ画像も、すべて自前で作れるようになりました。</p>
+
+<h3>失敗談：最初は「AIっぽい文章」になってしまった</h3>
+
+<p>ただし、最初からうまくいったわけではありません。「最初は『当館の自慢の温泉でごゆっくりお過ごしいただけます』みたいな、いかにも教科書的な文章ばかり出てきて、自分らしくないなと感じました」と恵子さんは振り返ります。</p>
+
+<p>工夫したのは、自分の口癖や旅館の小さなエピソードをプロンプトに入れることでした。「私はお客様に『ようこそお越しくださいました』とよく言います。番頭の主人は『うちの自慢は朝の鳥の声です』と言います。こういう表現を活かして、家族経営の温かみを出した投稿文にしてください」と指定したら、急に「うちらしい文章」になったそうです。</p>
+
+<h3>Googleフォーム×スプレッドシートで「お客様の声」も自動収集</h3>
+
+<p>さらに恵子さんは、チェックアウト時にお渡しするカードにGoogleフォームのQRコードを載せ、感想をいただくようにしました。集まった声はGoogleスプレッドシートに自動で記録され、月末にまとめてChatGPTに「この声の中から、SNS投稿のネタになりそうなものを3つ選んで、許可をいただいてから紹介する想定で投稿文を作ってください」と渡すだけ。LINE公式アカウントでのリピーター向け配信文も、同じ流れで月3本量産できるようになりました。</p>
+
+<h2 id="section-5">ビフォーアフター：数字で見える変化</h2>
+
+<h3>1日の変化</h3>
+
+<ul>
+<li><strong>作業時間</strong>：1投稿あたり30分 → 5分（83%削減）</li>
+<li><strong>写真撮影から投稿完了まで</strong>：撮影含めて1時間 → 15分</li>
+</ul>
+
+<h3>1週間の変化</h3>
+
+<ul>
+<li><strong>投稿本数</strong>：1〜2本 → 5本（約3倍）</li>
+<li><strong>DM返信時間</strong>：合計2時間 → 30分</li>
+</ul>
+
+<h3>1ヶ月の変化</h3>
+
+<ul>
+<li><strong>SNSにかかる総時間</strong>：月15時間 → 月3時間（<strong>月12時間削減</strong>）</li>
+<li><strong>Instagramフォロワー増加</strong>：月+10人 → 月+85人</li>
+<li><strong>SNS経由の直接予約</strong>：月2件 → 月9件</li>
+<li><strong>広告外注費</strong>：月3万円のチラシデザイン費用が<strong>ゼロに</strong>（年間36万円のコスト削減）</li>
+</ul>
+
+<p>「特に大きいのは、予約サイト経由ではなく、Instagram経由で直接予約してくださるお客様が増えたことです。手数料が浮く分、お客様にお出しするお料理を1品増やす余裕が出ました」と恵子さんは嬉しそうに話します。</p>
+
+<h2 id="section-6">もっと深く学びたい人へ：恵子さんが次に手に取った1冊</h2>
+
+<p>恵子さんは今、月に1回オンラインのAI活用勉強会にも参加しています。「最初の本で基礎を学んで、次は業種別の事例集を読みました。同じ宿泊業の人がどう使っているか知ると、また新しいアイデアが湧いてきます」。SNS運用に悩む同業の方には、まずはChatGPTのビジネス活用本から入って、その後にSNSマーケティングの実践本に進むのがおすすめだそうです。</p>
+
+<p>&lt;!-- AFFILIATE2 --&gt;</p>
+
+<h2 id="section-7">よくある質問</h2>
+
+<h3>Q1: パソコンが苦手でも本当にできますか？</h3>
+
+<p>恵子さんは普段スマホしか使いません。それでもChatGPTのスマホアプリで十分使いこなせています。文字を打つのが苦手な方は、音声入力で話しかけるだけでもプロンプトが書けるので、特別なPCスキルは不要です。</p>
+
+<h3>Q2: AIで作った文章をそのまま使うのは失礼ではないですか？</h3>
+
+<p>最終的に投稿前に自分の言葉で1〜2行追記するのがコツです。AIは「下書き作成役」として使い、最後の温かみは自分で加える。この使い分けをすれば、お客様にも違和感は伝わりません。</p>
+
+<h3>Q3: 初心者におすすめの本やツールはありますか？</h3>
+
+<p>まずはChatGPT（無料版で十分）と、Canva無料版から始めるのがおすすめです。書籍は「ChatGPTビジネス活用」と検索すると初心者向けの解説書がたくさんあります。1冊じっくり読むよりも、手を動かしながら短い実用書を1〜2冊読むほうが、現場ですぐ使えるようになります。</p>
+
+<h2 id="section-8">まとめ：恵子さんからのひとこと</h2>
+
+<p>「最初は『AIなんて若い人が使うもの』と思っていました。でもやってみたら、意外なほど簡単で、しかも自分の言葉を引き出してくれる相棒みたいな存在でした」と恵子さんは笑います。</p>
+
+<p>旅館・民宿のSNS投稿は、人手不足の現場では本当に後回しになりがちです。でも、AIを「自分の代わりに考えてくれるパートナー」として位置づければ、月12時間という時間を取り戻せます。その時間で、お客様一人ひとりへのおもてなしを丁寧にする。それこそが、小さな宿の本当の強みではないでしょうか。</p>
+
+<p>完璧を目指さなくて大丈夫です。恵子さんのように「とりあえず1つプロンプトを試してみる」ことから、あなたの旅館の物語も動き出します。</p>
+<div class="cta-box">
+  <p class="cta-title">「うちもSNS投稿の作成をどうにかしたい」と思った旅館・民宿の方へ</p>
+  <p>この記事で紹介した方法は、どなたでも今日から始められます。「でも一人だと不安…」という方は、かわさき楽AIサポートにご相談ください。無料ツール中心で、あなたの業務に合ったAI活用を一緒に考えます。</p>
+  <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="cta-btn">初回無料で相談してみる</a>
+</div>
+<div class="related-articles">
+  <h2>あわせて読みたい</h2>
+  <ul class="related-list"><li>
+  <span class="tag">飲食店</span>
+  <a href="091ae53a.html">飲食店 SNS投稿の作成 大変 → AIで解決した方法を全手順つきで紹介</a>
+</li></ul>
+</div>
+</article>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="../index.html">記事一覧</a>
+        <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">かわさき楽AIサポート</a>
+        <a href="../sitemap.xml">サイトマップ</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 AI活用ラボ / <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">株式会社スマイルファクトリー</a></p>
+    </div>
+  </footer>
+</body>
+</html>
