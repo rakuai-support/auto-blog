@@ -859,6 +859,59 @@ document.querySelectorAll('.category-btn').forEach(function(btn) {{
     return page
 
 
+def build_privacy_page(template, config):
+    """プライバシーポリシーページ"""
+    site_name = config["site"]["title"]
+    site_description = config["site"]["description"]
+    site_url = config["site"]["url"]
+    updated = datetime.now().strftime("%Y-%m-%d")
+
+    content = f"""<article class="policy-page">
+  <h1>プライバシーポリシー</h1>
+  <p>本プライバシーポリシーは、「{html.escape(site_name)}」（以下、「当サイト」）における個人情報および利用者情報の取り扱いについて定めるものです。</p>
+
+  <h2>アクセス解析ツールについて</h2>
+  <p>当サイトでは、サイトの利用状況を把握し、コンテンツ改善に役立てるため、Google LLC が提供する Google Analytics を利用しています。</p>
+  <p>Google Analytics は Cookie などを使用して、訪問ページ、滞在時間、利用環境などのトラフィックデータを収集します。これらのデータは匿名で収集されており、個人を特定するものではありません。</p>
+  <p>Google Analytics によるデータの収集および処理の仕組みについては、Google の説明ページをご確認ください。</p>
+  <p><a href="https://policies.google.com/technologies/partner-sites?hl=ja" target="_blank" rel="noopener">Google のサービスを使用するサイトやアプリから収集した情報の Google による使用</a></p>
+
+  <h2>Cookieの利用について</h2>
+  <p>当サイトでは、Google Analytics によるアクセス解析のために Cookie を使用する場合があります。Cookie は利用者のブラウザに保存される情報であり、氏名、住所、メールアドレスなど個人を直接特定する情報は含まれません。</p>
+  <p>Cookie の利用を望まない場合、利用者はブラウザの設定により Cookie を無効化できます。ただし、Cookie を無効化した場合、一部の機能が正しく動作しないことがあります。</p>
+
+  <h2>広告・アフィリエイトについて</h2>
+  <p>当サイトでは、第三者配信の広告サービスおよびアフィリエイトプログラムを利用する場合があります。商品・サービスの購入や申し込みに関する最終的な判断は、リンク先の公式情報をご確認ください。</p>
+
+  <h2>免責事項</h2>
+  <p>当サイトに掲載する情報は、できる限り正確な内容となるよう努めていますが、正確性・安全性・最新性を保証するものではありません。当サイトの情報に基づいて生じた損害等について、当サイトは責任を負いかねます。</p>
+
+  <h2>著作権について</h2>
+  <p>当サイトに掲載している文章・画像等の著作物を、無断で転載・利用することを禁止します。引用する場合は、引用元を明示し、著作権法上認められた範囲で行ってください。</p>
+
+  <h2>お問い合わせ</h2>
+  <p>当サイトに関するお問い合わせは、運営元の <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">かわさき楽AIサポート</a> までお願いいたします。</p>
+
+  <h2>改定について</h2>
+  <p>当サイトは、必要に応じて本プライバシーポリシーを変更することがあります。変更後の内容は、当ページに掲載した時点で有効となります。</p>
+  <p class="policy-updated">最終更新日: {updated}</p>
+</article>"""
+
+    page = template.replace("{{html_title}}", html.escape(f"プライバシーポリシー | {site_name}"))
+    page = page.replace("{{site_name}}", html.escape(site_name))
+    page = page.replace("{{site_description}}", html.escape(site_description))
+    page = page.replace("{{meta_description}}", html.escape(f"{site_name}のプライバシーポリシーです。"))
+    page = page.replace("{{canonical_url}}", f"{site_url}/privacy.html")
+    page = page.replace("{{root_path}}", "")
+    page = page.replace("{{og_type}}", "website")
+    page = page.replace("{{breadcrumb}}", '<div class="breadcrumb"><a href="index.html">トップ</a><span>&gt;</span><span>プライバシーポリシー</span></div>')
+    page = page.replace("{{structured_data}}", "")
+    page = page.replace("{{analytics_tag}}", build_analytics_tag(config))
+    page = page.replace("{{content}}", content)
+
+    return page
+
+
 def build_sitemap(all_meta, config):
     """sitemap.xml"""
     urls = [f"""
@@ -868,6 +921,14 @@ def build_sitemap(all_meta, config):
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>"""]
+
+    urls.append(f"""
+  <url>
+    <loc>{config['site']['url']}/privacy.html</loc>
+    <lastmod>{datetime.now().strftime('%Y-%m-%d')}</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>""")
 
     for meta in all_meta:
         urls.append(f"""
@@ -920,6 +981,11 @@ def main():
     index_html = build_index(all_meta, template, config)
     with open(PUBLIC_DIR / "index.html", "w", encoding="utf-8") as f:
         f.write(index_html)
+
+    # プライバシーポリシー
+    privacy_html = build_privacy_page(template, config)
+    with open(PUBLIC_DIR / "privacy.html", "w", encoding="utf-8") as f:
+        f.write(privacy_html)
 
     # サイトマップ
     sitemap = build_sitemap(all_meta, config)
