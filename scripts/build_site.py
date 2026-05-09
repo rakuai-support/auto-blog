@@ -354,56 +354,68 @@ def insert_saas_cards(html_text, config):
     return html_text
 
 
-def build_own_service_card(service):
-    """自社サービスのプロモーションカードを生成"""
-    return f"""<div class="own-service-card">
-  <div class="own-service-inner">
-    <div class="own-service-content">
-      <span class="own-service-badge">{html.escape(service['badge'])}</span>
-      <p class="own-service-name">{html.escape(service['name'])}</p>
-      <p class="own-service-desc">{html.escape(service['description'])}</p>
-      <a href="{html.escape(service['url'])}" target="_blank" rel="noopener" class="own-service-btn">
-        {html.escape(service['cta_text'])}
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
-</div>"""
-
-
 def insert_own_services(html_text, config, meta):
-    """記事のテーマ・業種に合う自社サービスカードを挿入"""
+    """記事本文中にサービスへの言及を自然に挿入する"""
     services = config.get("own_services", [])
     if not services:
         return html_text
 
     industry = meta.get("industry", "")
     topic = meta.get("topic", "")
+    inserted = 0
 
-    matched = []
-    for svc in services:
-        keywords = svc.get("keywords", [])
-        if any(k in industry or k in topic for k in keywords):
-            matched.append(svc)
+    # --- 1. 本文中のキーワードに応じたインライン挿入 ---
+    inline_rules = [
+        {
+            "triggers": ["メニュー", "チラシ", "価格表", "印刷"],
+            "service_id": "menuprint",
+            "text": 'ちなみに、スマホだけでメニュー表を作れる<a href="{url}" target="_blank" rel="noopener">MenuPrint</a>のようなサービスを使えば、デザインの手間もほぼゼロにできます。'
+        },
+        {
+            "triggers": ["集客", "検索", "見つけてもらえ", "認知", "口コミ"],
+            "service_id": "aio-shindan",
+            "text": '最近はAIが検索結果を要約して表示する時代です。自分のお店がAIに紹介されるかどうか、<a href="{url}" target="_blank" rel="noopener">AIOスコア診断</a>で無料チェックしてみるのもおすすめです。'
+        },
+        {
+            "triggers": ["外国人", "インバウンド", "多言語", "翻訳", "観光客"],
+            "service_id": "omotenashi-qr",
+            "text": '多言語対応には、日本語を入力するだけで15言語のAI音声動画を作れる<a href="{url}" target="_blank" rel="noopener">おもてなしQRメーカー</a>という選択肢もあります。'
+        },
+    ]
 
-    # マッチしなくてもAIO診断は全記事に出す
-    if not any(s["id"] == "aio-shindan" for s in matched):
-        aio = next((s for s in services if s["id"] == "aio-shindan"), None)
-        if aio:
-            matched.append(aio)
+    svc_map = {s["id"]: s for s in services}
 
-    if not matched:
-        return html_text
+    for rule in inline_rules:
+        if inserted >= 2:
+            break
+        svc = svc_map.get(rule["service_id"])
+        if not svc:
+            continue
 
-    # CTAボックスの直前に挿入
-    cards_html = "\n".join(build_own_service_card(s) for s in matched[:2])
-    promo_section = f"""<div class="own-service-section">
-  <p class="own-service-section-title">関連サービスのご紹介</p>
-  {cards_html}
-</div>"""
+        # 記事内にトリガーワードがあるか確認
+        has_trigger = any(t in html_text for t in rule["triggers"])
+        # 業種・テーマにキーワードが含まれるか確認
+        has_keyword = any(k in industry or k in topic for k in svc.get("keywords", []))
 
-    # disclaimerの前に挿入
-    html_text = html_text.replace('<div class="disclaimer">', f'{promo_section}\n<div class="disclaimer">')
+        if has_trigger or has_keyword:
+            mention = f'<p class="service-mention">{rule["text"].format(url=html.escape(svc["url"]))}</p>'
+            # 最後から3番目のh2の前に挿入（記事中盤あたり）
+            h2_positions = [m.start() for m in re.finditer(r'<h2 id="section-', html_text)]
+            if len(h2_positions) >= 3:
+                insert_pos = h2_positions[-3]
+                html_text = html_text[:insert_pos] + mention + "\n" + html_text[insert_pos:]
+                inserted += 1
+
+    # --- 2. FAQ内の「おすすめツール」回答にAIO診断を追加 ---
+    aio_svc = svc_map.get("aio-shindan")
+    if aio_svc and "おすすめ" in html_text and inserted < 3:
+        aio_mention = f'また、AIにお店が紹介されるかを確認できる<a href="{html.escape(aio_svc["url"])}" target="_blank" rel="noopener">AIOスコア診断（無料）</a>も試してみてください。'
+        # 「楽天ブックス」等の書籍紹介文の後に追加
+        html_text = html_text.replace(
+            "現場ですぐ使えるようになります。</p>",
+            f"現場ですぐ使えるようになります。{aio_mention}</p>"
+        )
+
     return html_text
 
 
