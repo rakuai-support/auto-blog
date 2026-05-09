@@ -29,6 +29,45 @@ def load_template():
         return f.read()
 
 
+def split_table_row(row):
+    """Markdown table rowをセル配列に分解する"""
+    return [cell.strip() for cell in row.strip().strip("|").split("|")]
+
+
+def is_table_row(line):
+    """Markdown table rowらしい行か判定する"""
+    stripped = line.strip()
+    return stripped.startswith("|") and stripped.endswith("|") and stripped.count("|") >= 2
+
+
+def is_table_separator(line):
+    """Markdown tableの区切り行（|---|---|）か判定する"""
+    if not is_table_row(line):
+        return False
+    cells = split_table_row(line)
+    return bool(cells) and all(re.fullmatch(r":?-{3,}:?", cell.strip()) for cell in cells)
+
+
+def build_table_html(header_row, body_rows):
+    """Markdown tableをHTML tableに変換する"""
+    headers = split_table_row(header_row)
+    thead = "".join(f"<th>{inline_format(cell)}</th>" for cell in headers)
+    rows = []
+    for row in body_rows:
+        cells = split_table_row(row)
+        if len(cells) < len(headers):
+            cells += [""] * (len(headers) - len(cells))
+        cells = cells[:len(headers)]
+        rows.append("<tr>" + "".join(f"<td>{inline_format(cell)}</td>" for cell in cells) + "</tr>")
+
+    return f"""<div class="table-wrap">
+<table>
+  <thead><tr>{thead}</tr></thead>
+  <tbody>{"".join(rows)}</tbody>
+</table>
+</div>"""
+
+
 def md_to_html(md_text):
     """簡易Markdownパーサー（外部依存なし）"""
     lines = md_text.split("\n")
@@ -37,7 +76,9 @@ def md_to_html(md_text):
     list_type = None
     h2_count = 0
 
-    for line in lines:
+    i = 0
+    while i < len(lines):
+        line = lines[i]
         stripped = line.strip()
 
         if not stripped:
@@ -45,10 +86,39 @@ def md_to_html(md_text):
                 result.append(f"</{list_type}>")
                 in_list = False
             result.append("")
+            i += 1
             continue
 
         # 水平線（---）はスキップ
         if stripped == "---":
+            i += 1
+            continue
+
+        # アフィリエイトタグ
+        affiliate_markers = ["<!-- AFFILIATE -->", "<!-- AFFILIATE2 -->"]
+        matched_marker = next((marker for marker in affiliate_markers if marker in stripped), None)
+        if matched_marker:
+            if in_list:
+                result.append(f"</{list_type}>")
+                in_list = False
+            before = stripped.replace(matched_marker, "").strip()
+            if before:
+                result.append(f"<p>{inline_format(before)}</p>")
+            result.append(matched_marker)
+            i += 1
+            continue
+
+        # Markdown table
+        if i + 1 < len(lines) and is_table_row(stripped) and is_table_separator(lines[i + 1].strip()):
+            if in_list:
+                result.append(f"</{list_type}>")
+                in_list = False
+            body_rows = []
+            i += 2
+            while i < len(lines) and is_table_row(lines[i].strip()):
+                body_rows.append(lines[i].strip())
+                i += 1
+            result.append(build_table_html(stripped, body_rows))
             continue
 
         # 見出し
@@ -58,6 +128,7 @@ def md_to_html(md_text):
                 in_list = False
             text = stripped[4:]
             result.append(f"<h3>{inline_format(text)}</h3>")
+            i += 1
             continue
         if stripped.startswith("## "):
             if in_list:
@@ -67,17 +138,14 @@ def md_to_html(md_text):
             text = stripped[3:]
             anchor = f"section-{h2_count}"
             result.append(f'<h2 id="{anchor}">{inline_format(text)}</h2>')
+            i += 1
             continue
         if stripped.startswith("# "):
             if in_list:
                 result.append(f"</{list_type}>")
                 in_list = False
             result.append(f"<h1>{inline_format(stripped[2:])}</h1>")
-            continue
-
-        # アフィリエイトタグ
-        if "<!-- AFFILIATE -->" in stripped:
-            result.append(stripped)
+            i += 1
             continue
 
         # リスト
@@ -87,6 +155,7 @@ def md_to_html(md_text):
                 in_list = True
                 list_type = "ul"
             result.append(f"<li>{inline_format(stripped[2:])}</li>")
+            i += 1
             continue
 
         if re.match(r"^\d+\. ", stripped):
@@ -96,6 +165,7 @@ def md_to_html(md_text):
                 list_type = "ol"
             content = re.sub(r"^\d+\. ", "", stripped)
             result.append(f"<li>{inline_format(content)}</li>")
+            i += 1
             continue
 
         # 通常段落
@@ -103,6 +173,7 @@ def md_to_html(md_text):
             result.append(f"</{list_type}>")
             in_list = False
         result.append(f"<p>{inline_format(stripped)}</p>")
+        i += 1
 
     if in_list:
         result.append(f"</{list_type}>")
@@ -495,6 +566,8 @@ def extract_faq(md_text):
             break
         if not in_faq:
             continue
+        if stripped in ["<!-- AFFILIATE -->", "<!-- AFFILIATE2 -->", "---"]:
+            continue
         # Q行を検出
         if stripped.startswith("### ") and ("Q" in stripped or "質問" in stripped):
             if current_q and current_a_lines:
@@ -502,12 +575,22 @@ def extract_faq(md_text):
             current_q = re.sub(r"^###\s*(Q\d*[:：]?\s*)", "", stripped).strip()
             current_a_lines = []
         elif current_q and stripped:
-            current_a_lines.append(stripped)
+            answer_line = re.sub(r"<!--\s*AFFILIATE2?\s*-->", "", stripped).strip()
+            if answer_line:
+                current_a_lines.append(answer_line)
 
     if current_q and current_a_lines:
         faqs.append({"q": current_q, "a": " ".join(current_a_lines).strip()})
 
-    return faqs
+    seen_questions = set()
+    unique_faqs = []
+    for faq in faqs:
+        if faq["q"] in seen_questions:
+            continue
+        seen_questions.add(faq["q"])
+        unique_faqs.append(faq)
+
+    return unique_faqs
 
 
 def extract_howto_steps(md_text):
