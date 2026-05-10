@@ -45,8 +45,8 @@ def search_books(app_id, access_key, aff_id, title_keyword, hits=2):
     )
 
     req = urllib.request.Request(url, headers={
-        "Referer": "https://rakuai-support.github.io/",
-        "Origin": "https://rakuai-support.github.io",
+        "Referer": "https://okomari.smilefactory-rakuai.com/",
+        "Origin": "https://okomari.smilefactory-rakuai.com",
     })
 
     with urllib.request.urlopen(req, timeout=15) as res:

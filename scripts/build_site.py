@@ -1018,7 +1018,7 @@ def ping_sitemap(config):
 
     try:
         data = json.dumps({
-            "host": "rakuai-support.github.io",
+            "host": "okomari.smilefactory-rakuai.com",
             "key": key,
             "keyLocation": f"{site_url}/{key}.txt",
             "urlList": [f"{site_url}/index.html", sitemap_url]

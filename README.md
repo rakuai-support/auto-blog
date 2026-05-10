@@ -2,7 +2,7 @@
 
 飲食店・美容室・士業・工務店などの「困った」をAIで減らす具体策を **完全自動** で生成・公開する静的サイトシステム。
 
-**公開URL**: https://rakuai-support.github.io/auto-blog/
+**公開URL**: https://okomari.smilefactory-rakuai.com/
 
 ## 概要
 
@@ -78,7 +78,7 @@ RAKUTEN_AFFILIATE_ID=（楽天アフィリエイトID）
 ```
 
 楽天API新ポータル（https://webservice.rakuten.co.jp/）でアプリ登録が必要。
-`Referer` ヘッダーに登録ドメイン（`https://rakuai-support.github.io/`）を設定。
+`Referer` ヘッダーに登録ドメイン（`https://okomari.smilefactory-rakuai.com/`）を設定。
 
 ### 2. GitHub Pages の有効化
 
