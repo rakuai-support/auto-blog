@@ -3,13 +3,13 @@
 
   <url>
     <loc>https://okomari.smilefactory-rakuai.com/index.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://okomari.smilefactory-rakuai.com/privacy.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -46,6 +46,12 @@
   <url>
     <loc>https://okomari.smilefactory-rakuai.com/articles/1aab3038.html</loc>
     <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://okomari.smilefactory-rakuai.com/articles/1b0996a3.html</loc>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -122,6 +128,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://okomari.smilefactory-rakuai.com/articles/523cae8d.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://okomari.smilefactory-rakuai.com/articles/59496467.html</loc>
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -184,6 +196,12 @@
   <url>
     <loc>https://okomari.smilefactory-rakuai.com/articles/95e4f0ea.html</loc>
     <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://okomari.smilefactory-rakuai.com/articles/96d32e66.html</loc>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
