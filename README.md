@@ -80,6 +80,20 @@ RAKUTEN_AFFILIATE_ID=（楽天アフィリエイトID）
 楽天API新ポータル（https://webservice.rakuten.co.jp/）でアプリ登録が必要。
 `Referer` ヘッダーに登録ドメイン（`https://okomari.smilefactory-rakuai.com/`）を設定。
 
+メール通知を使う場合は、同じ `.env` にSMTP設定を追加する:
+
+```
+NOTIFY_EMAIL_TO=admin@smilefactory-rakuai.com
+NOTIFY_EMAIL_FROM=admin@smilefactory-rakuai.com
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=admin@smilefactory-rakuai.com
+SMTP_PASS=（SMTPパスワードまたはアプリパスワード）
+SMTP_ENABLE_SSL=true
+```
+
+`SMTP_PASS` はGitに入れず、ローカルの `.env` のみに保存する。
+
 ### 2. GitHub Pages の有効化
 
 リポジトリ Settings → Pages → Source: GitHub Actions
