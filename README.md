@@ -13,6 +13,7 @@
 3. **書籍情報取得** - 楽天ブックスAPIで記事テーマに合った書籍を検索・キャッシュ
 4. **サイトビルド** - Markdown → HTML変換、目次・構造化データ・アフィリエイトカード付与
 5. **デプロイ** - git push → GitHub Actions → GitHub Pages自動公開
+6. **メール通知** - 成功・失敗どちらの場合もSMTPで管理者へ結果を通知
 
 人間の介入なしで記事が増え続け、アフィリエイト収益を生む仕組み。
 
@@ -37,6 +38,7 @@ auto-blog/
 │   ├── fetch_books.py           # 楽天ブックスAPI書籍検索・キャッシュ
 │   ├── build_site.py            # 静的サイトビルダー（Markdown→HTML）
 │   ├── run_daily.bat            # 毎日の自動実行バッチ
+│   ├── send_notification.ps1    # SMTPメール通知（成功/失敗）
 │   ├── setup_scheduler.bat      # タスクスケジューラ登録用
 │   └── task_definition.xml      # タスクスケジューラ定義（8:00 / 17:00）
 ├── templates/
@@ -93,6 +95,7 @@ SMTP_ENABLE_SSL=true
 ```
 
 `SMTP_PASS` はGitに入れず、ローカルの `.env` のみに保存する。
+Gmail / Google Workspace の場合、`SMTP_PASS` には通常のGoogleログインパスワードではなく、Googleアカウントで発行したアプリパスワードを設定する。
 
 ### 2. GitHub Pages の有効化
 
@@ -107,6 +110,30 @@ scripts\setup_scheduler.bat
 ```
 
 毎日8:00と17:00に `scripts\run_daily.bat` が実行される。
+
+### 4. メール通知
+
+`scripts\run_daily.bat` は各処理の終了コードを確認し、成功・失敗どちらの場合も `scripts\send_notification.ps1` からSMTPメールを送信する。
+
+通常運用では、8:00と17:00の自動実行ごとに成功通知が届くため、1日2通届く。失敗時は失敗箇所をメッセージに含めて通知する。
+
+通知件名の例:
+
+```
+[auto-blog] SUCCESS daily run 2026-05-11 08:05:00
+[auto-blog] FAILURE daily run 2026-05-11 17:03:00
+```
+
+失敗通知の主なメッセージ:
+
+- `ERROR: generate`
+- `ERROR: fetch_books`
+- `ERROR: build_site`
+- `ERROR: git add`
+- `ERROR: git commit`
+- `ERROR: git push`
+
+通知メールには、リポジトリパス、ブランチ、コミット、`logs\daily.log` の末尾が含まれる。SMTP設定が未設定、または通知送信だけが失敗した場合でも、記事生成・ビルド・pushの本処理は通知エラーで停止しない。
 
 ## 各スクリプトの詳細
 
@@ -133,6 +160,20 @@ scripts\setup_scheduler.bat
 - 関連記事（同業種/同テーマから最大4件）
 - JSON-LD構造化データ
 - サイトマップ自動生成
+
+### run_daily.bat
+
+- `generate_article.py` → `fetch_books.py` → `build_site.py` → `git add` → `git commit` → `git push` の順に実行
+- `GIT_TERMINAL_PROMPT=0` を設定し、GitHub認証で対話入力待ちになって止まることを防止
+- 各ステップの失敗を `logs\daily.log` に記録し、失敗通知を送信
+- 差分がない場合は `NO CHANGES` として成功通知を送信
+
+### send_notification.ps1
+
+- `.env` からSMTP設定を読み込み、成功・失敗通知を送信
+- `NOTIFY_EMAIL_TO` はカンマまたはセミコロン区切りで複数宛先に対応
+- SMTP設定が未設定の場合は通知をスキップし、ログに理由を出力
+- 通知失敗時も終了コードは0にして、本処理の成否を通知処理で上書きしない
 
 ## 収益化の仕組み
 
