@@ -6,6 +6,7 @@
   <meta name="google-site-verification" content="xq2Wicedua7rwzz4MrzjFmLgCvCU9ZIT-cl3uNYukho">
   <title>学習塾 SNS投稿の作成 人手不足で回らない → AIに任せたら楽になった話 | 小さなお店のための業種別AIお困り解決帳</title>
   <meta name="description" content="学習塾のSNS投稿に悩む経営者向け。ChatGPT×Canvaで月20時間を3時間に削減した実例とプロンプトを公開。">
+  <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://okomari.smilefactory-rakuai.com/articles/b012adf0.html">
   <!-- OGP -->
   <meta property="og:title" content="学習塾 SNS投稿の作成 人手不足で回らない → AIに任せたら楽になった話 | 小さなお店のための業種別AIお困り解決帳">
@@ -34,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "学習塾 SNS投稿の作成 人手不足で回らない → AIに任せたら楽になった話", "description": "学習塾のSNS投稿に悩む経営者向け。ChatGPT×Canvaで月20時間を3時間に削減した実例とプロンプトを公開。", "datePublished": "2026-05-20", "dateModified": "2026-05-20", "author": {"@type": "Organization", "name": "かわさき楽AIサポート", "url": "https://www.smilefactory-rakuai.com/"}, "publisher": {"@type": "Organization", "name": "株式会社スマイルファクトリー"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://okomari.smilefactory-rakuai.com/articles/b012adf0.html"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "url": "https://okomari.smilefactory-rakuai.com/articles/b012adf0.html", "headline": "学習塾 SNS投稿の作成 人手不足で回らない → AIに任せたら楽になった話", "description": "学習塾のSNS投稿に悩む経営者向け。ChatGPT×Canvaで月20時間を3時間に削減した実例とプロンプトを公開。", "image": "https://okomari.smilefactory-rakuai.com/ogp.png", "datePublished": "2026-05-20", "dateModified": "2026-05-20", "author": {"@type": "Organization", "name": "かわさき楽AIサポート", "url": "https://www.smilefactory-rakuai.com/"}, "publisher": {"@type": "Organization", "name": "株式会社スマイルファクトリー"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://okomari.smilefactory-rakuai.com/articles/b012adf0.html"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "AIで作った文章だと、保護者に冷たい印象を与えませんか？", "acceptedAnswer": {"@type": "Answer", "text": "最初の数回はそう感じるかもしれません。ただ、プロンプトに「教室の固有エピソードを1つ入れる」「具体的な生徒の頑張りを書く」と指示すれば、人間が書くより温かい文章になることもあります。AIは下書きで、最終チェックは人間が行うのが基本です。"}}, {"@type": "Question", "name": "初心者におすすめの本やツールはありますか？", "acceptedAnswer": {"@type": "Answer", "text": "書籍は「ChatGPT 仕事術」系の入門書が1冊あれば十分です。田中さんも本1冊を読んでスタートしました。ツールはChatGPTの無料版とCanvaの無料版から始めれば、追加コストゼロで運用できます。"}}, {"@type": "Question", "name": "投稿のネタが尽きたらどうすればいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "ChatGPTに「学習塾のInstagram投稿ネタを20個提案してください」と聞けば、季節イベント・受験情報・勉強法のコツなど、すぐに候補が出ます。そこから自塾に合うものを選ぶだけです。"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "学習塾のSNS投稿の作成をAIで効率化する方法", "description": "学習塾のSNS投稿に悩む経営者向け。ChatGPT×Canvaで月20時間を3時間に削減した実例とプロンプトを公開。", "step": [{"@type": "HowToStep", "name": "**塾の基本情報をChatGPTに「記憶」させる**", "text": "**塾の基本情報をChatGPTに「記憶」させる**"}, {"@type": "HowToStep", "name": "**その日の「ネタ」を箇条書きでメモする**", "text": "**その日の「ネタ」を箇条書きでメモする**"}, {"@type": "HowToStep", "name": "**箇条書きをChatGPTで投稿文に変換する**", "text": "**箇条書きをChatGPTで投稿文に変換する**"}, {"@type": "HowToStep", "name": "**画像はCanvaでテンプレ化**<!-- TOOL:Canva -->", "text": "**画像はCanvaでテンプレ化**<!-- TOOL:Canva -->"}, {"@type": "HowToStep", "name": "**週1回まとめて作って予約投稿する**", "text": "**週1回まとめて作って予約投稿する**"}]}</script>
   <!-- Google AdSense -->
@@ -108,15 +109,19 @@
 <p>田中さんが最初に読んだのは、ChatGPTのビジネス活用について書かれた入門書でした。「この本に書いてあった通りにテンプレートを作ったら、最初の投稿が10分で完成したんです」と振り返ります。</p>
 
 <div class="aff-section">
-  <p class="aff-section-intro">学習塾のSNS投稿の作成をさらに深く学べる書籍を探してみませんか？</p>
+  <p class="aff-section-intro">学習塾のSNS投稿の作成について、さらに詳しく学びたい方にはこちらの書籍がおすすめです。</p>
   <div class="aff-card">
-    <div class="aff-card-inner" style="padding:1.25rem 1.5rem">
+    <div class="aff-card-inner">
+      <div class="aff-book-img">
+        <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/9594/9784866809594_1_2.jpg" alt="ChatGPT最強の仕事術" loading="lazy">
+      </div>
       <div class="aff-content">
-        <span class="aff-badge">Recommend</span>
-        <p class="aff-book-title">学習塾のAI活用に役立つ書籍</p>
-        <p class="aff-book-meta">楽天ブックスで関連書籍を探せます</p>
-        <a href="https://rpx.a8.net/svt/ejp?a8mat=2ZPHBO+123RHU+2HOM+686ZL&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0ea62065.34400275.0ea62066.204f04c0%2Fa18090710619_2ZPHBO_123RHU_2HOM_686ZL%3Fpc%3Dhttp%253A%252F%252Fsearch.rakuten.co.jp%252Fsearch%252Fmall%252F%E5%AD%A6%E7%BF%92%E5%A1%BE%20SNS%E6%8A%95%E7%A8%BF%E3%81%AE%E4%BD%9C%E6%88%90%20AI%252F%26m%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252F" target="_blank" rel="nofollow" class="aff-btn">
-          楽天ブックスで探す
+        <span class="aff-badge">Pick Up</span>
+        <p class="aff-book-title">ChatGPT最強の仕事術</p>
+        <p class="aff-book-meta">池田朋弘 / 1,760円（税込）</p>
+        <div class="aff-review"><span class="aff-review-stars">★★★★☆</span><span class="aff-review-count">おすすめ書籍</span></div>
+        <a href="https://rpx.a8.net/svt/ejp?a8mat=2ZPHBO+123RHU+2HOM+686ZL&amp;rakuten=y&amp;a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0ea62065.34400275.0ea62066.204f04c0%2Fa18090710619_2ZPHBO_123RHU_2HOM_686ZL%3Fpc%3Dhttp%253A%252F%252Fsearch.rakuten.co.jp%252Fsearch%252Fmall%252FChatGPT%2B%E4%BB%95%E4%BA%8B%E8%A1%93%252F%26m%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252F" target="_blank" rel="nofollow" class="aff-btn">
+          楽天ブックスで見る
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
@@ -206,15 +211,19 @@
 <p>ChatGPTに「学習塾のInstagram投稿ネタを20個提案してください」と聞けば、季節イベント・受験情報・勉強法のコツなど、すぐに候補が出ます。そこから自塾に合うものを選ぶだけです。</p>
 
 <div class="aff-section">
-  <p class="aff-section-intro">「もっと詳しく知りたい」と思った方へ。AI活用の入門書から実践書まで、あなたに合った一冊が見つかるかもしれません。</p>
+  <p class="aff-section-intro">この記事の内容をもっと体系的に学びたい方へ。実践的な一冊をご紹介します。</p>
   <div class="aff-card">
-    <div class="aff-card-inner" style="padding:1.25rem 1.5rem">
+    <div class="aff-card-inner">
+      <div class="aff-book-img">
+        <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/9594/9784866809594_1_2.jpg" alt="ChatGPT最強の仕事術" loading="lazy">
+      </div>
       <div class="aff-content">
-        <span class="aff-badge">もっと学ぶ</span>
-        <p class="aff-book-title">学習塾×AI活用の関連書籍</p>
-        <p class="aff-book-meta">初心者向けから実践レベルまで幅広く揃っています</p>
-        <a href="https://rpx.a8.net/svt/ejp?a8mat=2ZPHBO+123RHU+2HOM+686ZL&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0ea62065.34400275.0ea62066.204f04c0%2Fa18090710619_2ZPHBO_123RHU_2HOM_686ZL%3Fpc%3Dhttp%253A%252F%252Fsearch.rakuten.co.jp%252Fsearch%252Fmall%252F%E5%AD%A6%E7%BF%92%E5%A1%BE%20SNS%E6%8A%95%E7%A8%BF%E3%81%AE%E4%BD%9C%E6%88%90%20AI%20%E5%85%A5%E9%96%80%252F%26m%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252F" target="_blank" rel="nofollow" class="aff-btn">
-          楽天ブックスで探す
+        <span class="aff-badge">おすすめ</span>
+        <p class="aff-book-title">ChatGPT最強の仕事術</p>
+        <p class="aff-book-meta">池田朋弘 / 1,760円（税込）</p>
+        <div class="aff-review"><span class="aff-review-stars">★★★★☆</span><span class="aff-review-count">おすすめ書籍</span></div>
+        <a href="https://rpx.a8.net/svt/ejp?a8mat=2ZPHBO+123RHU+2HOM+686ZL&amp;rakuten=y&amp;a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0ea62065.34400275.0ea62066.204f04c0%2Fa18090710619_2ZPHBO_123RHU_2HOM_686ZL%3Fpc%3Dhttp%253A%252F%252Fsearch.rakuten.co.jp%252Fsearch%252Fmall%252FChatGPT%2B%E4%BB%95%E4%BA%8B%E8%A1%93%252F%26m%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252F" target="_blank" rel="nofollow" class="aff-btn">
+          楽天ブックスで詳細を見る
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>

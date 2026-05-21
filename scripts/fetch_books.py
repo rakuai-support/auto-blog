@@ -1,6 +1,6 @@
 """
 楽天ブックスAPIから各記事に合った書籍を検索してキャッシュする。
-titleパラメータで書名検索し、記事テーマに関連する本を自動選択。
+タイトル検索で狭く探し、見つからない場合は総合検索のkeyword検索で広く拾う。
 """
 import json
 import os
@@ -14,6 +14,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 CONTENT_DIR = BASE_DIR / "content" / "articles"
 CACHE_PATH = BASE_DIR / "content" / "books_cache.json"
 ENV_PATH = BASE_DIR / ".env"
+REQUEST_HEADERS = {
+    "Referer": "https://okomari.smilefactory-rakuai.com/",
+    "Origin": "https://okomari.smilefactory-rakuai.com",
+}
 
 
 def load_env():
@@ -31,39 +35,121 @@ def load_env():
     return env
 
 
-def search_books(app_id, access_key, aff_id, title_keyword, hits=2):
-    """楽天ブックスAPIでタイトル検索"""
-    encoded = urllib.parse.quote(title_keyword)
-    url = (
-        f"https://openapi.rakuten.co.jp/services/api/BooksBook/Search/20170404"
-        f"?applicationId={app_id}"
-        f"&accessKey={access_key}"
-        f"&affiliateId={aff_id}"
-        f"&title={encoded}"
-        f"&hits={hits}"
-        f"&sort=sales"
-    )
-
-    req = urllib.request.Request(url, headers={
-        "Referer": "https://okomari.smilefactory-rakuai.com/",
-        "Origin": "https://okomari.smilefactory-rakuai.com",
-    })
-
+def request_json(url):
+    req = urllib.request.Request(url, headers=REQUEST_HEADERS)
     with urllib.request.urlopen(req, timeout=15) as res:
-        data = json.loads(res.read())
+        return json.loads(res.read())
 
+
+def build_url(endpoint, params):
+    query = urllib.parse.urlencode(params)
+    return f"https://openapi.rakuten.co.jp/services/api/{endpoint}/20170404?{query}"
+
+
+def normalize_book(item):
+    return {
+        "title": item.get("title", ""),
+        "author": item.get("author", ""),
+        "price": item.get("itemPrice", 0),
+        "review_count": item.get("reviewCount", 0),
+        "review_average": item.get("reviewAverage", 0),
+        "image_url": item.get("largeImageUrl") or item.get("mediumImageUrl") or item.get("smallImageUrl") or "",
+        "affiliate_url": item.get("affiliateUrl") or item.get("itemUrl", ""),
+    }
+
+
+def parse_items(data):
     results = []
     for item_wrap in data.get("Items", []):
-        item = item_wrap["Item"]
-        results.append({
-            "title": item.get("title", ""),
-            "author": item.get("author", ""),
-            "price": item.get("itemPrice", 0),
-            "review_count": item.get("reviewCount", 0),
-            "image_url": item.get("largeImageUrl", ""),
-            "affiliate_url": item.get("affiliateUrl", ""),
-        })
+        item = item_wrap.get("Item", item_wrap)
+        book = normalize_book(item)
+        if book["title"] and book["affiliate_url"]:
+            results.append(book)
     return results
+
+
+def search_book_title(app_id, access_key, aff_id, title_keyword, hits=3):
+    """楽天ブックス書籍検索APIでタイトルを狭く検索"""
+    url = build_url("BooksBook/Search", {
+        "applicationId": app_id,
+        "accessKey": access_key,
+        "affiliateId": aff_id,
+        "title": title_keyword,
+        "hits": hits,
+        "sort": "sales",
+    })
+    return parse_items(request_json(url))
+
+
+def search_books_total(app_id, access_key, aff_id, keyword, hits=8, or_flag=0):
+    """楽天ブックス総合検索APIでキーワードを広く検索"""
+    url = build_url("BooksTotal/Search", {
+        "applicationId": app_id,
+        "accessKey": access_key,
+        "affiliateId": aff_id,
+        "keyword": keyword,
+        "hits": hits,
+        "sort": "sales",
+        "field": 0,
+        "orFlag": or_flag,
+    })
+    return parse_items(request_json(url))
+
+
+def score_book(book, industry, topic):
+    text = f"{book.get('title', '')} {book.get('author', '')}".lower()
+    score = 0
+
+    topic_terms = [topic, topic.split("の")[0], topic.replace("・", " ")]
+    for term in topic_terms:
+        if term and term.lower() in text:
+            score += 4
+
+    if industry and industry.lower() in text:
+        score += 3
+
+    for term in ["ai", "chatgpt", "生成ai", "業務効率", "仕事術", "ビジネス"]:
+        if term in text:
+            score += 3
+
+    if book.get("image_url"):
+        score += 2
+    if book.get("review_count"):
+        score += min(3, int(book.get("review_count", 0)))
+
+    return score
+
+
+def choose_best_book(results, industry, topic):
+    with_images = [book for book in results if book.get("image_url")]
+    candidates = with_images or results
+    if not candidates:
+        return None
+
+    return max(candidates, key=lambda book: score_book(book, industry, topic))
+
+
+def search_books(app_id, access_key, aff_id, query, industry, topic):
+    """タイトル検索から総合検索へ段階的に広げる"""
+    results = []
+
+    try:
+        results.extend(search_book_title(app_id, access_key, aff_id, query, hits=3))
+    except Exception as e:
+        print(f"  -> タイトル検索エラー: {e}")
+
+    if results:
+        return choose_best_book(results, industry, topic)
+
+    for or_flag in [0, 1]:
+        try:
+            results.extend(search_books_total(app_id, access_key, aff_id, query, hits=8, or_flag=or_flag))
+        except Exception as e:
+            print(f"  -> 総合検索エラー: {e}")
+        if results:
+            return choose_best_book(results, industry, topic)
+
+    return None
 
 
 def get_search_queries(industry, topic):
@@ -89,11 +175,17 @@ def get_search_queries(industry, topic):
     queries.append(f"{industry} 経営")
     # 3. トピック系キーワード
     queries.extend(topic_map.get(topic, [topic.split("の")[0]]))
-    # 4. AI系フォールバック
+    # 4. AI系フォールバック（どの記事でも画像付き書籍に落とす）
     queries.append("AI 業務効率化")
-    queries.append("ChatGPT")
+    queries.append("生成AI ビジネス")
+    queries.append("ChatGPT ビジネス")
+    queries.append("ChatGPT 仕事術")
 
-    return queries
+    unique = []
+    for query in queries:
+        if query not in unique:
+            unique.append(query)
+    return unique
 
 
 def main():
@@ -133,9 +225,8 @@ def main():
             print(f"検索中: [{article['industry']} x {article['topic']}] -> \"{query}\"")
 
             try:
-                results = search_books(app_id, access_key, aff_id, query, hits=1)
-                if results:
-                    book = results[0]
+                book = search_books(app_id, access_key, aff_id, query, article["industry"], article["topic"])
+                if book:
                     cache["books"][slug] = book
                     print(f"  -> {book['title']} ({book['price']}円)")
                     new_count += 1

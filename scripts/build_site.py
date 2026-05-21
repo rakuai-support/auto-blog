@@ -29,6 +29,14 @@ def load_template():
         return f.read()
 
 
+def site_url(config):
+    return config["site"]["url"].rstrip("/")
+
+
+def site_home_url(config):
+    return f"{site_url(config)}/"
+
+
 def build_analytics_tag(config):
     """GA4 measurement IDが設定されている場合にGoogle tagを生成する"""
     measurement_id = config.get("analytics", {}).get("ga4_measurement_id", "").strip()
@@ -304,6 +312,42 @@ def build_review_html(review_count):
     return '<div class="aff-review"><span class="aff-review-stars">★★★★☆</span><span class="aff-review-count">おすすめ書籍</span></div>'
 
 
+def build_affiliate_url(config, search_query):
+    from urllib.parse import quote
+    aff = config.get("affiliate", {})
+    query = quote(search_query, safe="")
+    return aff.get("base_url", "").replace("{query}", query)
+
+
+def find_static_book_pick(config, industry, topic):
+    """APIで見つからない記事でも画像付きカードにするための定番書籍フォールバック"""
+    picks = [pick for pick in config.get("affiliate", {}).get("picks", []) if pick.get("book_img")]
+    if not picks:
+        return None
+
+    text = f"{industry} {topic}"
+    selected = next((pick for pick in picks if pick.get("keyword") and pick["keyword"] in text), None)
+    if selected is None:
+        selected = next((pick for pick in picks if pick.get("keyword") == "AI"), picks[0])
+
+    return {
+        "title": selected.get("book_title", ""),
+        "author": selected.get("book_author", ""),
+        "price_label": selected.get("book_price", ""),
+        "review_count": 0,
+        "image_url": selected.get("book_img", ""),
+        "affiliate_url": build_affiliate_url(config, selected.get("search", "ChatGPT")),
+    }
+
+
+def format_book_price(book):
+    if book.get("price_label"):
+        return f"{html.escape(str(book['price_label']))}（税込）"
+    if book.get("price"):
+        return f"{html.escape(str(book['price']))}円（税込）"
+    return "価格はリンク先でご確認ください"
+
+
 def insert_affiliate(html_text, config, meta=None, books_cache=None):
     """アフィリエイトタグを書籍画像付きカードに置換（文脈付き）"""
     if books_cache is None:
@@ -317,9 +361,13 @@ def insert_affiliate(html_text, config, meta=None, books_cache=None):
     if meta and meta.get("slug") in books_cache.get("books", {}):
         book = books_cache["books"][meta["slug"]]
 
+    if not (book and book.get("image_url")):
+        book = find_static_book_pick(config, industry, topic)
+
     if book and book.get("image_url"):
         aff_url = book.get("affiliate_url", "#")
         review_html = build_review_html(book.get("review_count", 0))
+        price_html = format_book_price(book)
         card_html = f"""<div class="aff-section">
   <p class="aff-section-intro">{html.escape(industry)}の{html.escape(topic)}について、さらに詳しく学びたい方にはこちらの書籍がおすすめです。</p>
   <div class="aff-card">
@@ -330,7 +378,7 @@ def insert_affiliate(html_text, config, meta=None, books_cache=None):
       <div class="aff-content">
         <span class="aff-badge">Pick Up</span>
         <p class="aff-book-title">{html.escape(book['title'])}</p>
-        <p class="aff-book-meta">{html.escape(book.get('author', ''))} / {book.get('price', '')}円（税込）</p>
+        <p class="aff-book-meta">{html.escape(book.get('author', ''))} / {price_html}</p>
         {review_html}
         <a href="{html.escape(aff_url)}" target="_blank" rel="nofollow" class="aff-btn">
           楽天ブックスで見る
@@ -379,7 +427,7 @@ def insert_affiliate(html_text, config, meta=None, books_cache=None):
       <div class="aff-content">
         <span class="aff-badge">おすすめ</span>
         <p class="aff-book-title">{html.escape(book['title'])}</p>
-        <p class="aff-book-meta">{html.escape(book.get('author', ''))} / {book.get('price', '')}円（税込）</p>
+        <p class="aff-book-meta">{html.escape(book.get('author', ''))} / {price_html}</p>
         {review_html}
         <a href="{html.escape(aff_url)}" target="_blank" rel="nofollow" class="aff-btn">
           楽天ブックスで詳細を見る
@@ -648,13 +696,16 @@ def extract_howto_steps(md_text):
 def build_structured_data(meta, config, md_text=""):
     """JSON-LD構造化データを生成（Article + FAQ + HowTo）"""
     scripts = []
+    article_url = f'{site_url(config)}/articles/{meta["slug"]}.html'
 
     # Article スキーマ
     article_data = {
         "@context": "https://schema.org",
         "@type": "Article",
+        "url": article_url,
         "headline": meta["title"],
         "description": meta["description"],
+        "image": f"{site_url(config)}/ogp.png",
         "datePublished": meta["date"],
         "dateModified": meta["date"],
         "author": {
@@ -668,7 +719,7 @@ def build_structured_data(meta, config, md_text=""):
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": f'{config["site"]["url"]}/articles/{meta["slug"]}.html'
+            "@id": article_url
         }
     }
     scripts.append(f'<script type="application/ld+json">{json.dumps(article_data, ensure_ascii=False)}</script>')
@@ -765,7 +816,7 @@ def build_article(meta, md_text, template, config, all_meta, books_cache=None):
     page = page.replace("{{site_name}}", html.escape(site_name))
     page = page.replace("{{site_description}}", html.escape(site_description))
     page = page.replace("{{meta_description}}", html.escape(meta["description"]))
-    page = page.replace("{{canonical_url}}", f'{config["site"]["url"]}/articles/{meta["slug"]}.html')
+    page = page.replace("{{canonical_url}}", f'{site_url(config)}/articles/{meta["slug"]}.html')
     page = page.replace("{{root_path}}", "../")
     page = page.replace("{{og_type}}", "article")
     page = page.replace("{{breadcrumb}}", breadcrumb)
@@ -781,6 +832,7 @@ def build_index(all_meta, template, config):
     site_name = config["site"]["title"]
     site_description = config["site"]["description"]
     sorted_meta = sorted(all_meta, key=lambda m: m.get("date", ""), reverse=True)
+    topic_count = len(config.get("topics_per_industry", []))
 
     # カテゴリ一覧（記事数付き）
     industries = sorted(set(m["industry"] for m in all_meta))
@@ -818,7 +870,7 @@ def build_index(all_meta, template, config):
   <div class="hero-stats">
     <div class="hero-stat"><span class="hero-stat-num">{len(all_meta)}</span><span class="hero-stat-label">記事</span></div>
     <div class="hero-stat"><span class="hero-stat-num">{industry_count}</span><span class="hero-stat-label">業種</span></div>
-    <div class="hero-stat"><span class="hero-stat-num">10</span><span class="hero-stat-label">テーマ</span></div>
+    <div class="hero-stat"><span class="hero-stat-num">{topic_count}</span><span class="hero-stat-label">テーマ</span></div>
   </div>
 </div>
 <div class="category-filter">
@@ -848,7 +900,7 @@ document.querySelectorAll('.category-btn').forEach(function(btn) {{
     page = page.replace("{{site_name}}", html.escape(site_name))
     page = page.replace("{{site_description}}", html.escape(site_description))
     page = page.replace("{{meta_description}}", html.escape(site_description))
-    page = page.replace("{{canonical_url}}", config["site"]["url"])
+    page = page.replace("{{canonical_url}}", site_home_url(config))
     page = page.replace("{{root_path}}", "")
     page = page.replace("{{og_type}}", "website")
     page = page.replace("{{breadcrumb}}", "")
@@ -863,7 +915,7 @@ def build_privacy_page(template, config):
     """プライバシーポリシーページ"""
     site_name = config["site"]["title"]
     site_description = config["site"]["description"]
-    site_url = config["site"]["url"]
+    root_url = site_url(config)
     updated = datetime.now().strftime("%Y-%m-%d")
 
     content = f"""<article class="policy-page">
@@ -901,7 +953,7 @@ def build_privacy_page(template, config):
     page = page.replace("{{site_name}}", html.escape(site_name))
     page = page.replace("{{site_description}}", html.escape(site_description))
     page = page.replace("{{meta_description}}", html.escape(f"{site_name}のプライバシーポリシーです。"))
-    page = page.replace("{{canonical_url}}", f"{site_url}/privacy.html")
+    page = page.replace("{{canonical_url}}", f"{root_url}/privacy.html")
     page = page.replace("{{root_path}}", "")
     page = page.replace("{{og_type}}", "website")
     page = page.replace("{{breadcrumb}}", '<div class="breadcrumb"><a href="index.html">トップ</a><span>&gt;</span><span>プライバシーポリシー</span></div>')
@@ -914,18 +966,20 @@ def build_privacy_page(template, config):
 
 def build_sitemap(all_meta, config):
     """sitemap.xml"""
+    root_url = site_url(config)
+    today = datetime.now().strftime('%Y-%m-%d')
     urls = [f"""
   <url>
-    <loc>{config['site']['url']}/index.html</loc>
-    <lastmod>{datetime.now().strftime('%Y-%m-%d')}</lastmod>
+    <loc>{site_home_url(config)}</loc>
+    <lastmod>{today}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>"""]
 
     urls.append(f"""
   <url>
-    <loc>{config['site']['url']}/privacy.html</loc>
-    <lastmod>{datetime.now().strftime('%Y-%m-%d')}</lastmod>
+    <loc>{root_url}/privacy.html</loc>
+    <lastmod>{today}</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>""")
@@ -933,8 +987,8 @@ def build_sitemap(all_meta, config):
     for meta in all_meta:
         urls.append(f"""
   <url>
-    <loc>{config['site']['url']}/articles/{meta['slug']}.html</loc>
-    <lastmod>{meta.get('date', datetime.now().strftime('%Y-%m-%d'))}</lastmod>
+    <loc>{root_url}/articles/{meta['slug']}.html</loc>
+    <lastmod>{meta.get('date', today)}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>""")
@@ -994,19 +1048,19 @@ def main():
 
     print(f"\nビルド完了: {built}記事 → public/")
 
-    # sitemap ping（Google / Bing）
-    ping_sitemap(config)
+    # IndexNow ping（Bing/Yandex等）
+    ping_sitemap(config, all_meta)
 
 
-def ping_sitemap(config):
+def ping_sitemap(config, all_meta):
     """IndexNow API（Bing/Yandex等）にURL更新を通知"""
-    site_url = config["site"]["url"]
+    root_url = site_url(config)
     # IndexNow用キーファイルが存在すれば通知
     key_path = Path(__file__).resolve().parent.parent / "public" / "indexnow-key.txt"
     if not key_path.exists():
         # キーを生成して保存
         import hashlib
-        key = hashlib.md5(site_url.encode()).hexdigest()[:32]
+        key = hashlib.md5(root_url.encode()).hexdigest()[:32]
         key_path.write_text(key, encoding="utf-8")
         # キー認証ファイルも作成
         verify_path = Path(__file__).resolve().parent.parent / "public" / f"{key}.txt"
@@ -1014,14 +1068,19 @@ def ping_sitemap(config):
         print(f"  IndexNow キー生成: {key}")
 
     key = key_path.read_text(encoding="utf-8").strip()
-    sitemap_url = f"{site_url}/sitemap.xml"
+    url_list = [
+        site_home_url(config),
+        f"{root_url}/privacy.html",
+        f"{root_url}/sitemap.xml",
+    ]
+    url_list.extend(f"{root_url}/articles/{meta['slug']}.html" for meta in all_meta)
 
     try:
         data = json.dumps({
             "host": "okomari.smilefactory-rakuai.com",
             "key": key,
-            "keyLocation": f"{site_url}/{key}.txt",
-            "urlList": [f"{site_url}/index.html", sitemap_url]
+            "keyLocation": f"{root_url}/{key}.txt",
+            "urlList": url_list
         }).encode("utf-8")
         req = urllib.request.Request(
             "https://api.indexnow.org/indexnow",
