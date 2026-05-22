@@ -20,35 +20,35 @@
     "picks": [
       {
         "keyword": "経理",
-        "book_title": "経理についてAIに質問！ イチからわかる！つまずかない！",
-        "book_author": "小島孝子",
-        "book_price": "1,760円",
-        "book_img": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/5529/9784478125529_1_3.jpg",
+        "book_title": "経理AIエージェント　「デジタル労働力」で仕事が回る",
+        "book_author": "黒崎 賢一",
+        "book_price": "2,200円",
+        "book_img": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/1840/9784295411840_1_4.jpg?_ex=200x200",
         "search": "経理+AI"
       },
       {
         "keyword": "集客",
-        "book_title": "はじめてのChatGPTの教科書 誰でもAIをビジネスに活用できる",
-        "book_author": "田口和裕",
-        "book_price": "1,650円",
-        "book_img": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/2372/9784800712372_1_3.jpg",
-        "search": "ChatGPT+ビジネス"
+        "book_title": "ゼロからわかるDifyの教科書 〜生成AI×ノーコードでかんたん業務効率化",
+        "book_author": "にゃんた",
+        "book_price": "2,970円",
+        "book_img": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8362/9784297148362_1_32.jpg?_ex=200x200",
+        "search": "生成AI+ビジネス"
       },
       {
         "keyword": "予約",
-        "book_title": "AI仕事革命 ChatGPTで業務効率化",
-        "book_author": "谷口恵子",
-        "book_price": "1,760円",
-        "book_img": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/4553/9784295404553_1_2.jpg",
-        "search": "ChatGPT+業務効率化"
+        "book_title": "ゼロからわかるDifyの教科書 〜生成AI×ノーコードでかんたん業務効率化",
+        "book_author": "にゃんた",
+        "book_price": "2,970円",
+        "book_img": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8362/9784297148362_1_32.jpg?_ex=200x200",
+        "search": "AI+業務効率化"
       },
       {
         "keyword": "教育",
-        "book_title": "ChatGPTの教科書 初心者から使いこなす人になる",
-        "book_author": "武井一巳",
-        "book_price": "1,540円",
-        "book_img": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/7780/9784863547780_1_3.jpg",
-        "search": "ChatGPT+教科書"
+        "book_title": "いちばんやさしい　先生が校務に使えるGoogle NotebookLMの教本　人気講師が教える学校業務を効率化するAI活用法",
+        "book_author": "山本康太",
+        "book_price": "1,980円",
+        "book_img": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/3654/9784295023654_1_2.jpg?_ex=200x200",
+        "search": "AI+教本"
       },
       {
         "keyword": "旅館",
@@ -60,11 +60,11 @@
       },
       {
         "keyword": "AI",
-        "book_title": "ChatGPT最強の仕事術",
-        "book_author": "池田朋弘",
-        "book_price": "1,760円",
-        "book_img": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/9594/9784866809594_1_2.jpg",
-        "search": "ChatGPT+仕事術"
+        "book_title": "ゼロからわかるDifyの教科書 〜生成AI×ノーコードでかんたん業務効率化",
+        "book_author": "にゃんた",
+        "book_price": "2,970円",
+        "book_img": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8362/9784297148362_1_32.jpg?_ex=200x200",
+        "search": "生成AI+業務効率化"
       }
     ]
   },
