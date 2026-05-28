@@ -5,6 +5,7 @@
 import json
 import os
 import time
+import urllib.error
 import urllib.request
 import urllib.parse
 from pathlib import Path
@@ -18,6 +19,11 @@ REQUEST_HEADERS = {
     "Referer": "https://okomari.smilefactory-rakuai.com/",
     "Origin": "https://okomari.smilefactory-rakuai.com",
 }
+BLOCKED_STATUS_CODES = {403, 429}
+
+
+class ApiBlockedError(Exception):
+    """楽天API側でリクエストが拒否された場合に、今回の書籍更新を早く諦めるための例外"""
 
 
 def load_env():
@@ -37,8 +43,13 @@ def load_env():
 
 def request_json(url):
     req = urllib.request.Request(url, headers=REQUEST_HEADERS)
-    with urllib.request.urlopen(req, timeout=15) as res:
-        return json.loads(res.read())
+    try:
+        with urllib.request.urlopen(req, timeout=15) as res:
+            return json.loads(res.read())
+    except urllib.error.HTTPError as e:
+        if e.code in BLOCKED_STATUS_CODES:
+            raise ApiBlockedError(f"HTTP Error {e.code}: {e.reason}") from e
+        raise
 
 
 def build_url(endpoint, params):
@@ -135,6 +146,8 @@ def search_books(app_id, access_key, aff_id, query, industry, topic):
 
     try:
         results.extend(search_book_title(app_id, access_key, aff_id, query, hits=3))
+    except ApiBlockedError:
+        raise
     except Exception as e:
         print(f"  -> タイトル検索エラー: {e}")
 
@@ -144,6 +157,8 @@ def search_books(app_id, access_key, aff_id, query, industry, topic):
     for or_flag in [0, 1]:
         try:
             results.extend(search_books_total(app_id, access_key, aff_id, query, hits=8, or_flag=or_flag))
+        except ApiBlockedError:
+            raise
         except Exception as e:
             print(f"  -> 総合検索エラー: {e}")
         if results:
@@ -210,8 +225,13 @@ def main():
         with open(meta_path, "r", encoding="utf-8") as f:
             articles.append(json.load(f))
 
+    max_new_books = int(env.get("FETCH_BOOKS_MAX_NEW", os.environ.get("FETCH_BOOKS_MAX_NEW", "3")))
     new_count = 0
     for article in articles:
+        if new_count >= max_new_books:
+            print(f"今回の書籍取得上限に達しました: 新規{new_count}件")
+            break
+
         slug = article["slug"]
         if slug in cache["books"]:
             print(f"キャッシュ済み: {article['industry']} x {article['topic']}")
@@ -232,9 +252,17 @@ def main():
                     new_count += 1
                     found = True
                     break
+            except ApiBlockedError as e:
+                print(f"  -> 楽天APIがリクエストを拒否しました: {e}")
+                print("  -> 今回の書籍キャッシュ更新はスキップします")
+                found = True
+                break
             except Exception as e:
                 print(f"  -> エラー: {e}")
                 continue
+
+        if found and slug not in cache["books"]:
+            break
 
         if not found:
             print(f"  -> 全クエリで該当なし（スキップ）")
