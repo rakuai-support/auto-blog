@@ -177,6 +177,14 @@ footer {
   margin-bottom: 1rem;
   position: relative;
 }
+.hero .hero-note {
+  max-width: 760px;
+  color: rgba(255,255,255,0.72);
+  font-size: 0.78rem;
+  line-height: 1.7;
+  margin: 0 0 1rem;
+  position: relative;
+}
 .hero-stats {
   display: flex;
   gap: 1.5rem;

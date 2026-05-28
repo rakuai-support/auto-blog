@@ -867,6 +867,7 @@ def build_index(all_meta, template, config):
     content = f"""<div class="hero">
   <h1>{html.escape(site_name)}</h1>
   <p class="hero-sub">{html.escape(site_description)}</p>
+  <p class="hero-note">※掲載記事の事例は、各業種でよくあるお悩みをもとに構成したフィクションです。登場人物名・店舗名・会社名は仮名であり、実在の個人・団体とは関係ありません。</p>
   <div class="hero-stats">
     <div class="hero-stat"><span class="hero-stat-num">{len(all_meta)}</span><span class="hero-stat-label">記事</span></div>
     <div class="hero-stat"><span class="hero-stat-num">{industry_count}</span><span class="hero-stat-label">業種</span></div>
