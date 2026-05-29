@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="xq2Wicedua7rwzz4MrzjFmLgCvCU9ZIT-cl3uNYukho">
+  <title>介護施設 在庫管理の改善 人手不足で回らない → AIに任せたら楽になった話 | 小さなお店のための業種別AIお困り解決帳</title>
+  <meta name="description" content="介護施設の在庫管理をChatGPTと無料ツールで効率化。月20時間削減した特養主任の実例とプロンプト例を紹介します。">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://okomari.smilefactory-rakuai.com/articles/4396d84d.html">
+  <!-- OGP -->
+  <meta property="og:title" content="介護施設 在庫管理の改善 人手不足で回らない → AIに任せたら楽になった話 | 小さなお店のための業種別AIお困り解決帳">
+  <meta property="og:description" content="介護施設の在庫管理をChatGPTと無料ツールで効率化。月20時間削減した特養主任の実例とプロンプト例を紹介します。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://okomari.smilefactory-rakuai.com/articles/4396d84d.html">
+  <meta property="og:site_name" content="小さなお店のための業種別AIお困り解決帳">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://okomari.smilefactory-rakuai.com/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="介護施設 在庫管理の改善 人手不足で回らない → AIに任せたら楽になった話 | 小さなお店のための業種別AIお困り解決帳">
+  <meta name="twitter:description" content="介護施設の在庫管理をChatGPTと無料ツールで効率化。月20時間削減した特養主任の実例とプロンプト例を紹介します。">
+  <meta name="twitter:image" content="https://okomari.smilefactory-rakuai.com/ogp.png">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZNG2CPH6V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7ZNG2CPH6V');
+  </script>
+  <!-- フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "url": "https://okomari.smilefactory-rakuai.com/articles/4396d84d.html", "headline": "介護施設 在庫管理の改善 人手不足で回らない → AIに任せたら楽になった話", "description": "介護施設の在庫管理をChatGPTと無料ツールで効率化。月20時間削減した特養主任の実例とプロンプト例を紹介します。", "image": "https://okomari.smilefactory-rakuai.com/ogp.png", "datePublished": "2026-05-29", "dateModified": "2026-05-29", "author": {"@type": "Organization", "name": "かわさき楽AIサポート", "url": "https://www.smilefactory-rakuai.com/"}, "publisher": {"@type": "Organization", "name": "株式会社スマイルファクトリー"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://okomari.smilefactory-rakuai.com/articles/4396d84d.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "個人情報を扱う介護現場でChatGPTを使って大丈夫ですか？", "acceptedAnswer": {"@type": "Answer", "text": "在庫管理の用途であれば、入居者の氏名や個人を特定できる情報を入力しなければ問題ありません。「Aさんのオムツ使用量」ではなく「居室101のLサイズ消費量」のように、匿名化したデータで運用するのがコツです。"}}, {"@type": "Question", "name": "ITが苦手なスタッフが多いのですが、本当に回りますか？", "acceptedAnswer": {"@type": "Answer", "text": "田中さんの施設も平均年齢48歳のスタッフ構成です。ポイントは「全員が使いこなす」のではなく、**「1〜2人がAIを使い、結果をLINEで全員に共有する」**形にすること。入力する人を最小限にすれば、現場の負担はほぼ増えません。"}}, {"@type": "Question", "name": "初心者におすすめの本やツールはありますか？", "acceptedAnswer": {"@type": "Answer", "text": "まずChatGPTの基本的な使い方を学べる入門書を1冊読むのがおすすめです。動画講座よりも、手元に置いて何度も見返せる書籍のほうが、忙しい介護現場では実用的です。ツールとしては、無料で始められるGoogleスプレッドシート＋ChatGPTの無料版で十分スタートできます。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "介護施設の在庫管理の改善をAIで効率化する方法", "description": "介護施設の在庫管理をChatGPTと無料ツールで効率化。月20時間削減した特養主任の実例とプロンプト例を紹介します。", "step": [{"@type": "HowToStep", "name": "Googleスプレッドシートで「在庫マスタ」を作る", "text": "Googleスプレッドシートで「在庫マスタ」を作る"}, {"@type": "HowToStep", "name": "ChatGPTにマスタの整理を頼む", "text": "ChatGPTにマスタの整理を頼む"}, {"@type": "HowToStep", "name": "Googleフォームで「使用報告」を作る", "text": "Googleフォームで「使用報告」を作る"}, {"@type": "HowToStep", "name": "ChatGPTに発注リストを作ってもらう", "text": "ChatGPTに発注リストを作ってもらう"}, {"@type": "HowToStep", "name": "参考書籍で土台を固める", "text": "参考書籍で土台を固める"}]}</script>
+  <!-- Google AdSense -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_ADSENSE_ID" crossorigin="anonymous"></script> -->
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="header-top">
+        <a href="../index.html" class="logo">小さなお店のための業種別AIお困り解決帳</a>
+        <nav class="header-nav">
+          <a href="../index.html">記事一覧</a>
+          <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="nav-cta">無料相談</a>
+        </nav>
+      </div>
+      <p class="tagline">飲食店・美容室・士業・工務店などの「困った」をAIで減らす具体策</p>
+    </div>
+  </header>
+  <main>
+    <div class="breadcrumb"><a href="../index.html">トップ</a><span>&gt;</span><span>介護施設</span><span>&gt;</span><span>介護施設 在庫管理の改善 人手不足で回らない → AIに任せ...</span></div>
+    <article>
+<div class="article-header-meta"><span class="tag">介護施設</span><span>2026-05-29</span><span>約12分で読めます</span></div>
+<h1>介護施設 在庫管理の改善 人手不足で回らない → AIに任せたら楽になった話</h1>
+<div class="toc">
+  <div class="toc-title">この記事の内容</div>
+  <ol><li><a href="#section-1">介護施設の在庫管理の改善、なぜこんなに大変なのか？</a></li>
+<li><a href="#section-2">介護施設で在庫管理の改善が放置されがちな3つの理由</a></li>
+<li><a href="#section-3">在庫管理の改善をAIで解決する方法（ステップ解説）</a></li>
+<li><a href="#section-4">もうひとつのAI活用法：LINE公式アカウントとの組み合わせ</a></li>
+<li><a href="#section-5">導入前後でどう変わった？数字で見るビフォーアフター</a></li>
+<li><a href="#section-6">よくある質問</a></li>
+<li><a href="#section-7">まとめ：田中さんからのひとこと</a></li></ol>
+</div>
+
+<p>「あ、またオムツの在庫切れてる…」夜勤明けの朝、倉庫の棚を見て田中さんはため息をつきました。発注したつもりが現場に伝わっていなかった、よくある光景です。手書きの在庫表、スタッフごとにバラバラの管理、急な利用者増で消耗品が一気に減る日々。2026年に入り、シャープが「介護向けAIトレーナー」を発表するなど介護現場へのAI実装が一気に進んでいますが、田中さんのような現場担当者にとっては「在庫管理くらいAIで何とかならないの？」というのが本音です。</p>
+
+<p><strong>結論から言えば、介護施設の在庫管理は、ChatGPTと無料のスプレッドシート・LINE公式アカウントを組み合わせることで、月20時間以上の発注作業を5時間以下に削減できます。</strong> 高額な専用システムを入れなくても、今日から始められる方法を、田中さんの実例とともにお伝えします。</p>
+
+
+<h2 id="section-1">介護施設の在庫管理の改善、なぜこんなに大変なのか？</h2>
+
+<h3>主人公：田中さん（48歳・女性・特養の主任）</h3>
+
+<p>田中明子さんは、川崎市内の特別養護老人ホーム「さくら苑」（仮名）で主任を務めています。入居者50名、スタッフ約30名、年間売上は約3億円規模の中堅施設です。介護歴は20年、現場一筋でやってきましたが、3年前に主任になってから「物品管理」という新しい仕事が増えました。</p>
+
+<p>田中さんの一番の困りごとは、<strong>「オムツ・パッド・グローブ・消毒液など100品目以上の消耗品を、誰がいつ何個使ったか把握しきれない」</strong>こと。発注は週1回、紙の在庫表を見ながら勘で決めるしかなく、ある週は大量に余り、別の週は週末に切らして近所のドラッグストアに走る、という綱渡りが続いていました。</p>
+
+<p>&gt; ※本記事の事例は、介護施設でよくあるお悩みをもとに構成したフィクションです。登場人物名・店舗名・会社名は仮名であり、実在の個人・団体とは関係ありません。</p>
+
+<h3>田中さんのある1日</h3>
+
+<p>朝7時、夜勤明けスタッフから「Lサイズのオムツあと2袋です」と申し送り。9時、ケア中に「グローブ最後の箱開けました」と声がかかる。10時、業者からFAXで「来週の納期遅れます」の連絡。11時、ようやくデスクに座って在庫表を広げると、書きかけのメモが数枚。「これ、結局いくつ残ってるんだっけ…」と頭を抱える。午後はケアに入りつつ、隙間時間で発注書をFAXで送信。夜、家に帰っても「あれ、消毒液頼んだっけ？」と気になって眠れない。</p>
+
+<p>これが田中さんの日常です。月の発注関連業務は、ざっと数えても<strong>20〜25時間</strong>。本来やりたい入居者ケアや職員育成の時間が、消耗品管理に飲まれていました。</p>
+
+
+<h2 id="section-2">介護施設で在庫管理の改善が放置されがちな3つの理由</h2>
+
+<h3>理由1：「ケアが最優先」で後回しになる業界構造</h3>
+
+<p>介護現場は人命に関わる仕事です。在庫管理は重要だとわかっていても、利用者対応が優先されるのは当然のこと。結果、「気づいた人が気づいたタイミングでやる」属人化した運用になりがちです。</p>
+
+<h3>理由2：システム導入の心理的ハードル</h3>
+
+<p>「専用システムは月数万円、現場のITが苦手なスタッフには使いこなせない」という思い込みがあります。2026年5月にはスターバックスが北米でAI在庫管理ツールを9カ月で打ち切ったニュースが話題になりました。誤作動が頻発し現場に不満が出たためですが、これを聞いて「やっぱりAIは介護現場には早い」と感じた施設長も多いはずです。ただ、これは「高額な専用システムを丸ごと任せる」発想の限界であって、<strong>ChatGPTと無料ツールを組み合わせる軽い使い方</strong>なら話は別です。</p>
+
+<h3>理由3：「紙とFAX文化」からの脱却が怖い</h3>
+
+<p>長年慣れた運用を変えると、移行期に必ずトラブルが起きます。「今のままでもなんとか回っているから」が一番の敵です。</p>
+
+
+<h2 id="section-3">在庫管理の改善をAIで解決する方法（ステップ解説）</h2>
+
+<p>田中さんが実際にやった手順を、そのまま紹介します。所要時間は<strong>初期セットアップで約3時間</strong>、その後は毎日5分の運用で回ります。</p>
+
+<h3>ステップ1：Googleスプレッドシートで「在庫マスタ」を作る</h3>
+
+<p>まず紙の在庫表をデジタル化します。品目名・規格・適正在庫数・発注先・単価の5列だけのシンプルな表でOK。田中さんは100品目を1時間で打ち込みました。</p>
+
+<h3>ステップ2：ChatGPTにマスタの整理を頼む</h3>
+
+<p>ここでAIの出番です。田中さんが最初に入力したプロンプトはこちら。</p>
+
+<p>「介護施設の消耗品100品目のリストを渡します。これを『毎日使う』『週単位で使う』『月単位で使う』の3つに分類し、それぞれの適正在庫日数を提案してください」</p>
+
+<p>5分後、ChatGPTは見事に分類してくれました。<strong>「毎日使うものは2週間分、月単位のものは1.5カ月分」</strong>という目安が一気に決まったのです。</p>
+
+<h3>ステップ3：Googleフォームで「使用報告」を作る</h3>
+
+<p>スタッフが棚から物を取り出したら、スマホで簡単に報告できる仕組みを作ります。「品目選択→使用個数入力」の2項目だけ。回答は自動でスプレッドシートに溜まります。</p>
+
+<h3>ステップ4：ChatGPTに発注リストを作ってもらう</h3>
+
+<p>週1回、スプレッドシートのデータをコピーして次のように頼みます。</p>
+
+<p>「以下が今週の使用実績と現在在庫です。適正在庫日数を下回る品目をリストアップし、発注数量を提案してください。発注先ごとにグループ分けして表にしてください」</p>
+
+<p>これまで2時間かかっていた発注書作成が、<strong>15分</strong>で終わるようになりました。</p>
+
+<h3>ステップ5：参考書籍で土台を固める</h3>
+
+<p>田中さんが最初に読んだのは、ChatGPTのビジネス活用について書かれた入門書でした。「この本に書いてあった『AIに頼むときは前提条件を先に伝える』というコツを知ってから、急にアウトプットの質が上がった」と振り返ります。</p>
+
+<div class="aff-section">
+  <p class="aff-section-intro">介護施設の在庫管理の改善について、さらに詳しく学びたい方にはこちらの書籍がおすすめです。</p>
+  <div class="aff-card">
+    <div class="aff-card-inner">
+      <div class="aff-book-img">
+        <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8362/9784297148362_1_32.jpg?_ex=200x200" alt="ゼロからわかるDifyの教科書 〜生成AI×ノーコードでかんたん業務効率化" loading="lazy">
+      </div>
+      <div class="aff-content">
+        <span class="aff-badge">Pick Up</span>
+        <p class="aff-book-title">ゼロからわかるDifyの教科書 〜生成AI×ノーコードでかんたん業務効率化</p>
+        <p class="aff-book-meta">にゃんた / 2,970円（税込）</p>
+        <div class="aff-review"><span class="aff-review-stars">★★★★☆</span><span class="aff-review-count">おすすめ書籍</span></div>
+        <a href="https://rpx.a8.net/svt/ejp?a8mat=2ZPHBO+123RHU+2HOM+686ZL&amp;rakuten=y&amp;a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0ea62065.34400275.0ea62066.204f04c0%2Fa18090710619_2ZPHBO_123RHU_2HOM_686ZL%3Fpc%3Dhttp%253A%252F%252Fsearch.rakuten.co.jp%252Fsearch%252Fmall%252F%E7%94%9F%E6%88%90AI%2B%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96%252F%26m%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252F" target="_blank" rel="nofollow" class="aff-btn">
+          楽天ブックスで見る
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h2 id="section-4">もうひとつのAI活用法：LINE公式アカウントとの組み合わせ</h2>
+
+<p>田中さんはさらに一歩進めて、スタッフ全員が参加するLINE公式アカウント &lt;!-- TOOL:LINE公式アカウント --&gt; を作りました。月200通まで無料で使えるので、30名規模の施設なら追加コストゼロです。</p>
+
+<h3>活用方法1：在庫アラートの自動配信</h3>
+
+<p>スプレッドシートで「適正在庫を下回ったらLINEに通知」する設定を組み、現場全員にリアルタイムで在庫状況が共有されるようにしました。「Lサイズオムツ残り5袋」と全員に届くので、誰かが買い忘れることがなくなりました。</p>
+
+<h3>活用方法2：写真でAIに在庫確認</h3>
+
+<p>倉庫の棚を写真に撮ってChatGPTに送り、こう聞きます。</p>
+
+<p>「この棚の写真から、見えている消耗品の種類と推定残数をリストアップしてください」</p>
+
+<p>完璧ではないものの、<strong>夜勤帯のスタッフが申し送りを書く手間が激減</strong>しました。</p>
+
+<h3>活用方法3：シフトと連動した需要予測</h3>
+
+<p>「来週は入浴介助が水曜と金曜に集中。グローブとタオルの使用量を予測して」とChatGPTに頼むと、過去データから増減を見積もってくれます。</p>
+
+<h3>経理連携も忘れずに</h3>
+
+<p>発注データはfreee会計 &lt;!-- TOOL:freee会計 --&gt; に連携することで、月次の消耗品費が自動集計されます。無料プランから始められるので、田中さんの施設では2024年からこれで経費精算を回しています。</p>
+
+
+<h2 id="section-5">導入前後でどう変わった？数字で見るビフォーアフター</h2>
+
+<p>田中さんの3カ月後の実績がこちらです。</p>
+
+<div class="table-wrap">
+<table>
+  <thead><tr><th>項目</th><th>導入前</th><th>導入後</th></tr></thead>
+  <tbody><tr><td>月間発注関連作業時間</td><td>22時間</td><td>4.5時間</td></tr><tr><td>緊急買い出し回数</td><td>月8回</td><td>月1回</td></tr><tr><td>過剰在庫による廃棄ロス</td><td>月約3.5万円</td><td>月約8,000円</td></tr><tr><td>スタッフからの「在庫どこ？」問い合わせ</td><td>1日5〜6件</td><td>1日0〜1件</td></tr><tr><td>田中さんの残業時間</td><td>月35時間</td><td>月12時間</td></tr></tbody>
+</table>
+</div>
+
+<p>金額換算すると、<strong>人件費削減＋廃棄ロス削減で月約7万円のコスト改善</strong>。年間84万円です。</p>
+
+<h3>失敗談：最初の2週間はぐちゃぐちゃでした</h3>
+
+<p>正直に言うと、田中さんも最初から順調だったわけではありません。Googleフォームの入力をスタッフに頼んだら、<strong>最初の1週間で入力したのは田中さん本人を含めて3人だけ</strong>。「忙しくてそんなのやってられない」と現場から反発も出ました。</p>
+
+<p>そこで田中さんは方針を変えました。<strong>「全員が入力する」のではなく、「各シフトリーダー1人だけが入力する」</strong>ルールに変更。さらにLINEで「今日の入力ありがとう」と一言返すようにしたら、3週目から定着し始めました。AIの仕組みより、現場運用の設計のほうが大事だった、というのが田中さんの学びです。</p>
+
+
+<p class="inline-related">あわせて読みたい: <a href="29fdffbf.html" class="inline-link">介護施設の売上データの分析</a>の記事もおすすめです。</p>
+<h2 id="section-6">よくある質問</h2>
+
+<h3>Q1: 個人情報を扱う介護現場でChatGPTを使って大丈夫ですか？</h3>
+
+<p>在庫管理の用途であれば、入居者の氏名や個人を特定できる情報を入力しなければ問題ありません。「Aさんのオムツ使用量」ではなく「居室101のLサイズ消費量」のように、匿名化したデータで運用するのがコツです。</p>
+
+<h3>Q2: ITが苦手なスタッフが多いのですが、本当に回りますか？</h3>
+
+<p>田中さんの施設も平均年齢48歳のスタッフ構成です。ポイントは「全員が使いこなす」のではなく、<strong>「1〜2人がAIを使い、結果をLINEで全員に共有する」</strong>形にすること。入力する人を最小限にすれば、現場の負担はほぼ増えません。</p>
+
+<h3>Q3: 初心者におすすめの本やツールはありますか？</h3>
+
+<p>まずChatGPTの基本的な使い方を学べる入門書を1冊読むのがおすすめです。動画講座よりも、手元に置いて何度も見返せる書籍のほうが、忙しい介護現場では実用的です。ツールとしては、無料で始められるGoogleスプレッドシート＋ChatGPTの無料版で十分スタートできます。</p>
+
+<div class="aff-section">
+  <p class="aff-section-intro">この記事の内容をもっと体系的に学びたい方へ。実践的な一冊をご紹介します。</p>
+  <div class="aff-card">
+    <div class="aff-card-inner">
+      <div class="aff-book-img">
+        <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8362/9784297148362_1_32.jpg?_ex=200x200" alt="ゼロからわかるDifyの教科書 〜生成AI×ノーコードでかんたん業務効率化" loading="lazy">
+      </div>
+      <div class="aff-content">
+        <span class="aff-badge">おすすめ</span>
+        <p class="aff-book-title">ゼロからわかるDifyの教科書 〜生成AI×ノーコードでかんたん業務効率化</p>
+        <p class="aff-book-meta">にゃんた / 2,970円（税込）</p>
+        <div class="aff-review"><span class="aff-review-stars">★★★★☆</span><span class="aff-review-count">おすすめ書籍</span></div>
+        <a href="https://rpx.a8.net/svt/ejp?a8mat=2ZPHBO+123RHU+2HOM+686ZL&amp;rakuten=y&amp;a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0ea62065.34400275.0ea62066.204f04c0%2Fa18090710619_2ZPHBO_123RHU_2HOM_686ZL%3Fpc%3Dhttp%253A%252F%252Fsearch.rakuten.co.jp%252Fsearch%252Fmall%252F%E7%94%9F%E6%88%90AI%2B%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96%252F%26m%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252F" target="_blank" rel="nofollow" class="aff-btn">
+          楽天ブックスで詳細を見る
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h2 id="section-7">まとめ：田中さんからのひとこと</h2>
+
+<p>「3年間、毎月20時間以上を発注作業に取られて、本当はもっと利用者さんと向き合いたいのに、と悔しい気持ちでした。AI在庫管理と聞くと『スタバですら失敗したのに』と尻込みしましたが、<strong>高いシステムを買うんじゃなくて、ChatGPTと無料ツールを組み合わせるだけで十分回る</strong>と気づけたのが転機でした」</p>
+
+<p>田中さんは今、削減できた月20時間を使って、新人スタッフの育成プログラムを作り始めています。在庫管理は「やらされる雑務」から「現場を回す土台」に変わりました。</p>
+
+<p>介護現場の在庫管理に悩む方は、ぜひ今週末の3時間を使って、スプレッドシート＋ChatGPTのセットアップから始めてみてください。来月にはきっと、田中さんと同じように「もっと早くやればよかった」と感じるはずです。</p>
+<div class="disclaimer">
+  <p>※本記事に登場する人物・店舗名は架空のものであり、実在の個人・団体とは関係ありません。事例は同業種でよくあるお悩みをもとに構成したフィクションです。効果や数値はあくまで想定であり、成果を保証するものではありません。</p>
+</div>
+<div class="cta-box">
+  <p class="cta-title">「うちも在庫管理の改善をどうにかしたい」と思った介護施設の方へ</p>
+  <p>この記事で紹介した方法は、どなたでも今日から始められます。「でも一人だと不安…」という方は、かわさき楽AIサポートにご相談ください。無料ツール中心で、あなたの業務に合ったAI活用を一緒に考えます。</p>
+  <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="cta-btn">初回無料で相談してみる</a>
+</div>
+<div class="related-articles">
+  <h2>あわせて読みたい</h2>
+  <ul class="related-list"><li>
+  <span class="tag">介護施設</span>
+  <a href="29fdffbf.html">介護施設 売上データの分析 改善したい｜今日から始められるAI活用3ステップ</a>
+</li><li>
+  <span class="tag">介護施設</span>
+  <a href="461e773f.html">介護施設 業務マニュアル作成 効率化｜ChatGPTを使った具体的なやり方</a>
+</li><li>
+  <span class="tag">保育園・幼稚園</span>
+  <a href="4e715493.html">保育園・幼稚園 在庫管理の改善 やり方がわからない｜初心者でもできるAI活用術</a>
+</li><li>
+  <span class="tag">自動車整備業</span>
+  <a href="52a33239.html">自動車整備業 在庫管理の改善 やり方がわからない｜初心者でもできるAI活用術</a>
+</li></ul>
+</div>
+</article>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="../index.html">記事一覧</a>
+        <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">かわさき楽AIサポート</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../sitemap.xml">サイトマップ</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 小さなお店のための業種別AIお困り解決帳 / <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">株式会社スマイルファクトリー</a></p>
+    </div>
+  </footer>
+</body>
+</html>
