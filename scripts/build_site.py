@@ -1,7 +1,8 @@
 """
 静的サイトビルドスクリプト v3
-目次自動生成、構造化データ（Article/FAQ/HowTo）、関連記事、内部リンク、
-SaaSアフィリエイト、カテゴリフィルター、sitemap ping対応
+目次自動生成、要点リード、構造化データ（Article/Breadcrumb/FAQ/HowTo + トップのOrganization/WebSite）、
+監修ボックス、関連記事、内部リンク、SaaSアフィリエイト、カテゴリフィルター、
+robots.txt/llms.txt生成、sitemap ping対応
 """
 import json
 import re

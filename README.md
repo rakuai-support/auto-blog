@@ -31,7 +31,7 @@
 
 ```
 auto-blog/
-├── config.json                  # サイト設定・業種/テーマ一覧・アフィリエイト情報
+├── config.json                  # サイト設定・業種/テーマ一覧・アフィリエイト情報・organization（監修元/EEAT情報）
 ├── .env                         # APIキー（gitignore対象）
 ├── scripts/
 │   ├── generate_article.py      # 記事生成（Claude CLI + ニュース取得）
@@ -51,7 +51,8 @@ auto-blog/
 │   ├── index.html               # トップページ（カテゴリフィルター付き）
 │   ├── articles/                # 各記事HTML
 │   ├── style.css                # サイトCSS
-│   ├── robots.txt               # クローラー設定
+│   ├── robots.txt               # クローラー設定（ビルド生成・主要AIクローラー明示許可）
+│   ├── llms.txt                 # LLM向けサイト案内（ビルド生成・監修元/全記事リスト）
 │   ├── sitemap.xml              # サイトマップ（changefreq付き）
 │   ├── ogp.png                  # OGP共通画像（1200x630）
 │   └── googlea0af38cf627c9297.html  # Search Console認証
@@ -156,10 +157,16 @@ scripts\setup_scheduler.bat
 
 - 簡易Markdownパーサー（外部ライブラリ不要）
 - 目次自動生成（h2見出しから）
+- 要点リード（結論先出しブロック・Speakable対象）をh1直下に挿入
 - アフィリエイトカード挿入（書籍画像 + 文脈紹介文）
 - 関連記事（同業種/同テーマから最大4件）
-- JSON-LD構造化データ
+- 監修ボックス（監修元＝かわさき楽AIサポートを明示／EEAT）
+- JSON-LD構造化データ（記事: Article + BreadcrumbList + FAQPage + HowTo、トップ: Organization + WebSite）
+  - author / publisher は `@id` で organization エンティティに統一、publisher.logo（ImageObject）付き
+  - Speakable で要点リード・見出しを音声/回答エンジン向けに指定
 - サイトマップ自動生成
+- robots.txt 生成（主要AIクローラー GPTBot / ClaudeBot / PerplexityBot / Google-Extended 等を明示許可）
+- llms.txt 生成（サイト概要・監修元・全記事リンクをLLM向けに出力）
 
 ### run_daily.bat
 
@@ -184,18 +191,39 @@ scripts\setup_scheduler.bat
 | Google AdSense | 準備中 | 30記事到達後に申請予定 |
 | CTA（自社サービス） | 稼働中 | 各記事下部に「かわさき楽AIサポート」への無料相談リンク |
 
-## SEO対策
+## SEO / AEO / AIO / EEAT 対策
 
+### SEO（検索エンジン最適化）
 - [x] Google Search Console 登録済み
-- [x] sitemap.xml 自動生成・送信
+- [x] sitemap.xml 自動生成・IndexNow送信
 - [x] robots.txt 設定
-- [x] JSON-LD 構造化データ（Article スキーマ）
+- [x] JSON-LD 構造化データ（Article / BreadcrumbList / FAQPage / HowTo）
+- [x] publisher.logo（ImageObject）でArticleリッチリザルト要件を充足
 - [x] OGP / Twitter Card メタタグ（og:image / twitter:image 設定済み）
 - [x] canonical URL
-- [x] パンくずリスト
+- [x] パンくずリスト（見た目 + BreadcrumbList JSON-LD）
 - [x] レスポンシブ対応
 - [x] 目次（内部リンク）
 - [x] 最新ニュースを反映した時事性のある記事内容
+
+### AEO（Answer Engine 最適化 / 回答枠・スニペット）
+- [x] 要点リード（結論先出し）を各記事の冒頭に配置
+- [x] FAQPage 構造化データ
+- [x] Speakable 指定（要点リード・h1・h2）
+
+### AIO（AI検索 / LLM最適化）
+- [x] llms.txt 自動生成（サイト構造・監修元・全記事リンクを明示）
+- [x] robots.txt で主要AIクローラー（GPTBot / OAI-SearchBot / ClaudeBot / PerplexityBot / Google-Extended / Applebot 等）を明示許可
+
+### EEAT（経験・専門性・権威性・信頼性）
+- [x] トップに Organization スキーマ（法人名・住所・連絡先・対応エリア）
+- [x] 公式SNSを sameAs に登録（X / Facebook / note）→ 権威性
+- [x] 各記事に監修バイライン＋監修プロフィールボックス（監修元＝かわさき楽AIサポートを明示）
+- [x] WebSite スキーマ（サイト内検索 SearchAction）
+- [ ] 監修を実在人物（代表）で Person 化（任意・更なる専門性強化）
+
+> 上記はすべて `build_site.py` に組み込み済みで、新記事の追加時に自動適用される。
+> 監修元・住所・SNS等の情報は `config.json` の `organization` ブロックに集約。
 
 ## 技術的な特徴
 
