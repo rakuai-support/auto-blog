@@ -8,6 +8,26 @@
   "analytics": {
     "ga4_measurement_id": "G-7ZNG2CPH6V"
   },
+  "organization": {
+    "name": "かわさき楽AIサポート",
+    "legal_name": "株式会社スマイルファクトリー",
+    "url": "https://www.smilefactory-rakuai.com/",
+    "logo": "https://okomari.smilefactory-rakuai.com/ogp.png",
+    "email": "admin@smilefactory-rakuai.com",
+    "description": "川崎の中小企業・個人事業主・個人がAIを「楽に」「楽しく」活用できる状態をつくるAI活用支援サービス。無料ツール中心で、AIの専門家ではなく『整理役・伴走者』として業務効率化を支援します。",
+    "slogan": "AIを楽に、楽しく。",
+    "founder": "内貴志",
+    "area_served": "神奈川県川崎市",
+    "address": {
+      "postal_code": "213-0011",
+      "region": "神奈川県",
+      "locality": "川崎市高津区",
+      "street": "久本1-6-8 3号室"
+    },
+    "same_as": [
+      "https://www.smilefactory-rakuai.com/"
+    ]
+  },
   "generation": {
     "articles_per_run": 3,
     "max_articles": 300

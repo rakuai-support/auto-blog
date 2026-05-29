@@ -693,36 +693,148 @@ def extract_howto_steps(md_text):
     return unique[:8]
 
 
+def org_id(config):
+    """Organizationエンティティの安定@id（サイト全体で参照を統一）"""
+    return f"{site_url(config)}/#organization"
+
+
+def build_org_node(config):
+    """監修元（かわさき楽AIサポート）のOrganizationノードを生成。
+    Article/WebSite/トップで使い回し、@idで同一エンティティとして紐づける。"""
+    org = config.get("organization", {})
+    node = {
+        "@type": "Organization",
+        "@id": org_id(config),
+        "name": org.get("name", ""),
+        "legalName": org.get("legal_name", ""),
+        "url": org.get("url", ""),
+        "description": org.get("description", ""),
+        "logo": {
+            "@type": "ImageObject",
+            "url": org.get("logo", f"{site_url(config)}/ogp.png"),
+            "width": 1200,
+            "height": 630
+        }
+    }
+    if org.get("slogan"):
+        node["slogan"] = org["slogan"]
+    if org.get("founder"):
+        node["founder"] = {"@type": "Person", "name": org["founder"]}
+    if org.get("area_served"):
+        node["areaServed"] = org["area_served"]
+    if org.get("email"):
+        node["contactPoint"] = {
+            "@type": "ContactPoint",
+            "email": org["email"],
+            "contactType": "customer support",
+            "areaServed": "JP",
+            "availableLanguage": "Japanese"
+        }
+    addr = org.get("address")
+    if addr:
+        node["address"] = {
+            "@type": "PostalAddress",
+            "postalCode": addr.get("postal_code", ""),
+            "addressRegion": addr.get("region", ""),
+            "addressLocality": addr.get("locality", ""),
+            "streetAddress": addr.get("street", ""),
+            "addressCountry": "JP"
+        }
+    if org.get("same_as"):
+        node["sameAs"] = org["same_as"]
+    return node
+
+
+def build_home_structured_data(config, all_meta):
+    """トップページ用のOrganization + WebSite + Blog（ItemList）JSON-LD"""
+    org = config.get("organization", {})
+    org_node = build_org_node(config)
+
+    website_node = {
+        "@type": "WebSite",
+        "@id": f"{site_url(config)}/#website",
+        "url": site_home_url(config),
+        "name": config["site"]["title"],
+        "description": config["site"]["description"],
+        "inLanguage": "ja",
+        "publisher": {"@id": org_id(config)},
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": f"{site_home_url(config)}?q={{search_term_string}}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+
+    graph = {
+        "@context": "https://schema.org",
+        "@graph": [org_node, website_node]
+    }
+    return f'<script type="application/ld+json">{json.dumps(graph, ensure_ascii=False)}</script>'
+
+
 def build_structured_data(meta, config, md_text=""):
-    """JSON-LD構造化データを生成（Article + FAQ + HowTo）"""
+    """JSON-LD構造化データを生成（Article + Breadcrumb + FAQ + HowTo）"""
     scripts = []
     article_url = f'{site_url(config)}/articles/{meta["slug"]}.html'
+    date_published = meta["date"]
+    date_modified = meta.get("updated", meta["date"])
 
-    # Article スキーマ
+    # Article スキーマ（監修＝かわさき楽AIサポート、publisher.logo付き）
+    org_node = build_org_node(config)
     article_data = {
         "@context": "https://schema.org",
         "@type": "Article",
         "url": article_url,
         "headline": meta["title"],
         "description": meta["description"],
-        "image": f"{site_url(config)}/ogp.png",
-        "datePublished": meta["date"],
-        "dateModified": meta["date"],
-        "author": {
-            "@type": "Organization",
-            "name": "かわさき楽AIサポート",
-            "url": "https://www.smilefactory-rakuai.com/"
+        "image": {
+            "@type": "ImageObject",
+            "url": f"{site_url(config)}/ogp.png",
+            "width": 1200,
+            "height": 630
         },
-        "publisher": {
-            "@type": "Organization",
-            "name": "株式会社スマイルファクトリー"
-        },
+        "inLanguage": "ja",
+        "datePublished": date_published,
+        "dateModified": date_modified,
+        "author": {"@id": org_id(config)},
+        "publisher": {"@id": org_id(config)},
+        "isPartOf": {"@id": f"{site_url(config)}/#website"},
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": article_url
+        },
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".article-lead", "h1", "h2"]
         }
     }
-    scripts.append(f'<script type="application/ld+json">{json.dumps(article_data, ensure_ascii=False)}</script>')
+    if meta.get("industry"):
+        article_data["about"] = {"@type": "Thing", "name": meta["industry"]}
+    # Organizationノードを同梱し@id参照を解決可能にする
+    article_graph = {"@context": "https://schema.org", "@graph": [article_data, org_node]}
+    scripts.append(f'<script type="application/ld+json">{json.dumps(article_graph, ensure_ascii=False)}</script>')
+
+    # パンくず（BreadcrumbList）
+    breadcrumb_items = [
+        {"@type": "ListItem", "position": 1, "name": "トップ", "item": site_home_url(config)},
+    ]
+    if meta.get("industry"):
+        breadcrumb_items.append({"@type": "ListItem", "position": 2, "name": meta["industry"]})
+    breadcrumb_items.append({
+        "@type": "ListItem",
+        "position": len(breadcrumb_items) + 1,
+        "name": meta["title"],
+        "item": article_url
+    })
+    breadcrumb_data = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": breadcrumb_items
+    }
+    scripts.append(f'<script type="application/ld+json">{json.dumps(breadcrumb_data, ensure_ascii=False)}</script>')
 
     # FAQ スキーマ
     faqs = extract_faq(md_text)
@@ -776,15 +888,51 @@ def build_article(meta, md_text, template, config, all_meta, books_cache=None):
     article_html = insert_inline_links(article_html, meta, all_meta)
     article_html = insert_own_services(article_html, config, meta)
 
-    # 目次を生成してh1の後に挿入
+    # 記事ヘッダーメタ（監修バイライン付き）
+    read_min = meta.get("read_minutes", 3)
+    org = config.get("organization", {})
+    org_name = html.escape(org.get("name", "かわさき楽AIサポート"))
+    org_url = org.get("url", "https://www.smilefactory-rakuai.com/")
+    updated = meta.get("updated", meta.get("date", ""))
+    updated_html = f'<span>更新: {updated}</span>' if updated and updated != meta.get("date", "") else ""
+    header_meta = (
+        f'<div class="article-header-meta">'
+        f'<span class="tag">{html.escape(meta.get("industry", ""))}</span>'
+        f'<span>公開: {meta.get("date", "")}</span>{updated_html}'
+        f'<span>約{read_min}分で読めます</span>'
+        f'<span class="byline">監修: <a href="{org_url}" target="_blank" rel="noopener">{org_name}</a></span>'
+        f'</div>'
+    )
+
+    # 要点リード（結論先出し・Speakable対象）
+    lead = (
+        f'<div class="article-lead">'
+        f'<p class="article-lead-label">この記事の要点</p>'
+        f'<p>{html.escape(meta.get("description", ""))}</p>'
+        f'</div>'
+    )
+
+    # 目次を生成してh1の後に挿入（h1 → 要点リード → 目次の順）
     headings = extract_h2_headings(md_text)
     toc = build_toc(headings)
-    if toc:
-        article_html = article_html.replace("</h1>", f"</h1>\n{toc}", 1)
+    article_html = article_html.replace("</h1>", f"</h1>\n{lead}\n{toc}", 1)
 
-    # 記事ヘッダーメタ
-    read_min = meta.get("read_minutes", 3)
-    header_meta = f'<div class="article-header-meta"><span class="tag">{html.escape(meta.get("industry", ""))}</span><span>{meta.get("date", "")}</span><span>約{read_min}分で読めます</span></div>'
+    # 監修者プロフィール（EEAT: 監修元アピール）
+    org_desc = html.escape(org.get("description", ""))
+    org_legal = html.escape(org.get("legal_name", ""))
+    org_area = html.escape(org.get("area_served", ""))
+    supervisor = (
+        f'<div class="supervisor-box">'
+        f'<p class="supervisor-label">この記事の監修</p>'
+        f'<div class="supervisor-body">'
+        f'<p class="supervisor-name"><a href="{org_url}" target="_blank" rel="noopener">{org_name}</a>'
+        f'<span class="supervisor-legal">（{org_legal}）</span></p>'
+        f'<p class="supervisor-desc">{org_desc}</p>'
+        f'<p class="supervisor-meta">対応エリア: {org_area}／初回相談無料</p>'
+        f'<a href="{org_url}" target="_blank" rel="noopener" class="supervisor-link">かわさき楽AIサポートに相談する →</a>'
+        f'</div>'
+        f'</div>'
+    )
 
     # 関連記事
     related = build_related_articles(meta, all_meta)
@@ -803,7 +951,7 @@ def build_article(meta, md_text, template, config, all_meta, books_cache=None):
   <p>※本記事に登場する人物・店舗名は架空のものであり、実在の個人・団体とは関係ありません。事例は同業種でよくあるお悩みをもとに構成したフィクションです。効果や数値はあくまで想定であり、成果を保証するものではありません。</p>
 </div>"""
 
-    content = f"<article>\n{header_meta}\n{article_html}\n{disclaimer}\n{cta}\n{related}\n</article>"
+    content = f"<article>\n{header_meta}\n{article_html}\n{disclaimer}\n{supervisor}\n{cta}\n{related}\n</article>"
 
     # パンくずリスト
     breadcrumb = f'<div class="breadcrumb"><a href="../index.html">トップ</a><span>&gt;</span><span>{html.escape(meta.get("industry", ""))}</span><span>&gt;</span><span>{html.escape(meta["title"][:30])}...</span></div>'
@@ -905,7 +1053,7 @@ document.querySelectorAll('.category-btn').forEach(function(btn) {{
     page = page.replace("{{root_path}}", "")
     page = page.replace("{{og_type}}", "website")
     page = page.replace("{{breadcrumb}}", "")
-    page = page.replace("{{structured_data}}", "")
+    page = page.replace("{{structured_data}}", build_home_structured_data(config, all_meta))
     page = page.replace("{{analytics_tag}}", build_analytics_tag(config))
     page = page.replace("{{content}}", content)
 
@@ -1000,6 +1148,70 @@ def build_sitemap(all_meta, config):
 </urlset>"""
 
 
+def build_robots_txt(config):
+    """robots.txt（AIクローラーを明示的に許可。引用・学習を歓迎する方針）"""
+    sitemap_url = f"{site_url(config)}/sitemap.xml"
+    # 引用・露出を狙うため主要AIクローラーを明示許可
+    ai_agents = [
+        "GPTBot", "OAI-SearchBot", "ChatGPT-User",
+        "ClaudeBot", "Claude-Web", "anthropic-ai",
+        "PerplexityBot", "Perplexity-User",
+        "Google-Extended", "GoogleOther",
+        "Bingbot", "Applebot", "Applebot-Extended",
+        "Amazonbot", "Bytespider", "CCBot",
+    ]
+    lines = ["User-agent: *", "Allow: /", ""]
+    for agent in ai_agents:
+        lines.append(f"User-agent: {agent}")
+        lines.append("Allow: /")
+        lines.append("")
+    lines.append(f"Sitemap: {sitemap_url}")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def build_llms_txt(all_meta, config):
+    """llms.txt（LLM向けにサイト構造・監修元・主要記事を明示）"""
+    org = config.get("organization", {})
+    root = site_url(config)
+    site_title = config["site"]["title"]
+    site_desc = config["site"]["description"]
+
+    lines = [
+        f"# {site_title}",
+        "",
+        f"> {site_desc}",
+        "",
+        f"本サイトは「{org.get('name', 'かわさき楽AIサポート')}」"
+        f"（{org.get('legal_name', '株式会社スマイルファクトリー')}）が監修・運営する、"
+        "中小企業・個人事業主向けのAI業務効率化メディアです。"
+        "業種別の「困りごと」を起点に、無料・低コストのAIツールで解決する具体策を解説しています。",
+        "",
+        "## 監修・運営",
+        "",
+        f"- 運営: [{org.get('name', '')}]({org.get('url', '')})（{org.get('legal_name', '')}）",
+        f"- 所在地: 〒{org.get('address', {}).get('postal_code', '')} "
+        f"{org.get('address', {}).get('region', '')}{org.get('address', {}).get('locality', '')}"
+        f"{org.get('address', {}).get('street', '')}",
+        f"- 対応エリア: {org.get('area_served', '')}",
+        f"- お問い合わせ: {org.get('email', '')}",
+        "",
+        "## 記事一覧",
+        "",
+    ]
+    for meta in all_meta:
+        url = f"{root}/articles/{meta['slug']}.html"
+        desc = meta.get("description", "").replace("\n", " ").strip()
+        lines.append(f"- [{meta['title']}]({url}): {desc}")
+    lines.append("")
+    lines.append("## 補足")
+    lines.append("")
+    lines.append("各記事の事例は同業種でよくあるお悩みをもとに構成したフィクションであり、"
+                 "登場する人物名・店舗名・会社名は仮名です。手順・プロンプト例・ツール紹介は実用情報です。")
+    lines.append("")
+    return "\n".join(lines)
+
+
 def main():
     config = load_config()
     template = load_template()
@@ -1046,6 +1258,14 @@ def main():
     sitemap = build_sitemap(all_meta, config)
     with open(PUBLIC_DIR / "sitemap.xml", "w", encoding="utf-8") as f:
         f.write(sitemap)
+
+    # robots.txt（AIクローラー明示許可）
+    with open(PUBLIC_DIR / "robots.txt", "w", encoding="utf-8") as f:
+        f.write(build_robots_txt(config))
+
+    # llms.txt（LLM向けサイト案内）
+    with open(PUBLIC_DIR / "llms.txt", "w", encoding="utf-8") as f:
+        f.write(build_llms_txt(all_meta, config))
 
     print(f"\nビルド完了: {built}記事 → public/")
 

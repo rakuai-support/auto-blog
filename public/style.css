@@ -322,12 +322,21 @@ article h1 {
 article .article-header-meta {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 0.75rem;
   padding-bottom: 1.25rem;
   margin-bottom: 1.75rem;
   border-bottom: 1px solid var(--border);
   font-size: 0.8rem;
   color: var(--text-muted);
+}
+article .article-header-meta .byline {
+  margin-left: auto;
+  color: var(--text-light);
+}
+article .article-header-meta .byline a {
+  color: var(--gold);
+  font-weight: 700;
 }
 article h2 {
   font-size: 1.25rem;
@@ -810,8 +819,84 @@ article tbody tr:nth-child(even) {
   border-radius: 4px;
 }
 
+/* ========== 要点リード（結論先出し / Speakable） ========== */
+.article-lead {
+  background: var(--blue-light);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--blue);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 1rem 1.25rem;
+  margin: 0 0 2rem;
+}
+.article-lead-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--blue-dark);
+  margin: 0 0 0.4rem;
+}
+.article-lead p:last-child {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+/* ========== 監修ボックス（EEAT） ========== */
+.supervisor-box {
+  border: 1px solid var(--gold);
+  background: var(--gold-light);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem 1.5rem;
+  margin: 2.5rem 0;
+}
+.supervisor-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  margin: 0 0 0.6rem;
+}
+.supervisor-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--black);
+  margin: 0 0 0.5rem;
+}
+.supervisor-name a { color: var(--black); }
+.supervisor-name a:hover { color: var(--blue); }
+.supervisor-legal {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+.supervisor-desc {
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: var(--text);
+  margin: 0 0 0.5rem;
+}
+.supervisor-meta {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin: 0 0 0.9rem;
+}
+.supervisor-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--blue);
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+}
+.supervisor-link:hover { background: var(--blue-dark); color: var(--white); }
+
 /* ========== レスポンシブ ========== */
 @media (max-width: 600px) {
+  .article-header-meta .byline { margin-left: 0; }
+  .supervisor-box { padding: 1rem 1.1rem; }
   main { padding: 1rem 1rem 3rem; }
   article { padding: 1.5rem 1.25rem; border-radius: var(--radius-sm); }
   article h1 { font-size: 1.3rem; }
