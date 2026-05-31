@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="xq2Wicedua7rwzz4MrzjFmLgCvCU9ZIT-cl3uNYukho">
+  <title>ペットショップ・動物病院 在庫管理の改善 つらい・終わらない → AI導入で変わった実例 | 小さなお店のための業種別AIお困り解決帳</title>
+  <meta name="description" content="動物病院の在庫管理をChatGPT＋ZAICO＋freeeで月17時間削減した実例。療法食ロス・欠品ゼロを目指す具体的手順とプロンプト例を紹介。">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://okomari.smilefactory-rakuai.com/articles/810f5126.html">
+  <!-- OGP -->
+  <meta property="og:title" content="ペットショップ・動物病院 在庫管理の改善 つらい・終わらない → AI導入で変わった実例 | 小さなお店のための業種別AIお困り解決帳">
+  <meta property="og:description" content="動物病院の在庫管理をChatGPT＋ZAICO＋freeeで月17時間削減した実例。療法食ロス・欠品ゼロを目指す具体的手順とプロンプト例を紹介。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://okomari.smilefactory-rakuai.com/articles/810f5126.html">
+  <meta property="og:site_name" content="小さなお店のための業種別AIお困り解決帳">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://okomari.smilefactory-rakuai.com/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ペットショップ・動物病院 在庫管理の改善 つらい・終わらない → AI導入で変わった実例 | 小さなお店のための業種別AIお困り解決帳">
+  <meta name="twitter:description" content="動物病院の在庫管理をChatGPT＋ZAICO＋freeeで月17時間削減した実例。療法食ロス・欠品ゼロを目指す具体的手順とプロンプト例を紹介。">
+  <meta name="twitter:image" content="https://okomari.smilefactory-rakuai.com/ogp.png">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZNG2CPH6V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7ZNG2CPH6V');
+  </script>
+  <!-- フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@context": "https://schema.org", "@type": "Article", "url": "https://okomari.smilefactory-rakuai.com/articles/810f5126.html", "headline": "ペットショップ・動物病院 在庫管理の改善 つらい・終わらない → AI導入で変わった実例", "description": "動物病院の在庫管理をChatGPT＋ZAICO＋freeeで月17時間削減した実例。療法食ロス・欠品ゼロを目指す具体的手順とプロンプト例を紹介。", "image": {"@type": "ImageObject", "url": "https://okomari.smilefactory-rakuai.com/ogp.png", "width": 1200, "height": 630}, "inLanguage": "ja", "datePublished": "2026-05-31", "dateModified": "2026-05-31", "author": {"@id": "https://okomari.smilefactory-rakuai.com/#organization"}, "publisher": {"@id": "https://okomari.smilefactory-rakuai.com/#organization"}, "isPartOf": {"@id": "https://okomari.smilefactory-rakuai.com/#website"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://okomari.smilefactory-rakuai.com/articles/810f5126.html"}, "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".article-lead", "h1", "h2"]}, "about": {"@type": "Thing", "name": "ペットショップ・動物病院"}}, {"@type": "Organization", "@id": "https://okomari.smilefactory-rakuai.com/#organization", "name": "かわさき楽AIサポート", "legalName": "株式会社スマイルファクトリー", "url": "https://www.smilefactory-rakuai.com/", "description": "川崎の中小企業・個人事業主・個人がAIを「楽に」「楽しく」活用できる状態をつくるAI活用支援サービス。無料ツール中心で、AIの専門家ではなく『整理役・伴走者』として業務効率化を支援します。", "logo": {"@type": "ImageObject", "url": "https://okomari.smilefactory-rakuai.com/ogp.png", "width": 1200, "height": 630}, "slogan": "AIを楽に、楽しく。", "founder": {"@type": "Person", "name": "内貴志"}, "areaServed": "神奈川県川崎市", "contactPoint": {"@type": "ContactPoint", "email": "admin@smilefactory-rakuai.com", "contactType": "customer support", "areaServed": "JP", "availableLanguage": "Japanese"}, "address": {"@type": "PostalAddress", "postalCode": "213-0011", "addressRegion": "神奈川県", "addressLocality": "川崎市高津区", "streetAddress": "久本1-6-8 3号室", "addressCountry": "JP"}, "sameAs": ["https://www.smilefactory-rakuai.com/", "https://x.com/rakuai_support", "https://www.facebook.com/profile.php?id=61578232930114", "https://note.com/arukuwa"]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://okomari.smilefactory-rakuai.com/"}, {"@type": "ListItem", "position": 2, "name": "ペットショップ・動物病院"}, {"@type": "ListItem", "position": 3, "name": "ペットショップ・動物病院 在庫管理の改善 つらい・終わらない → AI導入で変わった実例", "item": "https://okomari.smilefactory-rakuai.com/articles/810f5126.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "動物病院でも本当にAIで在庫管理ができますか？", "acceptedAnswer": {"@type": "Answer", "text": "はい、可能です。SKUが多く季節変動がある動物病院こそ、AIによる需要予測の恩恵が大きい業種です。最初は療法食など主要カテゴリだけに絞って始めると、無理なく定着します。"}}, {"@type": "Question", "name": "スタバが在庫管理AIを打ち切ったというニュースを見て不安です。", "acceptedAnswer": {"@type": "Answer", "text": "大企業の複雑なオペレーションと、小規模事業者の在庫管理は別物です。中小規模であれば、ZAICOのようなシンプルなSaaSと汎用AI（ChatGPT）の組み合わせで十分機能します。むしろ小回りが利く分、効果が出やすいです。"}}, {"@type": "Question", "name": "初心者におすすめの本やツールはありますか？", "acceptedAnswer": {"@type": "Answer", "text": "まずはChatGPTの無料版と、業務活用に特化した入門書を1冊読むことから始めるのがおすすめです。本で全体像を掴んでから、自院のデータで小さく試すと失敗が少ないです。ツールは無料プランのZAICO＋スプレッドシートで十分スタートできます。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "ペットショップ・動物病院の在庫管理の改善をAIで効率化する方法", "description": "動物病院の在庫管理をChatGPT＋ZAICO＋freeeで月17時間削減した実例。療法食ロス・欠品ゼロを目指す具体的手順とプロンプト例を紹介。", "step": [{"@type": "HowToStep", "name": "〜5：ChatGPT＋スプレッドシート＋ZAICOで構築", "text": "〜5：ChatGPT＋スプレッドシート＋ZAICOで構築"}, {"@type": "HowToStep", "name": "**在庫マスタをスプレッドシートで作成**：商品名・メーカー・標準在庫数・発注点・賞味期限を1行ずつ入力（最初はExcelの既存データをコピペ）", "text": "**在庫マスタをスプレッドシートで作成**：商品名・メーカー・標準在庫数・発注点・賞味期限を1行ずつ入力（最初はExcelの既存データをコピペ）"}, {"@type": "HowToStep", "name": "**ChatGPTに「発注点」を算出させる**：過去6カ月の出庫数を入力し、適正在庫を計算してもらう", "text": "**ChatGPTに「発注点」を算出させる**：過去6カ月の出庫数を入力し、適正在庫を計算してもらう"}, {"@type": "HowToStep", "name": "**ZAICOに移行**<!-- TOOL:ZAICO -->：スマホでバーコードを読むだけで入出庫が記録できる在庫管理SaaS。無料プランから始められる", "text": "**ZAICOに移行**<!-- TOOL:ZAICO -->：スマホでバーコードを読むだけで入出庫が記録できる在庫管理SaaS。無料プランから始められる"}, {"@type": "HowToStep", "name": "**賞味期限アラートをLINE公式アカウントに連携**<!-- TOOL:LINE公式アカウント -->：30日前にスタッフのグループLINEに自動通知", "text": "**賞味期限アラートをLINE公式アカウントに連携**<!-- TOOL:LINE公式アカウント -->：30日前にスタッフのグループLINEに自動通知"}, {"@type": "HowToStep", "name": "**週次でChatGPTに発注リストを作らせる**：在庫データを貼り付け、「来週分の発注リストを作って」と依頼", "text": "**週次でChatGPTに発注リストを作らせる**：在庫データを貼り付け、「来週分の発注リストを作って」と依頼"}]}</script>
+  <!-- Google AdSense -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_ADSENSE_ID" crossorigin="anonymous"></script> -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2335a0d9'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='sans-serif' font-size='11' font-weight='900' fill='white'%3E困AI%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#35a0d9">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="header-top">
+        <a href="../index.html" class="logo">小さなお店のための業種別AIお困り解決帳</a>
+        <nav class="header-nav">
+          <a href="../index.html">記事一覧</a>
+          <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="nav-cta">無料相談</a>
+        </nav>
+      </div>
+      <p class="tagline">飲食店・美容室・士業・工務店などの「困った」をAIで減らす具体策</p>
+    </div>
+  </header>
+  <main>
+    <div class="breadcrumb"><a href="../index.html">トップ</a><span>&gt;</span><span>ペットショップ・動物病院</span><span>&gt;</span><span>ペットショップ・動物病院 在庫管理の改善 つらい・終わらない...</span></div>
+    <article>
+<div class="article-header-meta"><span class="tag">ペットショップ・動物病院</span><span>公開: 2026-05-31</span><span>約11分で読めます</span><span class="byline">監修: <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">かわさき楽AIサポート</a></span></div>
+<h1>ペットショップ・動物病院 在庫管理の改善 つらい・終わらない → AI導入で変わった実例</h1>
+<div class="article-lead"><p class="article-lead-label">この記事の要点</p><p>動物病院の在庫管理をChatGPT＋ZAICO＋freeeで月17時間削減した実例。療法食ロス・欠品ゼロを目指す具体的手順とプロンプト例を紹介。</p></div>
+<div class="toc">
+  <div class="toc-title">この記事の内容</div>
+  <ol><li><a href="#section-1">ペットショップ・動物病院の在庫管理の改善、なぜこんなに大変なのか？</a></li>
+<li><a href="#section-2">ペットショップ・動物病院で在庫管理の改善が放置されがちな3つの理由</a></li>
+<li><a href="#section-3">在庫管理の改善をAIで解決する方法（ステップ解説）</a></li>
+<li><a href="#section-4">もうひとつのAI活用法：freee会計との組み合わせ</a></li>
+<li><a href="#section-5">導入前後でどう変わった？数字で見るビフォーアフター</a></li>
+<li><a href="#section-6">もっと深く学びたい人向け：佐藤さんおすすめの一冊</a></li>
+<li><a href="#section-7">よくある質問</a></li>
+<li><a href="#section-8">まとめ：佐藤さんからのひとこと</a></li></ol>
+</div>
+
+<p>川崎市高津区で小さな動物病院を営む獣医師の<strong>佐藤 美咲さん（42歳・女性）</strong>。スタッフ4名（看護師2名・受付1名・トリマー1名）の規模で、年商はおよそ8,000万円。診療の合間に、療法食・ノミダニ薬・サプリ・ペットフードなど約300SKUの在庫を管理しています。月末になると棚卸しで毎回深夜まで残業、「賞味期限切れのフードを発見してロス」「人気のシニア犬用療法食が突然欠品して飼い主さんに謝罪」――そんな日々が続いていました。最近では、スタバが北米で在庫管理AIツールを9カ月で打ち切ったというニュース（Reuters）も話題になり、「AIで在庫管理って本当にうまくいくの？」と半信半疑だった佐藤さん。それでも、ZAICOがDX総合EXPOで「AIで人手不足を救う在庫管理」を実演しているのを知り、重い腰を上げました。</p>
+
+<p>&gt; ※本記事の事例は、ペットショップ・動物病院でよくあるお悩みをもとに構成したフィクションです。登場人物名・店舗名・会社名は仮名であり、実在の個人・団体とは関係ありません。</p>
+
+<p><strong>結論から言えば、ペットショップ・動物病院の在庫管理は、ChatGPT＋無料のスプレッドシート＋在庫管理SaaSの組み合わせで、月20時間以上の棚卸し・発注作業を3時間程度まで圧縮できます。</strong> 高額なシステムを入れる必要はなく、月額数千円〜の運用で十分回ります。</p>
+
+
+<h2 id="section-1">ペットショップ・動物病院の在庫管理の改善、なぜこんなに大変なのか？</h2>
+
+<p>佐藤さんの1日は、朝8時のフード補充から始まります。診療開始前にバックヤードを覗き、療法食が足りているか目視チェック。診療が始まると、処置の合間に「あ、ノミダニ薬が残り2個だ」とメモ。昼休みに発注書をFAXで流し、夕方にはトリマーから「シャンプー在庫が少ない」と声がかかる。閉院後は伝票整理、月末は棚卸しで深夜まで残業……。</p>
+
+<h3>動物病院・ペットショップ特有の在庫の難しさ</h3>
+
+<ol>
+<li><strong>SKUが多すぎる</strong>：療法食だけでも腎臓・肝臓・尿路・アレルギー対応など犬種・年齢別に細分化</li>
+<li><strong>賞味期限管理がシビア</strong>：開封後の使用期限、ワクチンや薬剤の温度管理</li>
+<li><strong>季節変動が激しい</strong>：ノミダニ薬は春〜秋、毛玉ケアは換毛期に集中</li>
+<li><strong>欠品＝信頼の喪失</strong>：「いつもの療法食が買えない」と飼い主が他院に流れる</li>
+</ol>
+
+<p>佐藤さんが特に苦しんでいたのは「<strong>療法食の発注量がいつも勘</strong>」。多すぎれば賞味期限切れ、少なすぎれば欠品。月のロスだけで3〜5万円、欠品によるクレーム対応が月2〜3件発生していました。</p>
+
+
+<h2 id="section-2">ペットショップ・動物病院で在庫管理の改善が放置されがちな3つの理由</h2>
+
+<h3>理由1：本業（診療・接客）が忙しすぎる</h3>
+
+<p>獣医師もスタッフも、目の前の動物と飼い主への対応が最優先。「在庫を見直す時間なんてない」が本音です。</p>
+
+<h3>理由2：業界向け専用システムが高額</h3>
+
+<p>動物病院向け電子カルテに在庫機能が付いているものもありますが、月3〜5万円が相場。小規模院には負担が大きい。</p>
+
+<h3>理由3：「自分の頭の中に在庫がある」という属人化</h3>
+
+<p>佐藤さんも長年「だいたいこれくらい」で発注していました。スタッフに引き継げず、自分が休めない原因にもなっていました。</p>
+
+<p>最近ではアニコムHDが「保険3.0」としてAI化による医療効率化を打ち出すなど、業界全体がAI活用に動いています。小さな病院も、無料・低コストのツールから始められる時代になりました。</p>
+
+
+<h2 id="section-3">在庫管理の改善をAIで解決する方法（ステップ解説）</h2>
+
+<p>佐藤さんが実際に行った手順を紹介します。</p>
+
+<h3>ステップ1〜5：ChatGPT＋スプレッドシート＋ZAICOで構築</h3>
+
+<ol>
+<li><strong>在庫マスタをスプレッドシートで作成</strong>：商品名・メーカー・標準在庫数・発注点・賞味期限を1行ずつ入力（最初はExcelの既存データをコピペ）</li>
+<li><strong>ChatGPTに「発注点」を算出させる</strong>：過去6カ月の出庫数を入力し、適正在庫を計算してもらう</li>
+<li><strong>ZAICOに移行</strong>&lt;!-- TOOL:ZAICO --&gt;：スマホでバーコードを読むだけで入出庫が記録できる在庫管理SaaS。無料プランから始められる</li>
+<li><strong>賞味期限アラートをLINE公式アカウントに連携</strong>&lt;!-- TOOL:LINE公式アカウント --&gt;：30日前にスタッフのグループLINEに自動通知</li>
+<li><strong>週次でChatGPTに発注リストを作らせる</strong>：在庫データを貼り付け、「来週分の発注リストを作って」と依頼</li>
+</ol>
+
+<h3>佐藤さんが実際に使ったプロンプト例</h3>
+
+<p>&gt; 「動物病院の療法食在庫データです。過去6カ月の月次出庫数から、適正在庫数と発注点（リードタイム5日）を商品ごとに算出してください。」</p>
+
+<p>&gt; 「以下の在庫リストから、賞味期限が60日以内のものを抽出し、消費促進策（院内POP・飼い主への案内文）を3案ずつ提案してください。」</p>
+
+<p>&gt; 「シニア犬用腎臓ケア療法食の売上が先月比20%減です。原因として考えられる仮説を5つ挙げ、それぞれの検証方法も教えてください。」</p>
+
+<p>&gt; 「来月のノミダニ薬の発注数を、過去3年の同月実績と今年の気温推移から予測してください。」</p>
+
+<p>佐藤さんが最初に読んだのは、ChatGPTのビジネス活用について書かれた入門書でした。「この本に書いてあった通りに、データを貼り付けて『分析して』とお願いするだけ。最初のプロンプトでちゃんと答えが返ってきて、感動しました」と振り返ります。</p>
+
+<div class="aff-section">
+  <p class="aff-section-intro">ペットショップ・動物病院の在庫管理の改善について、さらに詳しく学びたい方にはこちらの書籍がおすすめです。</p>
+  <div class="aff-card">
+    <div class="aff-card-inner">
+      <div class="aff-book-img">
+        <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8362/9784297148362_1_32.jpg?_ex=200x200" alt="ゼロからわかるDifyの教科書 〜生成AI×ノーコードでかんたん業務効率化" loading="lazy">
+      </div>
+      <div class="aff-content">
+        <span class="aff-badge">Pick Up</span>
+        <p class="aff-book-title">ゼロからわかるDifyの教科書 〜生成AI×ノーコードでかんたん業務効率化</p>
+        <p class="aff-book-meta">にゃんた / 2,970円（税込）</p>
+        <div class="aff-review"><span class="aff-review-stars">★★★★☆</span><span class="aff-review-count">おすすめ書籍</span></div>
+        <a href="https://rpx.a8.net/svt/ejp?a8mat=2ZPHBO+123RHU+2HOM+686ZL&amp;rakuten=y&amp;a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0ea62065.34400275.0ea62066.204f04c0%2Fa18090710619_2ZPHBO_123RHU_2HOM_686ZL%3Fpc%3Dhttp%253A%252F%252Fsearch.rakuten.co.jp%252Fsearch%252Fmall%252F%E7%94%9F%E6%88%90AI%2B%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96%252F%26m%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252F" target="_blank" rel="nofollow" class="aff-btn">
+          楽天ブックスで見る
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>失敗談：最初はAIの答えを鵜呑みにして大量発注</h3>
+
+<p>導入1カ月目、ChatGPTが「シニア用フードを30個発注」と提案。佐藤さんはそのまま発注しましたが、実は前月にキャンペーンで一時的に売れただけ。在庫が大量に余ってしまいました。</p>
+<p><strong>対策</strong>：プロンプトに「季節要因・キャンペーンの有無も考慮し、平準化した数字で予測して」と一文加えただけで、現実的な数字が出るように。AIは「文脈」を伝えてあげると精度が一気に上がります。</p>
+
+
+<h2 id="section-4">もうひとつのAI活用法：freee会計との組み合わせ</h2>
+
+<p>在庫管理だけでなく、仕入原価の見える化も同時に進めました。</p>
+
+<h3>freee会計＋ChatGPTで原価率を毎月チェック</h3>
+
+<p>佐藤さんはfreee会計&lt;!-- TOOL:freee会計 --&gt;を使って仕入を記帳。月初にfreeeから仕入データをCSVでダウンロードし、ChatGPTに以下を依頼しています。</p>
+
+<p>&gt; 「先月の仕入CSVです。カテゴリ別（療法食／薬剤／サプリ／日用品）の原価率と、前月比較を表にまとめ、異常値があれば指摘してください。」</p>
+
+<p>これまで「なんとなく利益が出ている」だった経営が、<strong>カテゴリ別の粗利率まで毎月把握できる</strong>ように。仕入先の値上げにもすぐ気づけるようになりました。</p>
+
+<h3>Canvaで院内POPも自動化</h3>
+
+<p>賞味期限が近い商品の販促POPは、Canva&lt;!-- TOOL:Canva --&gt;の無料テンプレートにChatGPTが書いたコピーを流し込むだけで5分で完成。「ロス削減＋売上アップ」の二刀流が実現しました。</p>
+
+
+<h2 id="section-5">導入前後でどう変わった？数字で見るビフォーアフター</h2>
+
+<div class="table-wrap">
+<table>
+  <thead><tr><th>項目</th><th>導入前</th><th>導入後（6カ月）</th></tr></thead>
+  <tbody><tr><td>棚卸し時間（月）</td><td>20時間（深夜残業含む）</td><td>3時間</td></tr><tr><td>発注作業時間（週）</td><td>4時間</td><td>30分</td></tr><tr><td>賞味期限切れロス（月）</td><td>3〜5万円</td><td>5,000円以下</td></tr><tr><td>欠品クレーム（月）</td><td>2〜3件</td><td>0〜1件</td></tr><tr><td>在庫金額</td><td>約180万円</td><td>約120万円（▲33%）</td></tr><tr><td>スタッフへの引き継ぎ</td><td>不可（属人化）</td><td>バーコード操作で誰でも可</td></tr></tbody>
+</table>
+</div>
+
+<p><strong>月間で約17時間の作業削減＋月3万円以上のロス削減</strong>。年間で換算すれば100万円超のインパクトです。何より、佐藤さんが「月末に深夜まで残業しなくてよくなった」ことが、一番の変化でした。</p>
+
+
+<p class="service-mention">ちなみに、スマホだけでメニュー表を作れる<a href="https://print.omotenashiqr.com/lp.html" target="_blank" rel="noopener">MenuPrint</a>のようなサービスを使えば、デザインの手間もほぼゼロにできます。</p>
+<h2 id="section-6">もっと深く学びたい人向け：佐藤さんおすすめの一冊</h2>
+
+<p>「AIを業務に組み込むって、最初の一歩が一番怖い」と佐藤さん。同じように動物病院・ペットショップでAI導入を考えている方には、<strong>まず1冊、AI活用の全体像が掴める本を読むこと</strong>をおすすめしているそうです。「ネット記事をつまみ食いするより、体系的に学んだ方が結果的に近道でした」。</p>
+
+<div class="aff-section">
+  <p class="aff-section-intro">この記事の内容をもっと体系的に学びたい方へ。実践的な一冊をご紹介します。</p>
+  <div class="aff-card">
+    <div class="aff-card-inner">
+      <div class="aff-book-img">
+        <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8362/9784297148362_1_32.jpg?_ex=200x200" alt="ゼロからわかるDifyの教科書 〜生成AI×ノーコードでかんたん業務効率化" loading="lazy">
+      </div>
+      <div class="aff-content">
+        <span class="aff-badge">おすすめ</span>
+        <p class="aff-book-title">ゼロからわかるDifyの教科書 〜生成AI×ノーコードでかんたん業務効率化</p>
+        <p class="aff-book-meta">にゃんた / 2,970円（税込）</p>
+        <div class="aff-review"><span class="aff-review-stars">★★★★☆</span><span class="aff-review-count">おすすめ書籍</span></div>
+        <a href="https://rpx.a8.net/svt/ejp?a8mat=2ZPHBO+123RHU+2HOM+686ZL&amp;rakuten=y&amp;a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0ea62065.34400275.0ea62066.204f04c0%2Fa18090710619_2ZPHBO_123RHU_2HOM_686ZL%3Fpc%3Dhttp%253A%252F%252Fsearch.rakuten.co.jp%252Fsearch%252Fmall%252F%E7%94%9F%E6%88%90AI%2B%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96%252F%26m%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252F" target="_blank" rel="nofollow" class="aff-btn">
+          楽天ブックスで詳細を見る
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<p class="inline-related">あわせて読みたい: <a href="24cc9673.html" class="inline-link">ペットショップ・動物病院のスタッフ教育の効率化</a>の記事もおすすめです。</p>
+<h2 id="section-7">よくある質問</h2>
+
+<h3>Q1: 動物病院でも本当にAIで在庫管理ができますか？</h3>
+
+<p>はい、可能です。SKUが多く季節変動がある動物病院こそ、AIによる需要予測の恩恵が大きい業種です。最初は療法食など主要カテゴリだけに絞って始めると、無理なく定着します。</p>
+
+<h3>Q2: スタバが在庫管理AIを打ち切ったというニュースを見て不安です。</h3>
+
+<p>大企業の複雑なオペレーションと、小規模事業者の在庫管理は別物です。中小規模であれば、ZAICOのようなシンプルなSaaSと汎用AI（ChatGPT）の組み合わせで十分機能します。むしろ小回りが利く分、効果が出やすいです。</p>
+
+<h3>Q3: 初心者におすすめの本やツールはありますか？</h3>
+
+<p>まずはChatGPTの無料版と、業務活用に特化した入門書を1冊読むことから始めるのがおすすめです。本で全体像を掴んでから、自院のデータで小さく試すと失敗が少ないです。ツールは無料プランのZAICO＋スプレッドシートで十分スタートできます。</p>
+
+
+<h2 id="section-8">まとめ：佐藤さんからのひとこと</h2>
+
+<p>「在庫管理が苦手な自分を、ずっと責めていました。でも、AIに任せられる部分は任せていいんだと気づいてから、診療にも飼い主さんとの会話にも、もっと集中できるようになりました。ペットショップや動物病院の仲間にも、ぜひ知ってほしいです」――佐藤さん。</p>
+
+<p>ちなみに、院内の販促POPやキャンペーンチラシをもっとプロっぽく作りたい方には、スマホだけで作れる「MenuPrint（メニュープリント）」のようなサービスも便利です。「うちでも療法食フェアのチラシを試しに作ってみました」と佐藤さん。小さな一歩から、現場は確実に変わります。</p>
+
+<p>完璧を目指さず、まずは「賞味期限管理だけ」「主要10商品だけ」から始めてみてください。3カ月後、棚卸しの夜に、あなたも早く家に帰れるはずです。</p>
+<div class="disclaimer">
+  <p>※本記事に登場する人物・店舗名は架空のものであり、実在の個人・団体とは関係ありません。事例は同業種でよくあるお悩みをもとに構成したフィクションです。効果や数値はあくまで想定であり、成果を保証するものではありません。</p>
+</div>
+<div class="supervisor-box"><p class="supervisor-label">この記事の監修</p><div class="supervisor-body"><p class="supervisor-name"><a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">かわさき楽AIサポート</a><span class="supervisor-legal">（株式会社スマイルファクトリー）</span></p><p class="supervisor-desc">川崎の中小企業・個人事業主・個人がAIを「楽に」「楽しく」活用できる状態をつくるAI活用支援サービス。無料ツール中心で、AIの専門家ではなく『整理役・伴走者』として業務効率化を支援します。</p><p class="supervisor-meta">対応エリア: 神奈川県川崎市／初回相談無料</p><a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="supervisor-link">かわさき楽AIサポートに相談する →</a></div></div>
+<div class="cta-box">
+  <p class="cta-title">「うちも在庫管理の改善をどうにかしたい」と思ったペットショップ・動物病院の方へ</p>
+  <p>この記事で紹介した方法は、どなたでも今日から始められます。「でも一人だと不安…」という方は、かわさき楽AIサポートにご相談ください。無料ツール中心で、あなたの業務に合ったAI活用を一緒に考えます。</p>
+  <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="cta-btn">初回無料で相談してみる</a>
+</div>
+<div class="related-articles">
+  <h2>あわせて読みたい</h2>
+  <ul class="related-list"><li>
+  <span class="tag">ペットショップ・動物病院</span>
+  <a href="24cc9673.html">ペットショップ・動物病院 スタッフ教育の効率化 時間がかかりすぎる → ChatGPTで解決する方法</a>
+</li><li>
+  <span class="tag">ペットショップ・動物病院</span>
+  <a href="42118dc1.html">ペットショップ・動物病院 SNS投稿の作成 効率化｜ChatGPTを使った具体的なやり方</a>
+</li><li>
+  <span class="tag">介護施設</span>
+  <a href="4396d84d.html">介護施設 在庫管理の改善 人手不足で回らない → AIに任せたら楽になった話</a>
+</li><li>
+  <span class="tag">ペットショップ・動物病院</span>
+  <a href="45c3e789.html">ペットショップ・動物病院 多言語・インバウンド対応 改善したい｜今日から始められるAI活用3ステップ</a>
+</li></ul>
+</div>
+</article>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="../index.html">記事一覧</a>
+        <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">かわさき楽AIサポート</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../sitemap.xml">サイトマップ</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 小さなお店のための業種別AIお困り解決帳 / <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">株式会社スマイルファクトリー</a></p>
+    </div>
+  </footer>
+</body>
+</html>
