@@ -22,6 +22,7 @@
 - [飲食店 多言語・インバウンド対応 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/07ebea0d.html): 飲食店の多言語・インバウンド対応をAIで解決した実例を紹介。ChatGPTと無料ツールで月24時間削減・客単価15%アップを実現した手順を解説。
 - [整骨院・整体院 顧客対応の自動化 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/084a072d.html): 整骨院・整体院の顧客対応の自動化をChatGPTと無料ツールで実現。月40時間を9時間に削減した院長の実例とプロンプト例を初心者向けに解説します。
 - [花屋 売上データの分析 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/08e3502e.html): 花屋オーナーが売上データ分析の負担を月12時間→3時間に削減した、ChatGPTと無料ツール活用の全手順を紹介します。
+- [旅館・民宿 在庫管理の改善 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/090eb3df.html): 旅館・民宿の在庫管理をAIで改善した女将の実例。ChatGPTと無料ツールで月25時間→9時間、ロス12万円→4.5万円に削減した手順を解説。
 - [飲食店 SNS投稿の作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/091ae53a.html): 川崎の小さなイタリアン店オーナーがChatGPTでSNS投稿作業を月15時間削減し売上45万円増を実現した全手順を紹介します。
 - [不動産業 SNS投稿の作成 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/0ca3d6be.html): 不動産業のSNS投稿作成に悩む店長が、ChatGPTとCanvaで月20時間→4時間に削減した実例とプロンプトを公開。
 - [歯科医院 経理作業の時短 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/0daea87f.html): 川崎の歯科医院院長がChatGPTとfreee会計で月22時間の経理作業を5時間に短縮した実例を、具体的なプロンプトと数字で解説します。
@@ -68,6 +69,7 @@
 - [介護施設 在庫管理の改善 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/4396d84d.html): 介護施設の在庫管理をChatGPTと無料ツールで効率化。月20時間削減した特養主任の実例とプロンプト例を紹介します。
 - [ペットショップ・動物病院 多言語・インバウンド対応 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/45c3e789.html): 動物病院・ペットショップの多言語インバウンド対応をAIで月20時間削減。今日から始められる3ステップを実例で解説します。
 - [介護施設 業務マニュアル作成 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/461e773f.html): 介護施設の業務マニュアル作成をChatGPTで効率化する方法を、施設長の実例で解説。月30時間削減の具体ステップとプロンプト例付き。
+- [運送業 顧客対応の自動化 時間がかかりすぎる → ChatGPTで解決する方法](https://okomari.smilefactory-rakuai.com/articles/464817c4.html): 運送業の顧客対応に月70時間費やしていた経営者が、ChatGPTと無料ツールで月8時間に削減した実例を、具体的なプロンプトと共に解説します。
 - [司法書士事務所 顧客対応の自動化 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/49b84782.html): 司法書士事務所の顧客対応を自動化したい方へ。ChatGPTと無料ツールで月42時間削減した実例を解説します。
 - [歯科医院 SNS投稿の作成 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/4a95612f.html): 歯科医院のSNS投稿が終わらない院長がAIで月9時間削減した実例。プロンプト例と無料ツール活用法を物語で具体解説。
 - [飲食店 業務マニュアル作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/4ac81eed.html): 飲食店の業務マニュアル作成をChatGPTで月15時間→3時間に削減した実例を全手順つきで紹介。プロンプト例と無料ツール活用法も解説。
@@ -145,6 +147,7 @@
 - [印刷会社 集客・マーケティング 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/9daf4c03.html): 印刷会社の集客に悩む田中さんがAI活用で問い合わせ6倍を実現した3ヶ月の全手順をプロンプト例つきで解説します。
 - [美容室 顧客対応の自動化 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/9dd8a445.html): 美容室オーナーの佐藤さんが顧客対応をAIで自動化し月33時間削減した全手順を、プロンプト例と無料ツール活用法付きで紹介します。
 - [運送業 スタッフ教育の効率化 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/9e9c3eaa.html): 運送業のスタッフ教育に悩む社長必見。ChatGPTと無料ツールで月30時間削減した実例を物語形式で具体的に解説します。
+- [学習塾 スタッフ教育の効率化 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/a1be7407.html): 学習塾のスタッフ教育を月43時間削減した塾長の事例。ChatGPTと無料ツールで新人研修を仕組み化する具体手順を解説。
 - [司法書士事務所 スタッフ教育の効率化 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/a2a2b8bb.html): 司法書士事務所のスタッフ教育を月27時間削減した実例。ChatGPT・LINE公式・freeeを使った具体的プロンプトと手順を紹介。
 - [税理士事務所 在庫管理の改善 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/a2ce04e7.html): 税理士事務所の備品・書類在庫管理をChatGPTと無料ツールで月11時間削減した具体的手順を、48歳所長の実例で解説します。
 - [介護施設 口コミ対応 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/a3cc0e79.html): 介護施設の口コミ対応に悩む施設長必見。ChatGPT×無料ツールで月8時間→1時間、星3.2→4.1に改善した実例を紹介。
