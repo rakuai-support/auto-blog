@@ -16,6 +16,7 @@
 - [税理士事務所 顧客対応の自動化 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/0062498e.html): 税理士事務所の顧客対応を自動化する具体策をChatGPT活用事例で解説。月40時間を12時間に削減した手順とプロンプト例を紹介します。
 - [自動車整備業 業務マニュアル作成 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/023cc73b.html): 川崎の自動車整備工場経営者の実例から、ChatGPTで業務マニュアル作成を月20時間→3時間に削減した具体的手順とプロンプト例を紹介します。
 - [学習塾 予約管理の効率化 時間がかかりすぎる → ChatGPTで解決する方法](https://okomari.smilefactory-rakuai.com/articles/02594e47.html): 学習塾の予約管理に月32時間かかる塾長がChatGPT＋無料ツールで25時間削減した具体的手順と失敗談を公開。
+- [農業 SNS投稿の作成 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/057bec0b.html): 農業のSNS投稿に悩む農家がChatGPTとCanvaで月11時間削減し売上10万円増を実現した3ステップ実例
 - [花屋 経理作業の時短 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/07146f52.html): 花屋オーナーが無料AIツールで経理作業を月10時間以上削減した実話ベースの解決ステップを公開。
 - [花屋 在庫管理の改善 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/074ce880.html): 花屋の在庫管理をChatGPTで効率化する具体的手順を、街の花屋店長の事例で解説。月12時間削減・廃棄ロス約3万円減を実現した方法。
 - [税理士事務所 集客・マーケティング 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/07d47265.html): 税理士事務所の集客・マーケティングを月20時間から5時間に削減するAI活用3ステップを具体例で解説します
@@ -100,6 +101,8 @@
 - [保育園・幼稚園 経理作業の時短 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/68ddc0df.html): 保育園・幼稚園の経理作業の時短をChatGPTと無料ツールで実現。園長の実例と全手順、プロンプト例つきで月17時間削減の方法を紹介します。
 - [花屋 多言語・インバウンド対応 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/698d7829.html): 花屋の多言語・インバウンド対応をChatGPTと無料ツールで月22時間→4時間に削減した全手順を実例で紹介します。
 - [整骨院・整体院 予約管理の効率化 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/6bfd69ed.html): 整骨院オーナー田中さんの実例で学ぶ、ChatGPT＋無料ツールによる予約管理効率化。月32時間削減・売上11％向上の具体的手順を解説。
+- [司法書士事務所 業務マニュアル作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/6c17e173.html): 司法書士事務所の業務マニュアル作成をAIで解決する全手順を、月20時間→3時間削減した実例とプロンプト例つきで紹介します。
+- [保育園・幼稚園 メニュー表・チラシ作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/6c237365.html): 保育園のメニュー表・チラシ作成をChatGPT＋Canvaで月12時間→3時間に削減した主任保育士の全手順と実際のプロンプト例を紹介します。
 - [飲食店 経理作業の時短 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/6c3f1451.html): 飲食店の経理作業をChatGPTとfreeeで月22時間→5時間に短縮した飲食店オーナーの実例とAI活用5ステップを解説
 - [印刷会社 売上データの分析 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/6e578c89.html): 印刷会社の売上データ分析を月20時間→4時間に短縮した二代目社長の実例。ChatGPT・freee・スプレッドシートで誰でも始められる手順を解説。
 - [歯科医院 業務マニュアル作成 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/6ef6bd57.html): 歯科医院の業務マニュアル作成が苦手な院長必見。ChatGPTと無料ツールで月20時間を4時間に削減した具体的手順とプロンプト例を初心者向けに解説します。
