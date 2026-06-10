@@ -122,7 +122,9 @@
 - [花屋 スタッフ教育の効率化 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/7788b788.html): 花屋のスタッフ教育に悩むオーナーが、ChatGPTと無料ツールで指導時間を月20時間から6時間に削減した実例を、具体的なプロンプトと手順で初心者向けに解説します。
 - [保育園・幼稚園 集客・マーケティング 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/794b79a2.html): 保育園園長の佐藤さんがChatGPTで集客を効率化した実例。SNS投稿時間を月20時間→3時間に削減し見学申込を約2.6倍にした具体策を紹介。
 - [飲食店 在庫管理の改善 時間がかかりすぎる → ChatGPTで解決する方法](https://okomari.smilefactory-rakuai.com/articles/7e5defa7.html): 居酒屋オーナー田中さんの実例で解説。ChatGPTで在庫管理を月25時間→8時間に短縮、廃棄ロスも月5.5万円削減した具体的方法を紹介。
+- [農業 スタッフ教育の効率化 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/8001d9bb.html): 農業のスタッフ教育を月45時間→12時間に削減した実例。ChatGPTと無料ツールで暗黙知をマニュアル化する5ステップを解説。
 - [写真スタジオ 業務マニュアル作成 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/806300e3.html): 写真スタジオの業務マニュアル作成をChatGPTで効率化する具体的手順を、現場のリアルな事例とともに解説します。
+- [税理士事務所 SNS投稿の作成 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/80de4d0c.html): 税理士事務所のSNS投稿をAIで月20時間→3時間に削減した実例。ChatGPT活用の具体的プロンプトとビフォーアフターを解説。
 - [ペットショップ・動物病院 在庫管理の改善 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/810f5126.html): 動物病院の在庫管理をChatGPT＋ZAICO＋freeeで月17時間削減した実例。療法食ロス・欠品ゼロを目指す具体的手順とプロンプト例を紹介。
 - [農業 経理作業の時短 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/81ef6a24.html): 農業の経理作業の悩みを無料AIツールで月10時間削減した農家の実例。ChatGPTとfreeeの活用手順を解説します。
 - [写真スタジオ 売上データの分析 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/83c37864.html): 写真スタジオの売上データ分析に悩むオーナーが、ChatGPTと無料ツールで月10時間削減した実例とプロンプト例を紹介します。
@@ -220,6 +222,7 @@
 - [介護施設 予約管理の効率化 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/e447eea0.html): 介護施設の予約管理を月60時間から18時間に削減。ChatGPTと無料ツールで実現する初心者向けAI活用術を解説。
 - [不動産業 経理作業の時短 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/e607d040.html): 不動産業の経理作業を月60時間→8.5時間に削減した佐藤さんの実例。ChatGPT＋freee＋LINE公式の具体的活用ステップを解説。
 - [美容室 口コミ対応 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/e70fc4b7.html): 美容室の口コミ対応に毎月25時間かかっていたオーナーが、ChatGPTと無料ツールで月17時間削減した実例とプロンプトを公開します。
+- [歯科医院 口コミ対応 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/e8682bc4.html): 歯科医院の口コミ対応をChatGPTと無料ツールで効率化。月8時間→2時間に削減した院長の実例3ステップを解説。
 - [農業 業務マニュアル作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/e88256ba.html): 農業の業務マニュアル作成をChatGPTで効率化。月20時間→4時間に削減した農家の全手順を紹介。
 - [ペットショップ・動物病院 口コミ対応 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/eeff73bb.html): 動物病院・ペットショップの口コミ対応が大変な方へ。ChatGPTと無料ツールで返信時間を月8時間→2時間に削減した全手順を、具体的なプロンプト例つきで紹介します。
 - [ペットショップ・動物病院 予約管理の効率化 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/ef1d0cf1.html): 動物病院院長がChatGPTとSTORES予約・LINE公式で月45時間削減した実例。無料ツールだけで予約管理を効率化する具体的ステップを解説。
