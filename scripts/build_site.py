@@ -819,17 +819,13 @@ def build_structured_data(meta, config, md_text=""):
     scripts.append(f'<script type="application/ld+json">{json.dumps(article_graph, ensure_ascii=False)}</script>')
 
     # パンくず（BreadcrumbList）
+    # 業種の階層は入れない。業種別のページが存在せず item(URL) を付けられないため、
+    # Googleの「最後以外のListItemはitem必須」要件に違反してリッチリザルト対象外になる
+    # （Search Console 2026-06 検出）。
     breadcrumb_items = [
         {"@type": "ListItem", "position": 1, "name": "トップ", "item": site_home_url(config)},
+        {"@type": "ListItem", "position": 2, "name": meta["title"], "item": article_url},
     ]
-    if meta.get("industry"):
-        breadcrumb_items.append({"@type": "ListItem", "position": 2, "name": meta["industry"]})
-    breadcrumb_items.append({
-        "@type": "ListItem",
-        "position": len(breadcrumb_items) + 1,
-        "name": meta["title"],
-        "item": article_url
-    })
     breadcrumb_data = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
