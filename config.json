@@ -32,7 +32,7 @@
     ]
   },
   "generation": {
-    "articles_per_run": 3,
+    "articles_per_run": 1,
     "max_articles": 300
   },
   "affiliate": {

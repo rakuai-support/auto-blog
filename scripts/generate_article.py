@@ -86,6 +86,17 @@ def save_history(history):
         json.dump(history, f, ensure_ascii=False, indent=2)
 
 
+def has_article_today():
+    """同じ日に2本以上生成しないため、既存メタデータの日付を確認する"""
+    today = datetime.now().strftime("%Y-%m-%d")
+    for meta_path in CONTENT_DIR.glob("*.json"):
+        with open(meta_path, "r", encoding="utf-8") as f:
+            meta = json.load(f)
+        if meta.get("date") == today:
+            return True
+    return False
+
+
 def pick_next_topic(config, history):
     """業種×トピックの両方をバランスよく選ぶ"""
     generated = set(history["generated"])
@@ -336,6 +347,10 @@ def main():
 
     if total >= config["generation"]["max_articles"]:
         print("記事数上限に達しています。")
+        return
+
+    if has_article_today():
+        print("本日分の記事は生成済みです。")
         return
 
     for i in range(n):
