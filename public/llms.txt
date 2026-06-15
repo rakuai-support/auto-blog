@@ -246,6 +246,7 @@
 - [不動産業 在庫管理の改善 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/f4baf55a.html): 不動産業の在庫管理を月60時間→12時間に削減。ChatGPTと無料ツールで実現した全手順とプロンプト例を、店長視点で解説します。
 - [歯科医院 多言語・インバウンド対応 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/f5af22de.html): 歯科医院の多言語・インバウンド対応をChatGPTと無料ツールで月20時間→3時間に削減する具体的手順を解説します。
 - [クリーニング店 スタッフ教育の効率化 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/f799e614.html): クリーニング店のスタッフ教育をAIで効率化した実例。月25時間→5時間に削減した手順とプロンプト例を紹介。
+- [花屋 予約管理の効率化 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/f89e8a6e.html): 花屋の予約管理を月25時間削減した南さんの実例。ChatGPT・STORES予約・LINE公式の組み合わせで取りこぼしゼロへ。
 - [ペットショップ・動物病院 メニュー表・チラシ作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/f9d26873.html): 動物病院オーナーが実践したChatGPT＋Canvaでのチラシ制作術を全手順公開。月12時間→2時間に削減した方法を紹介。
 - [飲食店 予約管理の効率化 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/fa25459e.html): 川崎の15席イタリアン店長が実践した、ChatGPT×無料ツールで月30時間削減した飲食店予約管理AI活用術を物語形式で解説します。
 - [介護施設 経理作業の時短 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/fa7d66d6.html): 介護施設の経理作業を時短する方法を、施設長のリアルな物語で解説。ChatGPTと無料ツールで月20時間削減した具体的手順とプロンプト例を紹介します。
