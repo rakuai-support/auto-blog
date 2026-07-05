@@ -33,7 +33,8 @@
   },
   "generation": {
     "articles_per_run": 1,
-    "max_articles": 300
+    "max_articles": 1000,
+    "allow_topic_repeats": true
   },
   "affiliate": {
     "tracking_img": "https://www16.a8.net/0.gif?a8mat=2ZPHBO+123RHU+2HOM+686ZL",

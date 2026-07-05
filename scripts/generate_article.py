@@ -102,17 +102,23 @@ def pick_next_topic(config, history):
     generated = set(history["generated"])
     topics = config["topics_per_industry"]
     industries = config["industries"]
+    allow_topic_repeats = config.get("generation", {}).get("allow_topic_repeats", False)
 
     # 業種ごと・トピックごとの生成済み数をカウント
     ind_counts = {}
     topic_counts = {}
+    pair_counts = {}
     for key in generated:
         parts = key.split("|")
-        if len(parts) == 2:
-            ind_counts[parts[0]] = ind_counts.get(parts[0], 0) + 1
-            topic_counts[parts[1]] = topic_counts.get(parts[1], 0) + 1
+        if len(parts) >= 2:
+            industry = parts[0]
+            topic = parts[1]
+            pair_key = f"{industry}|{topic}"
+            ind_counts[industry] = ind_counts.get(industry, 0) + 1
+            topic_counts[topic] = topic_counts.get(topic, 0) + 1
+            pair_counts[pair_key] = pair_counts.get(pair_key, 0) + 1
 
-    # 未生成の組み合わせを全列挙し、業種+トピックの合計カウントでソート
+    # 未生成の組み合わせを優先し、業種+トピックの合計カウントでソート
     candidates = []
     for industry in industries:
         for topic in topics:
@@ -122,7 +128,27 @@ def pick_next_topic(config, history):
                 candidates.append((score, industry, topic, key))
 
     if not candidates:
-        return None, None, None
+        if not allow_topic_repeats:
+            return None, None, None
+
+        # 全組み合わせ生成後は第2巡以降として、同じテーマを別記事で追加する。
+        # キーに巡回番号を入れることで、既存記事のスラッグを上書きしない。
+        for industry in industries:
+            for topic in topics:
+                pair_key = f"{industry}|{topic}"
+                next_round = pair_counts.get(pair_key, 0) + 1
+                key = f"{pair_key}|round{next_round}"
+                if key in generated:
+                    continue
+                score = (
+                    pair_counts.get(pair_key, 0) * 100
+                    + ind_counts.get(industry, 0)
+                    + topic_counts.get(topic, 0)
+                )
+                candidates.append((score, industry, topic, key))
+
+        if not candidates:
+            return None, None, None
 
     # スコアが同じもの（最小値）からランダムに選んで単調さを防ぐ
     candidates.sort(key=lambda x: x[0])
@@ -133,9 +159,9 @@ def pick_next_topic(config, history):
     return chosen[1], chosen[2], chosen[3]
 
 
-def generate_slug(industry, topic):
+def generate_slug(industry, topic, key=None):
     """URLスラッグ生成"""
-    raw = f"{industry}-{topic}"
+    raw = key if key and len(key.split("|")) >= 3 else f"{industry}-{topic}"
     h = hashlib.md5(raw.encode()).hexdigest()[:8]
     return f"{h}"
 
@@ -373,7 +399,7 @@ def main():
         else:
             print(f"  -> ニュース取得なし（通常モードで生成）")
 
-        slug = generate_slug(industry, topic)
+        slug = generate_slug(industry, topic, key)
         raw = generate_article(industry, topic, title, news_items)
         title, body, desc = parse_article(raw)
         meta = save_article(slug, title, body, desc, industry, topic)
