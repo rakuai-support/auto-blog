@@ -165,6 +165,7 @@
 - [印刷会社 在庫管理の改善 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/9ad33325.html): 印刷会社の在庫管理をChatGPTと無料ツールで効率化。月18時間削減・年85万円コスト改善を実現した具体的手順を二代目社長の事例で解説。
 - [整骨院・整体院 多言語・インバウンド対応 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/9b48074b.html): 整骨院・整体院の多言語・インバウンド対応をChatGPTと無料ツールで月20時間→3時間に削減する実践AI活用術を解説。
 - [美容室 予約管理の効率化 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/9c909148.html): 美容室の予約管理に追われるオーナー田中さんがAIで月33時間削減＋売上25万円増を実現した実例を、無料ツールとプロンプト例つきで解説します。
+- [歯科医院 予約管理の効率化 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/9d7737f4.html): 歯科医院の予約管理をAIで効率化した実例。ChatGPT×STORES予約×LINE公式で月68時間削減した具体的手順と失敗談を紹介。
 - [印刷会社 集客・マーケティング 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/9daf4c03.html): 印刷会社の集客に悩む田中さんがAI活用で問い合わせ6倍を実現した3ヶ月の全手順をプロンプト例つきで解説します。
 - [美容室 顧客対応の自動化 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/9dd8a445.html): 美容室オーナーの佐藤さんが顧客対応をAIで自動化し月33時間削減した全手順を、プロンプト例と無料ツール活用法付きで紹介します。
 - [運送業 スタッフ教育の効率化 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/9e9c3eaa.html): 運送業のスタッフ教育に悩む社長必見。ChatGPTと無料ツールで月30時間削減した実例を物語形式で具体的に解説します。
