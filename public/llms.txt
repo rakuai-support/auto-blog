@@ -125,6 +125,7 @@
 - [美容室 業務マニュアル作成 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/75f40f53.html): 美容室の業務マニュアル作成に悩むオーナーが、無料のChatGPTと無料ツールで月15時間を3時間に削減した実践手順を、具体的プロンプト例つきで解説します。
 - [保育園・幼稚園 SNS投稿の作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/76498471.html): 保育園のSNS投稿作成にかかる月25時間を、ChatGPT＋Canvaで月4時間に削減した園長の全手順を公開します。
 - [美容室 在庫管理の改善 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/76fa5715.html): 美容室の在庫管理をChatGPTで効率化。月12時間→3時間に削減した田中さんの具体手順・プロンプト・無料ツール組合せを解説。
+- [農業 経理作業の時短 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/77051997.html): 農業の経理作業を月32時間から8時間へ。ChatGPTとfreee会計で実現した時短事例をプロンプト付きで解説します。
 - [税理士事務所 業務マニュアル作成 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/771e70c4.html): 税理士事務所の業務マニュアル作成をChatGPTで効率化する具体的手順。月20時間→4時間に削減した実例とプロンプト例を紹介。
 - [花屋 スタッフ教育の効率化 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/7788b788.html): 花屋のスタッフ教育に悩むオーナーが、ChatGPTと無料ツールで指導時間を月20時間から6時間に削減した実例を、具体的なプロンプトと手順で初心者向けに解説します。
 - [保育園・幼稚園 集客・マーケティング 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/794b79a2.html): 保育園園長の佐藤さんがChatGPTで集客を効率化した実例。SNS投稿時間を月20時間→3時間に削減し見学申込を約2.6倍にした具体策を紹介。
