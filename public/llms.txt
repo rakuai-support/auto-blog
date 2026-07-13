@@ -110,6 +110,7 @@
 - [歯科医院 売上データの分析 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/68225676.html): 歯科医院の売上分析に悩む院長向け。ChatGPTと無料ツールで月8時間→1.5時間に削減した実例を解説。
 - [学習塾 集客・マーケティング 時間がかかりすぎる → ChatGPTで解決する方法](https://okomari.smilefactory-rakuai.com/articles/682b39c4.html): 学習塾の集客に月20時間かけていた佐藤さんが、ChatGPT活用で月5時間まで削減した具体的手順とプロンプト例を紹介します。
 - [保育園・幼稚園 経理作業の時短 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/68ddc0df.html): 保育園・幼稚園の経理作業の時短をChatGPTと無料ツールで実現。園長の実例と全手順、プロンプト例つきで月17時間削減の方法を紹介します。
+- [美容室 口コミ対応 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/693342ec.html): 美容室オーナーが口コミ対応の時間を月8時間から2時間に削減した3ステップ。ChatGPTと無料ツールでGoogle評価も向上した実例を紹介します。
 - [花屋 多言語・インバウンド対応 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/698d7829.html): 花屋の多言語・インバウンド対応をChatGPTと無料ツールで月22時間→4時間に削減した全手順を実例で紹介します。
 - [整骨院・整体院 予約管理の効率化 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/6bfd69ed.html): 整骨院オーナー田中さんの実例で学ぶ、ChatGPT＋無料ツールによる予約管理効率化。月32時間削減・売上11％向上の具体的手順を解説。
 - [司法書士事務所 業務マニュアル作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/6c17e173.html): 司法書士事務所の業務マニュアル作成をAIで解決する全手順を、月20時間→3時間削減した実例とプロンプト例つきで紹介します。
