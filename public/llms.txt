@@ -89,6 +89,7 @@
 - [ペットショップ・動物病院 業務マニュアル作成 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/4cef94f5.html): 動物病院・ペットショップの業務マニュアル作成をAIで解決。ChatGPTと無料ツールで月15時間を3時間に削減した手順とプロンプト例を実例で解説します。
 - [旅館・民宿 SNS投稿の作成 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/4e49999c.html): 箱根の旅館女将がAIでSNS投稿を月12時間削減。具体的プロンプトとビフォーアフターを公開します。
 - [保育園・幼稚園 在庫管理の改善 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/4e715493.html): 保育園・幼稚園の在庫管理をAIで改善する具体的手順。ChatGPTと無料ツールで月6時間削減した実例とプロンプト例を紹介。
+- [税理士事務所 SNS投稿の作成 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/4e7e442a.html): 税理士事務所のSNS投稿の作成をChatGPTとCanvaで自動化。月8時間→1.5時間に削減した所長の実践手順を公開。
 - [クリーニング店 経理作業の時短 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/4f5d1aba.html): クリーニング店の経理作業をChatGPTとfreeeで月28時間→7時間に時短した店主の実例を、具体的プロンプトと無料ツール活用法つきで解説します。
 - [花屋 顧客対応の自動化 時間がかかりすぎる → ChatGPTで解決する方法](https://okomari.smilefactory-rakuai.com/articles/523cae8d.html): 花屋の顧客対応をChatGPTとLINE公式で自動化し、月60時間→15時間に削減した実践事例とプロンプト例を解説します。
 - [クリーニング店 SNS投稿の作成 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/5293290f.html): クリーニング店のSNS投稿をChatGPTで効率化する方法を、店長の実例とプロンプト例つきで解説。月8時間を1.5時間に削減した手順を紹介します。
