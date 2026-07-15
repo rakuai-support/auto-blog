@@ -117,6 +117,7 @@
 - [司法書士事務所 業務マニュアル作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/6c17e173.html): 司法書士事務所の業務マニュアル作成をAIで解決する全手順を、月20時間→3時間削減した実例とプロンプト例つきで紹介します。
 - [保育園・幼稚園 メニュー表・チラシ作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/6c237365.html): 保育園のメニュー表・チラシ作成をChatGPT＋Canvaで月12時間→3時間に削減した主任保育士の全手順と実際のプロンプト例を紹介します。
 - [飲食店 経理作業の時短 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/6c3f1451.html): 飲食店の経理作業をChatGPTとfreeeで月22時間→5時間に短縮した飲食店オーナーの実例とAI活用5ステップを解説
+- [飲食店 業務マニュアル作成 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/6c6e6246.html): 飲食店の業務マニュアル作成に悩むオーナー必見。ChatGPTと無料ツールで月10時間削減した実例を解説
 - [写真スタジオ 集客・マーケティング 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/6d402e17.html): 写真スタジオの集客をChatGPTと無料ツールで解決した具体手順を、佐藤さんの事例で紹介。月30時間削減・新規予約4倍の全プロセス公開。
 - [印刷会社 売上データの分析 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/6e578c89.html): 印刷会社の売上データ分析を月20時間→4時間に短縮した二代目社長の実例。ChatGPT・freee・スプレッドシートで誰でも始められる手順を解説。
 - [歯科医院 業務マニュアル作成 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/6ef6bd57.html): 歯科医院の業務マニュアル作成が苦手な院長必見。ChatGPTと無料ツールで月20時間を4時間に削減した具体的手順とプロンプト例を初心者向けに解説します。
