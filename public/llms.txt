@@ -265,6 +265,7 @@
 - [介護施設 経理作業の時短 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/fa7d66d6.html): 介護施設の経理作業を時短する方法を、施設長のリアルな物語で解説。ChatGPTと無料ツールで月20時間削減した具体的手順とプロンプト例を紹介します。
 - [旅館・民宿 業務マニュアル作成 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/faa6d33f.html): 旅館・民宿のマニュアル作成に悩む女将が無料AIツールで月10時間削減した実例。プロンプト例と具体手順を紹介。
 - [旅館・民宿 スタッフ教育の効率化 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/fb55cc7b.html): 旅館・民宿のスタッフ教育の効率化に悩む女将が、ChatGPTと無料ツールで月14時間削減した実例を具体的プロンプト付きで紹介します。
+- [工務店・リフォーム業 スタッフ教育の効率化 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/fd6faee7.html): 川崎の工務店経営者・田中さんがChatGPTと無料ツールで月32時間の教育工数削減を実現した全手順を公開します
 - [介護施設 在庫管理の改善 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/fe989643.html): 介護施設の在庫管理をAIで改善する具体手順を、架空の管理者・佐藤さんの物語で解説。月18時間→4時間削減の実例付き。
 - [旅館・民宿 口コミ対応 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/fead7e1f.html): 旅館・民宿の口コミ対応に悩む女将がChatGPTと無料ツールで月10時間削減した実例を、プロンプト例・数字付きで詳しく解説します。
 
