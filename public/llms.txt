@@ -56,6 +56,7 @@
 - [介護施設 多言語・インバウンド対応 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/2800861d.html): 介護施設の多言語・インバウンド対応に悩むフロア主任が、ChatGPTと無料ツールで月32時間→6時間に削減した実例を紹介します。
 - [クリーニング店 売上データの分析 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/282cd4cf.html): クリーニング店の売上データ分析をAIで月12時間→2時間に削減。ChatGPT活用の全手順を実例で紹介
 - [介護施設 売上データの分析 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/29fdffbf.html): 介護施設の売上データ分析に悩む施設長の事例で、ChatGPTと無料ツールを使い月12時間を3時間に削減する3ステップを具体的に解説します。
+- [司法書士事務所 顧客対応の自動化 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/2a506294.html): 司法書士事務所の顧客対応を自動化する具体的手順を、川崎の実例ペルソナで解説。ChatGPT×無料ツールで月45時間削減した方法を紹介。
 - [自動車整備業 メニュー表・チラシ作成 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/2b9a9d14.html): 自動車整備業のメニュー表・チラシ作成に悩むオーナー必見。ChatGPTとCanvaで月10時間削減した実例を初心者向けに解説します。
 - [クリーニング店 多言語・インバウンド対応 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/2bd95c55.html): クリーニング店オーナーがChatGPTとLINE公式で多言語対応を実現。月15時間削減と客単価1.4倍を達成した実例を紹介。
 - [運送業 売上データの分析 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/2e9ca24f.html): 運送業の売上データ分析に悩む方へ。ChatGPTと無料ツールで月12時間→3時間に削減した実例とプロンプト例、AI活用の具体的手順を初心者向けに解説します。
