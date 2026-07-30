@@ -247,6 +247,7 @@
 - [写真スタジオ スタッフ教育の効率化 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/e15bce80.html): 写真スタジオのスタッフ教育を月32時間→8時間に削減した実例。ChatGPTとCanva・LINE公式の組み合わせで属人化を解消する方法を紹介。
 - [ペットショップ・動物病院 経理作業の時短 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/e2f30e0c.html): 動物病院オーナーが月20時間の経理を5時間に短縮したAI活用全手順をプロンプト例つきで解説します。
 - [保育園・幼稚園 SNS投稿の作成 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/e34b1f88.html): 保育園のSNS投稿を月8時間→2時間に削減。ChatGPTとCanvaを使った初心者向け具体的手順を主任保育士の事例で解説
+- [ペットショップ・動物病院 口コミ対応 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/e4333d9e.html): ペットショップ・動物病院の口コミ対応の悩みを、無料AIツールで月20時間→10時間に削減した動物病院院長の実例を紹介します。
 - [介護施設 予約管理の効率化 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/e447eea0.html): 介護施設の予約管理を月60時間から18時間に削減。ChatGPTと無料ツールで実現する初心者向けAI活用術を解説。
 - [不動産業 経理作業の時短 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/e607d040.html): 不動産業の経理作業を月60時間→8.5時間に削減した佐藤さんの実例。ChatGPT＋freee＋LINE公式の具体的活用ステップを解説。
 - [美容室 口コミ対応 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/e70fc4b7.html): 美容室の口コミ対応に毎月25時間かかっていたオーナーが、ChatGPTと無料ツールで月17時間削減した実例とプロンプトを公開します。
