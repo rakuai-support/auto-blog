@@ -91,6 +91,7 @@
 - [司法書士事務所 顧客対応の自動化 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/49b84782.html): 司法書士事務所の顧客対応を自動化したい方へ。ChatGPTと無料ツールで月42時間削減した実例を解説します。
 - [歯科医院 SNS投稿の作成 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/4a95612f.html): 歯科医院のSNS投稿が終わらない院長がAIで月9時間削減した実例。プロンプト例と無料ツール活用法を物語で具体解説。
 - [飲食店 業務マニュアル作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/4ac81eed.html): 飲食店の業務マニュアル作成をChatGPTで月15時間→3時間に削減した実例を全手順つきで紹介。プロンプト例と無料ツール活用法も解説。
+- [不動産業 業務マニュアル作成 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/4b40b3be.html): 不動産業のマニュアル作成をChatGPTで月17時間削減した田中さんの具体的手順を紹介。プロンプト例と無料ツール活用法を解説。
 - [整骨院・整体院 経理作業の時短 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/4ba596fc.html): 整骨院オーナーが月10時間の経理を2時間に短縮した実例。ChatGPTとfreee会計の具体的プロンプトと手順を紹介。
 - [美容室 売上データの分析 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/4c05cc41.html): 美容室の売上データ分析に悩むオーナー必見。ChatGPTと無料ツールで月8時間の集計を1時間に短縮する実践手順を紹介。
 - [ペットショップ・動物病院 業務マニュアル作成 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/4cef94f5.html): 動物病院・ペットショップの業務マニュアル作成をAIで解決。ChatGPTと無料ツールで月15時間を3時間に削減した手順とプロンプト例を実例で解説します。
