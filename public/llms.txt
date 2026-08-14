@@ -173,6 +173,7 @@
 - [整骨院・整体院 スタッフ教育の効率化 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/92f47f38.html): 整骨院・整体院のスタッフ教育をAIで効率化する具体的手順。月25時間→6時間、定着率40%→85%を実現した院長の実例を物語形式で解説。
 - [農業 顧客対応の自動化 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/944e5760.html): 農業の顧客対応をChatGPTで自動化する具体的手順を、川崎の観光農園オーナー佐藤さんの実例で解説。月40時間→10時間削減の方法を公開。
 - [介護施設 顧客対応の自動化 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/94540f7f.html): 介護施設の顧客対応に悩む施設長が、ChatGPTと無料ツールで月36時間削減した実例を、具体的プロンプト付きで紹介します。
+- [運送業 顧客対応の自動化 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/95a0b126.html): 運送業の田中さん（仮名）がChatGPTと無料ツールで顧客対応を月14時間削減した実例。導入手順・プロンプト例・失敗談まで具体的に解説。
 - [写真スタジオ 経理作業の時短 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/95e4f0ea.html): 写真スタジオの経理作業を月22時間→3時間に短縮した佐藤さんの実例。ChatGPT×freee×STORES予約の具体的な手順とプロンプト例を解説。
 - [自動車整備業 予約管理の効率化 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/96602e70.html): 自動車整備業の予約管理を効率化するAI活用術を、川崎の整備工場経営者の事例で解説。月30時間削減した具体的手順を紹介。
 - [クリーニング店 売上データの分析 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/966f0342.html): クリーニング店の売上分析に悩む店主が無料AIツールで月10時間削減した実例。プロンプト例・ビフォーアフター・失敗談まで具体的に紹介します。
