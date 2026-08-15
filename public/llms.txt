@@ -210,6 +210,7 @@
 - [税理士事務所 経理作業の時短 時間がかかりすぎる → ChatGPTで解決する方法](https://okomari.smilefactory-rakuai.com/articles/ad9e0040.html): 税理士事務所の経理作業をChatGPTで月40時間削減した佐藤さんの実例。具体的なプロンプトと無料ツール活用法を解説。
 - [学習塾 SNS投稿の作成 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/b012adf0.html): 学習塾のSNS投稿に悩む経営者向け。ChatGPT×Canvaで月20時間を3時間に削減した実例とプロンプトを公開。
 - [整骨院・整体院 SNS投稿の作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/b03f0195.html): 整骨院・整体院のSNS投稿をChatGPTとCanvaで月20時間→4時間に削減した院長の全手順を紹介します。
+- [クリーニング店 SNS投稿の作成 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/b52598d2.html): クリーニング店のSNS投稿作成をChatGPTで効率化する方法を、川崎の街クリ店主・田中さんの実例で解説。月20時間→4時間削減の具体的手順。
 - [自動車整備業 スタッフ教育の効率化 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/b5be4057.html): 自動車整備工場の田中さんがChatGPTで月37時間の教育時間削減を実現。プロンプト例と具体的な手順を解説します。
 - [飲食店 集客・マーケティング 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/b7adda81.html): 飲食店オーナー佐藤さんがChatGPTと無料ツールで月10時間削減・客数増を実現した集客マーケティングの実例とプロンプト集
 - [歯科医院 在庫管理の改善 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/b8018cee.html): 歯科医院の在庫管理の悩みをChatGPT＋無料ツールで解決。月10時間削減・年36万円コスト減の実例を院長目線で解説。
