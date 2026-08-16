@@ -286,6 +286,7 @@
 - [工務店・リフォーム業 スタッフ教育の効率化 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/fd6faee7.html): 川崎の工務店経営者・田中さんがChatGPTと無料ツールで月32時間の教育工数削減を実現した全手順を公開します
 - [介護施設 在庫管理の改善 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/fe989643.html): 介護施設の在庫管理をAIで改善する具体手順を、架空の管理者・佐藤さんの物語で解説。月18時間→4時間削減の実例付き。
 - [旅館・民宿 口コミ対応 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/fead7e1f.html): 旅館・民宿の口コミ対応に悩む女将がChatGPTと無料ツールで月10時間削減した実例を、プロンプト例・数字付きで詳しく解説します。
+- [農業 多言語・インバウンド対応 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/ffc6d883.html): 農業の多言語・インバウンド対応に悩む観光農園オーナーが、ChatGPTと無料ツールで月10時間削減した実例を紹介します。
 
 ## 補足
 
