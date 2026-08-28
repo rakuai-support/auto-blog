@@ -249,6 +249,7 @@
 - [介護施設 メニュー表・チラシ作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/d5913a3c.html): 介護施設のメニュー表・チラシ作成を月18時間→3時間に削減。施設長の実例でChatGPT＋Canva活用手順を全公開します。
 - [写真スタジオ 多言語・インバウンド対応 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/d62c17ae.html): 写真スタジオのインバウンド対応に悩む個人オーナーが、ChatGPTと無料ツールで月18時間削減・売上15万円増を実現した実例を具体的なプロンプト付きで紹介。
 - [旅館・民宿 売上データの分析 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/d7261ed7.html): 旅館の女将が月20時間の売上集計を3時間に短縮。ChatGPTと無料ツールで稼働率15%UPを実現した全手順を公開。
+- [司法書士事務所 メニュー表・チラシ作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/d7673d5d.html): 司法書士事務所のチラシ作成に悩む所長がChatGPT×Canvaで月8時間→1時間に削減した全手順を実例で紹介します。
 - [工務店・リフォーム業 口コミ対応 時間がかかりすぎる → ChatGPTで解決する方法](https://okomari.smilefactory-rakuai.com/articles/d930b14e.html): 工務店・リフォーム業の口コミ対応に月8時間かかる悩みを、ChatGPTと無料ツールで月1.5時間に削減した実例を、具体的なプロンプトと手順つきで解説します。
 - [運送業 業務マニュアル作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/d9db01f4.html): 運送業の業務マニュアル作成が大変な理由とAIでの解決法を、運送会社専務の実例とプロンプト全手順つきで紹介。月20時間を3時間に削減した方法を解説します。
 - [運送業 予約管理の効率化 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/da6df25f.html): 運送業の予約管理をChatGPTと無料ツールで効率化。月45時間削減した田中さんの具体的手順とプロンプト例を紹介します。
