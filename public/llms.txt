@@ -110,6 +110,7 @@
 - [印刷会社 スタッフ教育の効率化 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/589841e3.html): 印刷会社のスタッフ教育を月48時間→12時間に削減。ChatGPT＋無料ツールで新人独り立ちを半減させた実例を紹介。
 - [運送業 メニュー表・チラシ作成 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/58ff719b.html): 運送業のメニュー表・チラシ作成をChatGPTで効率化する具体的手順を、川崎の運送業者の事例とプロンプト例つきで解説。月8時間を1時間に削減。
 - [自動車整備業 集客・マーケティング 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/59496467.html): 自動車整備業の集客・マーケティングをAIで改善する具体的3ステップ。月22時間→5時間に削減した田中さんの実例で解説。
+- [飲食店 多言語・インバウンド対応 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/5cb0349e.html): 飲食店の多言語・インバウンド対応の悩みを、無料AIツールで月10時間削減した実例をペルソナ視点で解説。プロンプト例と数字付き。
 - [農業 売上データの分析 時間がかかりすぎる → ChatGPTで解決する方法](https://okomari.smilefactory-rakuai.com/articles/5ede1ab3.html): 農業の売上データ分析に月16時間かけていた農家がChatGPTと無料ツールで月3時間に短縮。実際のプロンプト例と手順を物語で解説します。
 - [保育園・幼稚園 売上データの分析 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/5ef14399.html): 保育園経営者が月15時間かけていた売上分析を、ChatGPTとfreee会計で5時間に短縮した実話を解説します。
 - [保育園・幼稚園 業務マニュアル作成 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/5ef5ca4b.html): 保育園・幼稚園の業務マニュアル作成をChatGPTで月15時間→3時間に削減する3ステップを主任保育士の事例で解説。
