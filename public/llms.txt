@@ -210,6 +210,7 @@
 - [ペットショップ・動物病院 集客・マーケティング 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/a87ec79e.html): 動物病院のマーケ作業を月22時間→4時間に削減、新規来院1.5倍にしたAI活用全手順をペルソナ事例で解説
 - [不動産業 顧客対応の自動化 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/a8920580.html): 不動産業の顧客対応をChatGPTと無料ツールで自動化する手順を、川崎市の店舗オーナーの実例で月42時間削減まで具体的に解説します。
 - [花屋 業務マニュアル作成 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/a9bda791.html): 花屋の業務マニュアル作成をChatGPTと無料ツールで月10時間削減した実例。手順・プロンプト・ビフォーアフターを公開。
+- [歯科医院 集客・マーケティング 時間がかかりすぎる → ChatGPTで解決する方法](https://okomari.smilefactory-rakuai.com/articles/aa2e9e1f.html): 歯科医院の集客・マーケティングにかかる月20時間をChatGPTと無料ツールで月4時間に削減する具体的手順とプロンプト例を紹介
 - [保育園・幼稚園 顧客対応の自動化 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/aa8065ce.html): 保育園・幼稚園の顧客対応の自動化をChatGPTとLINE公式で月27時間削減した園長の実例を初心者向けに解説します。
 - [写真スタジオ 口コミ対応 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/abaf3b1d.html): 写真スタジオの口コミ対応 悩みを解決。ChatGPTと無料ツールで月14時間→月4時間に削減した実例とプロンプトを紹介。
 - [旅館・民宿 予約管理の効率化 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/abc3f2dc.html): 旅館・民宿の予約管理に悩む女将が、ChatGPTと無料ツールで月29時間削減した実例を紹介。今日から始められる手順を解説。
