@@ -139,6 +139,7 @@
 - [クリーニング店 業務マニュアル作成 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/722358ec.html): クリーニング店の業務マニュアル作成をChatGPTと無料ツールで月20時間→3時間に削減する3ステップを実例で解説。
 - [学習塾 在庫管理の改善 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/73244ebf.html): 学習塾の在庫管理をChatGPTとGoogleスプレッドシートで改善する3ステップを、48歳塾長の事例で解説。月8時間を月2時間に削減した実践法。
 - [写真スタジオ SNS投稿の作成 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/7334ecc1.html): 写真スタジオのSNS投稿に悩むオーナー必見。ChatGPT＋Canvaで月25時間→5時間に削減した実例を、ペルソナのストーリーと具体的プロンプトで解説します。
+- [司法書士事務所 経理作業の時短 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/737e9654.html): 司法書士事務所の経理作業を月14時間削減した具体的ステップを、ペルソナの実例とプロンプト付きで解説します。
 - [税理士事務所 予約管理の効率化 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/73d0e6f1.html): 税理士事務所の予約管理を効率化したい所長向けに、ChatGPT・Googleフォーム・LINE公式を組み合わせた今日から始められるAI活用3ステップを実例で解説します。
 - [整骨院・整体院 業務マニュアル作成 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/7462371f.html): 整骨院の業務マニュアル作成に悩む院長が無料AIツールで月10時間削減した実例とプロンプト例を紹介
 - [整骨院・整体院 売上データの分析 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/75d00953.html): 整骨院オーナーがChatGPTとfreee・STORES予約で売上分析の月20時間を3時間に削減した実例を紹介
