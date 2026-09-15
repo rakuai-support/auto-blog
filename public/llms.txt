@@ -82,6 +82,7 @@
 - [学習塾 売上データの分析 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/3fac53bb.html): 学習塾オーナーの売上データ分析の悩みを、ChatGPTと無料ツールで月10時間削減した実例を物語形式で解説します。
 - [飲食店 スタッフ教育の効率化 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/4012597b.html): 飲食店オーナー港さんが実践したAIによるスタッフ教育の効率化。プロンプト例と無料ツール活用で月40時間削減した全手順を紹介。
 - [ペットショップ・動物病院 SNS投稿の作成 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/42118dc1.html): ペットショップ・動物病院のSNS投稿をChatGPTで効率化する具体手順。月12時間→2時間に削減した実例とプロンプト集を紹介。
+- [自動車整備業 集客・マーケティング 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/42f9b808.html): 自動車整備業の集客・マーケティングに悩むオーナー必見。無料AIツールで月10時間削減・売上20万円増を実現した実例を紹介。
 - [農業 メニュー表・チラシ作成 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/4357e48f.html): 川崎の直売所オーナー田中さんの実例で、農家のメニュー表・チラシ作成をChatGPTとCanvaで月10時間→2時間に削減した方法を解説。
 - [整骨院・整体院 スタッフ教育の効率化 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/439108e3.html): 整骨院・整体院のスタッフ教育をAIで効率化する3ステップを、川崎の院長の実例とプロンプト付きで解説します。
 - [介護施設 在庫管理の改善 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/4396d84d.html): 介護施設の在庫管理をChatGPTと無料ツールで効率化。月20時間削減した特養主任の実例とプロンプト例を紹介します。
