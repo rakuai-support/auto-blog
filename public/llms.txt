@@ -82,6 +82,7 @@
 - [写真スタジオ メニュー表・チラシ作成 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/3dca28f8.html): 写真スタジオのメニュー表・チラシ作成に悩むオーナー必見。ChatGPTとCanvaで月10時間削減した実例を紹介します。
 - [学習塾 売上データの分析 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/3fac53bb.html): 学習塾オーナーの売上データ分析の悩みを、ChatGPTと無料ツールで月10時間削減した実例を物語形式で解説します。
 - [飲食店 スタッフ教育の効率化 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/4012597b.html): 飲食店オーナー港さんが実践したAIによるスタッフ教育の効率化。プロンプト例と無料ツール活用で月40時間削減した全手順を紹介。
+- [保育園・幼稚園 スタッフ教育の効率化 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/419096ac.html): 保育園園長がChatGPTと無料ツールで新人研修準備を月32時間→8時間に削減した実例。プロンプト例と失敗談も紹介。
 - [ペットショップ・動物病院 SNS投稿の作成 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/42118dc1.html): ペットショップ・動物病院のSNS投稿をChatGPTで効率化する具体手順。月12時間→2時間に削減した実例とプロンプト集を紹介。
 - [自動車整備業 集客・マーケティング 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/42f9b808.html): 自動車整備業の集客・マーケティングに悩むオーナー必見。無料AIツールで月10時間削減・売上20万円増を実現した実例を紹介。
 - [農業 メニュー表・チラシ作成 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/4357e48f.html): 川崎の直売所オーナー田中さんの実例で、農家のメニュー表・チラシ作成をChatGPTとCanvaで月10時間→2時間に削減した方法を解説。
