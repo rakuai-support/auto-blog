@@ -38,6 +38,7 @@
 - [工務店・リフォーム業 集客・マーケティング 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/11868313.html): 工務店・リフォーム業の集客をChatGPTと無料ツールで効率化。月15時間削減・問い合わせ2倍を実現した実例とプロンプトを解説。
 - [飲食店 メニュー表・チラシ作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/127dd0e1.html): 飲食店オーナーのメニュー表・チラシ作成をChatGPT＋Canvaで月16時間→2時間に削減した全手順をペルソナ目線で解説。
 - [工務店・リフォーム業 メニュー表・チラシ作成 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/13166930.html): 工務店・リフォーム業のチラシ作成を月15時間→3時間に削減。ChatGPTとCanvaを使った3ステップを実例で解説します。
+- [介護施設 業務マニュアル作成 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/135f233b.html): 介護施設の業務マニュアル作成をChatGPTで効率化。年間160時間削減した施設長の実体験と具体的な手順を解説します。
 - [旅館・民宿 経理作業の時短 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/13e816a5.html): 旅館・民宿の経理作業をAIで時短する方法を、女将の事例で解説。月60時間→20時間に削減した具体的手順を紹介します。
 - [歯科医院 メニュー表・チラシ作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/16a8d6d5.html): 歯科医院のメニュー表・チラシ作成にかかる月8時間を1.5時間に短縮。ChatGPT×Canva×LINE活用の全手順と実例を院長目線で解説します。
 - [不動産業 多言語・インバウンド対応 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/187336ad.html): 不動産業の多言語・インバウンド対応に悩む方へ。ChatGPTと無料ツールで翻訳時間を月20時間→5時間に削減した実例とプロンプトを初心者向けに解説。
