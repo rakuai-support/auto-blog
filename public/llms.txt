@@ -246,6 +246,7 @@
 - [写真スタジオ 在庫管理の改善 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/c1df3361.html): 写真スタジオの在庫管理をAIで月22時間→4.5時間に削減した実例。ChatGPTと無料ツールで実現する具体的手順を解説します。
 - [花屋 メニュー表・チラシ作成 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/c1ffe269.html): 花屋のメニュー表・チラシ作成をAIで効率化。ChatGPT＋Canvaで月8時間を1時間に削減した実例を紹介します。
 - [学習塾 在庫管理の改善 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/c2b6335f.html): 学習塾の在庫管理をAIで改善する3ステップを実例つきで解説。月8時間の業務を2時間に削減できる具体的手順を紹介。
+- [花屋 予約管理の効率化 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/c4c87535.html): 花屋の予約管理をChatGPTと無料ツールで月22時間削減した実例。プロンプト例・ステップ・ビフォーアフターを具体的に解説します。
 - [司法書士事務所 多言語・インバウンド対応 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/c529144c.html): 司法書士事務所の多言語・インバウンド対応の悩みをChatGPTと無料ツールで月10時間削減した実例を、プロンプト付きで解説します。
 - [飲食店 顧客対応の自動化 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/c55daf64.html): 川崎の定食屋店主・田中さんがChatGPTとLINE公式で顧客対応を自動化し月55時間削減した実例を紹介します。
 - [花屋 集客・マーケティング つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/c6171d00.html): 花屋の集客・マーケティングをAIで解決した実例。ChatGPTと無料ツールで月20時間削減・来店40%増を達成した方法を解説。
