@@ -241,6 +241,7 @@
 - [工務店・リフォーム業 顧客対応の自動化 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/bc48d5bc.html): 工務店・リフォーム業の顧客対応をAIで自動化。月60時間→18時間に削減した田中工務店の3ステップ実例を紹介。
 - [印刷会社 口コミ対応 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/bc6e0308.html): 印刷会社の口コミ対応をChatGPTと無料ツールで月12時間→3時間に削減。二代目社長の実例で3ステップを解説。
 - [工務店・リフォーム業 多言語・インバウンド対応 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/bd24eb48.html): 工務店・リフォーム業の多言語インバウンド対応に悩む方へ。ChatGPT＋無料ツールで月10時間削減した実例を公開します。
+- [介護施設 SNS投稿の作成 時間がかかりすぎる → ChatGPTで解決する方法](https://okomari.smilefactory-rakuai.com/articles/bff77191.html): 介護施設のSNS投稿を月30時間から6時間へ削減。ChatGPTと無料ツールで実現する具体的プロンプトと手順を施設長の実例で解説します。
 - [学習塾 口コミ対応 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/c05619f2.html): 学習塾オーナー佐藤さんの実例で紹介。ChatGPTで口コミ対応を月12時間→2時間に削減した全手順とプロンプト例を公開。
 - [美容室 多言語・インバウンド対応 悩み｜無料AIツールで月10時間削減できた話](https://okomari.smilefactory-rakuai.com/articles/c0e9f400.html): 美容室の多言語・インバウンド対応の悩みを、ChatGPTと無料ツールで月10時間削減した実例を物語形式で解説。具体的プロンプトと手順を紹介します。
 - [印刷会社 多言語・インバウンド対応 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/c13452ed.html): 印刷会社の多言語・インバウンド対応をChatGPTとAIツールで改善する3ステップを、川崎市の印刷会社オーナー佐藤さんの事例で解説します。
