@@ -174,12 +174,21 @@ def pick_title(industry, topic):
 
 def call_claude(prompt):
     """claude CLI を呼び出して結果を取得（stdinでプロンプト送信）"""
+    system = "あなたは中小企業向けAI活用の専門ライターです。実践的で具体的、読みやすいSEO記事をMarkdown形式で出力します。質問・確認・説明は一切せず、Markdown本文のみ出力してください。"
+    # まず Claude API（Maxプラン特典クレジット）で生成し、失敗したら従来どおりサブスク枠の CLI で作り直す
+    try:
+        if r"C:\Users\utaka\rakuai\projects" not in sys.path:
+            sys.path.insert(0, r"C:\Users\utaka\rakuai\projects")
+        import anthropic_auto
+        return anthropic_auto.generate(prompt, system, job="auto-blog")
+    except Exception as e:
+        print(f"Claude API 失敗 → CLI で再試行: {type(e).__name__}: {str(e)[:300]}", file=sys.stderr)
     claude_cmd = "claude.cmd" if sys.platform == "win32" else "claude"
     env = os.environ.copy()
     env.pop("CLAUDECODE", None)
     result = subprocess.run(
         [claude_cmd, "-p",
-         "--system-prompt", "あなたは中小企業向けAI活用の専門ライターです。実践的で具体的、読みやすいSEO記事をMarkdown形式で出力します。質問・確認・説明は一切せず、Markdown本文のみ出力してください。",
+         "--system-prompt", system,
          "--model", "claude-opus-4-7"],
         input=prompt,
         capture_output=True,
