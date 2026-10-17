@@ -320,6 +320,7 @@
 - [税理士事務所 顧客対応の自動化 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/f33ecb63.html): 税理士事務所の顧客対応をChatGPTと無料ツールで自動化する3ステップを、月85時間削減した事例で解説します。
 - [運送業 経理作業の時短 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/f40338d9.html): 運送業の経理作業に月40時間費やしていた田中さんが、AI活用で月10時間に短縮した実例を物語形式で解説。実践プロンプト例も多数紹介。
 - [不動産業 在庫管理の改善 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/f4baf55a.html): 不動産業の在庫管理を月60時間→12時間に削減。ChatGPTと無料ツールで実現した全手順とプロンプト例を、店長視点で解説します。
+- [自動車整備業 顧客対応の自動化 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/f4d8c6f8.html): 電話対応で整備が止まる自動車整備工場が、ChatGPTとLINE公式・予約ツールで顧客対応を自動化し、月40時間を12時間に削減した全手順を紹介します。
 - [税理士事務所 経理作業の時短 時間がかかりすぎる → ChatGPTで解決する方法](https://okomari.smilefactory-rakuai.com/articles/f511d59b.html): 税理士事務所の経理作業時短術。ChatGPTとfreeeの組み合わせで月45時間削減した佐藤税理士の実例を解説。
 - [歯科医院 多言語・インバウンド対応 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/f5af22de.html): 歯科医院の多言語・インバウンド対応をChatGPTと無料ツールで月20時間→3時間に削減する具体的手順を解説します。
 - [クリーニング店 スタッフ教育の効率化 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/f799e614.html): クリーニング店のスタッフ教育をAIで効率化した実例。月25時間→5時間に削減した手順とプロンプト例を紹介。
