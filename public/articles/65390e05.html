@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="xq2Wicedua7rwzz4MrzjFmLgCvCU9ZIT-cl3uNYukho">
+  <title>介護施設 売上データの分析 効率化｜ChatGPTを使った具体的なやり方 | 小さなお店のための業種別AIお困り解決帳</title>
+  <meta name="description" content="介護施設の売上データの分析をChatGPTとスプレッドシートで効率化。月20時間を5時間に削減した施設長の手順とプロンプト例を具体的に解説します。">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://okomari.smilefactory-rakuai.com/articles/65390e05.html">
+  <!-- OGP -->
+  <meta property="og:title" content="介護施設 売上データの分析 効率化｜ChatGPTを使った具体的なやり方 | 小さなお店のための業種別AIお困り解決帳">
+  <meta property="og:description" content="介護施設の売上データの分析をChatGPTとスプレッドシートで効率化。月20時間を5時間に削減した施設長の手順とプロンプト例を具体的に解説します。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://okomari.smilefactory-rakuai.com/articles/65390e05.html">
+  <meta property="og:site_name" content="小さなお店のための業種別AIお困り解決帳">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://okomari.smilefactory-rakuai.com/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="介護施設 売上データの分析 効率化｜ChatGPTを使った具体的なやり方 | 小さなお店のための業種別AIお困り解決帳">
+  <meta name="twitter:description" content="介護施設の売上データの分析をChatGPTとスプレッドシートで効率化。月20時間を5時間に削減した施設長の手順とプロンプト例を具体的に解説します。">
+  <meta name="twitter:image" content="https://okomari.smilefactory-rakuai.com/ogp.png">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZNG2CPH6V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7ZNG2CPH6V');
+  </script>
+  <!-- フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@context": "https://schema.org", "@type": "Article", "url": "https://okomari.smilefactory-rakuai.com/articles/65390e05.html", "headline": "介護施設 売上データの分析 効率化｜ChatGPTを使った具体的なやり方", "description": "介護施設の売上データの分析をChatGPTとスプレッドシートで効率化。月20時間を5時間に削減した施設長の手順とプロンプト例を具体的に解説します。", "image": {"@type": "ImageObject", "url": "https://okomari.smilefactory-rakuai.com/ogp.png", "width": 1200, "height": 630}, "inLanguage": "ja", "datePublished": "2026-10-20", "dateModified": "2026-10-20", "author": {"@id": "https://okomari.smilefactory-rakuai.com/#organization"}, "publisher": {"@id": "https://okomari.smilefactory-rakuai.com/#organization"}, "isPartOf": {"@id": "https://okomari.smilefactory-rakuai.com/#website"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://okomari.smilefactory-rakuai.com/articles/65390e05.html"}, "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".article-lead", "h1", "h2"]}, "about": {"@type": "Thing", "name": "介護施設"}}, {"@type": "Organization", "@id": "https://okomari.smilefactory-rakuai.com/#organization", "name": "かわさき楽AIサポート", "legalName": "株式会社スマイルファクトリー", "url": "https://www.smilefactory-rakuai.com/", "description": "川崎の中小企業・個人事業主・個人がAIを「楽に」「楽しく」活用できる状態をつくるAI活用支援サービス。無料ツール中心で、AIの専門家ではなく『整理役・伴走者』として業務効率化を支援します。", "logo": {"@type": "ImageObject", "url": "https://okomari.smilefactory-rakuai.com/ogp.png", "width": 1200, "height": 630}, "slogan": "AIを楽に、楽しく。", "founder": {"@type": "Person", "name": "内貴志"}, "areaServed": "神奈川県川崎市", "contactPoint": {"@type": "ContactPoint", "email": "admin@smilefactory-rakuai.com", "contactType": "customer support", "areaServed": "JP", "availableLanguage": "Japanese"}, "address": {"@type": "PostalAddress", "postalCode": "213-0011", "addressRegion": "神奈川県", "addressLocality": "川崎市高津区", "streetAddress": "久本1-6-8 3号室", "addressCountry": "JP"}, "sameAs": ["https://www.smilefactory-rakuai.com/", "https://x.com/rakuai_support", "https://www.facebook.com/profile.php?id=61578232930114", "https://note.com/arukuwa"]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://okomari.smilefactory-rakuai.com/"}, {"@type": "ListItem", "position": 2, "name": "介護施設 売上データの分析 効率化｜ChatGPTを使った具体的なやり方", "item": "https://okomari.smilefactory-rakuai.com/articles/65390e05.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "利用者のデータをChatGPTに入力しても大丈夫ですか？", "acceptedAnswer": {"@type": "Answer", "text": "氏名・住所・保険者番号などの個人情報は入力せず、IDに置き換えたデータを使いましょう。あわせて、データを学習に使わない設定や法人向けプランを利用すると安心です。施設の個人情報保護方針も事前に確認してください。"}}, {"@type": "Question", "name": "パソコンが苦手な職員でも運用できますか？", "acceptedAnswer": {"@type": "Answer", "text": "はい、職員がやることはスマホでGoogleフォームに入力するだけなので、山本さんの施設では60代のパート職員も1週間で慣れました。分析は施設長や事務担当者1人が担当すれば十分です。"}}, {"@type": "Question", "name": "初心者におすすめの本やツールはありますか？", "acceptedAnswer": {"@type": "Answer", "text": "まずはChatGPTのビジネス活用を扱った入門書を1冊読み、「役割・目的・データ・出力形式」を伝える基本を押さえるのがおすすめです。ツールは無料で使えるGoogleスプレッドシートとGoogleフォームから始めれば、費用をかけずに試せます。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "介護施設の売上データの分析をAIで効率化する方法", "description": "介護施設の売上データの分析をChatGPTとスプレッドシートで効率化。月20時間を5時間に削減した施設長の手順とプロンプト例を具体的に解説します。", "step": [{"@type": "HowToStep", "name": "### 山本さんが実践した6つのステップ", "text": "### 山本さんが実践した6つのステップ"}, {"@type": "HowToStep", "name": "**個人情報を取り除いたデータを用意する**", "text": "**個人情報を取り除いたデータを用意する**"}, {"@type": "HowToStep", "name": "**日々の実績はGoogleフォームで集める**", "text": "**日々の実績はGoogleフォームで集める**"}, {"@type": "HowToStep", "name": "**ChatGPTに「列の意味」を伝えてから分析を依頼する**", "text": "**ChatGPTに「列の意味」を伝えてから分析を依頼する**"}, {"@type": "HowToStep", "name": "**加算の取りこぼしをチェックする**", "text": "**加算の取りこぼしをチェックする**"}, {"@type": "HowToStep", "name": "**売上減少の原因を仮説として出してもらう**", "text": "**売上減少の原因を仮説として出してもらう**"}, {"@type": "HowToStep", "name": "**会議資料に変換する**", "text": "**会議資料に変換する**"}]}</script>
+  <!-- Google AdSense -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_ADSENSE_ID" crossorigin="anonymous"></script> -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2335a0d9'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='sans-serif' font-size='11' font-weight='900' fill='white'%3E困AI%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#35a0d9">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="header-top">
+        <a href="../index.html" class="logo">小さなお店のための業種別AIお困り解決帳</a>
+        <nav class="header-nav">
+          <a href="../index.html">記事一覧</a>
+          <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="nav-cta">無料相談</a>
+        </nav>
+      </div>
+      <p class="tagline">飲食店・美容室・士業・工務店などの「困った」をAIで減らす具体策</p>
+    </div>
+  </header>
+  <main>
+    <div class="breadcrumb"><a href="../index.html">トップ</a><span>&gt;</span><span>介護施設</span><span>&gt;</span><span>介護施設 売上データの分析 効率化｜ChatGPTを使った具...</span></div>
+    <article>
+<div class="article-header-meta"><span class="tag">介護施設</span><span>公開: 2026-10-20</span><span>約14分で読めます</span><span class="byline">監修: <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">かわさき楽AIサポート</a></span></div>
+<h1>介護施設 売上データの分析 効率化｜ChatGPTを使った具体的なやり方</h1>
+<div class="article-lead"><p class="article-lead-label">この記事の要点</p><p>介護施設の売上データの分析をChatGPTとスプレッドシートで効率化。月20時間を5時間に削減した施設長の手順とプロンプト例を具体的に解説します。</p></div>
+<div class="toc">
+  <div class="toc-title">この記事の内容</div>
+  <ol><li><a href="#section-1">介護施設の売上データの分析、なぜこんなに大変なのか？</a></li>
+<li><a href="#section-2">介護施設で売上データの分析が放置されがちな3つの理由</a></li>
+<li><a href="#section-3">売上データの分析をAIで解決する方法（ステップ解説）</a></li>
+<li><a href="#section-4">もうひとつのAI活用法：紹介元データ（HubSpot CRM）との組み合わせ</a></li>
+<li><a href="#section-5">導入前後でどう変わった？数字で見るビフォーアフター</a></li>
+<li><a href="#section-6">もっと深く学びたい人向け：山本さんが参考にした本・ツール</a></li>
+<li><a href="#section-7">よくある質問</a></li>
+<li><a href="#section-8">まとめ：山本さんからのひとこと</a></li></ol>
+</div>
+
+<p>夜8時、職員が帰ったデイサービスの事務室で、山本さんは請求ソフトから出力したCSVと手書きの利用実績表を見比べています。翌週は月1回の運営会議です。「先月より売上が落ちた理由」を説明しなければなりませんが、どこから手をつければいいのか分かりません。最近では介護現場でもAIの普及が進み、見守りや記録業務への活用が広がる一方、「使いこなせる人材が足りない」という課題も指摘されています。山本さんも「AIなんてうちには無理」と思っていた一人でした。</p>
+
+<p><strong>結論から言えば、介護施設の売上データの分析は、ChatGPTとGoogleスプレッドシート・Googleフォームを組み合わせることで、月20時間かかっていた集計・分析作業を月5時間程度まで減らせます。</strong> この記事では、山本さんが実際に試した手順を、プロンプト例つきで紹介します。</p>
+
+<h3>この記事の主人公：山本さん（54歳・デイサービス施設長）</h3>
+
+<ul>
+<li>名前：山本 恵子さん（54歳・女性）</li>
+<li>役割：通所介護「ひだまりデイサービス」の施設長（介護福祉士出身）</li>
+<li>規模：定員30名、職員18名（常勤8名・パート10名）、月商は約650万円（介護報酬＋自費サービス）</li>
+<li>困りごと：<strong>毎月の売上を「稼働率」と「加算」に分けて分析できず、売上が下がっても原因が分からない</strong></li>
+</ul>
+
+<p>※本記事の事例は、介護施設でよくあるお悩みをもとに構成したフィクションです。登場人物名・店舗名・会社名は仮名であり、実在の個人・団体とは関係ありません。</p>
+
+<h2 id="section-1">介護施設の売上データの分析、なぜこんなに大変なのか？</h2>
+
+<h3>山本さんの「月末のある1日」</h3>
+
+<p>山本さんの1日は送迎の調整から始まります。朝7時半にキャンセル連絡が2件入り、送迎ルートを組み直します。日中は利用者対応、ケアマネジャーからの電話、新人職員の相談に追われ、事務作業に向き合えるのは夕方以降です。</p>
+
+<p>月末になると、そこに「売上の確認」が加わります。請求ソフトの実績データ、紙の利用予定表、自費サービス（延長利用やお弁当代など）の記録はすべて別々の場所にあります。それらを手作業でExcelに転記し、合計を出すだけで毎月2〜3晩が終わってしまいます。</p>
+
+<h3>本当の困りごとは「数字が出ても理由が分からない」こと</h3>
+
+<p>山本さんが苦しんでいたのは、合計金額を出すことではありません。「先月より30万円減った」と分かっても、それが利用者の入院による稼働率の低下なのか、入浴介助加算などの算定漏れなのか、曜日ごとの偏りなのかを切り分けられないことでした。</p>
+
+<p>「数字は作れるけど、会議で『なぜ？』と聞かれると答えられない。それが一番つらかったんです」と山本さんは話します。</p>
+
+<h2 id="section-2">介護施設で売上データの分析が放置されがちな3つの理由</h2>
+
+<h3>理由1：売上の構造が複雑（業界構造の壁）</h3>
+
+<p>介護施設の売上は、基本報酬×利用回数に加えて、各種加算、自費サービスが積み重なってできています。しかも介護報酬は国保連への請求を経て約2か月後に入金されるため、「今月の現場の動き」と「通帳の数字」がずれます。飲食店のように「レジを締めれば売上が分かる」構造ではないのです。</p>
+
+<h3>理由2：分析に使える時間がない（時間の壁）</h3>
+
+<p>施設長やオーナーの多くは、現場の人員配置に組み込まれています。人手不足が続く中、山本さんのように「事務作業は夜か休日」という方は少なくありません。分析は緊急ではないため、どうしても後回しになります。</p>
+
+<h3>理由3：「数字は苦手」という思い込み（心理の壁）</h3>
+
+<p>現場出身の管理者ほど、「自分は数字に強くない」と感じがちです。2026年に入って、ITmediaなどでもAIデータ分析ツールの比較記事が増えていますが、高機能なツールほど「自分には難しそう」と感じてしまう方も多いでしょう。山本さんも、最初は専用ツールの資料を見ただけで閉じてしまったそうです。</p>
+
+<h2 id="section-3">売上データの分析をAIで解決する方法（ステップ解説）</h2>
+
+<h3>まずは入門書で「AIへの頼み方」を学んだ</h3>
+
+<p>山本さんが最初に読んだのは、ChatGPTのビジネス活用について書かれた入門書でした。「『役割・目的・データ・出力形式を伝える』という基本が書いてあって、その通りにやったら最初のプロンプトがうまくいったんです」と振り返ります。</p>
+
+<div class="aff-section">
+  <p class="aff-section-intro">介護施設の売上データの分析について、さらに詳しく学びたい方にはこちらの書籍がおすすめです。</p>
+  <div class="aff-card">
+    <div class="aff-card-inner">
+      <div class="aff-book-img">
+        <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8362/9784297148362_1_32.jpg?_ex=200x200" alt="ゼロからわかるDifyの教科書 〜生成AI×ノーコードでかんたん業務効率化" loading="lazy">
+      </div>
+      <div class="aff-content">
+        <span class="aff-badge">Pick Up</span>
+        <p class="aff-book-title">ゼロからわかるDifyの教科書 〜生成AI×ノーコードでかんたん業務効率化</p>
+        <p class="aff-book-meta">にゃんた / 2,970円（税込）</p>
+        <div class="aff-review"><span class="aff-review-stars">★★★★☆</span><span class="aff-review-count">おすすめ書籍</span></div>
+        <a href="https://rpx.a8.net/svt/ejp?a8mat=2ZPHBO+123RHU+2HOM+686ZL&amp;rakuten=y&amp;a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0ea62065.34400275.0ea62066.204f04c0%2Fa18090710619_2ZPHBO_123RHU_2HOM_686ZL%3Fpc%3Dhttp%253A%252F%252Fsearch.rakuten.co.jp%252Fsearch%252Fmall%252F%E7%94%9F%E6%88%90AI%2B%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96%252F%26m%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252F" target="_blank" rel="nofollow" class="aff-btn">
+          楽天ブックスで見る
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>山本さんが実践した6つのステップ</h3>
+
+<ol>
+<li><strong>個人情報を取り除いたデータを用意する</strong></li>
+</ol>
+<p>請求ソフトから利用実績をCSVで出力し、Googleスプレッドシートに貼り付けます。利用者名は「A001」などのIDに置き換え、氏名・住所・保険者番号は削除します。ChatGPTの設定でデータを学習に使わない設定にしておくことも大切です。</p>
+
+<ol>
+<li><strong>日々の実績はGoogleフォームで集める</strong></li>
+</ol>
+<p>キャンセルや当日の加算算定（入浴・機能訓練の実施有無）を、職員がスマホからGoogleフォームで入力する仕組みにしました。回答は自動でスプレッドシートにたまるため、紙からの転記がなくなります。</p>
+
+<ol>
+<li><strong>ChatGPTに「列の意味」を伝えてから分析を依頼する</strong></li>
+</ol>
+<p>山本さんが実際に入力したプロンプトはこちらです。</p>
+<p>「あなたはデイサービスの経営に詳しいアドバイザーです。以下は当施設の10月の利用実績データです（利用者名は削除済み）。列Aは利用者ID、列Bはサービス提供日、列Cは曜日、列Dは入浴介助加算の有無、列Eは個別機能訓練加算の有無です。定員30名として、曜日別の平均利用人数と稼働率を表にしてください。」</p>
+
+<ol>
+<li><strong>加算の取りこぼしをチェックする</strong></li>
+</ol>
+<p>「入浴介助加算と個別機能訓練加算の算定件数を利用者ID別に集計し、前月より算定件数が減っている利用者を一覧にしてください。考えられる理由も添えてください。」</p>
+<p>この一覧を相談員と確認したところ、計画書の更新漏れで個別機能訓練加算を算定できていなかった利用者が見つかりました。</p>
+
+<ol>
+<li><strong>売上減少の原因を仮説として出してもらう</strong></li>
+</ol>
+<p>「先月と今月の実績を比べて、売上が減った要因として考えられるものを3つ挙げ、それぞれ確認すべきデータを教えてください。」</p>
+<p>AIの答えをそのまま信じるのではなく、「どこを確認すればいいか」のヒントとして使うのがポイントです。</p>
+
+<ol>
+<li><strong>会議資料に変換する</strong></li>
+</ol>
+<p>「この分析結果を、運営会議で介護職員にも伝わるように、専門用語を使わずA4一枚に要約してください。改善のためのアクションを3つ入れてください。」</p>
+
+<h3>自費サービスはfreee会計で一元管理</h3>
+
+<p>延長利用料やお弁当代、おむつ代などの自費売上は、以前はノートに手書きしていました。山本さんはこれをfreee会計&lt;!-- TOOL:freee会計 --&gt;に移し、介護報酬の入金と一緒に管理するようにしました。月次の売上レポートをCSVで出力すれば、そのままChatGPTでの分析に使えます。「介護報酬と自費の比率がひと目で分かるようになった」と山本さんは話します。</p>
+
+<h3>失敗談：最初は稼働率が「92%」と出てしまった</h3>
+
+<p>実は最初の分析はうまくいきませんでした。CSVを説明なしでそのまま貼り付けたところ、ChatGPTが「請求月」と「サービス提供日」を取り違え、実際は約78%だった稼働率が92%と計算されてしまったのです。</p>
+
+<p>そこで山本さんは2つの工夫をしました。1つは、ステップ3のように<strong>列の意味を必ず先に説明すること</strong>。もう1つは、<strong>合計や平均などの計算はスプレッドシートの関数で行い、ChatGPTには関数の作り方と結果の解釈を任せること</strong>です。「COUNTIFSで曜日別の利用人数を数える式を書いてください」と頼めば、正確な式を教えてくれます。この役割分担にしてから、数字のズレはなくなりました。</p>
+
+<h2 id="section-4">もうひとつのAI活用法：紹介元データ（HubSpot CRM）との組み合わせ</h2>
+
+<h3>稼働率を上げるカギは「どこから利用者が来ているか」</h3>
+
+<p>売上を分析していくうちに、山本さんは「稼働率を上げるには新規利用者の獲得が欠かせない」と気づきました。デイサービスの新規利用者の多くは、居宅介護支援事業所のケアマネジャーからの紹介です。ところが、どのケアマネジャーから何件紹介を受けたかは、相談員の頭の中にしかありませんでした。</p>
+
+<h3>無料のHubSpot CRMで紹介元を記録</h3>
+
+<p>そこで山本さんは、永久無料プランのあるHubSpot CRM&lt;!-- TOOL:HubSpot CRM --&gt;を導入しました。紹介元の事業所・担当ケアマネジャー・紹介日・利用開始の有無を記録するだけのシンプルな使い方です。3か月分たまったところで、データを書き出してChatGPTに分析してもらいました。</p>
+
+<p>「紹介元の事業所別に、過去6か月の新規紹介件数と、紹介された利用者の月平均利用回数を表にしてください。そのうえで、関係を強化すべき事業所を3つ挙げ、理由を説明してください。」</p>
+
+<p>その結果、紹介件数は少ないものの、紹介された利用者の利用回数が多い事業所が見つかりました。山本さんは空き状況を毎月その事業所へ届けるようにし、2か月で新規紹介が3件増えました。</p>
+
+<p>ちなみに山本さんは、地域のご家族がAIに「近くのデイサービス」を相談したときに自施設が紹介されるかを確認するため、無料の「AIOスコア診断」も試してみたそうです。「ネットでの見え方も売上につながる時代なんですね」と話していました。</p>
+
+<h2 id="section-5">導入前後でどう変わった？数字で見るビフォーアフター</h2>
+
+<p>山本さんの施設で、取り組みから4か月後に変わった数字をまとめました。</p>
+
+<div class="table-wrap">
+<table>
+  <thead><tr><th>項目</th><th>導入前</th><th>導入後</th></tr></thead>
+  <tbody><tr><td>月次の売上集計・分析時間</td><td>月20時間</td><td>月5時間</td></tr><tr><td>会議資料の作成時間</td><td>約4時間</td><td>約1時間</td></tr><tr><td>平均稼働率</td><td>78%</td><td>85%</td></tr><tr><td>加算の算定漏れ（月あたり）</td><td>約6万円</td><td>ほぼ0円</td></tr><tr><td>月商</td><td>約650万円</td><td>約700万円</td></tr></tbody>
+</table>
+</div>
+
+<h3>時間が浮いた分、現場に戻れた</h3>
+
+<p>集計にかかる時間が月15時間減り、山本さんは夜の残業がほとんどなくなりました。浮いた時間は職員との面談や、利用者さんとの会話に使っています。</p>
+
+<h3>かかったコストは月3,000円程度</h3>
+
+<p>使ったツールは、Googleフォーム、Googleスプレッドシート、HubSpot CRMの無料プランが中心です。ChatGPTは無料版から始め、途中から有料プラン（月3,000円程度）に切り替えました。加算の算定漏れ解消だけで月約6万円の改善になったため、費用対効果は十分だったといえます。</p>
+
+<p class="service-mention">最近はAIが検索結果を要約して表示する時代です。自分のお店がAIに紹介されるかどうか、<a href="https://www.smilefactory-rakuai.com/aio-shindan" target="_blank" rel="noopener">AIOスコア診断</a>で無料チェックしてみるのもおすすめです。</p>
+<h2 id="section-6">もっと深く学びたい人向け：山本さんが参考にした本・ツール</h2>
+
+<p>山本さんは「最初の1冊でAIへの頼み方を覚えて、次にデータ分析の考え方を学んだのがよかった」と話します。ChatGPTの基本操作に慣れたら、スプレッドシートの関数やピボットテーブルの入門書、介護経営の数字の読み方を解説した本を読むと、AIへの質問の質がぐっと上がります。</p>
+
+<div class="aff-section">
+  <p class="aff-section-intro">この記事の内容をもっと体系的に学びたい方へ。実践的な一冊をご紹介します。</p>
+  <div class="aff-card">
+    <div class="aff-card-inner">
+      <div class="aff-book-img">
+        <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8362/9784297148362_1_32.jpg?_ex=200x200" alt="ゼロからわかるDifyの教科書 〜生成AI×ノーコードでかんたん業務効率化" loading="lazy">
+      </div>
+      <div class="aff-content">
+        <span class="aff-badge">おすすめ</span>
+        <p class="aff-book-title">ゼロからわかるDifyの教科書 〜生成AI×ノーコードでかんたん業務効率化</p>
+        <p class="aff-book-meta">にゃんた / 2,970円（税込）</p>
+        <div class="aff-review"><span class="aff-review-stars">★★★★☆</span><span class="aff-review-count">おすすめ書籍</span></div>
+        <a href="https://rpx.a8.net/svt/ejp?a8mat=2ZPHBO+123RHU+2HOM+686ZL&amp;rakuten=y&amp;a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0ea62065.34400275.0ea62066.204f04c0%2Fa18090710619_2ZPHBO_123RHU_2HOM_686ZL%3Fpc%3Dhttp%253A%252F%252Fsearch.rakuten.co.jp%252Fsearch%252Fmall%252F%E7%94%9F%E6%88%90AI%2B%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96%252F%26m%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252F" target="_blank" rel="nofollow" class="aff-btn">
+          楽天ブックスで詳細を見る
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p class="inline-related">あわせて読みたい: <a href="032d721c.html" class="inline-link">介護施設の集客・マーケティング</a>の記事もおすすめです。</p>
+<h2 id="section-7">よくある質問</h2>
+
+<h3>Q1: 利用者のデータをChatGPTに入力しても大丈夫ですか？</h3>
+<p>氏名・住所・保険者番号などの個人情報は入力せず、IDに置き換えたデータを使いましょう。あわせて、データを学習に使わない設定や法人向けプランを利用すると安心です。施設の個人情報保護方針も事前に確認してください。</p>
+
+<h3>Q2: パソコンが苦手な職員でも運用できますか？</h3>
+<p>はい、職員がやることはスマホでGoogleフォームに入力するだけなので、山本さんの施設では60代のパート職員も1週間で慣れました。分析は施設長や事務担当者1人が担当すれば十分です。</p>
+
+<h3>Q3: 初心者におすすめの本やツールはありますか？</h3>
+<p>まずはChatGPTのビジネス活用を扱った入門書を1冊読み、「役割・目的・データ・出力形式」を伝える基本を押さえるのがおすすめです。ツールは無料で使えるGoogleスプレッドシートとGoogleフォームから始めれば、費用をかけずに試せます。</p>
+
+<h2 id="section-8">まとめ：山本さんからのひとこと</h2>
+
+<p>介護施設の売上データの分析は、売上の構造が複雑で、時間もなく、「数字が苦手」という気持ちも重なって後回しにされがちです。しかし、ChatGPTに列の意味を伝えて分析を頼み、計算はスプレッドシートに任せる役割分担をすれば、専門知識がなくても「なぜ売上が変わったのか」が見えるようになります。</p>
+
+<p>最後に、山本さんからのひとことです。</p>
+
+<p>「最初は『AIなんて私には無理』と思っていました。でも、やってみたら難しいのは最初の1回だけ。今は会議で『なぜ？』と聞かれても、数字を見せながら答えられます。月末の夜に一人で悩んでいる施設長さんにこそ、試してほしいです。」</p>
+<div class="disclaimer">
+  <p>※本記事に登場する人物・店舗名は架空のものであり、実在の個人・団体とは関係ありません。事例は同業種でよくあるお悩みをもとに構成したフィクションです。効果や数値はあくまで想定であり、成果を保証するものではありません。</p>
+</div>
+<div class="supervisor-box"><p class="supervisor-label">この記事の監修</p><div class="supervisor-body"><p class="supervisor-name"><a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">かわさき楽AIサポート</a><span class="supervisor-legal">（株式会社スマイルファクトリー）</span></p><p class="supervisor-desc">川崎の中小企業・個人事業主・個人がAIを「楽に」「楽しく」活用できる状態をつくるAI活用支援サービス。無料ツール中心で、AIの専門家ではなく『整理役・伴走者』として業務効率化を支援します。</p><p class="supervisor-meta">対応エリア: 神奈川県川崎市／初回相談無料</p><a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="supervisor-link">かわさき楽AIサポートに相談する →</a></div></div>
+<div class="cta-box">
+  <p class="cta-title">「うちも売上データの分析をどうにかしたい」と思った介護施設の方へ</p>
+  <p>この記事で紹介した方法は、どなたでも今日から始められます。「でも一人だと不安…」という方は、かわさき楽AIサポートにご相談ください。無料ツール中心で、あなたの業務に合ったAI活用を一緒に考えます。</p>
+  <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="cta-btn">初回無料で相談してみる</a>
+</div>
+<div class="related-articles">
+  <h2>あわせて読みたい</h2>
+  <ul class="related-list"><li>
+  <span class="tag">介護施設</span>
+  <a href="032d721c.html">介護施設 集客・マーケティング 時間がかかりすぎる → ChatGPTで解決する方法</a>
+</li><li>
+  <span class="tag">花屋</span>
+  <a href="08e3502e.html">花屋 売上データの分析 大変 → AIで解決した方法を全手順つきで紹介</a>
+</li><li>
+  <span class="tag">学習塾</span>
+  <a href="0fc92f1d.html">学習塾 売上データの分析 人手不足で回らない → AIに任せたら楽になった話</a>
+</li><li>
+  <span class="tag">介護施設</span>
+  <a href="135f233b.html">介護施設 業務マニュアル作成 人手不足で回らない → AIに任せたら楽になった話</a>
+</li></ul>
+</div>
+</article>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="../index.html">記事一覧</a>
+        <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">かわさき楽AIサポート</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../sitemap.xml">サイトマップ</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 小さなお店のための業種別AIお困り解決帳 / <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">株式会社スマイルファクトリー</a></p>
+    </div>
+  </footer>
+</body>
+</html>
