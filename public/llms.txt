@@ -69,6 +69,7 @@
 - [司法書士事務所 顧客対応の自動化 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/2a506294.html): 司法書士事務所の顧客対応を自動化する具体的手順を、川崎の実例ペルソナで解説。ChatGPT×無料ツールで月45時間削減した方法を紹介。
 - [自動車整備業 メニュー表・チラシ作成 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/2b9a9d14.html): 自動車整備業のメニュー表・チラシ作成に悩むオーナー必見。ChatGPTとCanvaで月10時間削減した実例を初心者向けに解説します。
 - [クリーニング店 多言語・インバウンド対応 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/2bd95c55.html): クリーニング店オーナーがChatGPTとLINE公式で多言語対応を実現。月15時間削減と客単価1.4倍を達成した実例を紹介。
+- [美容室 業務マニュアル作成 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/2e90c2ab.html): 美容室の業務マニュアル作成をAIで改善する3ステップを店長の事例で解説。ChatGPTと無料ツールで新人の質問対応を月20時間から5時間に減らす方法を紹介。
 - [運送業 売上データの分析 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/2e9ca24f.html): 運送業の売上データ分析に悩む方へ。ChatGPTと無料ツールで月12時間→3時間に削減した実例とプロンプト例、AI活用の具体的手順を初心者向けに解説します。
 - [写真スタジオ 顧客対応の自動化 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/2f9e4ef4.html): 写真スタジオの顧客対応をAIで自動化する全手順。ChatGPT・LINE公式・STORES予約で月53時間削減した実例をプロンプト付きで紹介します。
 - [農業 口コミ対応 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/2fc64bde.html): 観光農園オーナー田中さんの実例。ChatGPTで口コミ返信を月13時間→1.5時間に削減した具体的プロンプトと無料ツール活用法を紹介。
