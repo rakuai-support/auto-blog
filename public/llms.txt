@@ -112,6 +112,7 @@
 - [旅館・民宿 SNS投稿の作成 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/4e49999c.html): 箱根の旅館女将がAIでSNS投稿を月12時間削減。具体的プロンプトとビフォーアフターを公開します。
 - [保育園・幼稚園 在庫管理の改善 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/4e715493.html): 保育園・幼稚園の在庫管理をAIで改善する具体的手順。ChatGPTと無料ツールで月6時間削減した実例とプロンプト例を紹介。
 - [税理士事務所 SNS投稿の作成 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/4e7e442a.html): 税理士事務所のSNS投稿の作成をChatGPTとCanvaで自動化。月8時間→1.5時間に削減した所長の実践手順を公開。
+- [運送業 集客・マーケティング やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/4edcd857.html): 運送業の集客・マーケティングのやり方がわからない方へ。ChatGPTと無料ツールで新規荷主の問い合わせを月0件から4件に増やした事例を、初心者向けに手順付きで解説します。
 - [クリーニング店 経理作業の時短 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/4f5d1aba.html): クリーニング店の経理作業をChatGPTとfreeeで月28時間→7時間に時短した店主の実例を、具体的プロンプトと無料ツール活用法つきで解説します。
 - [印刷会社 予約管理の効率化 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/4ff294bf.html): 印刷会社の予約管理を月60時間から12時間に削減した実例を、ChatGPT・STORES予約・LINE公式の組み合わせで初心者向けに解説します。
 - [学習塾 業務マニュアル作成 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/50047b84.html): 学習塾の塾長が業務マニュアル作成に悩む物語を軸に、ChatGPTと無料ツールで月16時間削減した具体的手順を公開。
