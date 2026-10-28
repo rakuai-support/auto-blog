@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="xq2Wicedua7rwzz4MrzjFmLgCvCU9ZIT-cl3uNYukho">
+  <title>歯科医院 経理作業の時短 時間がかかりすぎる → ChatGPTで解決する方法 | 小さなお店のための業種別AIお困り解決帳</title>
+  <meta name="description" content="歯科医院の経理作業に月22時間かかっていた事務長が、ChatGPTとfreee会計、Googleフォームの組み合わせで月7時間に短縮した方法を、プロンプト例付きで解説します。">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://okomari.smilefactory-rakuai.com/articles/d35236fc.html">
+  <!-- OGP -->
+  <meta property="og:title" content="歯科医院 経理作業の時短 時間がかかりすぎる → ChatGPTで解決する方法 | 小さなお店のための業種別AIお困り解決帳">
+  <meta property="og:description" content="歯科医院の経理作業に月22時間かかっていた事務長が、ChatGPTとfreee会計、Googleフォームの組み合わせで月7時間に短縮した方法を、プロンプト例付きで解説します。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://okomari.smilefactory-rakuai.com/articles/d35236fc.html">
+  <meta property="og:site_name" content="小さなお店のための業種別AIお困り解決帳">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://okomari.smilefactory-rakuai.com/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="歯科医院 経理作業の時短 時間がかかりすぎる → ChatGPTで解決する方法 | 小さなお店のための業種別AIお困り解決帳">
+  <meta name="twitter:description" content="歯科医院の経理作業に月22時間かかっていた事務長が、ChatGPTとfreee会計、Googleフォームの組み合わせで月7時間に短縮した方法を、プロンプト例付きで解説します。">
+  <meta name="twitter:image" content="https://okomari.smilefactory-rakuai.com/ogp.png">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZNG2CPH6V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7ZNG2CPH6V');
+  </script>
+  <!-- フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@context": "https://schema.org", "@type": "Article", "url": "https://okomari.smilefactory-rakuai.com/articles/d35236fc.html", "headline": "歯科医院 経理作業の時短 時間がかかりすぎる → ChatGPTで解決する方法", "description": "歯科医院の経理作業に月22時間かかっていた事務長が、ChatGPTとfreee会計、Googleフォームの組み合わせで月7時間に短縮した方法を、プロンプト例付きで解説します。", "image": {"@type": "ImageObject", "url": "https://okomari.smilefactory-rakuai.com/ogp.png", "width": 1200, "height": 630}, "inLanguage": "ja", "datePublished": "2026-10-29", "dateModified": "2026-10-29", "author": {"@id": "https://okomari.smilefactory-rakuai.com/#organization"}, "publisher": {"@id": "https://okomari.smilefactory-rakuai.com/#organization"}, "isPartOf": {"@id": "https://okomari.smilefactory-rakuai.com/#website"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://okomari.smilefactory-rakuai.com/articles/d35236fc.html"}, "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".article-lead", "h1", "h2"]}, "about": {"@type": "Thing", "name": "歯科医院"}}, {"@type": "Organization", "@id": "https://okomari.smilefactory-rakuai.com/#organization", "name": "かわさき楽AIサポート", "legalName": "株式会社スマイルファクトリー", "url": "https://www.smilefactory-rakuai.com/", "description": "川崎の中小企業・個人事業主・個人がAIを「楽に」「楽しく」活用できる状態をつくるAI活用支援サービス。無料ツール中心で、AIの専門家ではなく『整理役・伴走者』として業務効率化を支援します。", "logo": {"@type": "ImageObject", "url": "https://okomari.smilefactory-rakuai.com/ogp.png", "width": 1200, "height": 630}, "slogan": "AIを楽に、楽しく。", "founder": {"@type": "Person", "name": "内貴志"}, "areaServed": "神奈川県川崎市", "contactPoint": {"@type": "ContactPoint", "email": "admin@smilefactory-rakuai.com", "contactType": "customer support", "areaServed": "JP", "availableLanguage": "Japanese"}, "address": {"@type": "PostalAddress", "postalCode": "213-0011", "addressRegion": "神奈川県", "addressLocality": "川崎市高津区", "streetAddress": "久本1-6-8 3号室", "addressCountry": "JP"}, "sameAs": ["https://www.smilefactory-rakuai.com/", "https://x.com/rakuai_support", "https://www.facebook.com/profile.php?id=61578232930114", "https://note.com/arukuwa"]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://okomari.smilefactory-rakuai.com/"}, {"@type": "ListItem", "position": 2, "name": "歯科医院 経理作業の時短 時間がかかりすぎる → ChatGPTで解決する方法", "item": "https://okomari.smilefactory-rakuai.com/articles/d35236fc.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "お金の数字をChatGPTに任せて間違いはありませんか？", "acceptedAnswer": {"@type": "Answer", "text": "読み取りミスや科目の判断ミスはゼロではありません。そのため、合計金額を手元の数字と照合させる、「要確認」を出させるなど、人が最終チェックする仕組みを作ることが大切です。最終的な税務判断は顧問税理士に確認しましょう。"}}, {"@type": "Question", "name": "患者情報が含まれる書類はどう扱えばいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "患者の氏名やカルテ番号は、黒塗りや削除をしてから入力するのが原則です。中村さんのように院内ルールとして明文化し、スタッフ全員で共有しておくと安心です。"}}, {"@type": "Question", "name": "初心者におすすめの本やツールはありますか？", "acceptedAnswer": {"@type": "Answer", "text": "まずはChatGPTのビジネス活用を解説した入門書を1冊読み、プロンプトの基本を押さえるのがおすすめです。ツールは、無料プランのあるfreee会計と、GoogleフォームやGoogleスプレッドシートの組み合わせから始めると、費用をかけずに効果を実感できます。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "歯科医院の経理作業の時短をAIで効率化する方法", "description": "歯科医院の経理作業に月22時間かかっていた事務長が、ChatGPTとfreee会計、Googleフォームの組み合わせで月7時間に短縮した方法を、プロンプト例付きで解説します。", "step": [{"@type": "HowToStep", "name": "### 中村さんが実践した5つのステップ", "text": "### 中村さんが実践した5つのステップ"}, {"@type": "HowToStep", "name": "**勘定科目ルール表を作る**", "text": "**勘定科目ルール表を作る**"}, {"@type": "HowToStep", "name": "**ChatGPTに「経理アシスタント」の役割を設定する**", "text": "**ChatGPTに「経理アシスタント」の役割を設定する**"}, {"@type": "HowToStep", "name": "**領収書をスマホで撮影して読み取らせる**", "text": "**領収書をスマホで撮影して読み取らせる**"}, {"@type": "HowToStep", "name": "**技工所の請求明細を集計・チェックする**", "text": "**技工所の請求明細を集計・チェックする**"}, {"@type": "HowToStep", "name": "**freee会計に取り込めるCSV形式に変換する**", "text": "**freee会計に取り込めるCSV形式に変換する**"}]}</script>
+  <!-- Google AdSense -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_ADSENSE_ID" crossorigin="anonymous"></script> -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2335a0d9'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='sans-serif' font-size='11' font-weight='900' fill='white'%3E困AI%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#35a0d9">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="header-top">
+        <a href="../index.html" class="logo">小さなお店のための業種別AIお困り解決帳</a>
+        <nav class="header-nav">
+          <a href="../index.html">記事一覧</a>
+          <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="nav-cta">無料相談</a>
+        </nav>
+      </div>
+      <p class="tagline">飲食店・美容室・士業・工務店などの「困った」をAIで減らす具体策</p>
+    </div>
+  </header>
+  <main>
+    <div class="breadcrumb"><a href="../index.html">トップ</a><span>&gt;</span><span>歯科医院</span><span>&gt;</span><span>歯科医院 経理作業の時短 時間がかかりすぎる → ChatG...</span></div>
+    <article>
+<div class="article-header-meta"><span class="tag">歯科医院</span><span>公開: 2026-10-29</span><span>約15分で読めます</span><span class="byline">監修: <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">かわさき楽AIサポート</a></span></div>
+<h1>歯科医院 経理作業の時短 時間がかかりすぎる → ChatGPTで解決する方法</h1>
+<div class="article-lead"><p class="article-lead-label">この記事の要点</p><p>歯科医院の経理作業に月22時間かかっていた事務長が、ChatGPTとfreee会計、Googleフォームの組み合わせで月7時間に短縮した方法を、プロンプト例付きで解説します。</p></div>
+<div class="toc">
+  <div class="toc-title">この記事の内容</div>
+  <ol><li><a href="#section-1">歯科医院の経理作業の時短、なぜこんなに大変なのか？</a></li>
+<li><a href="#section-2">歯科医院で経理作業の時短が放置されがちな3つの理由</a></li>
+<li><a href="#section-3">経理作業の時短をAIで解決する方法（ステップ解説）</a></li>
+<li><a href="#section-4">もうひとつのAI活用法：Googleフォーム×スプレッドシートとの組み合わせ</a></li>
+<li><a href="#section-5">導入前後でどう変わった？数字で見るビフォーアフター</a></li>
+<li><a href="#section-6">もっと深く学びたい人へ：中村さんが参考にしたもの</a></li>
+<li><a href="#section-7">よくある質問</a></li>
+<li><a href="#section-8">まとめ：中村さんからのひとこと</a></li></ol>
+</div>
+
+<p>診療が終わった19時過ぎ、待合室の照明を半分落とし、受付カウンターに領収書の束と技工所の請求書を広げる。電卓を叩きながら会計ソフトに1件ずつ入力し、気づけば21時を回っている。そんな月末を、毎月繰り返していませんか？</p>
+
+<p>2026年に入って歯科業界でもAI活用の話題が増えましたが、「うちには関係ない」「難しそう」と感じている方も多いはずです。この記事では、そんな一人の事務長がChatGPTで経理作業の時間を大きく減らした道のりを、具体的な手順とプロンプト付きでご紹介します。</p>
+
+<p><strong>結論から言えば、歯科医院の経理作業はChatGPT・freee会計・Googleスプレッドシートを組み合わせることで、月22時間から約7時間まで短縮できます。</strong> 特別なITスキルは必要なく、今日から1ステップずつ始められます。</p>
+
+
+<h2 id="section-1">歯科医院の経理作業の時短、なぜこんなに大変なのか？</h2>
+
+<h3>中村さんのプロフィール</h3>
+
+<p>今回の主人公は、郊外で開業して12年目の「なかむら歯科クリニック」で事務長を務める中村真由美さん（44歳）です。院長である夫と二人三脚で医院を運営しており、スタッフは歯科衛生士4名、歯科助手2名、受付2名の計10名。ユニットは4台、年商はおよそ8,000万円の、地域に根ざした規模の医院です。</p>
+
+<p>中村さんの悩みはただ一つです。<strong>「歯科材料費と技工料の請求書・領収書の仕分けと入力に、毎月20時間以上かかってしまう」</strong>ことでした。</p>
+
+<p>※本記事の事例は、歯科医院でよくあるお悩みをもとに構成したフィクションです。登場人物名・店舗名・会社名は仮名であり、実在の個人・団体とは関係ありません。</p>
+
+<h3>月末の典型的な1日</h3>
+
+<p>月末の金曜日、中村さんの1日はこう進みます。</p>
+
+<ul>
+<li><strong>8:30</strong> 出勤。午前の予約確認と受付業務のフォロー</li>
+<li><strong>13:00</strong> 昼休みに、ディーラーから届いた材料の納品書を確認</li>
+<li><strong>19:00</strong> 診療終了。ここから経理作業がスタート</li>
+<li><strong>19:30</strong> 技工所3社からの請求書を広げ、補綴物の種類ごとに金額を照合</li>
+<li><strong>20:30</strong> 院長やスタッフが立て替えた領収書（文具、セミナー代、駐車場代など）を勘定科目ごとに仕分け</li>
+<li><strong>21:30</strong> 会計ソフトに1件ずつ手入力。合計が合わず、最初からやり直し</li>
+<li><strong>22:15</strong> ようやく帰宅。週末も残りを自宅で片付ける</li>
+</ul>
+
+<p>「技工料はインレー、クラウン、義歯で単価がバラバラですし、ディーラーの請求書は品目が細かすぎて、どれを材料費にしてどれを消耗品にするか毎回迷うんです」と中村さんは話します。</p>
+
+<h3>本当の問題は「判断の繰り返し」</h3>
+
+<p>中村さんの作業時間を分解すると、実は入力そのものより<strong>「これは何の科目か」と考える時間</strong>が全体の約半分を占めていました。同じ判断を毎月何十回も繰り返していることこそ、時間を奪う最大の原因だったのです。</p>
+
+
+<h2 id="section-2">歯科医院で経理作業の時短が放置されがちな3つの理由</h2>
+
+<h3>理由1：業界構造の壁「経理は院長家族の仕事」</h3>
+
+<p>多くの歯科医院では、院長の配偶者や家族が経理を担うケースが少なくありません。外部に任せる発想が生まれにくく、「家族がやれば人件費がかからない」という考えから、非効率なやり方がそのまま続いてしまいます。</p>
+
+<h3>理由2：時間の壁「改善を考える時間がない」</h3>
+
+<p>診療時間中は受付・電話・患者対応で手が離せず、経理は診療後に回ります。疲れた状態で「やり方を見直そう」と考える余裕はなく、とにかく今月分を終わらせることで精一杯になりがちです。</p>
+
+<h3>理由3：心理の壁「AIは難しそう、間違えたら怖い」</h3>
+
+<p>最近では、Tenyiが実施した「歯科医院のAI・DX実態調査」で、AIを業務に活用している歯科医院はわずか23%にとどまる一方、75%が導入意向を持っているという結果が報告されています。つまり「使いたいけれど、最初の一歩が踏み出せない」医院が大多数なのです。中村さんもまさにその一人で、「お金の数字をAIに任せて大丈夫なの？」という不安を抱えていました。</p>
+
+
+<h2 id="section-3">経理作業の時短をAIで解決する方法（ステップ解説）</h2>
+
+<h3>きっかけは同業者のニュース</h3>
+
+<p>中村さんが動き出したきっかけは、調布の歯科医院が全職員に「AI秘書」を導入して事務作業の負担軽減に取り組んでいるというニュースでした。「同じ歯科医院でもう始めているところがあるなら、うちもやれるかもしれない」と感じたそうです。</p>
+
+<p>中村さんが最初に読んだのは、ChatGPTのビジネス活用について書かれた入門書でした。「役割を与えて、条件を具体的に書く。この本に書いてあった通りにやったら、最初のプロンプトがうまくいったんです」と振り返ります。</p>
+
+<div class="aff-section">
+  <p class="aff-section-intro">歯科医院の経理作業の時短について、さらに詳しく学びたい方にはこちらの書籍がおすすめです。</p>
+  <div class="aff-card">
+    <div class="aff-card-inner">
+      <div class="aff-book-img">
+        <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/1840/9784295411840_1_4.jpg?_ex=200x200" alt="経理AIエージェント　「デジタル労働力」で仕事が回る" loading="lazy">
+      </div>
+      <div class="aff-content">
+        <span class="aff-badge">Pick Up</span>
+        <p class="aff-book-title">経理AIエージェント　「デジタル労働力」で仕事が回る</p>
+        <p class="aff-book-meta">黒崎 賢一 / 2,200円（税込）</p>
+        <div class="aff-review"><span class="aff-review-stars">★★★★☆</span><span class="aff-review-count">おすすめ書籍</span></div>
+        <a href="https://rpx.a8.net/svt/ejp?a8mat=2ZPHBO+123RHU+2HOM+686ZL&amp;rakuten=y&amp;a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0ea62065.34400275.0ea62066.204f04c0%2Fa18090710619_2ZPHBO_123RHU_2HOM_686ZL%3Fpc%3Dhttp%253A%252F%252Fsearch.rakuten.co.jp%252Fsearch%252Fmall%252F%E7%B5%8C%E7%90%86%2BAI%252F%26m%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252F" target="_blank" rel="nofollow" class="aff-btn">
+          楽天ブックスで見る
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>中村さんが実践した5つのステップ</h3>
+
+<ol>
+<li><strong>勘定科目ルール表を作る</strong></li>
+</ol>
+<p>まず過去1年分の帳簿を見返し、「ディーラーA社の印象材・セメント → 歯科材料費」「グローブ・マスク → 衛生消耗品費」「技工所 → 技工料」のように、支払先と品目ごとの科目ルールをA4用紙1枚にまとめました。</p>
+
+<ol>
+<li><strong>ChatGPTに「経理アシスタント」の役割を設定する</strong></li>
+</ol>
+<p>ChatGPTのプロジェクト機能に、ルール表と次の指示を登録しました。</p>
+<p>「あなたは歯科医院の経理担当アシスタントです。添付の勘定科目ルール表に従い、領収書の内容を日付・支払先・品目・金額・勘定科目の候補の5列の表に整理してください。判断に迷うものは『要確認』と明記してください。」</p>
+
+<ol>
+<li><strong>領収書をスマホで撮影して読み取らせる</strong></li>
+</ol>
+<p>立て替え領収書はスマホで撮影し、まとめてChatGPTにアップロード。表形式で一覧化されるので、中村さんは「要確認」の行だけをチェックすればよくなりました。</p>
+
+<ol>
+<li><strong>技工所の請求明細を集計・チェックする</strong></li>
+</ol>
+<p>技工所の請求書は患者名を黒塗りしたうえで、次のように依頼しました。</p>
+<p>「以下は今月の技工所3社の請求明細です（患者名は削除済み）。技工所ごと・補綴物の種類ごと（インレー、クラウン、ブリッジ、義歯）に件数と合計金額を集計し、先月と比べて20%以上増えた項目があれば指摘してください。」</p>
+
+<ol>
+<li><strong>freee会計に取り込めるCSV形式に変換する</strong></li>
+</ol>
+<p>中村さんは、手入力をやめるためにクラウド会計のfreee会計&lt;!-- TOOL:freee会計 --&gt;を導入しました。無料プランで操作感を試してから、本格運用に移ったそうです。整理した表は次のプロンプトでCSVに変換します。</p>
+<p>「上の表を、freee会計に取り込めるCSV形式（発生日,勘定科目,税区分,金額,取引先,備考）に変換してください。」</p>
+
+<h3>最初はうまくいかなかった：失敗談</h3>
+
+<p>導入1か月目、中村さんは思わぬ壁にぶつかりました。薄暗い場所で撮影した領収書の「8」が「3」と読み取られ、さらにディーラーの請求書にある「研磨用ポイント」が消耗品費に分類されるなど、ミスが続いたのです。「結局、全部見直す羽目になって、手入力より時間がかかりました」と苦笑いします。</p>
+
+<p>そこで中村さんは2つの工夫をしました。</p>
+
+<ul>
+<li><strong>撮影は明るい場所で、1枚ずつ平らに置いて撮る</strong></li>
+<li><strong>ルール表に「迷いやすい品目リスト」を追加し、最後に合計金額を領収書の総額と照合させる</strong></li>
+</ul>
+
+<p>照合用には、次のプロンプトを使いました。</p>
+<p>「読み取った金額の合計を出してください。私が手元で計算した合計は48,620円です。一致しない場合は、読み取りに自信がない行を挙げてください。」</p>
+
+<p>この工夫で読み取りミスはほぼなくなり、2か月目からは本当に時間が減り始めました。</p>
+
+<h3>患者情報の取り扱いには要注意</h3>
+
+<p>歯科医院ならではの注意点として、<strong>患者の氏名・カルテ番号などの個人情報はChatGPTに入力しない</strong>ことを徹底してください。中村さんは、請求書の患者名欄を必ず黒塗りしてから撮影するルールをスタッフとも共有しています。また、最終的な勘定科目の判断や税務処理は、顧問税理士への確認を前提にしています。</p>
+
+
+<h2 id="section-4">もうひとつのAI活用法：Googleフォーム×スプレッドシートとの組み合わせ</h2>
+
+<h3>立て替え精算の「回収」がもう一つの悩みだった</h3>
+
+<p>経理作業が減っても、中村さんにはもう一つ困りごとがありました。スタッフが立て替えた文具代やセミナー交通費の領収書が、月末にバラバラと集まってくることです。「財布に入れっぱなしで忘れていました」という声も多く、催促に時間を取られていました。</p>
+
+<h3>Googleフォームで精算申請をデジタル化</h3>
+
+<p>そこで中村さんは、無料のGoogleフォームで「立て替え精算フォーム」を作りました。項目は「日付」「支払先」「金額」「用途」「領収書の写真」の5つだけ。回答は自動でGoogleスプレッドシートに蓄積されます。</p>
+
+<p>フォームの設計もChatGPTに相談しました。</p>
+<p>「歯科医院のスタッフ10名が使う立て替え精算フォームを作りたいです。入力の手間が最小限になる項目構成と、用途の選択肢（例：文具、研修費、交通費、衛生用品）を提案してください。」</p>
+
+<h3>スプレッドシートで科目を自動判定</h3>
+
+<p>さらに、スプレッドシートに勘定科目を自動表示させる数式もChatGPTに作ってもらいました。</p>
+<p>「Googleスプレッドシートで、D列の用途が『研修費』なら『研修費』、『交通費』なら『旅費交通費』、『文具』なら『事務用品費』とE列に自動表示する数式を教えてください。」</p>
+
+<p>あとは月末にスプレッドシートを丸ごとChatGPTに渡し、freee会計用のCSVに変換するだけです。スタッフ向けの申請締め切りのお知らせは、院内で使っているLINEグループで送っているそうです。</p>
+
+<p>「マネジーの記事にあった『作業はAI、決断は人間』という言葉がしっくりきました。集計や仕分けはAIに任せて、私は数字を見て院長と経営の相談をする時間を持てるようになったんです」と中村さんは話します。</p>
+
+
+<h2 id="section-5">導入前後でどう変わった？数字で見るビフォーアフター</h2>
+
+<h3>作業時間の変化</h3>
+
+<div class="table-wrap">
+<table>
+  <thead><tr><th>作業項目</th><th>導入前（月）</th><th>導入後（月）</th></tr></thead>
+  <tbody><tr><td>領収書の仕分け・入力</td><td>9時間</td><td>2.5時間</td></tr><tr><td>技工料・材料費の照合</td><td>7時間</td><td>2時間</td></tr><tr><td>立て替え精算の回収・確認</td><td>4時間</td><td>1時間</td></tr><tr><td>合計ミスの見直し</td><td>2時間</td><td>0.5時間</td></tr><tr><td>その他（報告書作成など）</td><td>—</td><td>1時間</td></tr><tr><td><strong>合計</strong></td><td><strong>22時間</strong></td><td><strong>7時間</strong></td></tr></tbody>
+</table>
+</div>
+
+<p><strong>月22時間から7時間へ、約68%の削減</strong>に成功しました。年間にすると180時間、ちょうど22日分の診療後残業がなくなった計算です。</p>
+
+<h3>コストの変化</h3>
+
+<ul>
+<li>受付スタッフが手伝っていた入力作業（月6時間×時給1,300円）がほぼ不要になり、<strong>月約7,800円の人件費を削減</strong></li>
+<li>検討していた記帳代行サービス（月2万円）を契約せずに済んだ</li>
+<li>ChatGPTの有料プラン（月額約3,000円）を差し引いても、<strong>月2万円以上のコストメリット</strong></li>
+</ul>
+
+<h3>数字以外の変化</h3>
+
+<p>院長への月次報告も変わりました。中村さんは次のプロンプトで、毎月の経費サマリーを作っています。</p>
+<p>「今月の経費集計表をもとに、院長向けに3行でサマリーを作ってください。先月から大きく変動した項目と、その理由として考えられることも添えてください。」</p>
+
+<p>「技工料が増えているのは自費の補綴が増えたから、と数字で話せるようになって、院長との会話が前向きになりました」と中村さんは笑顔を見せます。</p>
+
+
+<h2 id="section-6">もっと深く学びたい人へ：中村さんが参考にしたもの</h2>
+
+<p>基本的な使い方に慣れてきた中村さんが次に取り組んだのは、プロンプトの精度を上げることと、クラウド会計の仕組みをきちんと理解することでした。「入門書で最初の一歩を踏み出したあと、経理とAIの両方を扱った本を読んだことで、自分の医院に合ったルールの作り方がわかりました」と話します。これから本格的に取り組みたい方は、ChatGPTの実践書とクラウド会計の解説書をセットで読むのがおすすめです。</p>
+
+<div class="aff-section">
+  <p class="aff-section-intro">この記事の内容をもっと体系的に学びたい方へ。実践的な一冊をご紹介します。</p>
+  <div class="aff-card">
+    <div class="aff-card-inner">
+      <div class="aff-book-img">
+        <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/1840/9784295411840_1_4.jpg?_ex=200x200" alt="経理AIエージェント　「デジタル労働力」で仕事が回る" loading="lazy">
+      </div>
+      <div class="aff-content">
+        <span class="aff-badge">おすすめ</span>
+        <p class="aff-book-title">経理AIエージェント　「デジタル労働力」で仕事が回る</p>
+        <p class="aff-book-meta">黒崎 賢一 / 2,200円（税込）</p>
+        <div class="aff-review"><span class="aff-review-stars">★★★★☆</span><span class="aff-review-count">おすすめ書籍</span></div>
+        <a href="https://rpx.a8.net/svt/ejp?a8mat=2ZPHBO+123RHU+2HOM+686ZL&amp;rakuten=y&amp;a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0ea62065.34400275.0ea62066.204f04c0%2Fa18090710619_2ZPHBO_123RHU_2HOM_686ZL%3Fpc%3Dhttp%253A%252F%252Fsearch.rakuten.co.jp%252Fsearch%252Fmall%252F%E7%B5%8C%E7%90%86%2BAI%252F%26m%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252F" target="_blank" rel="nofollow" class="aff-btn">
+          楽天ブックスで詳細を見る
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p class="inline-related">あわせて読みたい: <a href="0daea87f.html" class="inline-link">歯科医院の経理作業の時短</a>の記事もおすすめです。</p>
+<h2 id="section-7">よくある質問</h2>
+
+<h3>Q1: お金の数字をChatGPTに任せて間違いはありませんか？</h3>
+
+<p>読み取りミスや科目の判断ミスはゼロではありません。そのため、合計金額を手元の数字と照合させる、「要確認」を出させるなど、人が最終チェックする仕組みを作ることが大切です。最終的な税務判断は顧問税理士に確認しましょう。</p>
+
+<h3>Q2: 患者情報が含まれる書類はどう扱えばいいですか？</h3>
+
+<p>患者の氏名やカルテ番号は、黒塗りや削除をしてから入力するのが原則です。中村さんのように院内ルールとして明文化し、スタッフ全員で共有しておくと安心です。</p>
+
+<h3>Q3: 初心者におすすめの本やツールはありますか？</h3>
+
+<p>まずはChatGPTのビジネス活用を解説した入門書を1冊読み、プロンプトの基本を押さえるのがおすすめです。ツールは、無料プランのあるfreee会計と、GoogleフォームやGoogleスプレッドシートの組み合わせから始めると、費用をかけずに効果を実感できます。</p>
+
+
+<h2 id="section-8">まとめ：中村さんからのひとこと</h2>
+
+<p>歯科医院の経理作業に時間がかかる最大の理由は、同じ判断を毎月繰り返していることにあります。勘定科目のルールを一度言葉にしてChatGPTに覚えさせ、freee会計やGoogleフォーム、スプレッドシートと組み合わせれば、作業時間は大きく減らせます。</p>
+
+<p>最後に、中村さんからのメッセージです。</p>
+
+<p>「最初の1か月は失敗ばかりで、正直やめようかと思いました。でも、ルール表を作り直したら一気に楽になったんです。今は月末も20時前には帰れますし、空いた時間でスタッフと話したり、院長と医院の将来を考えたりできるようになりました。完璧を目指さず、まずは領収書1枚から試してみてください。きっと『もっと早く始めればよかった』と思うはずです。」</p>
+<div class="disclaimer">
+  <p>※本記事に登場する人物・店舗名は架空のものであり、実在の個人・団体とは関係ありません。事例は同業種でよくあるお悩みをもとに構成したフィクションです。効果や数値はあくまで想定であり、成果を保証するものではありません。</p>
+</div>
+<div class="supervisor-box"><p class="supervisor-label">この記事の監修</p><div class="supervisor-body"><p class="supervisor-name"><a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">かわさき楽AIサポート</a><span class="supervisor-legal">（株式会社スマイルファクトリー）</span></p><p class="supervisor-desc">川崎の中小企業・個人事業主・個人がAIを「楽に」「楽しく」活用できる状態をつくるAI活用支援サービス。無料ツール中心で、AIの専門家ではなく『整理役・伴走者』として業務効率化を支援します。</p><p class="supervisor-meta">対応エリア: 神奈川県川崎市／初回相談無料</p><a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="supervisor-link">かわさき楽AIサポートに相談する →</a></div></div>
+<div class="cta-box">
+  <p class="cta-title">「うちも経理作業の時短をどうにかしたい」と思った歯科医院の方へ</p>
+  <p>この記事で紹介した方法は、どなたでも今日から始められます。「でも一人だと不安…」という方は、かわさき楽AIサポートにご相談ください。無料ツール中心で、あなたの業務に合ったAI活用を一緒に考えます。</p>
+  <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="cta-btn">初回無料で相談してみる</a>
+</div>
+<div class="related-articles">
+  <h2>あわせて読みたい</h2>
+  <ul class="related-list"><li>
+  <span class="tag">花屋</span>
+  <a href="07146f52.html">花屋 経理作業の時短 悩み｜無料AIツールで月10時間削減できた話</a>
+</li><li>
+  <span class="tag">歯科医院</span>
+  <a href="0daea87f.html">歯科医院 経理作業の時短 人手不足で回らない → AIに任せたら楽になった話</a>
+</li><li>
+  <span class="tag">歯科医院</span>
+  <a href="0ddaa083.html">歯科医院 スタッフ教育の効率化 人手不足で回らない → AIに任せたら楽になった話</a>
+</li><li>
+  <span class="tag">歯科医院</span>
+  <a href="100228c5.html">歯科医院 集客・マーケティング 改善したい｜今日から始められるAI活用3ステップ</a>
+</li></ul>
+</div>
+</article>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="../index.html">記事一覧</a>
+        <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">かわさき楽AIサポート</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../sitemap.xml">サイトマップ</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 小さなお店のための業種別AIお困り解決帳 / <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">株式会社スマイルファクトリー</a></p>
+    </div>
+  </footer>
+</body>
+</html>

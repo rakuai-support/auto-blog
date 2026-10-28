@@ -291,6 +291,7 @@
 - [ペットショップ・動物病院 在庫管理の改善 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/cd6787b5.html): ペットショップ・動物病院の在庫管理をAIで改善する3ステップ。月23時間削減・廃棄ロス2万円減の実例を紹介
 - [司法書士事務所 スタッフ教育の効率化 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/ce8dff5e.html): 司法書士事務所のスタッフ教育が終わらない悩みを、ChatGPTと無料ツールで解決した実例を紹介。教育時間を月40時間から12時間に削減した手順を解説します。
 - [学習塾 メニュー表・チラシ作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/cee43b66.html): 学習塾のメニュー表・チラシ作成をChatGPTとCanvaで効率化。月8時間→1時間に削減した全手順をプロンプト例つきで紹介します。
+- [歯科医院 経理作業の時短 時間がかかりすぎる → ChatGPTで解決する方法](https://okomari.smilefactory-rakuai.com/articles/d35236fc.html): 歯科医院の経理作業に月22時間かかっていた事務長が、ChatGPTとfreee会計、Googleフォームの組み合わせで月7時間に短縮した方法を、プロンプト例付きで解説します。
 - [歯科医院 売上データの分析 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/d3c3962a.html): 歯科医院の売上データ分析を月12時間から2時間に短縮。ChatGPTとfreee・STORES予約を使った具体的な手順を院長の事例で解説します。
 - [不動産業 集客・マーケティング 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/d4aaf598.html): 不動産業の集客・マーケティングを改善したい方へ。ChatGPTで物件紹介文を時短し、LINE公式・Canvaと組み合わせて反響を増やす3ステップを事例で解説。
 - [農業 在庫管理の改善 時間がかかりすぎる → ChatGPTで解決する方法](https://okomari.smilefactory-rakuai.com/articles/d529a56e.html): 農業の在庫管理に月20時間以上かかる問題を、ChatGPTと無料ツールで月5時間以下に削減した家族経営農家の実例を解説します。
