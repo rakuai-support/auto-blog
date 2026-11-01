@@ -147,6 +147,7 @@
 - [美容室 口コミ対応 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/693342ec.html): 美容室オーナーが口コミ対応の時間を月8時間から2時間に削減した3ステップ。ChatGPTと無料ツールでGoogle評価も向上した実例を紹介します。
 - [不動産業 メニュー表・チラシ作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/6975d05e.html): 不動産店長がChatGPTとCanvaでチラシ作成を月20時間→4時間に削減した全手順を、失敗談・プロンプト例つきで公開します。
 - [花屋 多言語・インバウンド対応 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/698d7829.html): 花屋の多言語・インバウンド対応をChatGPTと無料ツールで月22時間→4時間に削減した全手順を実例で紹介します。
+- [ペットショップ・動物病院 SNS投稿の作成 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/6b1fec13.html): ペットショップ・動物病院のSNS投稿作成が終わらない悩みを、ChatGPTとCanva・LINE公式で月28時間→8時間に削減した実例を、プロンプト例付きで解説します。
 - [整骨院・整体院 予約管理の効率化 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/6bfd69ed.html): 整骨院オーナー田中さんの実例で学ぶ、ChatGPT＋無料ツールによる予約管理効率化。月32時間削減・売上11％向上の具体的手順を解説。
 - [司法書士事務所 業務マニュアル作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/6c17e173.html): 司法書士事務所の業務マニュアル作成をAIで解決する全手順を、月20時間→3時間削減した実例とプロンプト例つきで紹介します。
 - [保育園・幼稚園 メニュー表・チラシ作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/6c237365.html): 保育園のメニュー表・チラシ作成をChatGPT＋Canvaで月12時間→3時間に削減した主任保育士の全手順と実際のプロンプト例を紹介します。
