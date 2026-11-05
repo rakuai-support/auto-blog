@@ -27,6 +27,7 @@
 - [税理士事務所 集客・マーケティング 改善したい｜今日から始められるAI活用3ステップ](https://okomari.smilefactory-rakuai.com/articles/07d47265.html): 税理士事務所の集客・マーケティングを月20時間から5時間に削減するAI活用3ステップを具体例で解説します
 - [飲食店 多言語・インバウンド対応 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/07ebea0d.html): 飲食店の多言語・インバウンド対応をAIで解決した実例を紹介。ChatGPTと無料ツールで月24時間削減・客単価15%アップを実現した手順を解説。
 - [整骨院・整体院 顧客対応の自動化 やり方がわからない｜初心者でもできるAI活用術](https://okomari.smilefactory-rakuai.com/articles/084a072d.html): 整骨院・整体院の顧客対応の自動化をChatGPTと無料ツールで実現。月40時間を9時間に削減した院長の実例とプロンプト例を初心者向けに解説します。
+- [整骨院・整体院 売上データの分析 効率化｜ChatGPTを使った具体的なやり方](https://okomari.smilefactory-rakuai.com/articles/08acd0f7.html): 整骨院・整体院の売上データの分析をChatGPTと無料ツールで効率化する方法を、月12時間→3時間に削減した院長の事例とプロンプト例つきで具体的に解説します。
 - [花屋 売上データの分析 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/08e3502e.html): 花屋オーナーが売上データ分析の負担を月12時間→3時間に削減した、ChatGPTと無料ツール活用の全手順を紹介します。
 - [旅館・民宿 在庫管理の改善 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/090eb3df.html): 旅館・民宿の在庫管理をAIで改善した女将の実例。ChatGPTと無料ツールで月25時間→9時間、ロス12万円→4.5万円に削減した手順を解説。
 - [飲食店 SNS投稿の作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/091ae53a.html): 川崎の小さなイタリアン店オーナーがChatGPTでSNS投稿作業を月15時間削減し売上45万円増を実現した全手順を紹介します。
