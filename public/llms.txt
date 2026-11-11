@@ -329,6 +329,7 @@
 - [写真スタジオ 顧客対応の自動化 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/e872ffd4.html): 写真スタジオの顧客対応を人手不足でも回す方法を実例で解説。ChatGPTとLINE公式・STORES予約で問い合わせ対応を月60時間から18時間に削減した手順を紹介します。
 - [農業 業務マニュアル作成 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/e88256ba.html): 農業の業務マニュアル作成をChatGPTで効率化。月20時間→4時間に削減した農家の全手順を紹介。
 - [美容室 多言語・インバウンド対応 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/e8c1fb27.html): 美容室の多言語・インバウンド対応はChatGPTと無料ツール活用で月18時間削減。1人オーナー佐藤さんの実例でAI接客術を解説。
+- [整骨院・整体院 多言語・インバウンド対応 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/ea2d84a9.html): 整骨院・整体院の多言語・インバウンド対応をChatGPTと無料ツールで効率化。問診時間を25分から8分に短縮した具体的な手順とプロンプト例、失敗談まで紹介します。
 - [工務店・リフォーム業 業務マニュアル作成 つらい・終わらない → AI導入で変わった実例](https://okomari.smilefactory-rakuai.com/articles/ece9f638.html): 工務店・リフォーム業の業務マニュアル作成をAIで月20時間→3時間に削減。二代目社長のリアル事例と具体的プロンプトを公開。
 - [ペットショップ・動物病院 口コミ対応 大変 → AIで解決した方法を全手順つきで紹介](https://okomari.smilefactory-rakuai.com/articles/eeff73bb.html): 動物病院・ペットショップの口コミ対応が大変な方へ。ChatGPTと無料ツールで返信時間を月8時間→2時間に削減した全手順を、具体的なプロンプト例つきで紹介します。
 - [ペットショップ・動物病院 予約管理の効率化 人手不足で回らない → AIに任せたら楽になった話](https://okomari.smilefactory-rakuai.com/articles/ef1d0cf1.html): 動物病院院長がChatGPTとSTORES予約・LINE公式で月45時間削減した実例。無料ツールだけで予約管理を効率化する具体的ステップを解説。
