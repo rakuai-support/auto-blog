@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="xq2Wicedua7rwzz4MrzjFmLgCvCU9ZIT-cl3uNYukho">
+  <title>歯科医院 在庫管理の改善 人手不足で回らない → AIに任せたら楽になった話 | 小さなお店のための業種別AIお困り解決帳</title>
+  <meta name="description" content="人手不足の歯科医院で在庫管理を改善した事例を紹介。ChatGPTとGoogleフォーム・スプレッドシートで発注作業を月12時間から3時間に削減した方法を解説します。">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://okomari.smilefactory-rakuai.com/articles/0210c77f.html">
+  <!-- OGP -->
+  <meta property="og:title" content="歯科医院 在庫管理の改善 人手不足で回らない → AIに任せたら楽になった話 | 小さなお店のための業種別AIお困り解決帳">
+  <meta property="og:description" content="人手不足の歯科医院で在庫管理を改善した事例を紹介。ChatGPTとGoogleフォーム・スプレッドシートで発注作業を月12時間から3時間に削減した方法を解説します。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://okomari.smilefactory-rakuai.com/articles/0210c77f.html">
+  <meta property="og:site_name" content="小さなお店のための業種別AIお困り解決帳">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://okomari.smilefactory-rakuai.com/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="歯科医院 在庫管理の改善 人手不足で回らない → AIに任せたら楽になった話 | 小さなお店のための業種別AIお困り解決帳">
+  <meta name="twitter:description" content="人手不足の歯科医院で在庫管理を改善した事例を紹介。ChatGPTとGoogleフォーム・スプレッドシートで発注作業を月12時間から3時間に削減した方法を解説します。">
+  <meta name="twitter:image" content="https://okomari.smilefactory-rakuai.com/ogp.png">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZNG2CPH6V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7ZNG2CPH6V');
+  </script>
+  <!-- フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@context": "https://schema.org", "@type": "Article", "url": "https://okomari.smilefactory-rakuai.com/articles/0210c77f.html", "headline": "歯科医院 在庫管理の改善 人手不足で回らない → AIに任せたら楽になった話", "description": "人手不足の歯科医院で在庫管理を改善した事例を紹介。ChatGPTとGoogleフォーム・スプレッドシートで発注作業を月12時間から3時間に削減した方法を解説します。", "image": {"@type": "ImageObject", "url": "https://okomari.smilefactory-rakuai.com/ogp.png", "width": 1200, "height": 630}, "inLanguage": "ja", "datePublished": "2026-11-24", "dateModified": "2026-11-24", "author": {"@id": "https://okomari.smilefactory-rakuai.com/#organization"}, "publisher": {"@id": "https://okomari.smilefactory-rakuai.com/#organization"}, "isPartOf": {"@id": "https://okomari.smilefactory-rakuai.com/#website"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://okomari.smilefactory-rakuai.com/articles/0210c77f.html"}, "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".article-lead", "h1", "h2"]}, "about": {"@type": "Thing", "name": "歯科医院"}}, {"@type": "Organization", "@id": "https://okomari.smilefactory-rakuai.com/#organization", "name": "かわさき楽AIサポート", "legalName": "株式会社スマイルファクトリー", "url": "https://www.smilefactory-rakuai.com/", "description": "川崎の中小企業・個人事業主・個人がAIを「楽に」「楽しく」活用できる状態をつくるAI活用支援サービス。無料ツール中心で、AIの専門家ではなく『整理役・伴走者』として業務効率化を支援します。", "logo": {"@type": "ImageObject", "url": "https://okomari.smilefactory-rakuai.com/ogp.png", "width": 1200, "height": 630}, "slogan": "AIを楽に、楽しく。", "founder": {"@type": "Person", "name": "内貴志"}, "areaServed": "神奈川県川崎市", "contactPoint": {"@type": "ContactPoint", "email": "admin@smilefactory-rakuai.com", "contactType": "customer support", "areaServed": "JP", "availableLanguage": "Japanese"}, "address": {"@type": "PostalAddress", "postalCode": "213-0011", "addressRegion": "神奈川県", "addressLocality": "川崎市高津区", "streetAddress": "久本1-6-8 3号室", "addressCountry": "JP"}, "sameAs": ["https://www.smilefactory-rakuai.com/", "https://x.com/rakuai_support", "https://www.facebook.com/profile.php?id=61578232930114", "https://note.com/arukuwa"]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://okomari.smilefactory-rakuai.com/"}, {"@type": "ListItem", "position": 2, "name": "歯科医院 在庫管理の改善 人手不足で回らない → AIに任せたら楽になった話", "item": "https://okomari.smilefactory-rakuai.com/articles/0210c77f.html"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "ChatGPTに患者さんの情報を入力しても大丈夫ですか？", "acceptedAnswer": {"@type": "Answer", "text": "在庫管理の用途であれば、患者さんの個人情報を入力する必要はまったくありません。品目名や数量、納期などの業務データだけを扱いましょう。院内で「患者情報は入力しない」というルールを明文化しておくと安心です。"}}, {"@type": "Question", "name": "ITが苦手なスタッフばかりでも運用できますか？", "acceptedAnswer": {"@type": "Answer", "text": "できます。スタッフにお願いするのは「QRコードを読み取って、品目を選んで送信する」だけです。中村さんの医院でも、50代のスタッフが初日から問題なく使えていました。"}}, {"@type": "Question", "name": "初心者におすすめの本やツールはありますか？", "acceptedAnswer": {"@type": "Answer", "text": "まずはChatGPTのビジネス活用の入門書を1冊読み、プロンプトの基本を押さえるのがおすすめです。ツールはGoogleフォームとスプレッドシートから始めれば、費用をかけずに試せます。慣れてきたらfreee会計などの会計データと組み合わせると、コスト面の改善まで広げられます。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "歯科医院の在庫管理の改善をAIで効率化する方法", "description": "人手不足の歯科医院で在庫管理を改善した事例を紹介。ChatGPTとGoogleフォーム・スプレッドシートで発注作業を月12時間から3時間に削減した方法を解説します。", "step": [{"@type": "HowToStep", "name": "### 中村さんが実践した5つのステップ", "text": "### 中村さんが実践した5つのステップ"}, {"@type": "HowToStep", "name": "**ChatGPTで在庫管理表のひな形を作る**", "text": "**ChatGPTで在庫管理表のひな形を作る**"}, {"@type": "HowToStep", "name": "**Googleスプレッドシートに貼り付け、自院の品目に置き換える**", "text": "**Googleスプレッドシートに貼り付け、自院の品目に置き換える**"}, {"@type": "HowToStep", "name": "**過去の発注履歴から「定数」をAIに計算してもらう**", "text": "**過去の発注履歴から「定数」をAIに計算してもらう**"}, {"@type": "HowToStep", "name": "**色で知らせる仕組みを作る**", "text": "**色で知らせる仕組みを作る**"}, {"@type": "HowToStep", "name": "**Googleフォームでスタッフ全員が入力できるようにする**", "text": "**Googleフォームでスタッフ全員が入力できるようにする**"}]}</script>
+  <!-- Google AdSense -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_ADSENSE_ID" crossorigin="anonymous"></script> -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%2335a0d9'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='sans-serif' font-size='11' font-weight='900' fill='white'%3E困AI%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#35a0d9">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="header-top">
+        <a href="../index.html" class="logo">小さなお店のための業種別AIお困り解決帳</a>
+        <nav class="header-nav">
+          <a href="../index.html">記事一覧</a>
+          <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="nav-cta">無料相談</a>
+        </nav>
+      </div>
+      <p class="tagline">飲食店・美容室・士業・工務店などの「困った」をAIで減らす具体策</p>
+    </div>
+  </header>
+  <main>
+    <div class="breadcrumb"><a href="../index.html">トップ</a><span>&gt;</span><span>歯科医院</span><span>&gt;</span><span>歯科医院 在庫管理の改善 人手不足で回らない → AIに任せ...</span></div>
+    <article>
+<div class="article-header-meta"><span class="tag">歯科医院</span><span>公開: 2026-11-24</span><span>約14分で読めます</span><span class="byline">監修: <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">かわさき楽AIサポート</a></span></div>
+<h1>歯科医院 在庫管理の改善 人手不足で回らない → AIに任せたら楽になった話</h1>
+<div class="article-lead"><p class="article-lead-label">この記事の要点</p><p>人手不足の歯科医院で在庫管理を改善した事例を紹介。ChatGPTとGoogleフォーム・スプレッドシートで発注作業を月12時間から3時間に削減した方法を解説します。</p></div>
+<div class="toc">
+  <div class="toc-title">この記事の内容</div>
+  <ol><li><a href="#section-1">歯科医院の在庫管理の改善、なぜこんなに大変なのか？</a></li>
+<li><a href="#section-2">歯科医院で在庫管理の改善が放置されがちな3つの理由</a></li>
+<li><a href="#section-3">在庫管理の改善をAIで解決する方法（ステップ解説）</a></li>
+<li><a href="#section-4">もうひとつのAI活用法：freee会計とCanvaとの組み合わせ</a></li>
+<li><a href="#section-5">導入前後でどう変わった？数字で見るビフォーアフター</a></li>
+<li><a href="#section-6">もっと深く学びたい人へ：中村さんのおすすめ</a></li>
+<li><a href="#section-7">よくある質問</a></li>
+<li><a href="#section-8">まとめ：中村さんからのひとこと</a></li></ol>
+</div>
+
+<p>診療が終わった18時半。片付けを終えたスタッフが帰ったあと、ひとり材料棚の前で「グローブはあと何箱だっけ…」と指を折って数える。翌朝には「印象材が切れています！」と呼ばれ、ディーラーに急ぎの電話を入れる。そんな毎日を送っている方は少なくないはずです。2026年に入り、調布の船田歯科医院が全職員に「AI秘書」を導入したというニュースが話題になるなど、歯科医院の事務作業にもAI活用が広がっています。</p>
+
+<p><strong>結論から言えば、歯科医院の在庫管理の改善は、ChatGPTとGoogleフォーム・スプレッドシートという無料ツールの組み合わせで、月12時間かかっていた作業を3時間まで減らせます。</strong> 特別なシステムを買わなくても、今日から始められる方法です。</p>
+
+
+<h2 id="section-1">歯科医院の在庫管理の改善、なぜこんなに大変なのか？</h2>
+
+<h3>事務長・中村さんの紹介</h3>
+
+<p>今回の主人公は、中村由美さん（42歳）です。郊外にある「さくら台デンタルクリニック」で、歯科衛生士として働きながら事務長も兼任しています。医院はユニット4台、院長と勤務医が1名ずつ、歯科衛生士3名、歯科助手2名、受付1名の計8名体制。年間売上はおよそ1億円で、1日の来院患者数は40名前後です。</p>
+
+<p>中村さんの困りごとは、たった1つ。<strong>「材料の残数確認と発注が、中村さんの記憶と目視だけで回っていて、欠品と期限切れが繰り返されている」</strong> ことでした。</p>
+
+<p>※本記事の事例は、歯科医院でよくあるお悩みをもとに構成したフィクションです。登場人物名・店舗名・会社名は仮名であり、実在の個人・団体とは関係ありません。</p>
+
+<h3>ある火曜日の中村さん</h3>
+
+<p>その日も午後の診療は押していました。最後の患者さんを見送ったのは18時40分。中村さんはそこから棚を開け、グローブ、エプロン、紙コップ、アルジネート印象材、コンポジットレジン、麻酔カートリッジを一つずつ確認していきます。</p>
+
+<p>在庫表はあるものの、記入されるのは「気づいた人が書いたとき」だけ。実際の数とはズレていて、結局は目で数えるしかありません。発注書を手書きしてディーラー2社にFAXを送り終えたのは19時半でした。</p>
+
+<p>ところが翌朝、助手のスタッフから「先生、仮封材がもうありません」と声がかかります。棚の奥に新品があると思い込んでいたのに、実は先週使い切っていたのです。さらに引き出しの奥からは、使用期限が2か月前に切れたボンディング材が3本出てきました。</p>
+
+<h3>困りごとの正体は「仕組みがない」こと</h3>
+
+<p>中村さんは「私がもっとしっかりしていれば」と自分を責めていました。でも本当の原因は、中村さんの能力ではなく <strong>在庫の情報が中村さんの頭の中にしかない</strong> ことでした。休めば止まり、忙しければ漏れる。人手不足の医院ほど、この構造が深刻になります。</p>
+
+
+<h2 id="section-2">歯科医院で在庫管理の改善が放置されがちな3つの理由</h2>
+
+<h3>理由1：品目数が多く、管理が複雑な業界構造</h3>
+
+<p>歯科医院の消耗品は、小さな医院でも200品目を超えることが珍しくありません。サイズ違い・色違い（シェード）のレジン、複数のディーラー、品目ごとに異なる使用期限。飲食店や小売店の在庫管理よりも、実は細かい管理が求められます。</p>
+
+<h3>理由2：診療が最優先で、時間が取れない</h3>
+
+<p>在庫管理は「売上を生まない作業」と見なされがちです。診療の合間には手をつけられず、結局は診療後のサービス残業で処理されます。中村さんも月に12時間ほどを在庫確認と発注に使っていましたが、それは誰にも見えない時間でした。</p>
+
+<h3>理由3：「自分でやった方が早い」という心理の壁</h3>
+
+<p>ベテランほど「人に教えるより自分でやった方が早い」と考えがちです。中村さんも同じでした。しかしこの考え方こそが、属人化を深め、改善を先送りにする最大の原因です。</p>
+
+
+<h2 id="section-3">在庫管理の改善をAIで解決する方法（ステップ解説）</h2>
+
+<h3>まずは本を1冊読むところから</h3>
+
+<p>中村さんはパソコンが得意なわけではありません。最初に手に取ったのは、ChatGPTのビジネス活用について書かれた入門書でした。「質問の仕方ひとつで答えがまったく変わる、というのが一番の発見でした。本に書いてあった通り、前提条件を細かく伝えたら、最初のプロンプトがうまくいったんです」と振り返ります。</p>
+
+<div class="aff-section">
+  <p class="aff-section-intro">歯科医院の在庫管理の改善について、さらに詳しく学びたい方にはこちらの書籍がおすすめです。</p>
+  <div class="aff-card">
+    <div class="aff-card-inner">
+      <div class="aff-book-img">
+        <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8362/9784297148362_1_32.jpg?_ex=200x200" alt="ゼロからわかるDifyの教科書 〜生成AI×ノーコードでかんたん業務効率化" loading="lazy">
+      </div>
+      <div class="aff-content">
+        <span class="aff-badge">Pick Up</span>
+        <p class="aff-book-title">ゼロからわかるDifyの教科書 〜生成AI×ノーコードでかんたん業務効率化</p>
+        <p class="aff-book-meta">にゃんた / 2,970円（税込）</p>
+        <div class="aff-review"><span class="aff-review-stars">★★★★☆</span><span class="aff-review-count">おすすめ書籍</span></div>
+        <a href="https://rpx.a8.net/svt/ejp?a8mat=2ZPHBO+123RHU+2HOM+686ZL&amp;rakuten=y&amp;a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0ea62065.34400275.0ea62066.204f04c0%2Fa18090710619_2ZPHBO_123RHU_2HOM_686ZL%3Fpc%3Dhttp%253A%252F%252Fsearch.rakuten.co.jp%252Fsearch%252Fmall%252F%E7%94%9F%E6%88%90AI%2B%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96%252F%26m%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252F" target="_blank" rel="nofollow" class="aff-btn">
+          楽天ブックスで見る
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>中村さんが実践した5つのステップ</h3>
+
+<ol>
+<li><strong>ChatGPTで在庫管理表のひな形を作る</strong></li>
+</ol>
+<p>まず在庫表をゼロから考えるのではなく、ChatGPTに作ってもらいました。</p>
+<p>「歯科医院で使う消耗品の在庫管理表を作りたいです。品目名、カテゴリ、ディーラー名、入数、定数（最低在庫数）、現在庫、使用期限、発注先を列にして、Googleスプレッドシートに貼り付けられる表形式で、よく使う品目例を30個入れて作ってください。ユニットは4台、1日の患者数は約40名です。」</p>
+
+<ol>
+<li><strong>Googleスプレッドシートに貼り付け、自院の品目に置き換える</strong></li>
+</ol>
+<p>出てきた表をスプレッドシートに貼り、自院で実際に使っている品目名に修正します。最初から全品目を入れる必要はありません。中村さんは「切れると診療が止まる50品目」から始めました。</p>
+
+<ol>
+<li><strong>過去の発注履歴から「定数」をAIに計算してもらう</strong></li>
+</ol>
+<p>ディーラーの納品書3か月分を見ながら数字を入力し、こう依頼しました。</p>
+<p>「以下は過去3か月の材料の発注履歴です。品目ごとに月平均の使用量を出し、納期を考慮した定数（この数を下回ったら発注する数）を提案してください。納期は通常3営業日、連休前は5営業日で計算してください。」</p>
+
+<ol>
+<li><strong>色で知らせる仕組みを作る</strong></li>
+</ol>
+<p>数字を見なくても状況がわかるよう、条件付き書式を設定しました。</p>
+<p>「スプレッドシートで、現在庫が定数を下回ったら行が赤くなり、使用期限が60日以内なら黄色になる設定方法を、パソコンが苦手な人にもわかるように手順で教えてください。」</p>
+
+<ol>
+<li><strong>Googleフォームでスタッフ全員が入力できるようにする</strong></li>
+</ol>
+<p>「最後の1箱を開けたら、スマホで入力する」というルールを作りました。Googleフォームで「品目」「開封数」を選ぶだけのフォームを作り、回答がスプレッドシートに自動で反映されるよう連携します。週に1回、中村さんは赤くなった行を確認し、次のプロンプトで発注書を作るだけになりました。</p>
+<p>「今週の在庫チェック結果を貼ります。発注が必要な品目をディーラーごとにまとめ、そのままFAXやメールで送れる発注書の文面を作ってください。」</p>
+
+<h3>最初はうまくいかなかった：中村さんの失敗談</h3>
+
+<p>実は最初の1か月、この仕組みはほとんど機能しませんでした。原因は2つです。</p>
+
+<p>1つ目は、ステップ3で「適切な定数を考えて」とだけ入力したこと。ChatGPTが出した数字は一般論で、グローブの定数が少なすぎて、導入初週にさっそく欠品しかけました。そこで実際の使用データと、ユニット数・患者数・納期といった前提条件を必ず添えるようにしたところ、現場の感覚に合う数字が出るようになりました。</p>
+
+<p>2つ目は、フォームの選択肢が200品目並んでいて、スタッフが誰も入力しなかったこと。「探すのが面倒」という声を受けて、棚ごとにフォームを分け、各棚にQRコードを貼る形に変えました。読み取ればその棚の10品目程度だけが表示されるので、入力は10秒で終わります。これで入力率が一気に上がりました。</p>
+
+
+<h2 id="section-4">もうひとつのAI活用法：freee会計とCanvaとの組み合わせ</h2>
+
+<h3>freee会計の材料費データをAIで分析する</h3>
+
+<p>在庫の「数」が見えるようになると、次に気になるのは「お金」です。さくら台デンタルクリニックでは、もともと経理にfreee会計 &lt;!-- TOOL:freee会計 --&gt; を使っていました。中村さんは、勘定科目「材料費」の月別推移をCSVで書き出し、ChatGPTに相談しました。</p>
+
+<p>「freee会計から出した過去12か月の材料費の推移です。季節変動や急増した月の原因として考えられることを挙げ、来年度の材料費を抑えるための具体策を3つ提案してください。」</p>
+
+<p>返ってきた答えの中に「急ぎ発注の月に送料と単価が上がっている可能性」という指摘がありました。実際に確認すると、欠品で急ぎ取り寄せをした月は、配送料や小分け購入で材料費が跳ね上がっていたのです。在庫の見える化が、そのままコスト削減につながることがわかりました。</p>
+
+<p>最近では物流業界でも、ロジザードが「AI在庫分析」サービスの提供を始めるなど、在庫データをAIで分析して改善につなげる流れが広がっています。中村さんの取り組みは、その歯科医院版を無料ツールで実現したものといえます。</p>
+
+<h3>Canvaで棚ラベルとQRコード掲示を作る</h3>
+
+<p>QRコードを棚に貼る際には、Canva &lt;!-- TOOL:Canva --&gt; の無料版を使いました。「グローブ棚：最後の1箱を開けたらここを読み取ってね」というラベルを、色分けしたデザインでまとめて作成。手書きのメモよりも目立ち、新人スタッフでも迷わず入力できるようになりました。院内のどこに何があるかを示す配置図も同じくCanvaで作り、新人教育にも役立っています。</p>
+
+
+<h2 id="section-5">導入前後でどう変わった？数字で見るビフォーアフター</h2>
+
+<h3>導入から3か月後の変化</h3>
+
+<div class="table-wrap">
+<table>
+  <thead><tr><th>項目</th><th>導入前</th><th>導入後（3か月後）</th></tr></thead>
+  <tbody><tr><td>在庫確認・発注作業の時間</td><td>月12時間</td><td>月3時間</td></tr><tr><td>欠品による急ぎ発注</td><td>月4回</td><td>月0〜1回</td></tr><tr><td>期限切れによる廃棄額</td><td>年約18万円</td><td>年約4万円（見込み）</td></tr><tr><td>材料費（月平均）</td><td>約62万円</td><td>約57万円</td></tr><tr><td>在庫を把握している人数</td><td>中村さん1人</td><td>スタッフ全員</td></tr></tbody>
+</table>
+</div>
+
+<h3>数字以上に大きかった変化</h3>
+
+<p>在庫作業は月9時間の削減。材料費は月約5万円、年間にすると約60万円の削減です。期限切れ廃棄の減少分も合わせると、年間70万円以上のコストが浮いた計算になります。</p>
+
+<p>しかし中村さんが一番うれしかったのは、「休みの日に電話がかかってこなくなったこと」でした。以前は中村さんが休むと「〇〇ってどこにありますか？」と連絡が来ていましたが、今はスプレッドシートを見れば誰でもわかります。院長からも「在庫のことで中村さんを探さなくてよくなった」と言われたそうです。</p>
+
+
+<h2 id="section-6">もっと深く学びたい人へ：中村さんのおすすめ</h2>
+
+<p>「在庫管理がうまくいったら、次は院内マニュアルや新人教育にもAIを使ってみたくなりました」と中村さん。最近は、Claudeで院内マニュアルを整えるといった歯科医院向けのAI活用セミナーも開かれるようになり、学ぶ機会が増えています。中村さんは、プロンプトの書き方をもう一段深く学べる本や、業務改善の考え方をまとめた本を読み進めているそうです。</p>
+
+<div class="aff-section">
+  <p class="aff-section-intro">この記事の内容をもっと体系的に学びたい方へ。実践的な一冊をご紹介します。</p>
+  <div class="aff-card">
+    <div class="aff-card-inner">
+      <div class="aff-book-img">
+        <img src="https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8362/9784297148362_1_32.jpg?_ex=200x200" alt="ゼロからわかるDifyの教科書 〜生成AI×ノーコードでかんたん業務効率化" loading="lazy">
+      </div>
+      <div class="aff-content">
+        <span class="aff-badge">おすすめ</span>
+        <p class="aff-book-title">ゼロからわかるDifyの教科書 〜生成AI×ノーコードでかんたん業務効率化</p>
+        <p class="aff-book-meta">にゃんた / 2,970円（税込）</p>
+        <div class="aff-review"><span class="aff-review-stars">★★★★☆</span><span class="aff-review-count">おすすめ書籍</span></div>
+        <a href="https://rpx.a8.net/svt/ejp?a8mat=2ZPHBO+123RHU+2HOM+686ZL&amp;rakuten=y&amp;a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0ea62065.34400275.0ea62066.204f04c0%2Fa18090710619_2ZPHBO_123RHU_2HOM_686ZL%3Fpc%3Dhttp%253A%252F%252Fsearch.rakuten.co.jp%252Fsearch%252Fmall%252F%E7%94%9F%E6%88%90AI%2B%E6%A5%AD%E5%8B%99%E5%8A%B9%E7%8E%87%E5%8C%96%252F%26m%3Dhttp%253A%252F%252Fm.rakuten.co.jp%252F" target="_blank" rel="nofollow" class="aff-btn">
+          楽天ブックスで詳細を見る
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="aff-arrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<p class="inline-related">あわせて読みたい: <a href="0daea87f.html" class="inline-link">歯科医院の経理作業の時短</a>の記事もおすすめです。</p>
+<h2 id="section-7">よくある質問</h2>
+
+<h3>Q1: ChatGPTに患者さんの情報を入力しても大丈夫ですか？</h3>
+
+<p>在庫管理の用途であれば、患者さんの個人情報を入力する必要はまったくありません。品目名や数量、納期などの業務データだけを扱いましょう。院内で「患者情報は入力しない」というルールを明文化しておくと安心です。</p>
+
+<h3>Q2: ITが苦手なスタッフばかりでも運用できますか？</h3>
+
+<p>できます。スタッフにお願いするのは「QRコードを読み取って、品目を選んで送信する」だけです。中村さんの医院でも、50代のスタッフが初日から問題なく使えていました。</p>
+
+<h3>Q3: 初心者におすすめの本やツールはありますか？</h3>
+
+<p>まずはChatGPTのビジネス活用の入門書を1冊読み、プロンプトの基本を押さえるのがおすすめです。ツールはGoogleフォームとスプレッドシートから始めれば、費用をかけずに試せます。慣れてきたらfreee会計などの会計データと組み合わせると、コスト面の改善まで広げられます。</p>
+
+
+<h2 id="section-8">まとめ：中村さんからのひとこと</h2>
+
+<p>在庫管理の改善は、高価なシステムを入れることではなく「自分の頭の中にある情報を、みんなが見える場所に出すこと」から始まります。ChatGPTで表と仕組みを作り、Googleフォームとスプレッドシートで全員が入力できるようにする。それだけで、中村さんの医院では月9時間の作業と年間70万円以上のコストが削減できました。</p>
+
+<p>最後に、中村さんからのひとことです。</p>
+
+<p>「以前の私は、在庫を全部覚えていることが自分の役目だと思っていました。でも本当に大事なのは、私がいなくても回る仕組みを作ることだったんですね。最初の一歩は、ChatGPTに『在庫表を作って』と打ち込むだけ。同じように夜の棚の前でため息をついている方に、ぜひ試してほしいです。」</p>
+<div class="disclaimer">
+  <p>※本記事に登場する人物・店舗名は架空のものであり、実在の個人・団体とは関係ありません。事例は同業種でよくあるお悩みをもとに構成したフィクションです。効果や数値はあくまで想定であり、成果を保証するものではありません。</p>
+</div>
+<div class="supervisor-box"><p class="supervisor-label">この記事の監修</p><div class="supervisor-body"><p class="supervisor-name"><a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">かわさき楽AIサポート</a><span class="supervisor-legal">（株式会社スマイルファクトリー）</span></p><p class="supervisor-desc">川崎の中小企業・個人事業主・個人がAIを「楽に」「楽しく」活用できる状態をつくるAI活用支援サービス。無料ツール中心で、AIの専門家ではなく『整理役・伴走者』として業務効率化を支援します。</p><p class="supervisor-meta">対応エリア: 神奈川県川崎市／初回相談無料</p><a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="supervisor-link">かわさき楽AIサポートに相談する →</a></div></div>
+<div class="cta-box">
+  <p class="cta-title">「うちも在庫管理の改善をどうにかしたい」と思った歯科医院の方へ</p>
+  <p>この記事で紹介した方法は、どなたでも今日から始められます。「でも一人だと不安…」という方は、かわさき楽AIサポートにご相談ください。無料ツール中心で、あなたの業務に合ったAI活用を一緒に考えます。</p>
+  <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener" class="cta-btn">初回無料で相談してみる</a>
+</div>
+<div class="related-articles">
+  <h2>あわせて読みたい</h2>
+  <ul class="related-list"><li>
+  <span class="tag">花屋</span>
+  <a href="074ce880.html">花屋 在庫管理の改善 効率化｜ChatGPTを使った具体的なやり方</a>
+</li><li>
+  <span class="tag">旅館・民宿</span>
+  <a href="090eb3df.html">旅館・民宿 在庫管理の改善 人手不足で回らない → AIに任せたら楽になった話</a>
+</li><li>
+  <span class="tag">歯科医院</span>
+  <a href="0daea87f.html">歯科医院 経理作業の時短 人手不足で回らない → AIに任せたら楽になった話</a>
+</li><li>
+  <span class="tag">歯科医院</span>
+  <a href="0ddaa083.html">歯科医院 スタッフ教育の効率化 人手不足で回らない → AIに任せたら楽になった話</a>
+</li></ul>
+</div>
+</article>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="../index.html">記事一覧</a>
+        <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">かわさき楽AIサポート</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+        <a href="../sitemap.xml">サイトマップ</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 小さなお店のための業種別AIお困り解決帳 / <a href="https://www.smilefactory-rakuai.com/" target="_blank" rel="noopener">株式会社スマイルファクトリー</a></p>
+    </div>
+  </footer>
+</body>
+</html>
